@@ -237,5 +237,6 @@ plugins:
   - embed_file
   # - social
   - git-revision-date-localized:
-      type: date
+      type: timeago
       enable_creation_date: true
+      fallback_to_build_date: true
