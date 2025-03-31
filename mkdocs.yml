@@ -14,6 +14,8 @@ nav:
     - About: index.md
     - My Projects: my-projects/my-projects.md
     - Some Websites: some-websites.md
+    - Utilities:
+      - Discord Spam Spoiler: utilities/discord-spam-spoiler.md
 
   - Algorithms:
     - GCD & LCM: algorithms/gcd-lcm.md
@@ -237,6 +239,4 @@ plugins:
   - embed_file
   # - social
   - git-revision-date-localized:
-      type: timeago
-      enable_creation_date: true
-      fallback_to_build_date: true
+      type: date
