@@ -51,10 +51,14 @@ nav:
     - Quick Read & Write: oi-tips/qread-and-qwrite.md
     
   - Academic Notes:
-    - Calculus:
-      - Limit: academic-notes/calculus/limit.md
-      - Differentiation: academic-notes/calculus/differentiation.md
-      - Fundamental Calculus: academic-notes/calculus/fundamental-calculus.md
+    - AP:
+      - Calculus:
+        - Limit: academic-notes/ap/calculus/limit.md
+        - Differentiation: academic-notes/ap/calculus/differentiation.md
+        - Fundamental Calculus: academic-notes/ap/calculus/fundamental-calculus.md
+      - Microeconomics:
+        - Basic Economic Concept: academic-notes/ap/microeconomics/basic-economic-concept.md
+        - Demand and Supply: academic-notes/ap/microeconomics/demand-and-supply.md
     - Chinese:
       - 初中:
         - 初中地理总结: academic-notes/chinese/junior-notes/geography.md
