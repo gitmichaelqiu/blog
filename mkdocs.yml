@@ -30,11 +30,12 @@ nav:
       - SPFA: algorithms/shortest-path/spfa.md
     - Sort:
       - Sort Overview: algorithms/sort/sort-overview.md
-      # - Bubble Sort: algorithms/sort/bubble-sort.md
+      - Bubble Sort: algorithms/sort/bubble-sort.md
+      - Radix Sort: algorithms/sort/radix-sort.md
     - Quick Pow: algorithms/quick-pow.md
     
   - Data Structures:
-    # - Bignum: data-structures/bignum.md
+    - Bignum: data-structures/bignum.md
     - Binary Heap: data-structures/binary-heap.md
     - Disjoint Set Union: data-structures/disjoint-set-union.md
     - Segment Tree: data-structures/segment-tree.md
@@ -64,94 +65,7 @@ nav:
         - 初中地理总结: academic-notes/chinese/junior-notes/geography.md
       - 高中:
         - 集合: academic-notes/chinese/senior-high-school/sets.md
-    
-  - Curricula:
-    - AI For Beginners:
-      - Overview: curricula/ai-for-beginners/README.md
-      - Lesson 1: curricula/ai-for-beginners/1-Intro/README.md
-      - Lesson 2: curricula/ai-for-beginners/2-Symbolic/README.md
-      - Lesson 3:
-        - Intro: curricula/ai-for-beginners/3-NeuralNetworks/README.md
-        - Perceptron: curricula/ai-for-beginners/3-NeuralNetworks/03-Perceptron/README.md
-        - Own Framework: curricula/ai-for-beginners/3-NeuralNetworks/04-OwnFramework/README.md
-        - Frameworks: curricula/ai-for-beginners/3-NeuralNetworks/05-Frameworks/README.md
-      - Lesson 4: curricula/ai-for-beginners/4-ComputerVision/README.md
-      - Lesson 5: curricula/ai-for-beginners/5-NLP/README.md
-      - Lesson 6: 
-        - Genetic Algorithms: curricula/ai-for-beginners/6-Other/21-GeneticAlgorithms/README.md
-        - Deep RL: curricula/ai-for-beginners/6-Other/22-DeepRL/README.md
-        - Multi-Agent Systems: curricula/ai-for-beginners/6-Other/23-MultiagentSystems/README.md
-      - Lesson 7: curricula/ai-for-beginners/7-Ethics/README.md
-      - Lesson X: curricula/ai-for-beginners/X-Extras/X1-MultiModal/README.md
-    - Generative AI for Beginners:
-      - Overview: curricula/generative-ai-for-beginners/README.md
-      - Lesson 1: curricula/generative-ai-for-beginners/01-introduction-to-genai/README.md
-      - Lesson 2: curricula/generative-ai-for-beginners/02-exploring-and-comparing-different-llms/README.md
-      - Lesson 3: curricula/generative-ai-for-beginners/03-using-generative-ai-responsibly/README.md
-      - Lesson 4: curricula/generative-ai-for-beginners/04-prompt-engineering-fundamentals/README.md
-      - Lesson 5: curricula/generative-ai-for-beginners/05-advanced-prompts/README.md
-      - Lesson 6: curricula/generative-ai-for-beginners/06-text-generation-apps/README.md
-      - Lesson 7: curricula/generative-ai-for-beginners/07-building-chat-applications/README.md
-      - Lesson 8: curricula/generative-ai-for-beginners/08-building-search-applications/README.md
-      - Lesson 9: curricula/generative-ai-for-beginners/09-building-image-applications/README.md
-      - Lesson 10: curricula/generative-ai-for-beginners/10-building-low-code-ai-applications/README.md
-      - Lesson 11: curricula/generative-ai-for-beginners/11-integrating-with-function-calling/README.md
-      - Lesson 12: curricula/generative-ai-for-beginners/12-designing-ux-for-ai-applications/README.md
-      - Lesson 13: curricula/generative-ai-for-beginners/13-securing-ai-applications/README.md
-      - Lesson 14: curricula/generative-ai-for-beginners/14-the-generative-ai-application-lifecycle/README.md
-      - Lesson 15: curricula/generative-ai-for-beginners/15-rag-and-vector-databases/README.md
-      - Lesson 16: curricula/generative-ai-for-beginners/16-open-source-models/README.md
-      - Lesson 17: curricula/generative-ai-for-beginners/17-ai-agents/README.md
-      - Lesson 18: curricula/generative-ai-for-beginners/18-fine-tuning/README.md
-      - Lesson 19: curricula/generative-ai-for-beginners/19-slm/README.md
-      - Lesson 20: curricula/generative-ai-for-beginners/20-mistral/README.md
-      - Lesson 21: curricula/generative-ai-for-beginners/21-meta/README.md
-    - ML for Beginners:
-      - Overview: curricula/ml-for-beginners/README.md
-      - Lesson 1:
-        - Introduction: curricula/ml-for-beginners/1-Introduction/README.md
-        - Intro to ML: curricula/ml-for-beginners/1-Introduction/1-intro-to-ML/README.md
-        - History of ML: curricula/ml-for-beginners/1-Introduction/2-history-of-ML/README.md
-        - Fairness: curricula/ml-for-beginners/1-Introduction/3-fairness/README.md
-        - Techniques of ML: curricula/ml-for-beginners/1-Introduction/4-techniques-of-ML/README.md
-      - Lesson 2:
-        - Regression: curricula/ml-for-beginners/2-Regression/README.md
-        - Tools: curricula/ml-for-beginners/2-Regression/1-Tools/README.md
-        - Data: curricula/ml-for-beginners/2-Regression/2-Data/README.md
-        - Linear: curricula/ml-for-beginners/2-Regression/3-Linear/README.md
-        - Logistic: curricula/ml-for-beginners/2-Regression/4-Logistic/README.md
-      - Lesson 3: curricula/ml-for-beginners/3-Web-App/README.md
-      - Lesson 4:
-        - Classification: curricula/ml-for-beginners/4-Classification/README.md
-        - Introduction: curricula/ml-for-beginners/4-Classification/1-Introduction/README.md
-        - Classifiers 1: curricula/ml-for-beginners/4-Classification/2-Classifiers-1/README.md
-        - Classifiers 2: curricula/ml-for-beginners/4-Classification/3-Classifiers-2/README.md
-        - Applied: curricula/ml-for-beginners/4-Classification/4-Applied/README.md
-      - Lesson 5:
-        - Clustering: curricula/ml-for-beginners/5-Clustering/README.md
-        - Visualize: curricula/ml-for-beginners/5-Clustering/1-Visualize/README.md
-        - K Means: curricula/ml-for-beginners/5-Clustering/2-K-Means/README.md
-      - Lesson 6:
-        - NLP: curricula/ml-for-beginners/6-NLP/README.md
-        - Introduction to NLP: curricula/ml-for-beginners/6-NLP/1-Introduction-to-NLP/README.md
-        - Tasks: curricula/ml-for-beginners/6-NLP/2-Tasks/README.md
-        - Translation Sentiment: curricula/ml-for-beginners/6-NLP/3-Translation-Sentiment/README.md
-        - Hotel Reviews 1: curricula/ml-for-beginners/6-NLP/4-Hotel-Reviews-1/README.md
-        - Hotel Reviews 2: curricula/ml-for-beginners/6-NLP/5-Hotel-Reviews-2/README.md
-      - Lesson 7:
-        - Time Series: curricula/ml-for-beginners/7-TimeSeries/README.md
-        - Introduction: curricula/ml-for-beginners/7-TimeSeries/1-Introduction/README.md
-        - ARIMA: curricula/ml-for-beginners/7-TimeSeries/2-ARIMA/README.md
-        - SVR: curricula/ml-for-beginners/7-TimeSeries/3-SVR/README.md
-      - Lesson 8:
-        - Reinforcement: curricula/ml-for-beginners/8-Reinforcement/README.md
-        - Q-Learning: curricula/ml-for-beginners/8-Reinforcement/1-QLearning/README.md
-        - Gym: curricula/ml-for-beginners/8-Reinforcement/2-Gym/README.md
-      - Lesson 9:
-        - Real World: curricula/ml-for-beginners/9-Real-World/README.md
-        - Applications: curricula/ml-for-beginners/9-Real-World/1-Applications/README.md
-        - Debugging ML Models: curricula/ml-for-beginners/9-Real-World/2-Debugging-ML-Models/README.md
-
+        - 抛物线运动: academic-notes/chinese/senior-high-school/projectile-motion.md
   - Blog:
     - blog/index.md
 
@@ -226,11 +140,11 @@ extra:
       link: https://github.com/gitmichaelqiu
 
 extra_javascript:
-  # - javascripts/katex.js 
-  # - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js  
-  # - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js
-  - javascripts/mathjax.js
-  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+  - javascripts/katex.js 
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js  
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js
+  # - javascripts/mathjax.js
+  # - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
 
 extra_css:
   - https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css

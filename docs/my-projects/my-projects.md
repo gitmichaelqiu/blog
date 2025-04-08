@@ -15,7 +15,7 @@ comments: true
   Your browser does not support the video tag.
 </video>
 
-[LexiGen](https://github.com/gitmichaelqiu/LexiGen), under [GPL-3.0 license]((https://www.gnu.org/licenses/gpl-3.0)), is an AI-powered desktop application for generating educational fill-in-the-blank sentences.
+[LexiGen](https://github.com/gitmichaelqiu/LexiGen), under [GPL-3.0 license](https://www.gnu.org/licenses/gpl-3.0/), is an AI-powered desktop application for generating educational fill-in-the-blank sentences.
 
 LexiGen transforms vocabulary practice and language learning by automatically generating contextual fill-in-the-blank sentences. Leveraging Ollama's AI models, it creates engaging educational materials with just a few clicks.
 

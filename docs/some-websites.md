@@ -12,14 +12,14 @@ comments: true
 
 ## Online Judges
 
-- [Luogu (Chinese)](luogu.com.cn)
+- [Luogu (Chinese)](https://www.luogu.com.cn/)
 - [LeetCode](https://leetcode.com)
 - [CodeForces](https://codeforces.com)
 - [HDU OJ](https://acm.hdu.edu.cn)
 
 ## C++
 
-- [CPPReference](cpprefenrence.com)
+- [CPPReference](https://en.cppreference.com/)
 - [ISOCPP](https://isocpp.org)
 - [Microsoft C++ & C](https://learn.microsoft.com/en-us/cpp/?view=msvc-170)
 - [CPlusPlus](https://cplusplus.com)
