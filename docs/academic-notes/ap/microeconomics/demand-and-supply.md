@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 ## Supply Curve
 
 ### Determinants of Supply

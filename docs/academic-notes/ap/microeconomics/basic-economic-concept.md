@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 ## Scarcity
 
 **Scarcity**: limited resource $\leftrightarrow$ unlimited wants
