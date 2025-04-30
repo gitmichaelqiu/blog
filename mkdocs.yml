@@ -12,10 +12,16 @@ repo_url: 'https://github.com/gitmichaelqiu/gitmichaelqiu.github.io'
 nav:
   - Home:
     - About: index.md
-    - My Projects: my-projects/my-projects.md
     - Some Websites: some-websites.md
     - Utilities:
       - Discord Spam Spoiler: utilities/discord-spam-spoiler.md
+
+  - My Projects:
+    - My Projects: my-projects/my-projects.md
+    - LexiGen:
+      - LexiGen: my-projects/lexigen/lexigen.md
+      - Keyboard Shortcuts: my-projects/lexigen/keyboard-shortcuts.md
+      - Customize Prompts: my-projects/lexigen/customize-prompts.md
 
   - Algorithms:
     - GCD & LCM: algorithms/gcd-lcm.md
