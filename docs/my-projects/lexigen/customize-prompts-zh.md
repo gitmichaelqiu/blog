@@ -2,46 +2,46 @@
 comments: true
 ---
 
-## Where to customize prompts?
+## 在哪里自定义提示词？
 
-In `LexiGenAssets/settings.yaml`.
+在 `LexiGenAssets/settings.yaml`.
 
-If you want to write a prompt with multiple lines, follow this format:
+如果你想写多行的提示词，请使用以下格式：
 
 ```text
-key: |
-  line 1
-  line 2
-  line 3
+选项: |
+  行 1
+  行 2
+  行 3
 ```
 
-## Sentence Generation Prompt
+## 生成句子提示词
 
-**Prompt Key**:
+**提示词标签**:
 
 ```text
 generation_prompt
 ```
 
-**Default Prompt**:
+**默认提示词**:
 
 ```text
 Create a simple sentence using the word '{word}'. The sentence should be clear and educational.
 ```
 
-**Placeholders**:
+**占位符**:
 
 - `{word}`
 
-## Analysis Prompt
+## 分析句子提示词
 
-**Prompt Key**:
+**提示词标签**:
 
 ```text
 analysis_prompt
 ```
 
-**Default Prompt**:
+**默认提示词**:
 
 ```text
 Analyze the grammatical usage of '{word}' in this sentence: '{sentence}'
@@ -55,33 +55,33 @@ Keep the analysis concise and technical. Output in 1 line. Example format:
 "Present Simple, Active Voice. Functions as the subject of the sentence."
 ```
 
-**Placeholders**:
+**占位符**:
 
 - `{word}`
 - `{sentence}`
 
-## Designation Prompt
+## 指定语法提示词
 
 
-**Prompt Key**:
+**提示词标签**:
 
 ```text
 tense_prompt
 ```
 
-**Default Prompt**:
+**默认提示词**:
 
 ```text
 Create a simple sentence using the word '{word}' using {tense} tense. The sentence should be clear and educational.
 ```
 
-**Placeholders**:
+**占位符**:
 
 - `{word}`
 - `{tense}`
 
-## Contributing
+## 贡献
 
-If you have any better prompts, post here [GitHub Discussion #20](https://github.com/gitmichaelqiu/LexiGen/discussions/20).
+如果你有更好的提示词, 请在这里讨论 [GitHub Discussion #20](https://github.com/gitmichaelqiu/LexiGen/discussions/20).
 
-Thank you for your contribution 🫶.
+感谢你的支持 🫶.
