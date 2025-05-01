@@ -12,7 +12,7 @@ An AI-powered desktop application for generating educational fill-in-the-blank s
 [![Powered by Ollama](https://img.shields.io/badge/Powered%20by-Ollama-orange)](https://ollama.com)
 [![Release](https://img.shields.io/github/v/release/gitmichaelqiu/LexiGen?color=green)](https://github.com/gitmichaelqiu/LexiGen/releases/)
 
-<img width="1318" alt="Screenshot 2025-04-16 at 21 32 15" src="https://github.com/user-attachments/assets/c85c0ce1-dd8f-40f0-975a-e581a5968373" />
+<img width="1318" alt="Screenshot 2025-04-16 at 21 32 15" src="https://github.com/user-attachments/assets/0065f2a2-f1d0-4fa2-8a85-f36ca215c9b8" />
 
 ## 🎯 Overview
 
