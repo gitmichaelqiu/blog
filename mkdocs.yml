@@ -85,7 +85,7 @@ theme:
   name: material
 
   logo: assets/logo-MK-round-circle-auto.svg
-  favicon: images/favicon.png
+  favicon: favicon.ico
   custom_dir: overrides
 
   features:

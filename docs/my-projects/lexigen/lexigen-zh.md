@@ -6,6 +6,8 @@ comments: true
 
 基于人工智能的首字母填空生成器。
 
+**[在 GitHub 开源/下载](https://github.com/gitmichaelqiu/LexiGen)**
+
 [![License: GPL-3.0](https://img.shields.io/badge/License-GPL%203.0-blue.svg)](https://github.com/gitmichaelqiu/LexiGen/blob/main/LICENSE)
 [![Powered by Ollama](https://img.shields.io/badge/Powered%20by-Ollama-orange)](https://ollama.com)
 [![Release](https://img.shields.io/github/v/release/gitmichaelqiu/LexiGen?color=green)](https://github.com/gitmichaelqiu/LexiGen/releases/)
@@ -32,7 +34,7 @@ LexiGen 是一款 **开源** 的首字母填空生成器，**零成本** 使用�
 
 ### 安装
 
-1. 从 [GitHub](https://github.com/yourusername/lexigen/releases) 或 [蓝奏云盘](https://wwtm.lanzouq.com/b00uyomyxe) (密码：8hpe) 下载
+1. 从 [GitHub](https://github.com/gitmichaelqiu/LexiGen/releases) 或 [蓝奏云盘](https://wwtm.lanzouq.com/b00uyomyxe) (密码：8hpe) 下载
 2. 选择您平台的对应版本
 3. 启动 LexiGen
 
