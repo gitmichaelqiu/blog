@@ -72,11 +72,13 @@ nav:
         - Demand and Supply: academic-notes/ap/microeconomics/demand-and-supply.md
         - Production, Cost and Competition: academic-notes/ap/microeconomics/production-cost-and-competition.md
     - Chinese:
-      - 初中:
-        - 初中地理总结: academic-notes/chinese/junior-notes/geography.md
-      - 高中:
-        - 集合: academic-notes/chinese/senior-high-school/sets.md
-        - 抛物线运动: academic-notes/chinese/senior-high-school/projectile-motion.md
+      # - 初中:
+      #   - 初中地理总结: academic-notes/chinese/junior-notes/geography.md
+      # - 高中:
+      #   - 集合: academic-notes/chinese/senior-high-school/sets.md
+      #   - 抛物线运动: academic-notes/chinese/senior-high-school/projectile-motion.md
+      - 学考化学:
+        - 物质俗名: academic-notes/chinese/xuekao/chemistry.md
   - Blog:
     - blog/index.md
 
