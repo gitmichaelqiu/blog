@@ -12,8 +12,8 @@ copyright = "Copyright &copy; 2026 Michael Y. Qiu"
 
 # Navigation
 nav = [
+    { "Portfolio" = "https://gitmichaelqiu.github.io/MyWebsite" },
     { Home = [
-        {"Portfolio" = "https://gitmichaelqiu.github.io/MyWebsite"},
         { About = "index.md" },
         { "Some Websites" = "some-websites.md" },
         { Utilities = [
