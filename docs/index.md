@@ -42,10 +42,10 @@ This is a page created by **Michael Qiu**.
     }
     ```
 
-# About Me
+## About Me
 Currently an OIer.
 
-# Find Me
+## Find Me
 This is my GitHub page: [MichaelQiu](https://github.com/gitmichaelqiu)
 
 This is my Luogu page: [MikePP](https://www.luogu.com.cn/user/1050603)
