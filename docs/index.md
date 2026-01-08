@@ -2,10 +2,11 @@
 comments: true
 ---
 
-# 👋 Welcome to My Personal Site
+# 👋 Welcome
+
 ![](assets/logo-MK-round-little.svg)
 
-This is a page created by **Michael Qiu**.
+This is a blog site created by **Michael Qiu**.
 
 ---
 
