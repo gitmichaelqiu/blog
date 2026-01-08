@@ -23,11 +23,11 @@ nav = [
     { "My Projects" = [
         { "My Projects" = "my-projects/my-projects.md" },
         { LexiGen = [
-            { "中文版" = [
-                { LexiGen = "my-projects/lexigen/lexigen-zh.md" },
-                { "快捷键" = "my-projects/lexigen/keyboard-shortcuts-zh.md" },
-                { "自定义提示词" = "my-projects/lexigen/customize-prompts-zh.md" }
-            ]},
+            # { "中文版" = [
+            #     { LexiGen = "my-projects/lexigen/lexigen-zh.md" },
+            #     { "快捷键" = "my-projects/lexigen/keyboard-shortcuts-zh.md" },
+            #     { "自定义提示词" = "my-projects/lexigen/customize-prompts-zh.md" }
+            # ]},
             { LexiGen = "my-projects/lexigen/lexigen.md" },
             { "Keyboard Shortcuts" = "my-projects/lexigen/keyboard-shortcuts.md" },
             { "Customize Prompts" = "my-projects/lexigen/customize-prompts.md" }
@@ -55,14 +55,15 @@ nav = [
         { "Quick Pow" = "algorithms/quick-pow.md" }
     ]},
     { "Data Structures" = [
-        { Bignum = "data-structures/bignum.md" },
+        # { Bignum = "data-structures/bignum.md" },
         { "Binary Heap" = "data-structures/binary-heap.md" },
         { "Disjoint Set Union" = "data-structures/disjoint-set-union.md" },
-        { "Segment Tree" = "data-structures/segment-tree.md" },
+
         { "Sparse Table" = "data-structures/sparse-table.md" },
         { Stack = "data-structures/stack.md" },
         { Tree = [
-            { "Binary Tree Traversals" = "data-structures/tree/binary-tree-traversals.md" }
+            { "Binary Tree Traversals" = "data-structures/tree/binary-tree-traversals.md" },
+            { "Segment Tree" = "data-structures/segment-tree.md" },
         ]}
     ]},
     { "OI Tips" = [
@@ -90,7 +91,7 @@ nav = [
             ]}
         ]},
         { "学考化学" = [
-            { "物质俗名" = "academic-notes/chinese/xuekao/chemistry.md" }
+            { "物质俗名" = "academic-notes/chinese/xuekao/chemistry/material-name.md" }
         ]}
     ]},
 ]

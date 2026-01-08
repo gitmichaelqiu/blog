@@ -13,15 +13,6 @@
         <loc>https://gitmichaelqiu.github.io/my-projects/my-projects/</loc>
       </url>
       <url>
-        <loc>https://gitmichaelqiu.github.io/my-projects/lexigen/lexigen-zh/</loc>
-      </url>
-      <url>
-        <loc>https://gitmichaelqiu.github.io/my-projects/lexigen/keyboard-shortcuts-zh/</loc>
-      </url>
-      <url>
-        <loc>https://gitmichaelqiu.github.io/my-projects/lexigen/customize-prompts-zh/</loc>
-      </url>
-      <url>
         <loc>https://gitmichaelqiu.github.io/my-projects/lexigen/lexigen/</loc>
       </url>
       <url>
@@ -64,16 +55,10 @@
         <loc>https://gitmichaelqiu.github.io/algorithms/quick-pow/</loc>
       </url>
       <url>
-        <loc>https://gitmichaelqiu.github.io/data-structures/bignum/</loc>
-      </url>
-      <url>
         <loc>https://gitmichaelqiu.github.io/data-structures/binary-heap/</loc>
       </url>
       <url>
         <loc>https://gitmichaelqiu.github.io/data-structures/disjoint-set-union/</loc>
-      </url>
-      <url>
-        <loc>https://gitmichaelqiu.github.io/data-structures/segment-tree/</loc>
       </url>
       <url>
         <loc>https://gitmichaelqiu.github.io/data-structures/sparse-table/</loc>
@@ -83,6 +68,9 @@
       </url>
       <url>
         <loc>https://gitmichaelqiu.github.io/data-structures/tree/binary-tree-traversals/</loc>
+      </url>
+      <url>
+        <loc>https://gitmichaelqiu.github.io/data-structures/segment-tree/</loc>
       </url>
       <url>
         <loc>https://gitmichaelqiu.github.io/oi-tips/elapsed-time/</loc>
@@ -124,6 +112,6 @@
         <loc>https://gitmichaelqiu.github.io/academic-notes/ap/microeconomics/production-cost-and-competition/</loc>
       </url>
       <url>
-        <loc>https://gitmichaelqiu.github.io/academic-notes/chinese/xuekao/chemistry/</loc>
+        <loc>https://gitmichaelqiu.github.io/academic-notes/chinese/xuekao/chemistry/material-name/</loc>
       </url>
 </urlset>
