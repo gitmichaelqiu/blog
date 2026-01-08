@@ -155,11 +155,6 @@ code, kbd, pre {
     margin-bottom: 0.5rem;
 }
 
-/* Hide Repo Source (Explicit Request)
-.md-header__source {
-    display: none !important;
-} */
-
 /* Adjust Main Content Background transparency */
 .md-main__inner {
     margin-top: 1rem;
