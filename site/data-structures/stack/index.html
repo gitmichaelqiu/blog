@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Stack | Michael Qiu's Blog</title>
+<!-- Standard MkDocs/Material Scripts & Styles (Required for Search/Plugins) -->
+<script>var mkdocs_page_url = "/data-structures/stack/";</script>
+<script>var base_url = "../..";</script>
+<!-- We manually include search worker logic if needed, but usually mkdocs builds a search_index.json -->
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+        tailwind.config = {
+            darkMode: 'class', 
+            theme: {
+                extend: {
+                    colors: {
+                        'klein-blue': '#002FA7',
+                        'klein-light': '#3B6DFF',
+                        'bg-dark': '#050505',
+                        'bg-light': '#F2F2F7', 
+                        'deep-navy': '#020412',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                        display: ['Syncopate', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                }
+            }
+        }
+    </script>
+<!-- Libraries -->
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<!-- Fonts -->
+<link href="https://gs.jurieo.com/gemini/fonts-googleapis/css2?family=Inter:wght@300;400;600;900&amp;family=JetBrains+Mono:wght@400;700&amp;family=Syncopate:wght@700;800&amp;family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<!-- MkDocs Extra CSS -->
+<link href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" rel="stylesheet"/>
+<style>
+        :root { --klein-blue: #002FA7; }
+        body {
+            background-color: #F2F2F7;
+            color: #111;
+            transition: background 0.3s ease;
+            width: 100vw;
+            overflow-x: hidden;
+        }
+        html.dark body { background-color: #050505; color: #ffffff; }
+
+        /* --- MARKDOWN CONTENT STYLING --- */
+        .markdown-body { font-family: 'Inter', sans-serif; line-height: 1.8; }
+        .markdown-body h1 { font-family: 'Syncopate', sans-serif; font-weight: 700; font-size: 2.2rem; margin-top: 1rem; margin-bottom: 1.5rem; letter-spacing: -0.05em; color: var(--klein-blue); }
+        .markdown-body h2 { font-family: 'Inter', sans-serif; font-weight: 800; font-size: 1.75rem; margin-top: 3rem; margin-bottom: 1rem; position: relative; }
+        .markdown-body h3 { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 1.4rem; margin-top: 2rem; margin-bottom: 0.8rem; position: relative; }
+        .markdown-body h4 { font-weight: 600; margin-top: 1.5rem; }
+        .markdown-body p { margin-bottom: 1.2rem; font-weight: 300; color: rgba(var(--color-text), 0.9); }
+        .markdown-body ul, .markdown-body ol { padding-left: 1.5rem; margin-bottom: 1.5rem; }
+        .markdown-body li { margin-bottom: 0.5rem; }
+        .markdown-body code { font-family: 'JetBrains Mono', monospace; background: rgba(128,128,128,0.15); padding: 0.2em 0.4em; border-radius: 4px; font-size: 0.85em; }
+        .markdown-body pre { background: #111 !important; padding: 1.25rem; border-radius: 12px; overflow-x: auto; margin: 1.5rem 0; border: 1px solid rgba(255,255,255,0.1); }
+        .markdown-body pre code { background: transparent; padding: 0; color: #eee; font-size: 0.9em; }
+        .markdown-body blockquote { border-left: 4px solid var(--klein-blue); padding-left: 1rem; margin: 1.5rem 0; font-style: italic; color: gray; }
+        .markdown-body img { border-radius: 8px; max-width: 100%; height: auto; margin: 1.5rem 0; }
+        
+        /* Links */
+        .markdown-body a { color: var(--klein-blue); text-decoration: none; border-bottom: 1px solid transparent; transition: border 0.2s; }
+        .markdown-body a:hover { border-bottom-color: var(--klein-blue); }
+
+        /* Permalinks (The ¶ symbol) - HIDDEN BY DEFAULT */
+        .headerlink {
+            opacity: 0;
+            margin-left: 0.5rem;
+            text-decoration: none;
+            color: var(--klein-blue) !important;
+            transition: opacity 0.2s ease-in-out;
+            border: none !important;
+        }
+        h1:hover .headerlink, h2:hover .headerlink, h3:hover .headerlink, 
+        h4:hover .headerlink, h5:hover .headerlink, h6:hover .headerlink {
+            opacity: 1;
+        }
+
+        /* Glass Components */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(0,0,0,0.05);
+            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.1);
+        }
+        html.dark .glass-panel {
+            background: rgba(20, 20, 20, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
+        }
+
+        /* Nav Glass */
+        .nav-glass {
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        html.dark .nav-glass {
+            background: rgba(20, 20, 20, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Scrollbar Styling */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: rgba(128,128,128,0.3); border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: rgba(128,128,128,0.5); }
+
+        /* Search Highlight */
+        .md-search-result__highlight { background-color: rgba(0, 47, 167, 0.3); color: inherit; font-weight: bold; border-radius: 2px; }
+    </style>
+</head>
+<body class="font-sans antialiased selection:bg-klein-blue selection:text-white">
+<div class="relative min-h-screen flex flex-col" id="app">
+<!-- Background Orbs -->
+<div class="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+<div class="absolute top-[-10%] right-[-5%] w-[40vw] h-[40vw] bg-klein-blue/10 rounded-full blur-[100px]"></div>
+<div class="absolute bottom-[-10%] left-[-5%] w-[35vw] h-[35vw] bg-purple-500/10 rounded-full blur-[100px]"></div>
+</div>
+<!-- TOP BAR (Navigation & Search) -->
+<header class="fixed top-0 left-0 w-full z-[50] px-4 py-4 pointer-events-none">
+<div class="max-w-7xl mx-auto flex justify-between items-center">
+<!-- Left: Sidebar Toggle & Search -->
+<div class="flex items-center gap-3 pointer-events-auto">
+<button @click="toggleSidebar" class="nav-glass w-10 h-10 rounded-full flex items-center justify-center hover:scale-105 transition-transform text-black dark:text-white shadow-sm">
+<i class="w-5 h-5" data-lucide="menu"></i>
+</button>
+<!-- Search Trigger (Re-integrating functionality) -->
+<div class="relative group">
+<button @click="isSearchOpen = true" class="nav-glass h-10 px-4 rounded-full flex items-center gap-2 hover:scale-102 transition-transform text-gray-600 dark:text-gray-300 shadow-sm cursor-text">
+<i class="w-4 h-4" data-lucide="search"></i>
+<span class="text-xs font-mono hidden sm:block">Search...</span>
+<span class="text-[10px] border border-gray-300 dark:border-gray-600 rounded px-1 ml-2 opacity-50">/</span>
+</button>
+</div>
+</div>
+<!-- Center: Site Title Capsule -->
+<div class="pointer-events-auto">
+<div class="nav-glass h-10 px-6 rounded-full flex items-center gap-3 border border-black/5 dark:border-white/20 shadow-sm">
+<a class="flex items-center gap-2" href="https://gitmichaelqiu.github.io/">
+<div class="w-5 h-5 bg-gradient-to-tr from-klein-blue to-purple-600 rounded flex items-center justify-center text-white font-bold text-[10px]">M</div>
+<span class="font-display font-bold text-xs tracking-wide text-gray-900 dark:text-white">Michael Qiu's Blog</span>
+</a>
+</div>
+</div>
+<!-- Right: Theme Toggle -->
+<div class="pointer-events-auto">
+<button @click="cycleTheme" class="nav-glass w-10 h-10 rounded-full flex items-center justify-center hover:rotate-180 hover:scale-105 transition-transform text-black dark:text-white shadow-sm">
+<i class="w-5 h-5 dark:hidden" data-lucide="sun"></i>
+<i class="w-5 h-5 hidden dark:block" data-lucide="moon"></i>
+</button>
+</div>
+</div>
+</header>
+<!-- SEARCH OVERLAY (Custom UI wrapping MkDocs logic) -->
+<div class="fixed inset-0 z-[100] flex items-start justify-center pt-[15vh] px-4 pointer-events-auto" v-if="isSearchOpen">
+<div @click="isSearchOpen = false" class="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
+<div class="relative w-full max-w-2xl bg-white dark:bg-[#111] rounded-2xl shadow-2xl overflow-hidden border border-gray-200 dark:border-white/10 flex flex-col max-h-[70vh]">
+<div class="p-4 border-b border-gray-200 dark:border-white/10 flex items-center gap-3">
+<i class="w-5 h-5 text-klein-blue" data-lucide="search"></i>
+<!-- The Search Input that MkDocs Worker might attach to, or we handle manually via search plugin structure -->
+<form action="../../search.html" class="flex-1" method="get">
+<input class="w-full bg-transparent border-none focus:ring-0 text-lg text-black dark:text-white placeholder-gray-400 outline-none h-10" id="mkdocs-search-query" name="q" placeholder="Search documentation..." type="text"/>
+</form>
+<button @click="isSearchOpen = false" class="p-1 hover:bg-gray-100 dark:hover:bg-white/10 rounded">
+<span class="text-xs font-mono text-gray-500">ESC</span>
+</button>
+</div>
+<!-- Search Results Container (MkDocs usually populates this) -->
+<div class="overflow-y-auto p-4 space-y-2 min-h-[100px]" id="mkdocs-search-results">
+<p class="text-center text-gray-500 text-sm py-4">Type to start searching...</p>
+</div>
+</div>
+</div>
+<!-- MAIN LAYOUT -->
+<div class="flex-1 max-w-7xl mx-auto w-full pt-24 pb-12 px-4 md:px-8 flex gap-8 relative z-10">
+<!-- LEFT: Navigation Sidebar (Scrollable) -->
+<!-- Mobile: Slide-over / Desktop: Sticky -->
+<aside :class="[isSidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0']" class="fixed inset-y-0 left-0 z-40 w-72 bg-[#F2F2F7] dark:bg-[#050505] lg:bg-transparent lg:static lg:block transition-transform duration-300 ease-in-out lg:w-64 border-r lg:border-none border-gray-200 dark:border-white/10 lg:h-[calc(100vh-120px)] lg:sticky lg:top-24">
+<div class="h-full overflow-y-auto pr-2 custom-scrollbar p-6 lg:p-0">
+<!-- Mobile Close -->
+<div class="lg:hidden flex justify-end mb-6">
+<button @click="toggleSidebar" class="p-2"><i data-lucide="x"></i></button>
+</div>
+<div class="space-y-6">
+<div class="group">
+<h5 class="font-mono text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-3 pl-2">Home</h5>
+<div class="space-y-1 border-l border-gray-200 dark:border-white/10 ml-1">
+<a class="block pl-4 py-1.5 text-sm rounded-r-md transition-colors border-l-2 -ml-[1px] border-transparent text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white hover:border-gray-400" href="../..">
+                                                About
+                                            </a>
+<a class="block pl-4 py-1.5 text-sm rounded-r-md transition-colors border-l-2 -ml-[1px] border-transparent text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white hover:border-gray-400" href="../../some-websites/">
+                                                Some Websites
+                                            </a>
+<!-- Level 2 Header -->
+<div class="pl-4 py-1 text-xs font-bold text-gray-500 mt-2">Utilities</div>
+<a class="block pl-6 py-1.5 text-sm rounded-r-md transition-colors border-l-2 -ml-[1px] border-transparent text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white hover:border-gray-400" href="../../utilities/discord-spam-spoiler/">
+                                                    Discord Spam Spoiler
+                                                </a>
+</div>
+</div>
+<div class="group">
+<h5 class="font-mono text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-3 pl-2">My Projects</h5>
+<div class="space-y-1 border-l border-gray-200 dark:border-white/10 ml-1">
+<a class="block pl-4 py-1.5 text-sm rounded-r-md transition-colors border-l-2 -ml-[1px] border-transparent text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white hover:border-gray-400" href="../../my-projects/my-projects/">
+                                                My Projects
+                                            </a>
+<!-- Level 2 Header -->
+<div class="pl-4 py-1 text-xs font-bold text-gray-500 mt-2">LexiGen</div>
+<a class="block pl-6 py-1.5 text-sm rounded-r-md transition-colors border-l-2 -ml-[1px] border-transparent text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white hover:border-gray-400" href="../..">
+                                                    中文版
+                                                </a>
+<a class="block pl-6 py-1.5 text-sm rounded-r-md transition-colors border-l-2 -ml-[1px] border-transparent text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white hover:border-gray-400" href="../../my-projects/lexigen/lexigen/">
+                                                    LexiGen
+                                                </a>
+<a class="block pl-6 py-1.5 text-sm rounded-r-md transition-colors border-l-2 -ml-[1px] border-transparent text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white hover:border-gray-400" href="../../my-projects/lexigen/keyboard-shortcuts/">
+                                                    Keyboard Shortcuts
+                                                </a>
+<a class="block pl-6 py-1.5 text-sm rounded-r-md transition-colors border-l-2 -ml-[1px] border-transparent text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white hover:border-gray-400" href="../../my-projects/lexigen/customize-prompts/">
+                                                    Customize Prompts
+                                                </a>
+</div>
+</div>
+<div class="group">
+<h5 class="font-mono text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-3 pl-2">Algorithms</h5>
+<div class="space-y-1 border-l border-gray-200 dark:border-white/10 ml-1">
+<a class="block pl-4 py-1.5 text-sm rounded-r-md transition-colors border-l-2 -ml-[1px] border-transparent text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white hover:border-gray-400" href="../../algorithms/gcd-lcm/">
+                                                GCD &amp; LCM
+                                            </a>
+<!-- Level 2 Header -->
+<div class="pl-4 py-1 text-xs font-bold text-gray-500 mt-2">Prime</div>
+<a class="block pl-6 py-1.5 text-sm rounded-r-md transition-colors border-l-2 -ml-[1px] border-transparent text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white hover:border-gray-400" href="../../algorithms/prime/euler-sieve/">
+                                                    Euler Sieve
+                                                </a>
+<!-- Level 2 Header -->
+<div class="pl-4 py-1 text-xs font-bold text-gray-500 mt-2">Search</div>
+<a class="block pl-6 py-1.5 text-sm rounded-r-md transition-colors border-l-2 -ml-[1px] border-transparent text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white hover:border-gray-400" href="../../algorithms/search/a-star/">
+                                                    A*
+                                                </a>
+<!-- Level 2 Header -->
+<div class="pl-4 py-1 text-xs font-bold text-gray-500 mt-2">Shortest Path</div>
+<a class="block pl-6 py-1.5 text-sm rounded-r-md transition-colors border-l-2 -ml-[1px] border-transparent text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white hover:border-gray-400" href="../../algorithms/shortest-path/bellman-ford/">
+                                                    Bellman Ford
+                                                </a>
+<a class="block pl-6 py-1.5 text-sm rounded-r-md transition-colors border-l-2 -ml-[1px] border-transparent text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white hover:border-gray-400" href="../../algorithms/shortest-path/dijkstra/">
+                                                    Dijkstra (prioirty_queue)
+                                                </a>
+<a class="block pl-6 py-1.5 text-sm rounded-r-md transition-colors border-l-2 -ml-[1px] border-transparent text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white hover:border-gray-400" href="../../algorithms/shortest-path/floyd/">
+                                                    Floyd
+                                                </a>
+<a class="block pl-6 py-1.5 text-sm rounded-r-md transition-colors border-l-2 -ml-[1px] border-transparent text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white hover:border-gray-400" href="../../algorithms/shortest-path/spfa/">
+                                                    SPFA
+                                                </a>
+<!-- Level 2 Header -->
+<div class="pl-4 py-1 text-xs font-bold text-gray-500 mt-2">Sort</div>
+<a class="block pl-6 py-1.5 text-sm rounded-r-md transition-colors border-l-2 -ml-[1px] border-transparent text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white hover:border-gray-400" href="../../algorithms/sort/sort-overview/">
+                                                    Sort Overview
+                                                </a>
+<a class="block pl-6 py-1.5 text-sm rounded-r-md transition-colors border-l-2 -ml-[1px] border-transparent text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white hover:border-gray-400" href="../../algorithms/sort/bubble-sort/">
+                                                    Bubble Sort
+                                                </a>
+<a class="block pl-6 py-1.5 text-sm rounded-r-md transition-colors border-l-2 -ml-[1px] border-transparent text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white hover:border-gray-400" href="../../algorithms/sort/radix-sort/">
+                                                    Radix Sort
+                                                </a>
+<a class="block pl-4 py-1.5 text-sm rounded-r-md transition-colors border-l-2 -ml-[1px] border-transparent text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white hover:border-gray-400" href="../../algorithms/quick-pow/">
+                                                Quick Pow
+                                            </a>
+</div>
+</div>
+<div class="group">
+<h5 class="font-mono text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-3 pl-2">Data Structures</h5>
+<div class="space-y-1 border-l border-gray-200 dark:border-white/10 ml-1">
+<a class="block pl-4 py-1.5 text-sm rounded-r-md transition-colors border-l-2 -ml-[1px] border-transparent text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white hover:border-gray-400" href="../bignum/">
+                                                Bignum
+                                            </a>
+<a class="block pl-4 py-1.5 text-sm rounded-r-md transition-colors border-l-2 -ml-[1px] border-transparent text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white hover:border-gray-400" href="../binary-heap/">
+                                                Binary Heap
+                                            </a>
+<a class="block pl-4 py-1.5 text-sm rounded-r-md transition-colors border-l-2 -ml-[1px] border-transparent text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white hover:border-gray-400" href="../disjoint-set-union/">
+                                                Disjoint Set Union
+                                            </a>
+<a class="block pl-4 py-1.5 text-sm rounded-r-md transition-colors border-l-2 -ml-[1px] border-transparent text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white hover:border-gray-400" href="../segment-tree/">
+                                                Segment Tree
+                                            </a>
+<a class="block pl-4 py-1.5 text-sm rounded-r-md transition-colors border-l-2 -ml-[1px] border-transparent text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white hover:border-gray-400" href="../sparse-table/">
+                                                Sparse Table
+                                            </a>
+<a class="block pl-4 py-1.5 text-sm rounded-r-md transition-colors border-l-2 -ml-[1px] border-klein-blue text-klein-blue font-medium bg-klein-blue/5" href="./">
+                                                Stack
+                                            </a>
+<!-- Level 2 Header -->
+<div class="pl-4 py-1 text-xs font-bold text-gray-500 mt-2">Tree</div>
+<a class="block pl-6 py-1.5 text-sm rounded-r-md transition-colors border-l-2 -ml-[1px] border-transparent text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white hover:border-gray-400" href="../tree/binary-tree-traversals/">
+                                                    Binary Tree Traversals
+                                                </a>
+</div>
+</div>
+<div class="group">
+<h5 class="font-mono text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-3 pl-2">OI Tips</h5>
+<div class="space-y-1 border-l border-gray-200 dark:border-white/10 ml-1">
+<a class="block pl-4 py-1.5 text-sm rounded-r-md transition-colors border-l-2 -ml-[1px] border-transparent text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white hover:border-gray-400" href="../../oi-tips/elapsed-time/">
+                                                Elapsed Time Measurement
+                                            </a>
+<a class="block pl-4 py-1.5 text-sm rounded-r-md transition-colors border-l-2 -ml-[1px] border-transparent text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white hover:border-gray-400" href="../../oi-tips/file-read-and-write/">
+                                                File Read &amp; Write
+                                            </a>
+<a class="block pl-4 py-1.5 text-sm rounded-r-md transition-colors border-l-2 -ml-[1px] border-transparent text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white hover:border-gray-400" href="../../oi-tips/gcc-optimize/">
+                                                GCC Optimize
+                                            </a>
+<a class="block pl-4 py-1.5 text-sm rounded-r-md transition-colors border-l-2 -ml-[1px] border-transparent text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white hover:border-gray-400" href="../../oi-tips/accelerate-ios/">
+                                                iostream Acceleration
+                                            </a>
+<a class="block pl-4 py-1.5 text-sm rounded-r-md transition-colors border-l-2 -ml-[1px] border-transparent text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white hover:border-gray-400" href="../../oi-tips/qread-and-qwrite/">
+                                                Quick Read &amp; Write
+                                            </a>
+</div>
+</div>
+<div class="group">
+<h5 class="font-mono text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-3 pl-2">Math</h5>
+<div class="space-y-1 border-l border-gray-200 dark:border-white/10 ml-1">
+<a class="block pl-4 py-1.5 text-sm rounded-r-md transition-colors border-l-2 -ml-[1px] border-transparent text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white hover:border-gray-400" href="../../math/primes/">
+                                                Primes
+                                            </a>
+<a class="block pl-4 py-1.5 text-sm rounded-r-md transition-colors border-l-2 -ml-[1px] border-transparent text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white hover:border-gray-400" href="../../math/polynomials/">
+                                                Polynomials
+                                            </a>
+</div>
+</div>
+<div class="group">
+<h5 class="font-mono text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-3 pl-2">Academic Notes</h5>
+<div class="space-y-1 border-l border-gray-200 dark:border-white/10 ml-1">
+<!-- Level 2 Header -->
+<div class="pl-4 py-1 text-xs font-bold text-gray-500 mt-2">AP</div>
+<a class="block pl-6 py-1.5 text-sm rounded-r-md transition-colors border-l-2 -ml-[1px] border-transparent text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white hover:border-gray-400" href="../..">
+                                                    Calculus
+                                                </a>
+<a class="block pl-6 py-1.5 text-sm rounded-r-md transition-colors border-l-2 -ml-[1px] border-transparent text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white hover:border-gray-400" href="../..">
+                                                    Microeconomics
+                                                </a>
+<!-- Level 2 Header -->
+<div class="pl-4 py-1 text-xs font-bold text-gray-500 mt-2">Chinese</div>
+<a class="block pl-6 py-1.5 text-sm rounded-r-md transition-colors border-l-2 -ml-[1px] border-transparent text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white hover:border-gray-400" href="../..">
+                                                    学考化学
+                                                </a>
+</div>
+</div>
+<div class="group">
+<h5 class="font-mono text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-3 pl-2">Blog</h5>
+<div class="space-y-1 border-l border-gray-200 dark:border-white/10 ml-1">
+<a class="block pl-4 py-1.5 text-sm rounded-r-md transition-colors border-l-2 -ml-[1px] border-transparent text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white hover:border-gray-400" href="../../blog/">
+                                                Index
+                                            </a>
+<!-- Level 2 Header -->
+<div class="pl-4 py-1 text-xs font-bold text-gray-500 mt-2">Archive</div>
+<a class="block pl-6 py-1.5 text-sm rounded-r-md transition-colors border-l-2 -ml-[1px] border-transparent text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white hover:border-gray-400" href="../../blog/archive/2024/">
+                                                    2024
+                                                </a>
+<!-- Level 2 Header -->
+<div class="pl-4 py-1 text-xs font-bold text-gray-500 mt-2">Categories</div>
+<a class="block pl-6 py-1.5 text-sm rounded-r-md transition-colors border-l-2 -ml-[1px] border-transparent text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white hover:border-gray-400" href="../../blog/category/ai/">
+                                                    Ai
+                                                </a>
+</div>
+</div>
+</div>
+</div>
+</aside>
+<!-- CENTER: Content -->
+<article class="flex-1 min-w-0">
+<div class="glass-panel rounded-3xl p-8 md:p-12 mb-8">
+<!-- Breadcrumbs -->
+<div class="flex items-center gap-2 text-xs text-gray-500 mb-6 font-mono overflow-x-auto whitespace-nowrap pb-2">
+<span>Data Structures</span>
+<i class="w-3 h-3" data-lucide="chevron-right"></i>
+<span class="text-klein-blue font-bold">Stack</span>
+</div>
+<!-- CONTENT INJECTION -->
+<div class="markdown-body">
+<div><p>Time Complexity:</p>
+<ul>
+<li>Emplace <span class="arithmatex">\(O(1)\)</span></li>
+<li>Pop: <span class="arithmatex">\(O(1)\)</span></li>
+</ul>
+<hr/>
+<div class="language-cpp highlight"><span class="filename">mystack</span><pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">Type</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">Size</span><span class="o">&gt;</span>
+</span><span id="__span-0-2"><a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="k">class</span><span class="w"> </span><span class="nc">mystack</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-3"><a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="k">private</span><span class="o">:</span>
+</span><span id="__span-0-4"><a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">cnt</span><span class="p">;</span>
+</span><span id="__span-0-5"><a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">    </span><span class="n">Type</span><span class="w"> </span><span class="n">val</span><span class="p">[</span><span class="n">Size</span><span class="p">];</span>
+</span><span id="__span-0-6"><a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="k">public</span><span class="o">:</span>
+</span><span id="__span-0-8"><a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">    </span><span class="n">mystack</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="n">cnt</span><span class="o">=</span><span class="mi">0</span><span class="p">;}</span>
+</span><span id="__span-0-9"><a href="#__codelineno-0-9" id="__codelineno-0-9" name="__codelineno-0-9"></a>
+</span><span id="__span-0-10"><a href="#__codelineno-0-10" id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">emplace</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-11"><a href="#__codelineno-0-11" id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="w">        </span><span class="n">val</span><span class="p">[</span><span class="o">++</span><span class="n">cnt</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+</span><span id="__span-0-12"><a href="#__codelineno-0-12" id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-13"><a href="#__codelineno-0-13" id="__codelineno-0-13" name="__codelineno-0-13"></a>
+</span><span id="__span-0-14"><a href="#__codelineno-0-14" id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">pop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-15"><a href="#__codelineno-0-15" id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="w">        </span><span class="o">--</span><span class="n">cnt</span><span class="p">;</span>
+</span><span id="__span-0-16"><a href="#__codelineno-0-16" id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-17"><a href="#__codelineno-0-17" id="__codelineno-0-17" name="__codelineno-0-17"></a>
+</span><span id="__span-0-18"><a href="#__codelineno-0-18" id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="w">    </span><span class="n">Type</span><span class="w"> </span><span class="n">top</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-19"><a href="#__codelineno-0-19" id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">val</span><span class="p">[</span><span class="n">cnt</span><span class="p">];</span>
+</span><span id="__span-0-20"><a href="#__codelineno-0-20" id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-21"><a href="#__codelineno-0-21" id="__codelineno-0-21" name="__codelineno-0-21"></a>
+</span><span id="__span-0-22"><a href="#__codelineno-0-22" id="__codelineno-0-22" name="__codelineno-0-22"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">empty</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-23"><a href="#__codelineno-0-23" id="__codelineno-0-23" name="__codelineno-0-23"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">cnt</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-0-24"><a href="#__codelineno-0-24" id="__codelineno-0-24" name="__codelineno-0-24"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-25"><a href="#__codelineno-0-25" id="__codelineno-0-25" name="__codelineno-0-25"></a>
+</span><span id="__span-0-26"><a href="#__codelineno-0-26" id="__codelineno-0-26" name="__codelineno-0-26"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">clear</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-27"><a href="#__codelineno-0-27" id="__codelineno-0-27" name="__codelineno-0-27"></a><span class="w">        </span><span class="n">cnt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-0-28"><a href="#__codelineno-0-28" id="__codelineno-0-28" name="__codelineno-0-28"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-29"><a href="#__codelineno-0-29" id="__codelineno-0-29" name="__codelineno-0-29"></a><span class="p">}</span>
+</span></code></pre></div></div>
+</div>
+</div>
+<!-- Footer Navigation -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12">
+<a class="group glass-panel rounded-xl p-6 flex flex-col items-start hover:border-klein-blue transition-colors" href="../sparse-table/">
+<span class="text-[10px] font-mono text-gray-400 mb-1">PREVIOUS</span>
+<div class="flex items-center gap-2 text-gray-900 dark:text-white font-bold">
+<i class="w-4 h-4 group-hover:-translate-x-1 transition-transform text-klein-blue" data-lucide="arrow-left"></i>
+<span>Sparse Table</span>
+</div>
+</a>
+<a class="group glass-panel rounded-xl p-6 flex flex-col items-end text-right hover:border-klein-blue transition-colors" href="../tree/binary-tree-traversals/">
+<span class="text-[10px] font-mono text-gray-400 mb-1">NEXT</span>
+<div class="flex items-center gap-2 text-gray-900 dark:text-white font-bold">
+<span>Binary Tree Traversals</span>
+<i class="w-4 h-4 group-hover:translate-x-1 transition-transform text-klein-blue" data-lucide="arrow-right"></i>
+</div>
+</a>
+</div>
+<!-- Copyright Footer -->
+<div class="text-center pb-8 border-t border-black/5 dark:border-white/5 pt-8">
+<p class="text-xs font-mono text-gray-500">
+                        © {{ new Date().getFullYear() }} Michael Qiu. 
+                        Built with <a class="hover:text-klein-blue" href="https://www.mkdocs.org/">MkDocs</a>.
+                    </p>
+</div>
+</article>
+<!-- RIGHT: Table of Contents (Desktop Only) -->
+</div>
+</div>
+<!-- Vue Logic -->
+<script>
+        const { createApp, ref, onMounted } = Vue;
+
+        createApp({
+            setup() {
+                const isSidebarOpen = ref(false);
+                const isSearchOpen = ref(false);
+                const themeMode = ref('auto');
+
+                const toggleSidebar = () => isSidebarOpen.value = !isSidebarOpen.value;
+
+                // Simple Keyboard Shortcut for Search
+                window.addEventListener('keydown', (e) => {
+                    if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+                        e.preventDefault();
+                        isSearchOpen.value = !isSearchOpen.value;
+                    }
+                    if (e.key === 'Escape') {
+                        isSearchOpen.value = false;
+                        isSidebarOpen.value = false;
+                    }
+                });
+
+                const resolveTheme = () => {
+                    if (themeMode.value === 'auto') {
+                        if (window.matchMedia('(prefers-color-scheme: dark)').matches) document.documentElement.classList.add('dark');
+                        else document.documentElement.classList.remove('dark');
+                    } else if (themeMode.value === 'dark') {
+                        document.documentElement.classList.add('dark');
+                    } else {
+                        document.documentElement.classList.remove('dark');
+                    }
+                };
+
+                const cycleTheme = () => {
+                    if (themeMode.value === 'auto') themeMode.value = 'light';
+                    else if (themeMode.value === 'light') themeMode.value = 'dark';
+                    else themeMode.value = 'auto';
+                    resolveTheme();
+                };
+
+                onMounted(() => {
+                    resolveTheme();
+                    lucide.createIcons();
+                    // Smooth Scroll
+                    const lenis = new Lenis({ duration: 1.2 });
+                    function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+                    requestAnimationFrame(raf);
+                });
+
+                return { isSidebarOpen, isSearchOpen, toggleSidebar, cycleTheme, themeMode };
+            }
+        }).mount('#app');
+    </script>
+<!-- REQUIRED MKDOCS SCRIPTS FOR SEARCH TO WORK -->
+<!-- We must include these so the search index is loaded and the search worker can function -->
+<script src="javascripts/katex.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js"></script>
+<!-- Include built-in search logic if available. Usually MkDocs injects specific search scripts. -->
+<!-- NOTE: Since we replaced the theme, we might need to manually trigger search initialization if standard scripts fail. 
+         However, sticking to the standard ID #mkdocs-search-query usually allows the default worker to attach. -->
+</body>
+</html>
