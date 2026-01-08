@@ -92,6 +92,9 @@ nav = [
 [project.theme]
 logo = "images/logo.png"
 favicon = "images/favicon.png"
+features = [
+    "navigation.tabs"
+]
 
 [[project.theme.palette]]
 media = "(prefers-color-scheme)"
