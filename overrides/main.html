@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block extrahead %}
+  {{ super() }}
+  <!-- Import DesktopRenamer Fonts -->
+  <link href="https://gs.jurieo.com/gemini/fonts-googleapis/css2?family=Inter:wght@300;400;600;900&family=JetBrains+Mono:wght@400;700&family=Syncopate:wght@700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block header %}
+  <!-- Aurora Background Animation Layer -->
+  <div class="aurora-wrapper">
+      <div class="aurora-container">
+          <div class="aurora-blob blob-1"></div>
+          <div class="aurora-blob blob-2"></div>
+          <div class="aurora-blob blob-3"></div>
+      </div>
+      <div class="aurora-overlay"></div>
+  </div>
+  
+  {{ super() }}
+{% endblock %}
