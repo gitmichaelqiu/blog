@@ -95,7 +95,8 @@ favicon = "images/favicon.png"
 features = [
     "navigation.tabs",
     "navigation.sections",
-    "navigation.path"
+    "navigation.path",
+    "navigation.footer"
 ]
 
 [[project.theme.palette]]
@@ -121,3 +122,15 @@ toggle.icon = "lucide/moon"
 toggle.name = "Switch to system preference"
 primary = "indigo"
 accent = "indigo"
+
+[[project.extra.social]]
+icon = "fontawesome/brands/github"
+link = "https://github.com/gitmichaelqiu"
+
+[[project.extra.social]]
+icon = "fontawesome/brands/x-twitter"
+link = "https://x.com/mickymike2023"
+
+[[project.extra.social]]
+icon = "fontawesome/brands/reddit"
+link = "https://www.reddit.com/user/MickyMike2077"
