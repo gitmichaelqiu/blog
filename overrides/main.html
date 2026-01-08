@@ -6,470 +6,410 @@
   <link rel="preconnect" href="https://gs.jurieo.com/gemini/fonts-googleapis">
   <link rel="preconnect" href="https://gs.jurieo.com/gemini/fonts-gstatic" crossorigin>
   <link href="https://gs.jurieo.com/gemini/fonts-googleapis/css2?family=Inter:wght@300;400;600;900&family=JetBrains+Mono:wght@400;700&family=Syncopate:wght@700;800&display=swap" rel="stylesheet">
-  <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <style>
-    /* --- 1. CORE THEME VARIABLES --- */
+    /* --- 1. CORE VARIABLES --- */
     :root {
       --klein-blue: #002FA7;
-      --klein-blue-hover: #0042e6;
-      --klein-light: #4D8BFF; /* For Dark Mode */
+      --klein-light: #4D8BFF;
       
-      /* App-like Dimensions */
-      --header-height: 0px; /* We hide the default header */
-      --capsule-height: 48px;
+      /* Navigation Dimensions */
+      --nav-height: 80px;
+      --capsule-height: 44px;
       
-      /* Glass Vars */
-      --glass-bg: rgba(255, 255, 255, 0.65);
-      --glass-bg-hover: rgba(255, 255, 255, 0.85);
-      --glass-border: rgba(0, 0, 0, 0.08);
+      /* Glass Styling */
+      --glass-bg: rgba(255, 255, 255, 0.75);
+      --glass-bg-hover: rgba(255, 255, 255, 0.95);
+      --glass-border: rgba(0, 0, 0, 0.06);
       --glass-blur: blur(20px);
-      --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+      --glass-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
       
       /* Fonts */
       --md-text-font: "Inter", sans-serif;
       --md-code-font: "JetBrains Mono", monospace;
     }
 
-    /* LIGHT MODE */
-    [data-md-color-scheme="default"] {
-      --bg-color: #F2F2F7;
-      --text-primary: #111111;
-      --text-secondary: #666666;
-      --accent-color: var(--klein-blue);
-      --surface-color: rgba(255, 255, 255, 0.5);
-    }
-
-    /* DARK MODE */
+    /* DARK MODE OVERRIDES */
     [data-md-color-scheme="slate"] {
-      --bg-color: #050505;
-      --text-primary: #ffffff;
-      --text-secondary: #aaaaaa;
-      --accent-color: var(--klein-light);
-      --surface-color: rgba(30, 30, 30, 0.5);
-      
-      --glass-bg: rgba(20, 20, 20, 0.65);
-      --glass-bg-hover: rgba(40, 40, 40, 0.85);
-      --glass-border: rgba(255, 255, 255, 0.12);
+      --glass-bg: rgba(20, 20, 20, 0.75);
+      --glass-bg-hover: rgba(40, 40, 40, 0.95);
+      --glass-border: rgba(255, 255, 255, 0.1);
+      --glass-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     }
 
-    /* --- 2. GLOBAL RESET & LAYOUT --- */
-    body {
-      background-color: var(--bg-color);
-      transition: background-color 0.5s ease;
+    /* --- 2. LAYOUT RESET --- */
+    /* Hide default header VISUALLY but keep functionality for search/theme */
+    .md-header {
+      opacity: 0;
+      height: 0;
+      pointer-events: none;
+      position: absolute;
+      z-index: -1;
     }
-    
-    /* Hide Default Elements */
-    .md-header, .md-tabs, .md-footer { display: none !important; }
-    
-    /* Main Layout Adjustments */
-    .md-container { padding-top: 0 !important; }
+    .md-tabs { display: none !important; }
+
+    /* Push content down to accommodate fixed capsules */
     .md-main__inner {
-      padding-top: 6rem; /* Space for Capsules */
-      padding-bottom: 6rem; /* Space for Footer */
-      max-width: 94vw;
-      display: flex;
-      justify-content: center;
+      padding-top: var(--nav-height);
     }
 
-    /* --- 3. CUSTOM CAPSULE NAVIGATION --- */
+    /* --- 3. FLOATING CAPSULE NAVIGATION --- */
     .nav-layer {
-      position: fixed; top: 1.5rem; left: 0; width: 100%;
-      display: flex; justify-content: center; align-items: flex-start; gap: 1rem;
-      z-index: 100; pointer-events: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: var(--nav-height);
+      display: flex; justify-content: center; align-items: center; gap: 12px;
+      z-index: 100; pointer-events: none; /* Allow clicks through empty space */
+      transition: background 0.3s;
     }
 
     .capsule {
       pointer-events: auto;
+      height: var(--capsule-height);
       background: var(--glass-bg);
       backdrop-filter: var(--glass-blur);
       -webkit-backdrop-filter: var(--glass-blur);
       border: 1px solid var(--glass-border);
       border-radius: 9999px;
-      height: var(--capsule-height);
-      display: flex; align-items: center; justify-content: center;
       box-shadow: var(--glass-shadow);
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      color: var(--text-primary);
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+      color: var(--md-default-fg-color);
     }
     .capsule:hover {
-      background: var(--glass-bg-hover);
       transform: translateY(-2px);
-      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+      background: var(--glass-bg-hover);
     }
 
-    /* --- CAPSULE 1: MENU (Logo | Section) --- */
+    /* --- MENU CAPSULE --- */
     .capsule-menu {
-      padding: 0 1.25rem;
-      position: relative; /* For dropdown positioning */
+      padding: 0 1.5rem;
       gap: 1rem;
-      min-width: 200px;
+      position: relative;
       cursor: default;
     }
-
+    
     .menu-brand {
-      display: flex; align-items: center; gap: 0.5rem;
-      font-family: 'Syncopate', sans-serif; font-weight: 700; font-size: 0.75rem;
-      color: var(--text-primary); text-transform: uppercase; letter-spacing: 0.05em;
+      font-family: 'Syncopate', sans-serif;
+      font-weight: 800;
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
       text-decoration: none;
+      color: var(--md-default-fg-color);
     }
     
-    .menu-divider { width: 1px; height: 16px; background: var(--text-secondary); opacity: 0.3; }
-
-    .menu-current {
-      display: flex; align-items: center; gap: 0.5rem;
-      font-size: 0.8rem; font-weight: 600; color: var(--accent-color);
+    .menu-sep { width: 1px; height: 16px; background: currentColor; opacity: 0.2; }
+    
+    .menu-section {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--md-accent-fg-color);
+      display: flex; align-items: center; gap: 6px;
       cursor: pointer;
     }
-    
-    /* Hover Dropdown Logic */
+
+    /* DROPDOWN - Right Aligned */
     .menu-dropdown {
       position: absolute;
-      top: calc(100% + 8px); left: 0;
-      width: 240px;
+      top: calc(100% + 8px);
+      right: 0; /* Aligns to the right side of the capsule */
+      min-width: 220px;
       background: var(--glass-bg);
-      backdrop-filter: blur(30px);
+      backdrop-filter: blur(25px);
       border: 1px solid var(--glass-border);
       border-radius: 16px;
-      padding: 0.5rem;
+      padding: 6px;
       display: flex; flex-direction: column; gap: 2px;
-      opacity: 0; visibility: hidden; transform: translateY(-10px);
-      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-      box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+      
+      /* Animation */
+      opacity: 0; visibility: hidden; transform: translateY(-10px) scale(0.98);
+      transform-origin: top right;
+      transition: all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
     }
     
     .capsule-menu:hover .menu-dropdown {
-      opacity: 1; visibility: visible; transform: translateY(0);
+      opacity: 1; visibility: visible; transform: translateY(0) scale(1);
     }
-
-    .dropdown-item {
-      padding: 0.75rem 1rem;
+    
+    .dropdown-link {
+      padding: 10px 14px;
       border-radius: 10px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--md-default-fg-color);
       text-decoration: none;
-      font-size: 0.85rem; font-weight: 500;
-      color: var(--text-primary);
       display: flex; justify-content: space-between; align-items: center;
-      transition: background 0.2s;
+      transition: background 0.1s;
     }
-    .dropdown-item:hover { background: rgba(125,125,125,0.1); }
-    .dropdown-item.active { background: var(--accent-color); color: white; }
+    .dropdown-link:hover { background: rgba(127, 127, 127, 0.1); }
+    .dropdown-link.active { color: var(--md-accent-fg-color); background: rgba(127, 127, 127, 0.05); }
 
-    /* --- CAPSULE 2: SEARCH --- */
-    .capsule-search {
-      width: var(--capsule-height);
-      cursor: pointer;
-    }
-    .capsule-search label {
-      width: 100%; height: 100%;
-      display: flex; align-items: center; justify-content: center;
-      cursor: pointer;
-    }
-
-    /* --- CAPSULE 3: THEME --- */
-    .capsule-theme {
+    /* --- ICON CAPSULES --- */
+    .capsule-icon {
       width: var(--capsule-height);
       cursor: pointer;
       position: relative;
     }
-    /* Hidden checkboxes for MkDocs logic */
-    .theme-toggle-input { display: none; }
+    .capsule-icon label {
+      cursor: pointer;
+      width: 100%; height: 100%;
+      display: flex; justify-content: center; align-items: center;
+    }
 
-    /* --- 4. SIDEBAR & TOC OVERRIDES --- */
+    /* --- 4. SIDEBAR & CONTENT FIXES --- */
+    /* We do NOT position:fixed the sidebar. We let MkDocs handle the grid. */
+    /* We just style the scrollwrap to look like glass. */
     
-    /* Ensure sidebars are visible above background */
-    .md-sidebar {
-      z-index: 10 !important;
-    }
-
-    /* Main Navigation Sidebar (Left) */
-    .md-sidebar--primary {
-      top: 7rem !important; /* Push down */
-      height: calc(100vh - 8rem) !important;
-      background: transparent !important;
-    }
-    .md-sidebar--primary .md-sidebar__scrollwrap {
-      background: var(--surface-color);
-      backdrop-filter: blur(10px);
-      border-radius: 16px;
+    .md-sidebar__scrollwrap {
+      background: var(--glass-bg); /* Use semi-transparent background */
+      backdrop-filter: blur(12px); /* Add blur */
       border: 1px solid var(--glass-border);
-      padding: 1rem;
-      margin-right: 10px;
-    }
-
-    /* Table of Contents Sidebar (Right) */
-    .md-sidebar--secondary {
-      top: 7rem !important;
-      height: calc(100vh - 8rem) !important;
-      background: transparent !important;
-    }
-    
-    .md-sidebar--secondary .md-sidebar__scrollwrap {
-      background: var(--surface-color);
-      backdrop-filter: blur(10px);
       border-radius: 16px;
-      border: 1px solid var(--glass-border);
-      padding: 1rem;
-      margin-left: 10px;
+      margin: 0.5rem;
+      padding: 0.5rem;
     }
     
-    /* Link Styling */
-    .md-nav__link {
-      color: var(--text-secondary);
-      transition: color 0.2s;
-    }
-    .md-nav__item .md-nav__link--active {
-      color: var(--accent-color);
-      font-weight: 700;
-    }
+    /* Ensure Toc links are visible */
+    .md-nav__link { opacity: 0.7; transition: opacity 0.2s; }
+    .md-nav__link:hover { opacity: 1; }
+    .md-nav__link--active { opacity: 1; font-weight: 700; color: var(--md-accent-fg-color) !important; }
 
-    /* --- 5. CONTENT AREA --- */
+    /* Content Card */
     .md-content {
-      background: var(--surface-color);
-      backdrop-filter: blur(30px);
-      border: 1px solid var(--glass-border);
-      border-radius: 24px;
-      padding: 2.5rem;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.02);
-      /* Ensure it doesn't overlap the fixed header area */
-      margin-top: 0; 
-      width: 100%;
+      background: transparent;
     }
-    
-    /* Typography Overrides */
-    h1 { 
-      font-family: 'Syncopate', sans-serif; 
-      font-weight: 800; 
-      letter-spacing: -0.02em; 
-      text-transform: uppercase;
-      margin-bottom: 1.5rem;
-    }
-    
-    /* Code Blocks */
-    .md-typeset pre > code {
-      font-family: 'JetBrains Mono', monospace;
-      background: #0d0d0d !important;
-      border: 1px solid rgba(255,255,255,0.1);
-    }
-    /* Copy Button */
-    .md-clipboard {
-      color: rgba(255,255,255,0.6);
-      transition: all 0.2s;
-    }
-    .md-clipboard:hover { color: white; background: var(--accent-color); }
-
-    /* --- 6. CUSTOM FOOTER --- */
-    .custom-footer {
-      position: fixed; bottom: 1.5rem; left: 50%; transform: translateX(-50%);
+    /* Wrap the actual article content in a glass card if desired, or leave transparent */
+    article.md-content__inner {
       background: var(--glass-bg);
       backdrop-filter: blur(20px);
       border: 1px solid var(--glass-border);
-      border-radius: 9999px;
-      padding: 0.75rem 2rem;
-      display: flex; align-items: center; gap: 1.5rem;
-      z-index: 90;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+      border-radius: 20px;
+      padding: 3rem;
+      margin-bottom: 2rem;
     }
-    .footer-text { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--text-secondary); }
-    .footer-link { font-family: 'Syncopate', sans-serif; font-weight: 700; color: var(--text-primary); text-decoration: none; }
-    .footer-up { 
-      display: flex; align-items: center; justify-content: center;
-      width: 24px; height: 24px; border-radius: 50%; 
-      background: var(--text-primary); color: var(--bg-color);
-      cursor: pointer; transition: transform 0.2s;
-    }
-    .footer-up:hover { transform: translateY(-2px); }
 
-    /* --- 7. AURORA ANIMATION --- */
+    /* --- 5. FOOTER (DesktopRenamer Style) --- */
+    .dr-footer {
+      width: 100%;
+      padding: 3rem 2rem;
+      border-top: 1px solid var(--glass-border);
+      background: var(--md-default-bg-color); /* Match body bg */
+      display: flex; flex-direction: column; gap: 2rem;
+      position: relative; z-index: 10;
+    }
+    .dr-footer-content {
+      max-width: 1200px; margin: 0 auto; width: 100%;
+      display: flex; flex-direction: column; md:flex-row; justify-content: space-between; align-items: center;
+      gap: 1.5rem;
+    }
+    
+    @media (min-width: 768px) {
+      .dr-footer-content { flex-direction: row; }
+    }
+
+    .footer-copy { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--md-default-fg-color); opacity: 0.6; }
+    
+    .footer-brand { 
+      font-family: 'Syncopate', sans-serif; font-weight: 900; font-size: 1.5rem; 
+      color: var(--md-default-fg-color); opacity: 0.2; text-decoration: none; transition: opacity 0.3s;
+    }
+    .footer-brand:hover { opacity: 1; color: var(--md-accent-fg-color); }
+    
+    .footer-up {
+      width: 40px; height: 40px; border-radius: 50%;
+      border: 1px solid var(--glass-border);
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; transition: all 0.3s;
+      color: var(--md-default-fg-color);
+    }
+    .footer-up:hover {
+      background: var(--md-accent-fg-color);
+      color: white; border-color: transparent;
+    }
+
+    /* --- 6. BACKGROUND --- */
     .aurora-bg {
-      position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1;
-      overflow: hidden; pointer-events: none;
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -2;
+      pointer-events: none; overflow: hidden;
     }
     .aurora-blob {
       position: absolute; border-radius: 50%; filter: blur(100px); opacity: 0.4;
-      animation: float 20s infinite ease-in-out;
     }
-    .blob-1 { top: -20%; right: -10%; width: 60vw; height: 60vw; background: var(--accent-color); }
-    .blob-2 { bottom: -20%; left: -10%; width: 50vw; height: 50vw; background: #00d2ff; animation-delay: -5s; }
+    .blob-1 { top: -20%; right: -20%; width: 60vw; height: 60vw; background: var(--md-accent-fg-color); }
     
-    @keyframes float {
-      0%, 100% { transform: translate(0, 0); }
-      50% { transform: translate(-20px, 20px); }
-    }
-
-    /* Mobile Responsive */
-    @media screen and (max-width: 768px) {
-      .nav-layer { justify-content: space-between; padding: 0 1rem; }
-      .capsule-menu { min-width: auto; padding: 0 1rem; }
-      .menu-divider, .menu-current { display: none; } /* Simplify logo on mobile */
-      .md-sidebar { display: none; } /* Standard MkDocs handles mobile nav differently */
-      .md-main__inner { padding-top: 5rem; padding-bottom: 6rem; max-width: 90vw; }
-      .custom-footer { width: 90%; justify-content: space-between; }
-    }
   </style>
 {% endblock %}
 
 {% block header %}
-  <!-- NAVIGATION CAPSULES -->
+  <!-- 1. CUSTOM NAVIGATION LAYER -->
   <div class="nav-layer">
     
-    <!-- 1. MENU CAPSULE -->
+    <!-- MENU CAPSULE -->
     <div class="capsule capsule-menu">
+      <!-- Logo -->
       <a href="{{ nav.url | url }}" class="menu-brand">
         {% if config.theme.logo %}
-          <img src="{{ config.theme.logo | url }}" alt="Logo" style="height: 18px; width: auto;">
+          <img src="{{ config.theme.logo | url }}" style="height:16px; vertical-align:middle; margin-right:4px;">
         {% endif %}
-        <span>{{ config.site_name }}</span>
+        {{ config.site_name }}
       </a>
-      
-      <div class="menu-divider"></div>
-      
-      <!-- Logic to find current Top-Level Section -->
-      {% set current_section_title = "Home" %}
+
+      <div class="menu-sep"></div>
+
+      <!-- Current Section Logic -->
+      {% set current_title = "Menu" %}
+      <!-- Simple Jinja loop to find active top-level item -->
       {% for nav_item in nav %}
         {% if nav_item.active %}
-          {% set current_section_title = nav_item.title %}
+          {% set current_title = nav_item.title %}
         {% else %}
           {% if nav_item.children %}
-            {% for child in nav_item.children %}
-               {% if child.active or (child.children and child in page.ancestors) %}
-                  {% set current_section_title = nav_item.title %}
-               {% endif %}
-            {% endfor %}
+             {% for child in nav_item.children %}
+                {% if child.active or (child.children and child in page.ancestors) %}
+                   {% set current_title = nav_item.title %}
+                {% endif %}
+             {% endfor %}
           {% endif %}
         {% endif %}
       {% endfor %}
 
-      <div class="menu-current">
-        <span>{{ current_section_title }}</span>
-        <!-- Right Arrow Icon -->
-        <i data-lucide="chevron-right" style="width: 14px; height: 14px;"></i>
+      <!-- Section Trigger -->
+      <div class="menu-section">
+        {{ current_title }}
+        <i data-lucide="chevron-right" style="width:14px;"></i>
       </div>
 
-      <!-- Dropdown Menu -->
+      <!-- Dropdown -->
       <div class="menu-dropdown">
         {% for nav_item in nav %}
-          <a href="{{ nav_item.url | url if nav_item.url else '#' }}" class="dropdown-item {% if nav_item.title == current_section_title %}active{% endif %}">
-            <span>{{ nav_item.title }}</span>
-            {% if nav_item.title == current_section_title %}
-              <i data-lucide="check" style="width: 14px;"></i>
+          <a href="{{ nav_item.url | url if nav_item.url else '#' }}" class="dropdown-link {% if nav_item.title == current_title %}active{% endif %}">
+            {{ nav_item.title }}
+            {% if nav_item.title == current_title %}
+              <i data-lucide="check" style="width:14px;"></i>
             {% endif %}
           </a>
         {% endfor %}
       </div>
     </div>
 
-    <!-- 2. SEARCH CAPSULE -->
-    <div class="capsule capsule-search" title="Search">
+    <!-- SEARCH CAPSULE -->
+    <div class="capsule capsule-icon" title="Search">
+      <!-- Direct label to MkDocs standard input id -->
       <label for="__search">
-        <i data-lucide="search" style="width: 18px; height: 18px;"></i>
+        <i data-lucide="search" style="width:18px;"></i>
       </label>
     </div>
 
-    <!-- 3. THEME CAPSULE -->
-    <!-- 
-       MkDocs Material Logic:
-       Standard config has 3 palettes: Auto (1), Light (2), Dark (3).
-       We render ONE button that triggers the 'next' one in the cycle.
-    -->
-    <div class="capsule capsule-theme" onclick="cycleTheme()" title="Switch Theme">
-      <!-- Icon changes based on active palette via CSS/JS -->
-      <div id="theme-icon-container" style="display: flex; align-items: center;">
-         <!-- Icons injected by JS based on state -->
-         <i data-lucide="monitor" style="width: 18px;"></i> 
+    <!-- THEME CAPSULE -->
+    <div class="capsule capsule-icon" title="Switch Theme" onclick="toggleTheme()">
+      <div id="theme-icon-box" style="display:flex; align-items:center; justify-content:center;">
+         <i data-lucide="monitor" style="width:18px;"></i>
       </div>
     </div>
+
   </div>
 
-  <!-- Standard Hidden Header for MkDocs functionality (Search Modal, etc) -->
-  <div class="md-header" data-md-component="header"></div>
+  <!-- 2. KEEP STANDARD HEADER (HIDDEN) -->
+  <!-- This preserves the DOM elements for search and palette inputs -->
+  {{ super() }}
 {% endblock %}
 
 {% block footer %}
-  <!-- CUSTOM GLASS FOOTER -->
-  <footer class="custom-footer">
-    <!-- FIX: Using JS to set date to avoid BlogPlugin strict date filter error -->
-    <div class="footer-text">&copy; <span id="year-display">2024</span> {{ config.site_author }}</div>
-    <div class="menu-divider" style="height: 12px;"></div>
-    <a href="{{ nav.url | url }}" class="footer-link">MQ</a>
-    <div class="footer-up" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-      <i data-lucide="arrow-up" style="width: 14px;"></i>
+  <!-- 3. DESKTOP RENAMER STYLE FOOTER -->
+  <footer class="dr-footer">
+    <div class="dr-footer-content">
+      
+      <!-- Copyright -->
+      <div class="footer-copy">
+        &copy; <span id="year-target">2024</span> {{ config.site_author }}
+      </div>
+
+      <!-- Brand/Logo Center -->
+      <a href="{{ nav.url | url }}" class="footer-brand">MQ</a>
+
+      <!-- Back to Top -->
+      <button class="footer-up" onclick="window.scrollTo({top:0, behavior:'smooth'})" aria-label="Back to Top">
+        <i data-lucide="arrow-up" style="width:18px;"></i>
+      </button>
+
     </div>
   </footer>
 {% endblock %}
 
 {% block announce %}
-  <!-- Aurora Background -->
   <div class="aurora-bg">
     <div class="aurora-blob blob-1"></div>
-    <div class="aurora-blob blob-2"></div>
   </div>
 {% endblock %}
 
 {% block scripts %}
   {{ super() }}
   <script>
-    // Initialize Lucide Icons
+    // 1. Icon Init
     lucide.createIcons();
 
-    // Set Footer Year safely
-    document.getElementById('year-display').textContent = new Date().getFullYear();
+    // 2. Set Footer Year
+    const yearTarget = document.getElementById('year-target');
+    if(yearTarget) yearTarget.innerText = new Date().getFullYear();
 
-    // --- THEME TOGGLE LOGIC ---
-    // We assume 3 palettes in mkdocs.yml: 0:Auto, 1:Light, 2:Dark
-    const palettes = ['auto', 'light', 'dark'];
+    // 3. Theme Toggle Logic
+    const themeIconBox = document.getElementById('theme-icon-box');
     const icons = {
       'auto': 'monitor',
-      'light': 'sun',
-      'dark': 'moon'
+      'default': 'sun', /* mkdocs 'default' scheme is light */
+      'slate': 'moon'   /* mkdocs 'slate' scheme is dark */
     };
 
     function updateThemeIcon() {
-      // Find which palette input is checked
-      const inputs = document.querySelectorAll('input[name="__palette"]');
-      let activeIndex = 0;
-      inputs.forEach((input, index) => {
-        if (input.checked) activeIndex = index;
-      });
-
-      // Update the icon in our custom capsule
-      const currentMode = palettes[activeIndex] || 'auto';
-      const container = document.getElementById('theme-icon-container');
-      container.innerHTML = `<i data-lucide="${icons[currentMode]}" style="width: 18px;"></i>`;
-      lucide.createIcons();
+      // MkDocs stores scheme in local storage or on body data attribute
+      const currentScheme = document.body.getAttribute('data-md-color-scheme') || 'default';
+      const pref = localStorage.getItem(__prefix('palette', 'color-scheme')) || 'auto'; 
+      
+      // We essentially just want to show what's active. 
+      // MkDocs cycles: default -> slate -> default (if only 2 defined)
+      // Or if auto is defined: auto -> default -> slate
+      
+      let iconName = icons[currentScheme] || 'monitor';
+      // If we can detect 'preference' is auto, show monitor
+      // However, just showing current visual state (Sun/Moon) is usually safer
+      
+      if (themeIconBox) {
+        themeIconBox.innerHTML = `<i data-lucide="${iconName}" style="width:18px;"></i>`;
+        lucide.createIcons();
+      }
     }
 
-    function cycleTheme() {
+    function toggleTheme() {
+      // Simulate click on the hidden palette input
       const inputs = document.querySelectorAll('input[name="__palette"]');
-      if(inputs.length === 0) return;
-
-      // Find current index
-      let currentIndex = 0;
-      inputs.forEach((input, idx) => { if(input.checked) currentIndex = idx; });
-
-      // Calculate next index
-      let nextIndex = (currentIndex + 1) % inputs.length;
+      if (!inputs.length) return;
       
-      // Click the hidden MkDocs label to trigger the switch
-      const nextId = inputs[nextIndex].id; // e.g., __palette_2
-      const label = document.querySelector(`label[for="${nextId}"]`);
+      // Find current checked
+      let idx = 0;
+      inputs.forEach((inp, i) => { if (inp.checked) idx = i; });
       
-      if(label) label.click();
-      else if (inputs[nextIndex]) inputs[nextIndex].click(); // Fallback
+      // Next
+      let next = (idx + 1) % inputs.length;
       
-      // Slight delay to allow DOM update then refresh icon
-      setTimeout(updateThemeIcon, 50);
+      // Click the label associated with the next input
+      const id = inputs[next].id;
+      const label = document.querySelector(`label[for="${id}"]`);
+      if (label) label.click();
+      
+      setTimeout(updateThemeIcon, 100);
     }
 
-    // Run on load
-    document.addEventListener('DOMContentLoaded', () => {
-      updateThemeIcon();
-      
-      // Listen for changes (in case system theme changes automatically)
-      const inputs = document.querySelectorAll('input[name="__palette"]');
-      inputs.forEach(input => {
-         input.addEventListener('change', updateThemeIcon);
-      });
-    });
+    // Helper to get mkdocs prefix if needed, usually empty or calculated
+    function __prefix(key, value) { return key + (value ? "$" + value : "") }
+
+    // Init
+    document.addEventListener('DOMContentLoaded', updateThemeIcon);
+    
+    // Observer for body attribute changes (MkDocs changes data-md-color-scheme)
+    const observer = new MutationObserver(updateThemeIcon);
+    observer.observe(document.body, { attributes: true, attributeFilter: ['data-md-color-scheme'] });
   </script>
 {% endblock %}
