@@ -88,3 +88,10 @@ nav = [
     ]},
     { Blog = "blog/index.md" }
 ]
+
+[project.theme.palette]
+scheme = "default"
+
+[project.theme]
+palette.primary = "indigo"
+palette.accent = "deep purple"
