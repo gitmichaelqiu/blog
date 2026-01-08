@@ -60,6 +60,10 @@ nav:
     - GCC Optimize: oi-tips/gcc-optimize.md
     - iostream Acceleration: oi-tips/accelerate-ios.md
     - Quick Read & Write: oi-tips/qread-and-qwrite.md
+
+  - Math:
+    - Primes: math/primes.md
+    - Polynomials: math/polynomials.md
     
   - Academic Notes:
     - AP:
