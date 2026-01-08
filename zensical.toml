@@ -89,9 +89,26 @@ nav = [
     { Blog = "blog/index.md" }
 ]
 
-[project.theme.palette]
-scheme = "default"
+[[project.theme.palette]]
+media = "(prefers-color-scheme)"
+toggle.icon = "lucide/monitor"
+toggle.name = "Switch to light mode"
+# You can add the colors here if you want them to apply to this mode:
+primary = "indigo"
+accent = "indigo"
 
-[project.theme]
-palette.primary = "indigo"
-palette.accent = "deep purple"
+[[project.theme.palette]]
+media = "(prefers-color-scheme: light)"
+scheme = "default"
+toggle.icon = "lucide/sun"
+toggle.name = "Switch to dark mode"
+primary = "indigo"
+accent = "indigo"
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme: dark)"
+scheme = "slate"
+toggle.icon = "lucide/moon"
+toggle.name = "Switch to system preference"
+primary = "indigo"
+accent = "indigo"
