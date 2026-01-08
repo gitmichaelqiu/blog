@@ -39,13 +39,20 @@ body {
     letter-spacing: -0.05em;
 }
 
-/* Syncopate for Headings */
-h1, .md-typeset h1,
-h2, .md-typeset h2 {
+/* Syncopate for H1 Only */
+h1, .md-typeset h1 {
     font-family: "Syncopate", sans-serif !important;
     font-weight: 700;
     /* REMOVED: text-transform: uppercase; */
     letter-spacing: -0.03em;
+}
+
+/* Revert other headings to default/Inter */
+h2, .md-typeset h2,
+h3, .md-typeset h3,
+h4, .md-typeset h4 {
+    font-family: "Inter", sans-serif !important;
+    letter-spacing: -0.02em;
 }
 
 /* Code Font */
@@ -118,42 +125,37 @@ code, kbd, pre {
     border: 1px solid rgba(255,255,255,0.1);
 }
 
-/* Footer Previous/Next Links - Restored Card Style */
+/* Footer Previous/Next Links - Font Only Modification */
+/* Removed background/border/shadow to just change font per request */
 .md-footer__link {
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
-    border-radius: 16px;
-    padding: 1.5rem;
-    margin: 0.5rem 0;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0; /* Reset padding if necessary or keep minimal */
+    transition: opacity 0.2s;
 }
 
 .md-footer__link:hover {
-    background: #ffffff;
-    transform: translateY(-4px);
-    border-color: var(--dr-klein-blue);
-    box-shadow: 0 10px 30px rgba(0, 47, 167, 0.15);
+    background: transparent;
+    transform: none;
+    box-shadow: none;
+    opacity: 0.7;
 }
 
-[data-md-color-scheme="slate"] .md-footer__link:hover {
-    background: #222;
-    border-color: var(--dr-klein-light);
-}
-
-/* Force Syncopate on Text Elements inside Footer Link */
-.md-footer__direction {
-    font-family: "JetBrains Mono", monospace !important;
-    /* REMOVED: text-transform: uppercase; */
-    font-size: 0.75rem;
-    opacity: 0.6;
-    margin-bottom: 0.5rem;
-}
-
+/* Force Syncopate on Title Elements inside Footer Link */
 .md-footer__title {
     font-family: "Syncopate", sans-serif !important;
     font-weight: 700 !important;
     font-size: 1.1rem;
+    /* REMOVED: text-transform: uppercase; */
+}
+
+/* Keep direction label default or mono */
+.md-footer__direction {
+    font-family: "JetBrains Mono", monospace !important;
+    font-size: 0.75rem;
+    opacity: 0.6;
+    margin-bottom: 0.5rem;
 }
 
 /* Hide Repo Source (Explicit Request) */
