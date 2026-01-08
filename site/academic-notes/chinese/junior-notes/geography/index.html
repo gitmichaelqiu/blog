@@ -85,6 +85,8 @@
       
     
     
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
     <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,a=__md_scope)=>JSON.parse(t.getItem(a.pathname+"."+e)),__md_set=(e,t,a=localStorage,_=__md_scope)=>{try{a.setItem(_.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
     
       
@@ -3051,52 +3053,44 @@
   
 
 
-<h1 id="i">Ⅰ. 地图信息的获取、表达和理解<a class="headerlink" href="#i" title="Permanent link">&para;</a></h1>
-<h2 id="_1">从地图和图表中获取信息<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>《人文地理 上册》 P2~4, P14~20, P45~52
-</span></code></pre></div>
-<h3 id="_2">地图三要素<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h1 id="i">Ⅰ. 地图信息的获取、表达和理解</h1>
+<h2 id="_1">从地图和图表中获取信息</h2>
+<p><code>text
+《人文地理 上册》 P2~4, P14~20, P45~52</code></p>
+<h3 id="_2">地图三要素</h3>
 <blockquote>
-<p>方向，比例尺，图例 &amp; 注记 <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+<p>方向，比例尺，图例 &amp; 注记 <a href="../合为一个要素">^1</a></p>
 </blockquote>
-<h4 id="_3">方向🧭<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
-<details class="- tip">
-<summary>正确表达某地的经纬度</summary>
-<p>Point A (n° N/S, n° W/E)</p>
-<p>如：A点（30° N, 45° W）</p>
-</details>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>站在地球的南(北)极点，前后左右都是北(南)方</p>
-</div>
-<h4 id="_4">图例 &amp; 注记🏷️<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<h4 id="_3">方向🧭</h4>
+<p>???- tip "正确表达某地的经纬度"
+    Point A (n° N/S, n° W/E)</p>
+<pre><code>如：A点（30° N, 45° W）
+</code></pre>
+<p>!!! warning
+    站在地球的南(北)极点，前后左右都是北(南)方</p>
+<h4 id="_4">图例 &amp; 注记🏷️</h4>
 <p><strong>图例和注记的区别</strong></p>
 <blockquote>
 <p><strong>图例：</strong>对地图上<strong>各种符号</strong>和<strong>注记</strong>的说明，一般在地图<u>外面</u></p>
 <p><strong>注记：</strong>指地图<strong>上</strong>的<strong>文字说明</strong>，一般地图<u>里面</u></p>
 </blockquote>
-<h3 id="_5">从地图🗺️上获取信息<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<h4 id="_6">等高线地形图<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
-<details class="tip 等高距和比例尺的关系" open="open">
-<summary>Tip</summary>
-<p>图幅和图中<strong>等高距相同时，比例尺越小，坡度越缓</strong>，反之同理</p>
-</details>
-<details open="open">
-<summary>山脊和山谷的判定</summary>
-<p><strong>山脊：</strong>等高线向<strong>低处</strong>凸出
-<strong>山谷：</strong>等高线向<strong>高出</strong>凸出 <u>(可以发育河流)</u></p>
-</details>
-<h3 id="_7">从地球仪🌎上看世界<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
-<h4 id="_8">经线和纬线<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
+<h3 id="_5">从地图🗺️上获取信息</h3>
+<h4 id="_6">等高线地形图</h4>
+<p>???+ tip 等高距和比例尺的关系
+    图幅和图中<strong>等高距相同时，比例尺越小，坡度越缓</strong>，反之同理</p>
+<p>???+ "山脊和山谷的判定"
+    <strong>山脊：</strong>等高线向<strong>低处</strong>凸出
+    <strong>山谷：</strong>等高线向<strong>高出</strong>凸出 <u>(可以发育河流)</u></p>
+<h3 id="_7">从地球仪🌎上看世界</h3>
+<h4 id="_8">经线和纬线</h4>
 <blockquote>
 <p>经线又名子午线🌐</p>
 </blockquote>
-<details class="- tip">
-<summary>经线纬线的长度和形状</summary>
-<p>每条经线呈半圆状，每条长度相等</p>
-<p>每条纬线呈整圆状<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>，赤道最长</p>
-</details>
-<h4 id="_9">经度和纬度<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
+<p>???- tip "经线纬线的长度和形状"
+    每条经线呈半圆状，每条长度相等</p>
+<pre><code>每条纬线呈整圆状[^2]，赤道最长
+</code></pre>
+<h4 id="_9">经度和纬度</h4>
 <table>
 <thead>
 <tr>
@@ -3123,115 +3117,66 @@
 </tr>
 </tbody>
 </table>
-<div class="admonition danger">
-<p class="admonition-title">Danger</p>
-<p>东西半球分界线为<u>20° W, 160° E</u></p>
-</div>
-<details class="- quote">
-<summary>五温带 &amp; 低中高纬度</summary>
-<p>我国大部分地区位于<u>北温带，中纬度</u>；小部分地区位于热带，低纬度</p>
-</details>
-<div class="admonition tip">
-<p>经度相差15°，时间相差1h</p>
-</div>
+<p>!!! danger
+    东西半球分界线为<u>20° W, 160° E</u></p>
+<p>???- quote "五温带 &amp; 低中高纬度"
+    我国大部分地区位于<u>北温带，中纬度</u>；小部分地区位于热带，低纬度</p>
+<p>!!! tip ""
+    经度相差15°，时间相差1h</p>
 <hr />
-<h2 id="_10">描述区域的位置、自然环境和人文环境的特点<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>《人文地理 上册》P100~104
-</span></code></pre></div>
-<h3 id="_11">描述地区的自然环境🌲特点<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
-<div class="admonition abstract">
-<p>地形、气候、河流、自然资源等</p>
-</div>
-<h4 id="_12">描述方法<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h4>
-<details class="- info">
-<summary>地形</summary>
-<ul>
-<li>海拔</li>
-<li>地面起伏</li>
-<li>地形种类和分布</li>
-</ul>
-</details>
-<details class="- info">
-<summary>气候</summary>
-<ul>
-<li>气温</li>
-<li>降水</li>
-</ul>
-<details class="tip" open="open">
-<summary>归纳气候特征</summary>
-<p>季节+气温特点+降水特点</p>
-</details>
-</details>
-<details class="- info">
-<summary>河流</summary>
-<ul>
-<li>年径流量<blockquote>
-<p>年降水量</p>
-</blockquote>
-</li>
-<li>径流量季节变化<blockquote>
-<p>降水量季节变化</p>
-</blockquote>
-</li>
-</ul>
-<details class="- example">
-<summary>亚热带季风气候</summary>
-<p><span class="arithmatex">\(\because\)</span> 夏季多雨，冬季少雨</p>
-<p><span class="arithmatex">\(\therefore\)</span> 河流径流量夏季大，冬季少</p>
-</details>
-<ul>
-<li>流速<blockquote>
-<p>等高线</p>
-</blockquote>
-</li>
-<li>流向<blockquote>
-<p>地势</p>
-</blockquote>
-</li>
-<li>水能<blockquote>
-<p>地势落差，径流量</p>
-</blockquote>
-</li>
-<li>水位<blockquote>
-<p>河流宽度，径流量</p>
-</blockquote>
-</li>
-<li>含沙量<blockquote>
-<p>土质，人为因素</p>
-</blockquote>
-</li>
-<li>结冰期<blockquote>
-<p>气温</p>
-</blockquote>
-</li>
-<li>水系特征描述<blockquote>
-<p>河网(密集/稀疏)、河湖数量、长度、入海口、流域面积等</p>
-</blockquote>
-</li>
-</ul>
-</details>
-<details class="- info">
-<summary>资源</summary>
-<p><strong>常见资源：</strong>土地资源、矿产资源、生物资源、水资源、太阳能、风能等</p>
-<p><strong>常见表述：</strong>"土地资源广阔，土地肥沃" "煤炭资源丰富" "水资源短缺"等</p>
-</details>
-<details class="- info">
-<summary>耕地</summary>
-<p>分为以下2类：</p>
-<ol>
-<li>
-<p><strong>水田：</strong>水资源丰富、地势低平的地方，一般以水田为主</p>
-</li>
-<li>
-<p><strong>旱地：</strong>水资源不足，地势又相对较高的地方，一般以旱地为主</p>
-</li>
-</ol>
-</details>
-<h3 id="_13">描述地区的人文环境🗿特点<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
-<div class="admonition abstract">
-<p>人口、民族、城市和乡村、风俗习惯等</p>
-</div>
-<h4 id="_14">描述方法<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h4>
+<h2 id="_10">描述区域的位置、自然环境和人文环境的特点</h2>
+<p><code>text
+《人文地理 上册》P100~104</code></p>
+<h3 id="_11">描述地区的自然环境🌲特点</h3>
+<p>!!! abstract ""
+    地形、气候、河流、自然资源等</p>
+<h4 id="_12">描述方法</h4>
+<p>???- info "地形"
+    - 海拔
+    - 地面起伏
+    - 地形种类和分布</p>
+<p>???- info "气候"
+    - 气温
+    - 降水
+    ???+ tip "归纳气候特征"
+        季节+气温特点+降水特点</p>
+<p>???- info "河流"
+    - 年径流量
+    &gt; 年降水量
+    - 径流量季节变化
+    &gt; 降水量季节变化
+    ???- example "亚热带季风气候"
+        <span class="arithmatex">\(\because\)</span> 夏季多雨，冬季少雨</p>
+<pre><code>    $\therefore$ 河流径流量夏季大，冬季少
+- 流速
+&gt; 等高线
+- 流向
+&gt; 地势
+- 水能
+&gt; 地势落差，径流量
+- 水位
+&gt; 河流宽度，径流量
+- 含沙量
+&gt; 土质，人为因素
+- 结冰期
+&gt; 气温
+- 水系特征描述
+&gt; 河网(密集/稀疏)、河湖数量、长度、入海口、流域面积等
+</code></pre>
+<p>???- info "资源"
+    <strong>常见资源：</strong>土地资源、矿产资源、生物资源、水资源、太阳能、风能等</p>
+<pre><code>**常见表述：**"土地资源广阔，土地肥沃" "煤炭资源丰富" "水资源短缺"等
+</code></pre>
+<p>???- info "耕地"
+    分为以下2类：</p>
+<pre><code>1. **水田：**水资源丰富、地势低平的地方，一般以水田为主
+
+2. **旱地：**水资源不足，地势又相对较高的地方，一般以旱地为主
+</code></pre>
+<h3 id="_13">描述地区的人文环境🗿特点</h3>
+<p>!!! abstract ""
+    人口、民族、城市和乡村、风俗习惯等</p>
+<h4 id="_14">描述方法</h4>
 <ul>
 <li>生活特色<blockquote>
 <p>衣食住行，传统文化，风俗习惯</p>
@@ -3247,437 +3192,256 @@
 </blockquote>
 </li>
 </ul>
-<h3 id="_15">感受区域的发展<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
-<div class="admonition abstract">
-<p>一个区域的发展一般可以通过该地的<u>政治、经济和文化发展水平</u>等几个方面来认识</p>
-</div>
-<details class="example" open="open">
-<summary>南非🇿🇦</summary>
-<p>南非依靠自然条件的优势，<strong>因地制宜</strong>地发展经济。</p>
-<p>例如，充分利用其<strong>矿产资源</strong>优势，大力发展<strong>采矿业</strong>和<strong>制造业</strong>；</p>
-<p>利用丰富的<strong>野生动物资源</strong>，发展<strong>旅游业</strong>，等等。</p>
-</details>
-<h3 id="_16"><font color = red>【重点提醒】</font><a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
-<details class="warning" open="open">
-<summary>影响农业生产的因素</summary>
-<details class="info" open="open">
-<summary>光</summary>
-<ul>
-<li><strong>纬度：</strong>纬度低，太阳辐射量丰富</li>
-<li><strong>天气：</strong>晴天多，光照时间长</li>
-<li><strong>海拔：</strong>海拔高，空气稀薄，透明度好，太阳辐射量丰富</li>
-</ul>
-</details>
-<details class="info" open="open">
-<summary>热</summary>
-<ul>
-<li><strong>季节：</strong>夏季温度高，热量条件好</li>
-<li><strong>纬度：</strong>低纬度地区热量条件好</li>
-<li><strong>地形：</strong>海拔高，气温低，热量不足；盆地地形不易散热，热量条件较好，东西走向和东北一西南走向的山脉，大大减弱了冬季寒潮和冷空气的入侵程度等</li>
-</ul>
-</details>
-<details class="info" open="open">
-<summary>水</summary>
-<ul>
-<li><strong>时间：</strong>季节变化角度</li>
-<li><strong>空间：</strong>如“东多西少”“南多北少”“由东南沿海向西北内陆逐渐减少”等</li>
-<li><strong>影响降雨因素：</strong><ol>
-<li>夏季风（一般情况下，受夏季风影响明显的地方，降水较多）</li>
-<li>海陆位置（一般情况下，沿海地区降水多，内陆地区降水少）。</li>
-<li>地形（一般情况下，湿润气流遇到高山阻挡时，迎风坡降水多，背风坡降水少）</li>
-</ol>
-</li>
-</ul>
-</details>
-<details class="info" open="open">
-<summary>土</summary>
-<ol>
-<li><strong>地形：</strong>如平原，平坦辽阔，适宜种植农作物；丘陵适合种植茶叶、柑橘等经济作物</li>
-<li><strong>土壤：</strong>如河流冲积平原，土壤肥沃，适合农作物的生长；东南丘陵地区的酸性土壤适宜种植茶树等作物；碱性土壤则适合种植喜碱性的作物</li>
-</ol>
-</details>
-</details>
-<details class="warning" open="open">
-<summary>影响工业生产的因素</summary>
-<p>地理位置、资源、交通、市场、科技、人才、劳动力、资金、首础设施、历史条件、政策支持等</p>
-<details class="warning" open="open">
-<summary>珠三角地区</summary>
-<p>还要考虑是否<strong>靠近港澳</strong>，是否<strong>地处侨乡</strong>。这里有以引外来资金尤其是滤澳资全的有利条件，还有发达的市场经料广阔的市场等。</p>
-</details>
-</details>
+<h3 id="_15">感受区域的发展</h3>
+<p>!!! abstract ""
+    一个区域的发展一般可以通过该地的<u>政治、经济和文化发展水平</u>等几个方面来认识</p>
+<p>???+ example "南非🇿🇦"
+    南非依靠自然条件的优势，<strong>因地制宜</strong>地发展经济。</p>
+<pre><code>例如，充分利用其**矿产资源**优势，大力发展**采矿业**和**制造业**；
+
+利用丰富的**野生动物资源**，发展**旅游业**，等等。
+</code></pre>
+<h3 id="_16"><font color = red>【重点提醒】</font></h3>
+<p>???+ warning "影响农业生产的因素"
+    ???+ info "光"
+        - <strong>纬度：</strong>纬度低，太阳辐射量丰富
+        - <strong>天气：</strong>晴天多，光照时间长
+        - <strong>海拔：</strong>海拔高，空气稀薄，透明度好，太阳辐射量丰富
+    ???+ info "热"
+        - <strong>季节：</strong>夏季温度高，热量条件好
+        - <strong>纬度：</strong>低纬度地区热量条件好
+        - <strong>地形：</strong>海拔高，气温低，热量不足；盆地地形不易散热，热量条件较好，东西走向和东北一西南走向的山脉，大大减弱了冬季寒潮和冷空气的入侵程度等
+    ???+ info "水"
+        - <strong>时间：</strong>季节变化角度
+        - <strong>空间：</strong>如“东多西少”“南多北少”“由东南沿海向西北内陆逐渐减少”等
+        - <strong>影响降雨因素：</strong>
+            1. 夏季风（一般情况下，受夏季风影响明显的地方，降水较多）
+            2. 海陆位置（一般情况下，沿海地区降水多，内陆地区降水少）。
+            3.  地形（一般情况下，湿润气流遇到高山阻挡时，迎风坡降水多，背风坡降水少）
+    ???+ info "土"
+        1. <strong>地形：</strong>如平原，平坦辽阔，适宜种植农作物；丘陵适合种植茶叶、柑橘等经济作物
+        2. <strong>土壤：</strong>如河流冲积平原，土壤肥沃，适合农作物的生长；东南丘陵地区的酸性土壤适宜种植茶树等作物；碱性土壤则适合种植喜碱性的作物</p>
+<p>???+ warning "影响工业生产的因素"
+    地理位置、资源、交通、市场、科技、人才、劳动力、资金、首础设施、历史条件、政策支持等
+    ???+ warning "珠三角地区"
+        还要考虑是否<strong>靠近港澳</strong>，是否<strong>地处侨乡</strong>。这里有以引外来资金尤其是滤澳资全的有利条件，还有发达的市场经料广阔的市场等。</p>
 <hr />
-<h1 id="ii">Ⅱ. 共同的家园 共同的岁月<a class="headerlink" href="#ii" title="Permanent link">&para;</a></h1>
-<h2 id="_17">大洲⛰️和大洋🌊<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h2>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>《人文地理 上册》 P22~27
-</span></code></pre></div>
-<h3 id="_18">海陆分布<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
+<h1 id="ii">Ⅱ. 共同的家园 共同的岁月</h1>
+<h2 id="_17">大洲⛰️和大洋🌊</h2>
+<p><code>text
+《人文地理 上册》 P22~27</code></p>
+<h3 id="_18">海陆分布</h3>
 <blockquote>
 <p>海洋占<strong>71%</strong>，陆地占<strong>29%</strong></p>
 </blockquote>
-<h3 id="_19">大洲⛰️<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h3>
-<h4 id="_20">含义<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h4>
+<h3 id="_19">大洲⛰️</h3>
+<h4 id="_20">含义</h4>
 <blockquote>
 <p>大陆与其<strong>附近的岛屿</strong>合起来称作大洲</p>
 </blockquote>
-<h4 id="_21">排列📢<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h4>
+<h4 id="_21">排列📢</h4>
 <p>亚洲🌏 &gt; 非洲🌍 &gt; 北美洲🌎 &gt; 南美洲🌎 &gt; 南极洲🇦🇶 &gt; 欧洲🌍 &gt; 大洋洲🌏</p>
-<h4 id="_22">分界线〰️<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h4>
-<details class="quote" open="open">
-<summary>分界线</summary>
-<p><table style="border-collapse:collapse;border-spacing:0" class="tg"><thead><tr><th style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">亚洲与北美洲</th><th style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">白令海峡</th><th style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">所在大洲</th></tr></thead><tbody><tr><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">欧洲与非洲</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">地中海—直布罗陀海峡</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">亚欧交界</td></tr><tr><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">非洲与亚洲</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">苏伊士运河</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">北美洲</td></tr><tr><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">亚洲与欧洲</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">乌拉尔山脉一乌拉尔河一里海一大高加索山脉一黑海—土耳其海峡</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">亚洲</td></tr><tr><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">北美洲与南美洲</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">巴拿马运河</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">亚洲</td></tr><tr><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">南美洲与南极洲</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">德雷克海峡</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">亚洲</td></tr><tr><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">鄱阳湖</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">中国面积最大的淡水湖</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">亚洲</td></tr></tbody></table></p>
-</details>
-<h4 id="_23">分区§<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h4>
+<h4 id="_22">分界线〰️</h4>
+<p>???+ quote "分界线"
+    <table style="border-collapse:collapse;border-spacing:0" class="tg"><thead><tr><th style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">亚洲与北美洲</th><th style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">白令海峡</th><th style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">所在大洲</th></tr></thead><tbody><tr><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">欧洲与非洲</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">地中海—直布罗陀海峡</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">亚欧交界</td></tr><tr><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">非洲与亚洲</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">苏伊士运河</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">北美洲</td></tr><tr><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">亚洲与欧洲</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">乌拉尔山脉一乌拉尔河一里海一大高加索山脉一黑海—土耳其海峡</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">亚洲</td></tr><tr><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">北美洲与南美洲</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">巴拿马运河</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">亚洲</td></tr><tr><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">南美洲与南极洲</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">德雷克海峡</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">亚洲</td></tr><tr><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">鄱阳湖</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">中国面积最大的淡水湖</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">亚洲</td></tr></tbody></table></p>
+<h4 id="_23">分区§</h4>
 <p><strong>亚洲🌏：</strong>东亚、东南亚、南亚、中亚、西亚、北亚</p>
 <p><strong>欧洲🌍：</strong>南欧、西欧、中欧、北欧、东欧</p>
-<h3 id="_24">大洋🌊<a class="headerlink" href="#_24" title="Permanent link">&para;</a></h3>
-<h4 id="_25">排列📢<a class="headerlink" href="#_25" title="Permanent link">&para;</a></h4>
+<h3 id="_24">大洋🌊</h3>
+<h4 id="_25">排列📢</h4>
 <p>太平洋 &gt; 大西洋 &gt; 印度洋 &gt; 北冰洋</p>
-<h4 id="_26">著名运河 &amp; 海峡<a class="headerlink" href="#_26" title="Permanent link">&para;</a></h4>
-<details class="info" open="open">
-<summary>著名运河 &amp; 海峡</summary>
-<hr />
-<table>
-<thead>
-<tr>
-<th><strong>运河名称</strong></th>
-<th>地理位置</th>
-<th>沟通海洋</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>苏伊士运河</strong></td>
-<td>亚洲和非洲的分界处</td>
-<td>地中海--红海</td>
-</tr>
-<tr>
-<td><strong>巴拿马运河</strong></td>
-<td>南、北美洲的分界处</td>
-<td>太平洋--大西洋</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<table>
-<thead>
-<tr>
-<th><strong>海峡名称</strong></th>
-<th>地理位置</th>
-<th>沟通的海洋</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>马六甲海峡</strong></td>
-<td>位于东南亚</td>
-<td>太平洋一印度洋</td>
-</tr>
-<tr>
-<td><strong>德雷克海峡</strong></td>
-<td>位于南美洲、南极洲之间</td>
-<td>太平洋一大西洋</td>
-</tr>
-<tr>
-<td><strong>麦哲伦海峡</strong></td>
-<td>位于南美洲南端</td>
-<td>太平洋一大西洋</td>
-</tr>
-<tr>
-<td><strong>白令海峡</strong></td>
-<td>位于亚洲、北美洲之间</td>
-<td>太平洋一北冰洋</td>
-</tr>
-<tr>
-<td><strong>直布罗陀海峡</strong></td>
-<td>位于欧洲、非洲之间</td>
-<td>地中海一大西洋</td>
-</tr>
-<tr>
-<td><strong>霍尔木兹海峡</strong></td>
-<td>位于阿拉伯半岛 伊朗之间</td>
-<td>波斯湾一印度洋 (阿拉伯海)</td>
-</tr>
-<tr>
-<td><strong>曼德海峡</strong></td>
-<td>位于亚洲、非洲之间</td>
-<td>红海一印度洋 (阿拉伯海)</td>
-</tr>
-</tbody>
-</table>
-<hr />
-</details>
-<h3 id="_27">海洋🌊对人类🧍🏿的影响<a class="headerlink" href="#_27" title="Permanent link">&para;</a></h3>
+<h4 id="_26">著名运河 &amp; 海峡</h4>
+<p>???+ info "著名运河 &amp; 海峡"
+    ---
+    | <strong>运河名称</strong> | 地理位置 | 沟通海洋 |
+    |---|---|---|
+    | <strong>苏伊士运河</strong> | 亚洲和非洲的分界处 | 地中海--红海 |
+    | <strong>巴拿马运河</strong> | 南、北美洲的分界处 | 太平洋--大西洋 |</p>
+<pre><code>---
+
+| **海峡名称** | 地理位置 | 沟通的海洋 |
+|---|---|---|
+| **马六甲海峡** | 位于东南亚 | 太平洋一印度洋 |
+| **德雷克海峡** | 位于南美洲、南极洲之间 | 太平洋一大西洋 |
+| **麦哲伦海峡** | 位于南美洲南端 | 太平洋一大西洋 |
+| **白令海峡** | 位于亚洲、北美洲之间 | 太平洋一北冰洋 |
+| **直布罗陀海峡** | 位于欧洲、非洲之间 | 地中海一大西洋 |
+| **霍尔木兹海峡** | 位于阿拉伯半岛 伊朗之间 | 波斯湾一印度洋 (阿拉伯海) |
+| **曼德海峡** | 位于亚洲、非洲之间 | 红海一印度洋 (阿拉伯海) |
+
+---
+</code></pre>
+<h3 id="_27">海洋🌊对人类🧍🏿的影响</h3>
 <ol>
 <li>淡水💧资源</li>
 <li>渔盐🐟🧂资源</li>
 <li>为旅游业提供资源</li>
-<li>空间资源</li>
+<li>空间资源
+!!! tip ""
+    开辟海上交通航线，修筑运河，建设港口，促进世界各地之间的物资交流</li>
 </ol>
-<div class="admonition tip">
-<p>开辟海上交通航线，修筑运河，建设港口，促进世界各地之间的物资交流</p>
-</div>
-<h3 id="_28"><font color = red>【重点提醒】</font><a class="headerlink" href="#_28" title="Permanent link">&para;</a></h3>
-<details class="warning" open="open">
-<summary>陆地的构成</summary>
-<p>陆地分为<strong>大陆</strong>和<strong>岛屿</strong></p>
-<ul>
-<li><strong>大陆⛰️</strong></li>
-</ul>
-<blockquote>
-<p><strong>最大的大陆：</strong>亚欧大陆🌏</p>
-<p><strong>最小的大陆：</strong>澳大利亚大陆🇦🇺</p>
-</blockquote>
-<ul>
-<li><strong>岛屿🏝️</strong></li>
-</ul>
-<blockquote>
-<p><strong>最大的岛屿：</strong>格陵兰岛🇬🇱</p>
-<p><strong>最大的群岛：</strong>马来群岛🇲🇾</p>
-</blockquote>
-<ul>
-<li><strong>半岛</strong></li>
-</ul>
-<blockquote>
-<p><strong>最大的半岛：</strong>阿拉伯半岛🇸🇦</p>
-</blockquote>
-</details>
-<details class="warning" open="open">
-<summary>赤道穿过的大洲</summary>
-<p>非洲、亚洲、大洋洲、南美洲</p>
-</details>
-<details class="warning" open="open">
-<summary>回归线穿过的大洲</summary>
-<p><strong>北回归线</strong></p>
-<blockquote>
-<p>非洲、亚洲、大洋洲、北美洲</p>
-</blockquote>
-<p><strong>南回归线：</strong></p>
-<blockquote>
-<p>非洲、大洋洲、南美洲</p>
-</blockquote>
-</details>
-<details class="warning" open="open">
-<summary>极圈穿过的大洲</summary>
-<p><strong>北极圈</strong></p>
-<p>欧洲、亚洲、北美洲</p>
-<p><strong>南极圈</strong></p>
-<p>南极洲</p>
-</details>
-<details class="warning" open="open">
-<summary>跨经度最广、纬度最高</summary>
-<p><strong>洲⛰️：</strong>南极洲</p>
-<p><strong>洋🌊：</strong>北冰洋</p>
-</details>
-<details class="warning" open="open">
-<summary>大洲平均海拔之最</summary>
-<p><strong>最高：</strong>南极洲</p>
-<p><strong>最低：</strong>欧洲</p>
-</details>
+<h3 id="_28"><font color = red>【重点提醒】</font></h3>
+<p>???+ warning "陆地的构成"
+    陆地分为<strong>大陆</strong>和<strong>岛屿</strong></p>
+<pre><code>- **大陆⛰️**
+
+&gt; **最大的大陆：**亚欧大陆🌏
+
+&gt; **最小的大陆：**澳大利亚大陆🇦🇺
+
+- **岛屿🏝️**
+
+&gt; **最大的岛屿：**格陵兰岛🇬🇱
+
+&gt; **最大的群岛：**马来群岛🇲🇾
+
+- **半岛**
+
+&gt; **最大的半岛：**阿拉伯半岛🇸🇦
+</code></pre>
+<p>???+ warning "赤道穿过的大洲"
+    非洲、亚洲、大洋洲、南美洲</p>
+<p>???+ warning "回归线穿过的大洲"
+    <strong>北回归线</strong>
+    &gt; 非洲、亚洲、大洋洲、北美洲</p>
+<pre><code>**南回归线：**
+&gt; 非洲、大洋洲、南美洲
+</code></pre>
+<p>???+ warning "极圈穿过的大洲"
+    <strong>北极圈</strong></p>
+<pre><code>欧洲、亚洲、北美洲
+
+**南极圈**
+
+南极洲
+</code></pre>
+<p>???+ warning "跨经度最广、纬度最高"
+    <strong>洲⛰️：</strong>南极洲</p>
+<pre><code>**洋🌊：**北冰洋
+</code></pre>
+<p>???+ warning "大洲平均海拔之最"
+    <strong>最高：</strong>南极洲</p>
+<pre><code>**最低：**欧洲
+</code></pre>
 <hr />
-<h2 id="_29">世界自然环境<a class="headerlink" href="#_29" title="Permanent link">&para;</a></h2>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>《人文地理 上册》 P21, P28~39
-</span></code></pre></div>
-<h3 id="_30">地形多样<a class="headerlink" href="#_30" title="Permanent link">&para;</a></h3>
-<details class="- quote">
-<summary>五种基本地形</summary>
-<table>
-<thead>
-<tr>
-<th>类型</th>
-<th>海拔</th>
-<th>地表特征</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>山地</strong></td>
-<td>500米以上</td>
-<td>峰峦起伏,坡度陡峻。有的呈长条状延伸,形成山脉。 山脉排列有序,脉络分明,仿佛是"大地的骨架"</td>
-</tr>
-<tr>
-<td><strong>高原</strong></td>
-<td>500米以上</td>
-<td>地表起伏不大,但边缘处比较陡峭;也有的高原表面 山峦起伏,凹凸不平</td>
-</tr>
-<tr>
-<td><strong>丘陵</strong></td>
-<td>200~500米</td>
-<td>起伏和缓</td>
-</tr>
-<tr>
-<td><strong>平原</strong></td>
-<td>200米以下</td>
-<td>地面平坦或起伏较小,主要分布在大河两岸和濒临海洋的地区</td>
-</tr>
-<tr>
-<td><strong>盆地</strong></td>
-<td>无标准</td>
-<td>四周被群山环绕,四周高,中间低</td>
-</tr>
-</tbody>
-</table>
-</details>
-<h3 id="_31">世界上重要的地形单元<a class="headerlink" href="#_31" title="Permanent link">&para;</a></h3>
-<details class="quote" open="open">
-<summary>重要的地形单元</summary>
-<p><table style="border-collapse:collapse;border-spacing:0" class="tg"><thead><tr><th style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">地形类型</th><th style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">重要地形单元</th><th style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">特点</th><th style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">所在大洲</th></tr></thead><tbody><tr><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal" rowspan="2">山脉</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">安第斯山脉</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">世界上最长的山脉</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">南美洲</td></tr><tr><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">喜马拉雅山脉</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">世界上最高的山脉</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">亚洲</td></tr><tr><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal" rowspan="2">高原</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">青藏高原</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">世界上最高的高原</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">亚洲</td></tr><tr><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">巴西高原</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">世界上最大的高原</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">南美洲</td></tr><tr><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">平原</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">亚马孙平原</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">世界上最大的热带雨林区</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">南美洲</td></tr><tr><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">盆地</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">刚果盆地</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">非洲最大的盆地</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">非洲</td></tr></tbody></table></p>
-</details>
-<h3 id="_32"><font color = red>【重点提醒】</font><a class="headerlink" href="#_32" title="Permanent link">&para;</a></h3>
-<details class="warning" open="open">
-<summary>如何描述一个地区的地形特点</summary>
-<p>一般可以从<strong>海拔、地面起伏、地形的种类和分布</strong>三个方面来描述</p>
-</details>
+<h2 id="_29">世界自然环境</h2>
+<p><code>text
+《人文地理 上册》 P21, P28~39</code></p>
+<h3 id="_30">地形多样</h3>
+<p>???- quote "五种基本地形"
+    | 类型 | 海拔 | 地表特征 |
+    |---|---|---|
+    | <strong>山地</strong> | 500米以上 | 峰峦起伏,坡度陡峻。有的呈长条状延伸,形成山脉。 山脉排列有序,脉络分明,仿佛是"大地的骨架" |
+    | <strong>高原</strong> | 500米以上 | 地表起伏不大,但边缘处比较陡峭;也有的高原表面 山峦起伏,凹凸不平 |
+    | <strong>丘陵</strong> | 200~500米 | 起伏和缓 |
+    | <strong>平原</strong> | 200米以下 | 地面平坦或起伏较小,主要分布在大河两岸和濒临海洋的地区 |
+    | <strong>盆地</strong> | 无标准 | 四周被群山环绕,四周高,中间低 |</p>
+<h3 id="_31">世界上重要的地形单元</h3>
+<p>???+ quote "重要的地形单元"
+    <table style="border-collapse:collapse;border-spacing:0" class="tg"><thead><tr><th style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">地形类型</th><th style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">重要地形单元</th><th style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">特点</th><th style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">所在大洲</th></tr></thead><tbody><tr><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal" rowspan="2">山脉</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">安第斯山脉</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">世界上最长的山脉</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">南美洲</td></tr><tr><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">喜马拉雅山脉</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">世界上最高的山脉</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">亚洲</td></tr><tr><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal" rowspan="2">高原</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">青藏高原</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">世界上最高的高原</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">亚洲</td></tr><tr><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">巴西高原</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">世界上最大的高原</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">南美洲</td></tr><tr><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">平原</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">亚马孙平原</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">世界上最大的热带雨林区</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">南美洲</td></tr><tr><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">盆地</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">刚果盆地</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">非洲最大的盆地</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">非洲</td></tr></tbody></table></p>
+<h3 id="_32"><font color = red>【重点提醒】</font></h3>
+<p>???+ warning "如何描述一个地区的地形特点"
+    一般可以从<strong>海拔、地面起伏、地形的种类和分布</strong>三个方面来描述</p>
 <hr />
-<h2 id="_33">气象万千<a class="headerlink" href="#_33" title="Permanent link">&para;</a></h2>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>《人文地理 上册》 P21, P28~39
-</span></code></pre></div>
-<h3 id="_34">气候的概念<a class="headerlink" href="#_34" title="Permanent link">&para;</a></h3>
+<h2 id="_33">气象万千</h2>
+<p><code>text
+《人文地理 上册》 P21, P28~39</code></p>
+<h3 id="_34">气候的概念</h3>
 <blockquote>
 <p>气候是一个地区<strong>多年</strong>的天气平均状况 一个地方的气候具有一定的<strong>稳定性</strong></p>
 </blockquote>
-<h3 id="_35">气候的描述<a class="headerlink" href="#_35" title="Permanent link">&para;</a></h3>
-<details class="tip" open="open">
-<summary>通过<u>气温曲线图</u>和<u>降水量柱状图</u>，从<u>气温</u>和<u>降水</u>两个方面描述</summary>
-<p><strong>气温的变化特点、降水的时间分布、水热的吻合情况</strong>!</p>
-</details>
-<h3 id="_36">判断气候类型的方法<a class="headerlink" href="#_36" title="Permanent link">&para;</a></h3>
+<h3 id="_35">气候的描述</h3>
+<p>???+ tip "通过<u>气温曲线图</u>和<u>降水量柱状图</u>，从<u>气温</u>和<u>降水</u>两个方面描述"
+    <strong>气温的变化特点、降水的时间分布、水热的吻合情况</strong>!</p>
+<h3 id="_36">判断气候类型的方法</h3>
 <table style="border-collapse:collapse;border-spacing:0" class="tg"><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:middle;word-break:normal" colspan="2">以"温"定"带"</th><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:middle;word-break:normal" colspan="2">以"水"定"型"</th></tr></thead><tbody><tr><td style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:middle;word-break:normal">最冷月月均温</td><td style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:middle;word-break:normal">温度带</td><td style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:middle;word-break:normal">降水季节分配规律</td><td style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:middle;word-break:normal">气候类型</td></tr><tr><td style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:middle;word-break:normal" rowspan="3">&gt;15C</td><td style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:middle;word-break:normal" rowspan="3">热带</td><td style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:middle;word-break:normal">夏雨型(全年1500~2000毫米)</td><td style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:middle;word-break:normal">热带季风气候</td></tr><tr><td style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:middle;word-break:normal">少雨型</td><td style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:middle;word-break:normal">热带沙漠气候</td></tr><tr><td style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:middle;word-break:normal">年雨型</td><td style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:middle;word-break:normal">热带雨林气候</td></tr><tr><td style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:middle;word-break:normal" rowspan="2">0~15C</td><td style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:middle;word-break:normal" rowspan="2">亚热带</td><td style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:middle;word-break:normal">夏雨型(全年&gt;800毫米)</td><td style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:middle;word-break:normal">亚热带季风和湿润气候</td></tr><tr><td style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:middle;word-break:normal">冬雨型</td><td style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:middle;word-break:normal">地中海气候</td></tr><tr><td style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:middle;word-break:normal">-15~0C</td><td style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:middle;word-break:normal" rowspan="3">温带</td><td style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:middle;word-break:normal">夏雨型(全年&lt;800毫米)</td><td style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:middle;word-break:normal">温带季风气候</td></tr><tr><td style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:middle;word-break:normal" rowspan="2">&gt;0C</td><td style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:middle;word-break:normal">少雨型</td><td style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:middle;word-break:normal">温带大陆性气候</td></tr><tr><td style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:middle;word-break:normal">年雨型</td><td style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:middle;word-break:normal">温带海洋性气候</td></tr></tbody></table>
 
-<h3 id="_37">主要气候类型<a class="headerlink" href="#_37" title="Permanent link">&para;</a></h3>
-<details class="abstract" open="open">
-<summary>主要气候类型</summary>
-<ul>
-<li><strong>热带南林气候：</strong>终年高温多雨</li>
-<li><strong>热带章原气候：</strong>终年高温 分干湿两季</li>
-<li><strong>热带季风气候：</strong>终年高温 分旱雨两季</li>
-<li><strong>热带沙淡气候：</strong>终年炎热干旱</li>
-<li><strong>亚热带季风和湿润气候：</strong>夏季高温多雨 冬季温和少雨</li>
-<li><strong>地中海气候：</strong>夏季炎热干燥 冬季温和多雨</li>
-<li><strong>温带海洋性气候：</strong>冬温夏凉 全年降水均匀</li>
-<li><strong>温带季风气候：</strong>夏季高温多雨 冬季寒冷干燥</li>
-<li><strong>温带大陆性气候：</strong>冬冷夏热 全年降水较少</li>
-<li><strong>寒带气候：</strong>终年寒冷干燥</li>
-</ul>
-<details class="tip 高原山地气候的特点" open="open">
-<summary>Tip</summary>
-<p>寒冷，很多地方终年冰雪覆盖，气侯重直变化明显。主要分布在高大的高原、山地等地区，如青藏高原、阿尔卑斯山、安第斯山脉等。</p>
-</details>
-</details>
-<h3 id="_38">世界主要气候类型的分布情况<a class="headerlink" href="#_38" title="Permanent link">&para;</a></h3>
+<h3 id="_37">主要气候类型</h3>
+<p>???+ abstract "主要气候类型"
+    - <strong>热带南林气候：</strong>终年高温多雨
+    - <strong>热带章原气候：</strong>终年高温 分干湿两季
+    - <strong>热带季风气候：</strong>终年高温 分旱雨两季
+    - <strong>热带沙淡气候：</strong>终年炎热干旱
+    - <strong>亚热带季风和湿润气候：</strong>夏季高温多雨 冬季温和少雨
+    - <strong>地中海气候：</strong>夏季炎热干燥 冬季温和多雨
+    - <strong>温带海洋性气候：</strong>冬温夏凉 全年降水均匀
+    - <strong>温带季风气候：</strong>夏季高温多雨 冬季寒冷干燥
+    - <strong>温带大陆性气候：</strong>冬冷夏热 全年降水较少
+    - <strong>寒带气候：</strong>终年寒冷干燥</p>
+<pre><code>???+ tip 高原山地气候的特点
+    寒冷，很多地方终年冰雪覆盖，气侯重直变化明显。主要分布在高大的高原、山地等地区，如青藏高原、阿尔卑斯山、安第斯山脉等。
+</code></pre>
+<h3 id="_38">世界主要气候类型的分布情况</h3>
 <table style="border-collapse:collapse;border-spacing:0" class="tg"><thead><tr><th style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:middle;word-break:normal" colspan="2">气候类型</th><th style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:middle;word-break:normal">主要分布地区(见封三彩图)及特点</th></tr></thead><tbody><tr><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:middle;word-break:normal" rowspan="4">热 带</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:middle;word-break:normal">热带 雨林 气候</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:middle;word-break:normal">分布规律:大致在南北纬10°之间。 典型地区:亚马孙河流域、刚果河流域、马来群岛。 气候及植被特点:终年高温多雨。植被生长旺盛,植物种类繁多</td></tr><tr><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:middle;word-break:normal">热带 草原 气候</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:middle;word-break:normal">分布规律:大致在南北纬10°至南北回归线之间。 典型地区:非洲中部、南美巴西、澳大利亚大陆北部和南部。 气候及植被特点:终年高温,一年有明显的干湿两季。植被是稀树草原</td></tr><tr><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:middle;word-break:normal">热带 季风 气候</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:middle;word-break:normal">分布规律 大致在北纬10°至北回归线附近的南亚和东南亚大部分地区。 典型地区:亚洲中南半岛和印度半岛。 气候及植被特点:终年高温,分旱雨两季,夏季多雨。植被为热带季雨林</td></tr><tr><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:middle;word-break:normal">热带 沙漠 气候</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:middle;word-break:normal">分布规律:大致在回归线附近的大陆内部和西岸。 典型地区:撒哈拉、阿拉伯半岛、澳大利亚中西部。 气候及植被特点:终年高温,降水稀少。植被以绿洲区的耐旱植物为主</td></tr><tr><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:middle;word-break:normal" rowspan="2">亚 热 带</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:middle;word-break:normal">亚热带 季风和 湿润气候</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:middle;word-break:normal">分布规律 大致在南北纬25°至南北纬35。之间的大陆东岸。 典型地区:中国南方、韩国、日本大部分地区。 气候及植被特点:夏季高温多雨,冬季温和少雨。植被以常绿阔叶林为主</td></tr><tr><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:middle;word-break:normal">地中海 气候</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:middle;word-break:normal">分布规律:南北纬30°至南北纬40°之间的大陆西岸。 典型地区:地中海沿岸地区分布最广。 气候及植被特点:夏季炎热干燥,冬季温和多雨。植被以常绿硬叶林为主</td></tr><tr><td style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:middle;word-break:normal" rowspan="3">温 带</td><td style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:middle;word-break:normal">温带 季风 气候</td><td style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:middle;word-break:normal">分布规律:主要分布在亚洲东部的中纬度地区。 典型地区:我国北方、日本北部、朝鲜。 气候及植被特点:夏季高温多雨,冬季寒冷干燥。植被以落叶阔叶林和针 阔混交林为主</td></tr><tr><td style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:middle;word-break:normal">温带 大陆性 气候</td><td style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:middle;word-break:normal">分布规律:主要分布在中纬度内陆地区。 典型地区:亚欧大陆和北美大陆的内陆地区。 气候及植被特点:冬冷夏热,降水较少。多沙漠和草原</td></tr><tr><td style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:middle;word-break:normal">温带 海洋性 气候</td><td style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:middle;word-break:normal">分布规律:主要分布在南北纬40°至南北纬60°之间的大陆西岸。 典型地区:以欧洲西部最广。 气候及植被特点:冬温夏凉,全年降水均匀。植被为落叶阔叶林</td></tr><tr><td style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:middle;word-break:normal" colspan="2">寒带气候</td><td style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:middle;word-break:normal">分布规律:主要分布在极圈以内的高纬度地区。 典型地区:南极洲、格陵兰岛及亚欧大陆和北美大陆的北冰洋沿岸。 气候及植被特点:终年严寒少雨。有苔藓、地衣等植被分布或完全被冰雪覆盖</td></tr><tr><td style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:middle;word-break:normal" colspan="2">高原山地 气候</td><td style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:middle;word-break:normal">分布规律:主要分布在高大的高原、山地地区。 典型地区:青藏高原、南美洲的安第斯山等。 气候及植被特点:寒冷,很多地方终年冰雪覆盖,气候垂直变化明显。植 被也呈现垂直变化的特点</td></tr></tbody></table>
 
-<h3 id="_39"><font color = red>【重点提醒】</font><a class="headerlink" href="#_39" title="Permanent link">&para;</a></h3>
-<details class="warning" open="open">
-<summary>非洲气候分布的特点</summary>
-<p>基本上<strong>以赤道为中心，南北对称，季节相反</strong></p>
-</details>
-<details class="warning" open="open">
-<summary>世界上分布面积最大的气候类型</summary>
-<p>温带大陆性气候</p>
-</details>
-<details class="warning" open="open">
-<summary>除南极洲外各大洲都有分布的气候类型</summary>
-<p>温带大陆性气候</p>
-</details>
-<details class="warning" open="open">
-<summary>亚洲没有分布的气候类型</summary>
-<p>热带草原气候、温带海洋性气候</p>
-</details>
+<h3 id="_39"><font color = red>【重点提醒】</font></h3>
+<p>???+ warning "非洲气候分布的特点"
+    基本上<strong>以赤道为中心，南北对称，季节相反</strong></p>
+<p>???+ warning "世界上分布面积最大的气候类型"
+    温带大陆性气候</p>
+<p>???+ warning "除南极洲外各大洲都有分布的气候类型"
+    温带大陆性气候</p>
+<p>???+ warning "亚洲没有分布的气候类型"
+    热带草原气候、温带海洋性气候</p>
 <hr />
-<h2 id="_40">众多的河湖<a class="headerlink" href="#_40" title="Permanent link">&para;</a></h2>
-<h3 id="_41">河流与湖泊<a class="headerlink" href="#_41" title="Permanent link">&para;</a></h3>
+<h2 id="_40">众多的河湖</h2>
+<h3 id="_41">河流与湖泊</h3>
 <blockquote>
 <p>河流被成为大地的<em>动脉</em>，湖泊被誉为大地的<em>明珠</em>，山脉为大地的<em>骨架</em></p>
 </blockquote>
-<h3 id="_42">世界主要的河流与湖泊<a class="headerlink" href="#_42" title="Permanent link">&para;</a></h3>
-<details class="quote" open="open">
-<summary>主要的河流</summary>
-<p><table style="border-collapse:collapse;border-spacing:0" class="tg"><thead><tr><th style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">河流</th><th style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">流向</th><th style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">注入</th><th style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">特点</th><th style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">所在大洲</th></tr></thead><tbody><tr><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">尼罗河</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">自南向北流</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">地中海</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">世界第一长河</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">非洲</td></tr><tr><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">亚马孙河</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">自西向东流</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">大西洋</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">世界第二长河、流量最大、 流域面积最广的河流</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">南美洲</td></tr><tr><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">长江</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">自西向东流</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">东海</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">世界第三长河</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">亚洲</td></tr><tr><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">密西西比河</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">自北向南流</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">墨西哥湾</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">世界第四长河</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">北美洲</td></tr><tr><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">黄河</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">自西向东流</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">渤海</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">含沙量较大</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">亚洲</td></tr><tr><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">刚果河</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">注:各段流向不 一致</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">大西洋</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">世界上水能蕴藏量最大的 河流</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">非洲</td></tr><tr><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">多瑙河</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">自西向东流</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">黑海</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">世界上流经国家最多的河流</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">欧洲</td></tr><tr><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">湄公河</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">自北向南流</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">南海</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">亚洲流经国家最多的河流</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">亚洲</td></tr><tr><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">莱茵河</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">自南向北流</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">大西洋</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">欧洲著名的国际性河流</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">欧洲</td></tr></tbody></table></p>
-</details>
-<details class="quote" open="open">
-<summary>主要的湖泊</summary>
-<p><table style="border-collapse:collapse;border-spacing:0" class="tg"><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">湖泊</th><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">特点</th><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">所在大洲</th></tr></thead><tbody><tr><td style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">里海</td><td style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">世界面积最大的咸水湖</td><td style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">亚欧交界</td></tr><tr><td style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">苏必利尔湖</td><td style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">世界面积最大的淡水湖</td><td style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">北美洲</td></tr><tr><td style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">贝加尔湖</td><td style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">世界最深的湖泊</td><td style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">亚洲</td></tr><tr><td style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">死海</td><td style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">亚洲海拔最低的湖泊</td><td style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">亚洲</td></tr><tr><td style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">青海湖</td><td style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">中国面积最大的咸水湖</td><td style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">亚洲</td></tr><tr><td style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">鄱阳湖</td><td style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">中国面积最大的淡水湖</td><td style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">亚洲</td></tr></tbody></table></p>
-</details>
+<h3 id="_42">世界主要的河流与湖泊</h3>
+<p>???+ quote "主要的河流"
+    <table style="border-collapse:collapse;border-spacing:0" class="tg"><thead><tr><th style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">河流</th><th style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">流向</th><th style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">注入</th><th style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">特点</th><th style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">所在大洲</th></tr></thead><tbody><tr><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">尼罗河</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">自南向北流</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">地中海</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">世界第一长河</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">非洲</td></tr><tr><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">亚马孙河</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">自西向东流</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">大西洋</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">世界第二长河、流量最大、 流域面积最广的河流</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">南美洲</td></tr><tr><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">长江</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">自西向东流</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">东海</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">世界第三长河</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">亚洲</td></tr><tr><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">密西西比河</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">自北向南流</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">墨西哥湾</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">世界第四长河</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">北美洲</td></tr><tr><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">黄河</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">自西向东流</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">渤海</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">含沙量较大</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">亚洲</td></tr><tr><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">刚果河</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">注:各段流向不 一致</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">大西洋</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">世界上水能蕴藏量最大的 河流</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">非洲</td></tr><tr><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">多瑙河</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">自西向东流</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">黑海</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">世界上流经国家最多的河流</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">欧洲</td></tr><tr><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">湄公河</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">自北向南流</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">南海</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">亚洲流经国家最多的河流</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">亚洲</td></tr><tr><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">莱茵河</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">自南向北流</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">大西洋</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">欧洲著名的国际性河流</td><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">欧洲</td></tr></tbody></table></p>
+<p>???+ quote "主要的湖泊"
+    <table style="border-collapse:collapse;border-spacing:0" class="tg"><thead><tr><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">湖泊</th><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">特点</th><th style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">所在大洲</th></tr></thead><tbody><tr><td style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">里海</td><td style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">世界面积最大的咸水湖</td><td style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">亚欧交界</td></tr><tr><td style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">苏必利尔湖</td><td style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">世界面积最大的淡水湖</td><td style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">北美洲</td></tr><tr><td style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">贝加尔湖</td><td style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">世界最深的湖泊</td><td style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">亚洲</td></tr><tr><td style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">死海</td><td style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">亚洲海拔最低的湖泊</td><td style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">亚洲</td></tr><tr><td style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">青海湖</td><td style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">中国面积最大的咸水湖</td><td style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">亚洲</td></tr><tr><td style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">鄱阳湖</td><td style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">中国面积最大的淡水湖</td><td style="border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">亚洲</td></tr></tbody></table></p>
 <hr />
-<h2 id="_43">世界人文环境<a class="headerlink" href="#_43" title="Permanent link">&para;</a></h2>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>《人文地理 上册》 P21, P40~48
-</span></code></pre></div>
-<h3 id="_44">语言 &amp; 宗教<a class="headerlink" href="#_44" title="Permanent link">&para;</a></h3>
-<details class="- info">
-<summary>联合国🇺🇳工作语言</summary>
-<p>汉语🇨🇳、英语🇺🇸🇬🇧、法语🇫🇷、俄语🇷🇺、西班牙语🇪🇸、阿拉伯语🇸🇦🇦🇪</p>
-</details>
-<details class="- info">
-<summary>世界三大宗教</summary>
-<p>佛教🇮🇳、基督教🇵🇸、伊斯兰教🇸🇦</p>
-<p><strong>特色体现</strong></p>
-<p><strong>佛教🇮🇳：</strong>寺庙 &amp; 佛塔🛕</p>
-<p><strong>基督教🇵🇸：</strong>教堂⛪️</p>
-<p><strong>伊斯兰教🇸🇦：</strong>清真寺🕌️</p>
-</details>
+<h2 id="_43">世界人文环境</h2>
+<p><code>text
+《人文地理 上册》 P21, P40~48</code></p>
+<h3 id="_44">语言 &amp; 宗教</h3>
+<p>???- info "联合国🇺🇳工作语言"
+    汉语🇨🇳、英语🇺🇸🇬🇧、法语🇫🇷、俄语🇷🇺、西班牙语🇪🇸、阿拉伯语🇸🇦🇦🇪</p>
+<p>???- info "世界三大宗教"
+    佛教🇮🇳、基督教🇵🇸、伊斯兰教🇸🇦</p>
+<pre><code>**特色体现**
+
+**佛教🇮🇳：**寺庙 &amp; 佛塔🛕
+
+**基督教🇵🇸：**教堂⛪️
+
+**伊斯兰教🇸🇦：**清真寺🕌️
+</code></pre>
 <hr />
-<h1 id="iii">Ⅲ. 生活在不同区域里<a class="headerlink" href="#iii" title="Permanent link">&para;</a></h1>
-<details class="abstract" open="open">
-<summary>典型国家汇总</summary>
-<details class="info" open="open">
-<summary>美国🇺🇸</summary>
-<details class="- question">
-<summary>美国商品农业发达的有利条件(原因)</summary>
-<ol>
-<li><strong>自然条件：土地</strong>辽阔，平原<strong>地形</strong>，<strong>地势</strong>低平，<strong>土壤</strong>肥沃；温带大陆性<strong>气候</strong>，气候适宜；密西西比河自北向南贯穿平原，<strong>水源</strong>充足，灌溉便利。</li>
-<li><strong>人文条件：</strong>经济发达，农业科技水平高，农场规模大，地广人稀，机械化生产，效率高，产量大，产品储存条件好，交通四通八达等等。</li>
-</ol>
-</details>
-</details>
-<details class="info" open="open">
-<summary>瑞士🇨🇭</summary>
-<details class="- question">
-<summary>瑞士成为旅游热区的有利条件(原因)</summary>
-<ol>
-<li>自然条件：<ol>
-<li>地形多样，海拔高，有冰川和雪山，风景优美，景观奇特。</li>
-<li>夏天成观光、避暑、登山胜地；冬天发展滑雪运动的条件十分理想，温泉资源也很丰富。</li>
-</ol>
-</li>
-<li>人文条件：<ol>
-<li>旅游内容丰富多彩，配套设施完备、精良，服务周到、细致入微等。</li>
-<li>拥有发达的铁路和公路；游客乘火车可直接到达山峰观看冰川奇景；许多地方有电缆车直达山巅；还有直升机为遇到危险的游人提供救助。</li>
-<li>有古老的城镇和纯朴的乡村生活等。</li>
-</ol>
-</li>
-</ol>
-</details>
-<details class="- question">
-<summary>我国与瑞士在地形上的共同特点</summary>
-<ol>
-<li>地形类型多样</li>
-<li>山区面积广大</li>
-</ol>
-</details>
-</details>
-</details>
-<details class="abstract" open="open">
-<summary>波斯湾地区石油输出路线</summary>
-<p><font color = red>A线：</font>波斯湾 -&gt; 霍尔木兹海峡 -&gt; 印度洋 -&gt; 马六甲海峡 -&gt; 太平洋 -&gt; <font color = red>东亚(中国、日本)</font></p>
-<p><font color = red>B线：</font>波斯湾 -&gt; 霍尔木兹海峡 -&gt; 印度洋 -&gt; 好望角 -&gt; 大西洋 -&gt; <font color = red>西欧和美国</font></p>
-<p><font color = red>C线：</font>波斯湾 -&gt; 霍尔木兹海峡 -&gt; 阿拉伯海 -&gt; 曼德海峡 -&gt; 红海 -&gt; 苏伊士运河 -&gt; 地中海 -&gt; 直布罗陀海峡 -&gt; 大西洋 -&gt; <font color = red>西欧和美国</font></p>
-<p><font color = red>D线：</font>波斯湾 -&gt; 霍尔木兹海峡 -&gt; 印度洋 -&gt; <font color = red>澳大利亚</font></p>
-</details>
-<details class="abstract" open="open">
-<summary>波斯湾地区位置特征</summary>
-<p>位于亚洲西部，地处<strong>亚、欧、非</strong>三大洲的连接地带，濒临<strong>阿拉伯海、红海、里海，靠近黑海和地中海，地理位置极为重要，素有“三洲五海”</strong>之称。</p>
-</details>
-<div class="footnote">
-<hr />
-<ol>
-<li id="fn:1">
-<p>合为一个要素&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
-<li id="fn:2">
-<p>极点除外&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
-</li>
-</ol>
-</div>
+<h1 id="iii">Ⅲ. 生活在不同区域里</h1>
+<p>???+ abstract "典型国家汇总"
+    ???+ info "美国🇺🇸"
+        ???- question "美国商品农业发达的有利条件(原因)"
+            1. <strong>自然条件：土地</strong>辽阔，平原<strong>地形</strong>，<strong>地势</strong>低平，<strong>土壤</strong>肥沃；温带大陆性<strong>气候</strong>，气候适宜；密西西比河自北向南贯穿平原，<strong>水源</strong>充足，灌溉便利。
+            2. <strong>人文条件：</strong>经济发达，农业科技水平高，农场规模大，地广人稀，机械化生产，效率高，产量大，产品储存条件好，交通四通八达等等。</p>
+<pre><code>???+ info "瑞士🇨🇭"
+    ???- question "瑞士成为旅游热区的有利条件(原因)"
+        1. 自然条件：
+            1. 地形多样，海拔高，有冰川和雪山，风景优美，景观奇特。
+            2. 夏天成观光、避暑、登山胜地；冬天发展滑雪运动的条件十分理想，温泉资源也很丰富。
+        2. 人文条件：
+            1. 旅游内容丰富多彩，配套设施完备、精良，服务周到、细致入微等。
+            2. 拥有发达的铁路和公路；游客乘火车可直接到达山峰观看冰川奇景；许多地方有电缆车直达山巅；还有直升机为遇到危险的游人提供救助。
+            3. 有古老的城镇和纯朴的乡村生活等。
+
+    ???- question "我国与瑞士在地形上的共同特点"
+        1. 地形类型多样
+        2. 山区面积广大
+</code></pre>
+<p>???+ abstract "波斯湾地区石油输出路线"
+    <font color = red>A线：</font>波斯湾 -&gt; 霍尔木兹海峡 -&gt; 印度洋 -&gt; 马六甲海峡 -&gt; 太平洋 -&gt; <font color = red>东亚(中国、日本)</font></p>
+<pre><code>&lt;font color = red&gt;B线：&lt;/font&gt;波斯湾 -&gt; 霍尔木兹海峡 -&gt; 印度洋 -&gt; 好望角 -&gt; 大西洋 -&gt; &lt;font color = red&gt;西欧和美国&lt;/font&gt;
+
+&lt;font color = red&gt;C线：&lt;/font&gt;波斯湾 -&gt; 霍尔木兹海峡 -&gt; 阿拉伯海 -&gt; 曼德海峡 -&gt; 红海 -&gt; 苏伊士运河 -&gt; 地中海 -&gt; 直布罗陀海峡 -&gt; 大西洋 -&gt; &lt;font color = red&gt;西欧和美国&lt;/font&gt;
+
+&lt;font color = red&gt;D线：&lt;/font&gt;波斯湾 -&gt; 霍尔木兹海峡 -&gt; 印度洋 -&gt; &lt;font color = red&gt;澳大利亚&lt;/font&gt;
+</code></pre>
+<p>???+ abstract "波斯湾地区位置特征"
+    位于亚洲西部，地处<strong>亚、欧、非</strong>三大洲的连接地带，濒临<strong>阿拉伯海、红海、里海，靠近黑海和地中海，地理位置极为重要，素有“三洲五海”</strong>之称。</p>
 
 
 
@@ -3836,6 +3600,12 @@
     
     
       <script src="../../../../assets/javascripts/bundle.00c35305.min.js"></script>
+      
+        <script src="../../../../javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
       
     
   </body>

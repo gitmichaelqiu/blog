@@ -89,6 +89,8 @@
       
     
     
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,a=__md_scope)=>JSON.parse(t.getItem(a.pathname+"."+e)),__md_set=(e,t,a=localStorage,_=__md_scope)=>{try{a.setItem(_.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
     
       
@@ -1160,10 +1162,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#gcd" class="md-nav__link">
+  <a href="#gcd-1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        GCD
+        GCD [^1]
       
     </span>
   </a>
@@ -1171,10 +1173,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#lcm" class="md-nav__link">
+  <a href="#lcm-2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        LCM
+        LCM [^2]
       
     </span>
   </a>
@@ -2917,10 +2919,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#gcd" class="md-nav__link">
+  <a href="#gcd-1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        GCD
+        GCD [^1]
       
     </span>
   </a>
@@ -2928,10 +2930,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#lcm" class="md-nav__link">
+  <a href="#lcm-2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        LCM
+        LCM [^2]
       
     </span>
   </a>
@@ -3006,68 +3008,43 @@
 
   <h1>Gcd lcm</h1>
 
-<h2 id="stl">STL<a class="headerlink" href="#stl" title="Permanent link">&para;</a></h2>
+<h2 id="stl">STL</h2>
 <p><a href="https://en.cppreference.com/w/cpp/numeric/gcd">cppreference</a></p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Head Files</label><label for="__tabbed_1_2">C++ Version</label><label for="__tabbed_1_3">std::gcd</label><label for="__tabbed_1_4">std::lcm</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="language-cpp highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;numeric&gt;</span>
-</span></code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="language-cpp highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="o">-</span><span class="n">std</span><span class="o">=</span><span class="n">c</span><span class="o">++</span><span class="mi">17</span>
-</span></code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="language-cpp highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">template</span><span class="o">&lt;</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">M</span><span class="p">,</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">N</span><span class="w"> </span><span class="o">&gt;</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">constexpr</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">common_type_t</span><span class="o">&lt;</span><span class="n">M</span><span class="p">,</span><span class="w"> </span><span class="n">N</span><span class="o">&gt;</span><span class="w"> </span><span class="n">gcd</span><span class="p">(</span><span class="w"> </span><span class="n">M</span><span class="w"> </span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="p">);</span>
-</span></code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="language-cpp highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">template</span><span class="o">&lt;</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">M</span><span class="p">,</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">N</span><span class="w"> </span><span class="o">&gt;</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="k">constexpr</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">common_type_t</span><span class="o">&lt;</span><span class="n">M</span><span class="p">,</span><span class="w"> </span><span class="n">N</span><span class="o">&gt;</span><span class="w"> </span><span class="n">lcm</span><span class="p">(</span><span class="w"> </span><span class="n">M</span><span class="w"> </span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="p">);</span>
-</span></code></pre></div>
-</div>
-</div>
-</div>
-<h2 id="gcd">GCD <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup><a class="headerlink" href="#gcd" title="Permanent link">&para;</a></h2>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Conditional Operator</label><label for="__tabbed_2_2">Bitwise Operation</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="language-cpp highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kt">int</span><span class="w"> </span><span class="nf">gcd</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">y</span><span class="o">&gt;</span><span class="mi">0</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">gcd</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="o">%</span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="p">}</span>
-</span></code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="language-cpp highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kt">int</span><span class="w"> </span><span class="nf">gcd</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">y</span><span class="o">^=</span><span class="n">x</span><span class="o">^=</span><span class="n">y</span><span class="o">^=</span><span class="n">x</span><span class="o">%=</span><span class="n">y</span><span class="p">);</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="p">}</span>
-</span></code></pre></div>
-</div>
-</div>
-</div>
-<h2 id="lcm">LCM <sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup><a class="headerlink" href="#lcm" title="Permanent link">&para;</a></h2>
-<div class="language-cpp highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kt">int</span><span class="w"> </span><span class="nf">lcm</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">gcd</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="p">}</span>
-</span></code></pre></div>
-<div class="admonition tips">
-<p class="admonition-title">Tips</p>
-<p>Performing division before multiplication can help avoid overflow.</p>
-</div>
-<div class="footnote">
-<hr />
-<ol>
-<li id="fn:1">
-<p>Greatest Common Divisor&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
-<li id="fn:2">
-<p>Least Common Multiple&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
-</li>
-</ol>
-</div>
+<p>=== "Head Files"
+    <code>cpp
+    #include &lt;numeric&gt;</code>
+=== "C++ Version"
+    <code>cpp
+    -std=c++17</code></p>
+<p>=== "std::gcd"
+    <code>cpp
+    template&lt; class M, class N &gt;
+    constexpr std::common_type_t&lt;M, N&gt; gcd( M m, N n );</code></p>
+<p>=== "std::lcm"
+    <code>cpp
+    template&lt; class M, class N &gt;
+    constexpr std::common_type_t&lt;M, N&gt; lcm( M m, N n );</code></p>
+<h2 id="gcd-1">GCD [^1]</h2>
+<p>[^1]: Greatest Common Divisor</p>
+<p>=== "Conditional Operator"
+    <code>cpp
+    int gcd(int x, int y) {
+        return y&gt;0 ? gcd(y, x%y) : x;
+    }</code></p>
+<p>=== "Bitwise Operation"
+    <code>cpp
+    int gcd(int x, int y) {
+        while (y^=x^=y^=x%=y);
+        return x;
+    }</code></p>
+<h2 id="lcm-2">LCM [^2]</h2>
+<p>[^2]: Least Common Multiple</p>
+<p><code>cpp
+int lcm(int x, int y) {
+    return a / gcd(x, y) * y;
+}</code></p>
+<p>!!! tips
+    Performing division before multiplication can help avoid overflow.</p>
 
 
 
@@ -3264,6 +3241,12 @@
     
     
       <script src="../../assets/javascripts/bundle.00c35305.min.js"></script>
+      
+        <script src="../../javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
       
     
   </body>

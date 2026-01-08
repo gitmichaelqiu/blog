@@ -89,6 +89,8 @@
       
     
     
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
     <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,a=__md_scope)=>JSON.parse(t.getItem(a.pathname+"."+e)),__md_set=(e,t,a=localStorage,_=__md_scope)=>{try{a.setItem(_.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
     
       
@@ -3069,58 +3071,58 @@
 
   <h1>Customize prompts</h1>
 
-<h2 id="where-to-customize-prompts">Where to customize prompts?<a class="headerlink" href="#where-to-customize-prompts" title="Permanent link">&para;</a></h2>
+<h2 id="where-to-customize-prompts">Where to customize prompts?</h2>
 <p>In <code>LexiGenAssets/settings.yaml</code>.</p>
 <p>If you want to write a prompt with multiple lines, follow this format:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>key: |
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  line 1
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  line 2
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  line 3
-</span></code></pre></div>
-<h2 id="sentence-generation-prompt">Sentence Generation Prompt<a class="headerlink" href="#sentence-generation-prompt" title="Permanent link">&para;</a></h2>
+<p><code>text
+key: |
+  line 1
+  line 2
+  line 3</code></p>
+<h2 id="sentence-generation-prompt">Sentence Generation Prompt</h2>
 <p><strong>Prompt Key</strong>:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>generation_prompt
-</span></code></pre></div>
+<p><code>text
+generation_prompt</code></p>
 <p><strong>Default Prompt</strong>:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Create a simple sentence using the word &#39;{word}&#39;. The sentence should be clear and educational.
-</span></code></pre></div>
+<p><code>text
+Create a simple sentence using the word '{word}'. The sentence should be clear and educational.</code></p>
 <p><strong>Placeholders</strong>:</p>
 <ul>
 <li><code>{word}</code></li>
 </ul>
-<h2 id="analysis-prompt">Analysis Prompt<a class="headerlink" href="#analysis-prompt" title="Permanent link">&para;</a></h2>
+<h2 id="analysis-prompt">Analysis Prompt</h2>
 <p><strong>Prompt Key</strong>:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>analysis_prompt
-</span></code></pre></div>
+<p><code>text
+analysis_prompt</code></p>
 <p><strong>Default Prompt</strong>:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Analyze the grammatical usage of &#39;{word}&#39; in this sentence: &#39;{sentence}&#39;
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>Focus on:
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>1. Tense (e.g., Present Simple, Past Perfect)
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>2. Voice (Active/Passive)
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>3. Mood (Indicative/Subjunctive)
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>4. Function (e.g., Subject, Object, Modifier)
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>
-</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>Keep the analysis concise and technical. Output in 1 line. Example format:
-</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>&quot;Present Simple, Active Voice. Functions as the subject of the sentence.&quot;
-</span></code></pre></div>
+<p>```text
+Analyze the grammatical usage of '{word}' in this sentence: '{sentence}'
+Focus on:
+1. Tense (e.g., Present Simple, Past Perfect)
+2. Voice (Active/Passive)
+3. Mood (Indicative/Subjunctive)
+4. Function (e.g., Subject, Object, Modifier)</p>
+<p>Keep the analysis concise and technical. Output in 1 line. Example format:
+"Present Simple, Active Voice. Functions as the subject of the sentence."
+```</p>
 <p><strong>Placeholders</strong>:</p>
 <ul>
 <li><code>{word}</code></li>
 <li><code>{sentence}</code></li>
 </ul>
-<h2 id="designation-prompt">Designation Prompt<a class="headerlink" href="#designation-prompt" title="Permanent link">&para;</a></h2>
+<h2 id="designation-prompt">Designation Prompt</h2>
 <p><strong>Prompt Key</strong>:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>tense_prompt
-</span></code></pre></div>
+<p><code>text
+tense_prompt</code></p>
 <p><strong>Default Prompt</strong>:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Create a simple sentence using the word &#39;{word}&#39; using {tense} tense. The sentence should be clear and educational.
-</span></code></pre></div>
+<p><code>text
+Create a simple sentence using the word '{word}' using {tense} tense. The sentence should be clear and educational.</code></p>
 <p><strong>Placeholders</strong>:</p>
 <ul>
 <li><code>{word}</code></li>
 <li><code>{tense}</code></li>
 </ul>
-<h2 id="contributing">Contributing<a class="headerlink" href="#contributing" title="Permanent link">&para;</a></h2>
+<h2 id="contributing">Contributing</h2>
 <p>If you have any better prompts, post here <a href="https://github.com/gitmichaelqiu/LexiGen/discussions/20">GitHub Discussion #20</a>.</p>
 <p>Thank you for your contribution 🫶.</p>
 
@@ -3319,6 +3321,12 @@
     
     
       <script src="../../../assets/javascripts/bundle.00c35305.min.js"></script>
+      
+        <script src="../../../javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
       
     
   </body>

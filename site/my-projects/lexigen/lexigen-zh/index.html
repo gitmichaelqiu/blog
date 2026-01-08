@@ -89,6 +89,8 @@
       
     
     
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
     <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,a=__md_scope)=>JSON.parse(t.getItem(a.pathname+"."+e)),__md_set=(e,t,a=localStorage,_=__md_scope)=>{try{a.setItem(_.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
     
       
@@ -3196,29 +3198,29 @@
 <a href="https://ollama.com"><img alt="Powered by Ollama" src="https://img.shields.io/badge/Powered%20by-Ollama-orange" /></a>
 <a href="https://github.com/gitmichaelqiu/LexiGen/releases/"><img alt="Release" src="https://img.shields.io/github/v/release/gitmichaelqiu/LexiGen?color=green" /></a></p>
 <p><img width="1318" alt="Screenshot 2025-04-16 at 21 32 15" src="https://github.com/user-attachments/assets/c293c99e-0d28-41b3-bbfa-13102c44f6e8" /></p>
-<h2 id="_1">🎯 概述<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="_1">🎯 概述</h2>
 <p>LexiGen 是一款 <strong>开源</strong> 的首字母填空生成器，<strong>零成本</strong> 使用本地 Ollama AI。</p>
-<h2 id="_2">🚀 下载安装<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<h3 id="_3">前置<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h2 id="_2">🚀 下载安装</h2>
+<h3 id="_3">前置</h3>
 <ol>
 <li>安装 <a href="https://ollama.com">Ollama</a></li>
 <li>启动 Ollama 应用程序</li>
 <li>打开终端（Windows：按 <code>Windows + R</code>，然后输入 <code>cmd</code>），并安装一个模型（推荐 <code>qwen2.5:3b</code>（质量更高，占用1.3GB） 或 <code>qwen2.5:0.5b</code>（模型更小，占用500MB）)：</li>
 </ol>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ollama<span class="w"> </span>pull<span class="w"> </span>qwen2.5:3b
-</span></code></pre></div>
-<h3 id="_4">安装<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p><code>bash
+  ollama pull qwen2.5:3b</code></p>
+<h3 id="_4">安装</h3>
 <ol>
 <li>从 <a href="https://github.com/gitmichaelqiu/LexiGen/releases">GitHub</a> 或 <a href="https://wwtm.lanzouq.com/b00uyomyxe">蓝奏云盘</a> (密码：8hpe) 下载</li>
 <li>选择您平台的对应版本</li>
 <li>启动 LexiGen</li>
 </ol>
 <p>注意，云盘的更新可能比较慢，所以优先从 GitHub Releases 中下载。</p>
-<h2 id="_5">💡 自定义<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h2 id="_5">💡 自定义</h2>
 <ul>
 <li>自定义 <code>LexiGenAssets/prompt.txt</code> 中的prompt，<code>{word}</code> 是您输入单词的占位符</li>
 </ul>
-<h2 id="_6">📂 文件结构<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h2 id="_6">📂 文件结构</h2>
 <p><code>LexiGenAssets</code> 文件夹用于存放所有外部文件：</p>
 <ul>
 <li><code>LexiGenAssets/</code> - 主资源目录</li>
@@ -3226,7 +3228,7 @@
 <li><code>prompt.txt</code> - 自定义提示模板文件</li>
 <li><code>settings.yaml</code> - 软件设置</li>
 </ul>
-<h2 id="_7">⚠️ 故障排除<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<h2 id="_7">⚠️ 故障排除</h2>
 <table>
 <thead>
 <tr>
@@ -3253,10 +3255,10 @@
 </tr>
 </tbody>
 </table>
-<h2 id="_8">🤩 趣事<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<h2 id="_8">🤩 趣事</h2>
 <p>"Lexi" 来源于 "lexicon"（词典）。</p>
 <p>我曾考虑过 "FibGen" 的名字 (<strong>F</strong>ill <strong>I</strong>n the <strong>B</strong>lank)，但因为 "fib" 意为谎言，名字被替换为 "LexiGen"。</p>
-<h2 id="_9">🤝 贡献<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<h2 id="_9">🤝 贡献</h2>
 <p>欢迎您的贡献！以下是您可以帮助的方式，请遵循 <a href="../LICENSE">GNU 通用公共许可证 v3.0</a>：</p>
 <ul>
 <li>在 <a href="https://github.com/gitmichaelqiu/LexiGen/issues">Issues</a> 中报告错误</li>
@@ -3462,6 +3464,12 @@
     
     
       <script src="../../../assets/javascripts/bundle.00c35305.min.js"></script>
+      
+        <script src="../../../javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
       
     
   </body>

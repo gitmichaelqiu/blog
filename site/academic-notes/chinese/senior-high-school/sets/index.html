@@ -85,6 +85,8 @@
       
     
     
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
     <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,a=__md_scope)=>JSON.parse(t.getItem(a.pathname+"."+e)),__md_set=(e,t,a=localStorage,_=__md_scope)=>{try{a.setItem(_.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
     
       
@@ -2905,99 +2907,80 @@
   
 
 
-<h1 id="_1">集合及基本关系<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<h2 id="_2">定义<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h1 id="_1">集合及基本关系</h1>
+<h2 id="_2">定义</h2>
 <p>对象(即元素)所构成的整体</p>
-<h2 id="_3">表示<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h2 id="_3">表示</h2>
 <p><strong>集合:</strong> 大写字母 <span class="arithmatex">\(\mathbb{A}, \mathbb{B}, \mathbb{C},...\)</span></p>
 <p><strong>元素:</strong> 小写字母 <span class="arithmatex">\(a, b, c,...\)</span></p>
-<h2 id="_4">写法<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<h3 id="_5">数集的写法<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">列举法</label><label for="__tabbed_1_2">描述法</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<p><span class="arithmatex">\(\mathbb{A} = \\{a, b, c, ..., z\\}\)</span></p>
-</div>
-<div class="tabbed-block">
-<p><span class="arithmatex">\(\mathbb{A} = \\{x \mid p(x)\\}\)</span> <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
-</div>
-</div>
-</div>
-<details class="note" open="open">
-<summary>特殊的集合</summary>
-<p><span class="arithmatex">\(\mathbb{N}\)</span>: 自然数集</p>
-<p><span class="arithmatex">\(\mathbb{N}_+\ or\ \mathbb{N}^*\)</span>: 正整数集</p>
-<p><span class="arithmatex">\(\mathbb{Z}\)</span>: 整数集</p>
-<p><span class="arithmatex">\(\mathbb{Q}\)</span>: 有理数集</p>
-<p><span class="arithmatex">\(\mathbb{R}\)</span>: 实数集</p>
-<p><span class="arithmatex">\(\mathbb{C}\)</span>: 复数集</p>
-</details>
-<h3 id="_6">关系的写法<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">元素与集合的关系</label><label for="__tabbed_2_2">集合与集合的关系</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<p>属于: <span class="arithmatex">\(a \in \mathbb{A}\)</span></p>
-<p>不属于: <span class="arithmatex">\(b \notin \mathbb{A}\)</span></p>
-</div>
-<div class="tabbed-block">
-<p>子集: $\mathbb{B} \subseteq \mathbb{A}
-\iff
-\mathbb{A} \supseteq \mathbb{B}
-$</p>
-<p>相等: <span class="arithmatex">\(\mathbb{A} = \mathbb{B}\)</span></p>
-<p>真子集: $\mathbb{B} \subsetneqq \mathbb{A}
+<h2 id="_4">写法</h2>
+<h3 id="_5">数集的写法</h3>
+<p>=== "列举法"
+    <span class="arithmatex">\(\mathbb{A} = \\{a, b, c, ..., z\\}\)</span></p>
+<p>=== "描述法"
+    <span class="arithmatex">\(\mathbb{A} = \\{x \mid p(x)\\}\)</span> [^1]</p>
+<p>[^1]: 默认 <span class="arithmatex">\(x \in \mathbb{R}\)</span></p>
+<p>???+ note "特殊的集合"
+    <span class="arithmatex">\(\mathbb{N}\)</span>: 自然数集</p>
+<pre><code>$\mathbb{N}_+\ or\ \mathbb{N}^*$: 正整数集
+
+$\mathbb{Z}$: 整数集
+
+$\mathbb{Q}$: 有理数集
+
+$\mathbb{R}$: 实数集
+
+$\mathbb{C}$: 复数集
+</code></pre>
+<h3 id="_6">关系的写法</h3>
+<p>=== "元素与集合的关系"
+    属于: <span class="arithmatex">\(a \in \mathbb{A}\)</span></p>
+<pre><code>不属于: $b \notin \mathbb{A}$
+</code></pre>
+<p>=== "集合与集合的关系"
+    子集: $\mathbb{B} \subseteq \mathbb{A}
+    \iff
+    \mathbb{A} \supseteq \mathbb{B}
+    $</p>
+<pre><code>相等: $\mathbb{A} = \mathbb{B}$
+
+真子集: $\mathbb{B} \subsetneqq \mathbb{A}
 \iff
 \mathbb{A} \supsetneqq \mathbb{B}
-$</p>
-</div>
-</div>
-</div>
-<h2 id="_7">数集 &amp; 点集<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+$
+</code></pre>
+<h2 id="_7">数集 &amp; 点集</h2>
 <p>数集，表范围: <span class="arithmatex">\(\mathbb{A} = \\{x \mid p(x)\\}\)</span></p>
 <p>点集，表图像: <span class="arithmatex">\(\mathbb{B} = \\{(x, y) \mid y = x^2 \\}\)</span></p>
-<h1 id="_8">集合间的运算及运用<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h1>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">交集</label><label for="__tabbed_3_2">并集</label><label for="__tabbed_3_3">补集</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<p><span class="arithmatex">\(\mathbb{A} \cap \mathbb{B} = \\{x \mid x \in \mathbb{A}\ and\ x \in \mathbb{B}\\}\)</span></p>
-<p>即对集合进行 "与 <span class="arithmatex">\(\land\)</span>" 操作</p>
-</div>
-<div class="tabbed-block">
-<p><span class="arithmatex">\(\mathbb{A} \cup \mathbb{B} = \\{x \mid x \in \mathbb{A}\ or\ x \in \mathbb{B}\\}\)</span></p>
-<p>即对集合进行 "或 <span class="arithmatex">\(\lor\)</span>" 操作</p>
-</div>
-<div class="tabbed-block">
-<p><span class="arithmatex">\(\complement_\mathbb{U} \mathbb{A} = \\{x \mid x \in \mathbb{U}\ and\ x \notin \mathbb{A}\\}\)</span></p>
-</div>
-</div>
-</div>
-<details class="tip" open="open">
-<summary>运算变形 &amp; 性质</summary>
-<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">并集的性质</label><label for="__tabbed_4_2">补集的性质</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<p><span class="arithmatex">\(\mathbb{A} \cup \emptyset = \mathbb{A}\)</span></p>
-<p><span class="arithmatex">\((\mathbb{A} \cup \mathbb{B}) \supseteq \mathbb{A}\)</span></p>
-<p><span class="arithmatex">\(\mathbb{A} \cup \mathbb{B} \iff \mathbb{B} \subseteq \mathbb{A}\)</span></p>
-</div>
-<div class="tabbed-block">
-<p><span class="arithmatex">\(\complement_\mathbb{U} \mathbb{U} = \emptyset\)</span></p>
-<p><span class="arithmatex">\(\complement_\mathbb{U} \emptyset = \mathbb{U}\)</span></p>
-<p><span class="arithmatex">\(\complement_\mathbb{U} (\complement_\mathbb{U} \mathbb{A}) = \mathbb{A}\)</span></p>
-<p><span class="arithmatex">\(\mathbb{A} \cup (\complement_\mathbb{U} \mathbb{A}) = \mathbb{U}\)</span></p>
-<p><span class="arithmatex">\(\mathbb{A} \cap (\complement_\mathbb{U} \mathbb{A}) = \emptyset\)</span></p>
-</div>
-</div>
-</div>
-</details>
-<div class="footnote">
-<hr />
-<ol>
-<li id="fn:1">
-<p>默认 <span class="arithmatex">\(x \in \mathbb{R}\)</span>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
-</ol>
-</div>
+<h1 id="_8">集合间的运算及运用</h1>
+<p>=== "交集"
+    <span class="arithmatex">\(\mathbb{A} \cap \mathbb{B} = \\{x \mid x \in \mathbb{A}\ and\ x \in \mathbb{B}\\}\)</span></p>
+<pre><code>即对集合进行 "与 $\land$" 操作
+</code></pre>
+<p>=== "并集"
+    <span class="arithmatex">\(\mathbb{A} \cup \mathbb{B} = \\{x \mid x \in \mathbb{A}\ or\ x \in \mathbb{B}\\}\)</span></p>
+<pre><code>即对集合进行 "或 $\lor$" 操作
+</code></pre>
+<p>=== "补集"
+    <span class="arithmatex">\(\complement_\mathbb{U} \mathbb{A} = \\{x \mid x \in \mathbb{U}\ and\ x \notin \mathbb{A}\\}\)</span></p>
+<p>???+ tip "运算变形 &amp; 性质"
+    === "并集的性质"
+        <span class="arithmatex">\(\mathbb{A} \cup \emptyset = \mathbb{A}\)</span></p>
+<pre><code>    $(\mathbb{A} \cup \mathbb{B}) \supseteq \mathbb{A}$
+
+    $\mathbb{A} \cup \mathbb{B} \iff \mathbb{B} \subseteq \mathbb{A}$
+
+=== "补集的性质"
+    $\complement_\mathbb{U} \mathbb{U} = \emptyset$
+
+    $\complement_\mathbb{U} \emptyset = \mathbb{U}$
+
+    $\complement_\mathbb{U} (\complement_\mathbb{U} \mathbb{A}) = \mathbb{A}$
+
+    $\mathbb{A} \cup (\complement_\mathbb{U} \mathbb{A}) = \mathbb{U}$
+
+    $\mathbb{A} \cap (\complement_\mathbb{U} \mathbb{A}) = \emptyset$
+</code></pre>
 
 
 
@@ -3098,6 +3081,12 @@ $</p>
     
     
       <script src="../../../../assets/javascripts/bundle.00c35305.min.js"></script>
+      
+        <script src="../../../../javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
       
     
   </body>
