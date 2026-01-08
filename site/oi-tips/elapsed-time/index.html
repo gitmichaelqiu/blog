@@ -29,7 +29,7 @@
     
     
       
-        <title>include - Michael Qiu's Blog</title>
+        <title>Elapsed time - Michael Qiu's Blog</title>
       
     
     
@@ -115,11 +115,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#include" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -130,7 +125,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../blog/" title="Michael Qiu&#x27;s Blog" class="md-header__button md-logo" aria-label="Michael Qiu's Blog" data-md-component="logo">
+    <a href="../../blog/index.md" title="Michael Qiu&#x27;s Blog" class="md-header__button md-logo" aria-label="Michael Qiu's Blog" data-md-component="logo">
       
   <img src="../../images/logo.png" alt="logo">
 
@@ -149,7 +144,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              include
+              Elapsed time
             
           </span>
         </div>
@@ -398,7 +393,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../blog/" class="md-tabs__link">
+      <a href="../../blog/index.md" class="md-tabs__link">
         
   
   Blog
@@ -430,7 +425,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../blog/" title="Michael Qiu&#x27;s Blog" class="md-nav__button md-logo" aria-label="Michael Qiu's Blog" data-md-component="logo">
+    <a href="../../blog/index.md" title="Michael Qiu&#x27;s Blog" class="md-nav__button md-logo" aria-label="Michael Qiu's Blog" data-md-component="logo">
       
   <img src="../../images/logo.png" alt="logo">
 
@@ -2022,8 +2017,6 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -2783,7 +2776,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/" class="md-nav__link">
+      <a href="../../blog/index.md" class="md-nav__link">
         
   
   
@@ -2821,8 +2814,6 @@
   
   
   
-    
-  
   
 </nav>
                   </div>
@@ -2847,7 +2838,7 @@
   
   
     <li class="md-path__item">
-      <a href="../../blog/" class="md-path__link">
+      <a href="../../blog/index.md" class="md-path__link">
         
   <span class="md-ellipsis">
     Blog
@@ -2888,43 +2879,44 @@
   
 
 
-<p>```cpp title="Head File"</p>
-<h1 id="include">include <chrono></h1>
-<p>```</p>
-<p><code>cpp title="global variables"
-auto chrono_start_time = chrono::high_resolution_clock::now();</code></p>
-<p><code>cpp title="Start Measuring"
-void start_measuring() {
-    chrono_start_time = chrono::high_resolution_clock::now();
-}</code></p>
+  <h1>Elapsed time</h1>
+
+<div class="language-cpp highlight"><span class="filename">Head File</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;chrono&gt;</span>
+</span></code></pre></div>
+<div class="language-cpp highlight"><span class="filename">global variables</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">auto</span><span class="w"> </span><span class="n">chrono_start_time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">chrono</span><span class="o">::</span><span class="n">high_resolution_clock</span><span class="o">::</span><span class="n">now</span><span class="p">();</span>
+</span></code></pre></div>
+<div class="language-cpp highlight"><span class="filename">Start Measuring</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">start_measuring</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="n">chrono_start_time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">chrono</span><span class="o">::</span><span class="n">high_resolution_clock</span><span class="o">::</span><span class="n">now</span><span class="p">();</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="p">}</span>
+</span></code></pre></div>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Milliseconds</label><label for="__tabbed_1_2">Seconds</label><label for="__tabbed_1_3">Minutes</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p><code>cpp title="End Measuring"
-void end_measuring() {
-    auto chrono_end_time = chrono::high_resolution_clock::now();
-    chrono::duration&lt;double, milli&gt; chrono_elapsed_seconds = chrono_end_time - chrono_start_time;
-    double chrono_elapsed_ms = chrono_elapsed_seconds.count();
-    cout &lt;&lt; "Elapsed time: " &lt;&lt; chrono_elapsed_ms &lt;&lt; "ms" &lt;&lt; endl;
-}</code></p>
+<div class="language-cpp highlight"><span class="filename">End Measuring</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">end_measuring</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">chrono_end_time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">chrono</span><span class="o">::</span><span class="n">high_resolution_clock</span><span class="o">::</span><span class="n">now</span><span class="p">();</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="n">chrono</span><span class="o">::</span><span class="n">duration</span><span class="o">&lt;</span><span class="kt">double</span><span class="p">,</span><span class="w"> </span><span class="n">milli</span><span class="o">&gt;</span><span class="w"> </span><span class="n">chrono_elapsed_seconds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">chrono_end_time</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">chrono_start_time</span><span class="p">;</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">chrono_elapsed_ms</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">chrono_elapsed_seconds</span><span class="p">.</span><span class="n">count</span><span class="p">();</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Elapsed time: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">chrono_elapsed_ms</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;ms&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="p">}</span>
+</span></code></pre></div>
 </div>
 <div class="tabbed-block">
-<p><code>cpp title="End Measuring"
-void end_measuring() {
-    auto chrono_end_time = chrono::high_resolution_clock::now();
-    chrono::duration&lt;double&gt; chrono_elapsed_seconds = chrono_end_time - chrono_start_time;
-    double chrono_elapsed_ms = chrono_elapsed_seconds.count();
-    cout &lt;&lt; "Elapsed time: " &lt;&lt; chrono_elapsed_ms &lt;&lt; "s" &lt;&lt; endl;
-}</code></p>
+<div class="language-cpp highlight"><span class="filename">End Measuring</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">end_measuring</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">chrono_end_time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">chrono</span><span class="o">::</span><span class="n">high_resolution_clock</span><span class="o">::</span><span class="n">now</span><span class="p">();</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="n">chrono</span><span class="o">::</span><span class="n">duration</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">chrono_elapsed_seconds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">chrono_end_time</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">chrono_start_time</span><span class="p">;</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">chrono_elapsed_ms</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">chrono_elapsed_seconds</span><span class="p">.</span><span class="n">count</span><span class="p">();</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Elapsed time: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">chrono_elapsed_ms</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;s&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="p">}</span>
+</span></code></pre></div>
 </div>
 <div class="tabbed-block">
-<p><code>cpp title="End Measuring"
-void end_measuring() {
-    auto chrono_end_time = chrono::high_resolution_clock::now();
-    chrono::duration&lt; double, ratio&lt;60&gt; &gt; chrono_elapsed_seconds = chrono_end_time - chrono_start_time;
-    double chrono_elapsed_ms = chrono_elapsed_seconds.count();
-    cout &lt;&lt; "Elapsed time: " &lt;&lt; chrono_elapsed_ms &lt;&lt; "min" &lt;&lt; endl;
-}</code></p>
+<div class="language-cpp highlight"><span class="filename">End Measuring</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">end_measuring</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">chrono_end_time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">chrono</span><span class="o">::</span><span class="n">high_resolution_clock</span><span class="o">::</span><span class="n">now</span><span class="p">();</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="n">chrono</span><span class="o">::</span><span class="n">duration</span><span class="o">&lt;</span><span class="w"> </span><span class="kt">double</span><span class="p">,</span><span class="w"> </span><span class="n">ratio</span><span class="o">&lt;</span><span class="mi">60</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">chrono_elapsed_seconds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">chrono_end_time</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">chrono_start_time</span><span class="p">;</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">chrono_elapsed_ms</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">chrono_elapsed_seconds</span><span class="p">.</span><span class="n">count</span><span class="p">();</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Elapsed time: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">chrono_elapsed_ms</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;min&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="p">}</span>
+</span></code></pre></div>
 </div>
 </div>
 </div>

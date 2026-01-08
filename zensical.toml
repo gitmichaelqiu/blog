@@ -159,3 +159,10 @@ alternate_style = true
 
 [project.markdown_extensions.pymdownx.highlight]
 linenums_style = "pymdownx-inline"
+anchor_linenums = true
+line_spans = "__span"
+pygments_lang_class = true
+
+[project.markdown_extensions.pymdownx.inlinehilite]
+[project.markdown_extensions.pymdownx.snippets]
+[project.markdown_extensions.pymdownx.superfences]

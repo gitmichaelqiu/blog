@@ -130,7 +130,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../blog/" title="Michael Qiu&#x27;s Blog" class="md-header__button md-logo" aria-label="Michael Qiu's Blog" data-md-component="logo">
+    <a href="../../blog/index.md" title="Michael Qiu&#x27;s Blog" class="md-header__button md-logo" aria-label="Michael Qiu's Blog" data-md-component="logo">
       
   <img src="../../images/logo.png" alt="logo">
 
@@ -398,7 +398,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../blog/" class="md-tabs__link">
+      <a href="../../blog/index.md" class="md-tabs__link">
         
   
   Blog
@@ -430,7 +430,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../blog/" title="Michael Qiu&#x27;s Blog" class="md-nav__button md-logo" aria-label="Michael Qiu's Blog" data-md-component="logo">
+    <a href="../../blog/index.md" title="Michael Qiu&#x27;s Blog" class="md-nav__button md-logo" aria-label="Michael Qiu's Blog" data-md-component="logo">
       
   <img src="../../images/logo.png" alt="logo">
 
@@ -2832,7 +2832,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/" class="md-nav__link">
+      <a href="../../blog/index.md" class="md-nav__link">
         
   
   
@@ -2915,7 +2915,7 @@
   
   
     <li class="md-path__item">
-      <a href="../../blog/" class="md-path__link">
+      <a href="../../blog/index.md" class="md-path__link">
         
   <span class="md-ellipsis">
     Blog
@@ -2958,8 +2958,8 @@
 
 <h1 id="c-file-freopen">C: FILE <code>freopen()</code></h1>
 <p>head file: `<cstdio></p>
-<p><code>cpp title="Definition"
-std::FILE* freopen( const char* filename, const char* mode, std::FILE* stream );</code></p>
+<div class="language-cpp highlight"><span class="filename">Definition</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">std</span><span class="o">::</span><span class="kt">FILE</span><span class="o">*</span><span class="w"> </span><span class="nf">freopen</span><span class="p">(</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">filename</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">mode</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="kt">FILE</span><span class="o">*</span><span class="w"> </span><span class="n">stream</span><span class="w"> </span><span class="p">);</span>
+</span></code></pre></div>
 <h2 id="file-access-mode-string">File Access Mode String</h2>
 <blockquote>
 <p>From <a href="https://en.cppreference.com/w/cpp/io/c/freopen">CPPReference</a></p>
@@ -3022,26 +3022,25 @@ std::FILE* freopen( const char* filename, const char* mode, std::FILE* stream );
 <p>!!! note
     std::freopen is the only way to change the narrow/wide orientation of a stream once it has been established by an I/O operation or by std::fwide.</p>
 <p>??? example
-    ```cpp
-    #include <cstdio>
-    #include <iostream>
-    using namespace std;</p>
-<div class="highlight"><pre><span></span><code>int main() {
-    freopen(&quot;in.in&quot;, &quot;r&quot;, stdin);
-    freopen(&quot;out.out&quot;, &quot;w&quot;, stdout);
-
-    int a, b;
-    cin &gt;&gt; a &gt;&gt; b;
-    cout &lt;&lt; a * a + b * b &lt;&lt; endl;
-    return 0;
-}
-```
-</code></pre></div>
+    <div class="language-cpp highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cstdio&gt;</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="n">freopen</span><span class="p">(</span><span class="s">&quot;in.in&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;r&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">stdin</span><span class="p">);</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="n">freopen</span><span class="p">(</span><span class="s">&quot;out.out&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;w&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">stdout</span><span class="p">);</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="p">}</span>
+</span></code></pre></div></p>
 <p>!!! warning
     If you have used the <a href="../accelerate-ios/#untie">untie</a> operation, you shouldn't use freopen because you would have already disabled <code>&lt;cstdio&gt;</code>.</p>
 <p>???+ tip
     If you are using an <a href="../../some-websites/#online-judges">Online Judge</a>, you can add this macro definition to your code:</p>
-<div class="highlight"><pre><span></span><code>```cpp title=&quot;ONLINE_JUDGE&quot;
+<div class="language-text highlight"><pre><span></span><code>```cpp title=&quot;ONLINE_JUDGE&quot;
 #ifdef ONLINE_JUDGE
 #else
 #endif
@@ -3065,16 +3064,16 @@ Most OJ will use this macro definition, while your computer won&#39;t have one, 
 <div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Read</label><label for="__tabbed_1_2">Write</label><label for="__tabbed_1_3">Read &amp; Write</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p><code>cpp
-ifstream in("FILENAME", ios::in);</code></p>
+<div class="language-cpp highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">ifstream</span><span class="w"> </span><span class="n">in</span><span class="p">(</span><span class="s">&quot;FILENAME&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ios</span><span class="o">::</span><span class="n">in</span><span class="p">);</span>
+</span></code></pre></div>
 </div>
 <div class="tabbed-block">
-<p><code>cpp
-ofstream out("FILENAME", ios::out);</code></p>
+<div class="language-cpp highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">ofstream</span><span class="w"> </span><span class="n">out</span><span class="p">(</span><span class="s">&quot;FILENAME&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ios</span><span class="o">::</span><span class="n">out</span><span class="p">);</span>
+</span></code></pre></div>
 </div>
 <div class="tabbed-block">
-<p><code>cpp
-fstream foi("FILENAME", ios::in|ios::out);</code></p>
+<div class="language-cpp highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">fstream</span><span class="w"> </span><span class="n">foi</span><span class="p">(</span><span class="s">&quot;FILENAME&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ios</span><span class="o">::</span><span class="n">in</span><span class="o">|</span><span class="n">ios</span><span class="o">::</span><span class="n">out</span><span class="p">);</span>
+</span></code></pre></div>
 </div>
 </div>
 </div>
@@ -3082,37 +3081,36 @@ fstream foi("FILENAME", ios::in|ios::out);</code></p>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">General Using</label><label for="__tabbed_2_2">Protocol</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p><code>cpp
-void open(const char * filename,
-    ios_base::openmode mode = ios_base::in | ios::base::out);</code></p>
+<div class="language-cpp highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">open</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">filename</span><span class="p">,</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">    </span><span class="n">ios_base</span><span class="o">::</span><span class="n">openmode</span><span class="w"> </span><span class="n">mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ios_base</span><span class="o">::</span><span class="n">in</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">ios</span><span class="o">::</span><span class="n">base</span><span class="o">::</span><span class="n">out</span><span class="p">);</span>
+</span></code></pre></div>
 </div>
 <div class="tabbed-block">
-<p><code>cpp
-void open(const wchar_t *_Filename,
-    ios_base::in | ios_base::out, int prot = ios_base::_Openprot);</code></p>
+<div class="language-cpp highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">open</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">wchar_t</span><span class="w"> </span><span class="o">*</span><span class="n">_Filename</span><span class="p">,</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">    </span><span class="n">ios_base</span><span class="o">::</span><span class="n">in</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">ios_base</span><span class="o">::</span><span class="n">out</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">prot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ios_base</span><span class="o">::</span><span class="n">_Openprot</span><span class="p">);</span>
+</span></code></pre></div>
 </div>
 </div>
 </div>
 <p>??? Parameters
     === "mode"
-        ```cpp
-            ios::app: //open the file as append  </p>
-<div class="highlight"><pre><span></span><code>        ios::ate: //Locate the file to the end of the file when it is opened. ios:app includes this property.
-
-        ios::binary: //Open the file as binary, the default is text. See the previous section for the difference between the two methods
-
-        ios::in: // the file is opened as input (file data is entered into memory)
-
-        ios::out: //files are opened as output (memory data is output to the file)
-
-        ios::nocreate: //doesn&#39;t create the file, so it fails to open if the file doesn&#39;t exist
-
-        ios::noreplace: // doesn&#39;t overwrite the file, so opening the file fails if the file exists
-
-        ios::trunc: // set file length to 0 if file exists
-    ```
-
-=== &quot;prot&quot; 
+        <div class="language-cpp highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="w">    </span><span class="n">ios</span><span class="o">::</span><span class="n">app</span><span class="o">:</span><span class="w"> </span><span class="c1">//open the file as append  </span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span><span class="n">ios</span><span class="o">::</span><span class="n">ate</span><span class="o">:</span><span class="w"> </span><span class="c1">//Locate the file to the end of the file when it is opened. ios:app includes this property.  </span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">    </span><span class="n">ios</span><span class="o">::</span><span class="n">binary</span><span class="o">:</span><span class="w"> </span><span class="c1">//Open the file as binary, the default is text. See the previous section for the difference between the two methods  </span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">    </span><span class="n">ios</span><span class="o">::</span><span class="n">in</span><span class="o">:</span><span class="w"> </span><span class="c1">// the file is opened as input (file data is entered into memory)  </span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="w">    </span><span class="n">ios</span><span class="o">::</span><span class="n">out</span><span class="o">:</span><span class="w"> </span><span class="c1">//files are opened as output (memory data is output to the file)  </span>
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="w">    </span><span class="n">ios</span><span class="o">::</span><span class="n">nocreate</span><span class="o">:</span><span class="w"> </span><span class="c1">//doesn&#39;t create the file, so it fails to open if the file doesn&#39;t exist  </span>
+</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>
+</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="w">    </span><span class="n">ios</span><span class="o">::</span><span class="n">noreplace</span><span class="o">:</span><span class="w"> </span><span class="c1">// doesn&#39;t overwrite the file, so opening the file fails if the file exists  </span>
+</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>
+</span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="w">    </span><span class="n">ios</span><span class="o">::</span><span class="n">trunc</span><span class="o">:</span><span class="w"> </span><span class="c1">// set file length to 0 if file exists</span>
+</span></code></pre></div></p>
+<div class="language-text highlight"><pre><span></span><code>=== &quot;prot&quot; 
     ```text
         0: Ordinary file, open access  
         1: Read-only file  
@@ -3124,12 +3122,12 @@ void open(const wchar_t *_Filename,
     You can use &quot;or&quot; or &quot;+&quot; to connect the above attributes, such as 3 or 1 | 2 is to open the file with read-only and implicit attributes.
 </code></pre></div>
 <h2 id="status-indicator">Status Indicator</h2>
-<p><code>cpp
-is_open() //whether the file is normally open
-bad() // read and write process whether the error
-fail() // read and write process whether the error 
-eof() // read the file to reach the end of the file, return true
-good () // any of the above return true, this will return false</code></p>
+<div class="language-cpp highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">is_open</span><span class="p">()</span><span class="w"> </span><span class="c1">//whether the file is normally open</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="n">bad</span><span class="p">()</span><span class="w"> </span><span class="c1">// read and write process whether the error</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="n">fail</span><span class="p">()</span><span class="w"> </span><span class="c1">// read and write process whether the error </span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="n">eof</span><span class="p">()</span><span class="w"> </span><span class="c1">// read the file to reach the end of the file, return true</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="n">good</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="c1">// any of the above return true, this will return false</span>
+</span></code></pre></div>
 
 
 
