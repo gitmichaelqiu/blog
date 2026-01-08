@@ -2,288 +2,166 @@
    1. CORE VARIABLES & PALETTE
    ========================================= */
 :root {
-    /* Brand Colors (Michael Qiu's Portfolio) */
+    /* Brand Colors */
     --dr-klein-blue: #002FA7;
     --dr-klein-light: #3B6DFF;
     --dr-bg-light: #F2F2F7;
     --dr-bg-dark: #050505;
     
-    /* Zensical Overrides */
+    /* Zensical Overrides - Minimal */
     --md-primary-fg-color: var(--dr-klein-blue);
     --md-primary-fg-color--light: var(--dr-klein-light);
-    
-    /* Refined Glass Variables (Matches index.html) */
-    --glass-bg: rgba(250, 250, 250, 0.6);
-    --glass-border: rgba(0, 0, 0, 0.05);
-    --glass-blur: blur(20px);
-    --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
-    
-    /* Dimensions */
-    --capsule-height: 48px;
-    --capsule-radius: 999px;
+    --md-default-bg-color: transparent; /* Let aurora show through */
 }
 
+/* Dark Mode Overrides */
 [data-md-color-scheme="slate"] {
-    --md-default-bg-color: var(--dr-bg-dark);
+    --md-default-bg-color: transparent;
     --md-default-fg-color: #ffffff;
-    --glass-bg: rgba(20, 20, 20, 0.6);
-    --glass-border: rgba(255, 255, 255, 0.1);
+    --md-primary-fg-color: var(--dr-klein-light);
 }
 
 /* =========================================
    2. TYPOGRAPHY
    ========================================= */
-body { 
-    -webkit-font-smoothing: antialiased; 
-    letter-spacing: -0.01em; 
+body {
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: -0.01em;
     font-family: "Inter", sans-serif;
 }
 
-/* Display Font for Headings */
-h1, .md-typeset h1 { 
-    font-family: "Syncopate", sans-serif; 
-    font-weight: 800; 
-    text-transform: uppercase; 
-    letter-spacing: -0.05em; 
+/* Syncopate for Site Title - Force Override */
+.md-header__title, 
+.md-header__topic {
+    font-family: "Syncopate", sans-serif !important;
+    font-weight: 800 !important;
+    /* REMOVED: text-transform: uppercase; */
+    letter-spacing: -0.05em;
+}
+
+/* Syncopate for Headings */
+h1, .md-typeset h1,
+h2, .md-typeset h2 {
+    font-family: "Syncopate", sans-serif !important;
+    font-weight: 700;
+    /* REMOVED: text-transform: uppercase; */
+    letter-spacing: -0.03em;
 }
 
 /* Code Font */
-code, kbd, pre { 
-    font-family: "JetBrains Mono", monospace; 
+code, kbd, pre {
+    font-family: "JetBrains Mono", monospace;
 }
 
 /* =========================================
-   3. BACKGROUND (Aurora from DesktopRenamer)
+   3. AURORA BACKGROUND (Wallpaper)
    ========================================= */
-.aurora-wrapper { 
-    position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1; 
-    overflow: hidden; pointer-events: none; background-color: var(--dr-bg-light); 
+/* Wrapper behind everything */
+.aurora-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+    background-color: var(--dr-bg-light);
 }
-[data-md-color-scheme="slate"] .aurora-wrapper { background-color: var(--dr-bg-dark); }
+[data-md-color-scheme="slate"] .aurora-wrapper {
+    background-color: var(--dr-bg-dark);
+}
 
 .aurora-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
-.aurora-blob { 
-    position: absolute; border-radius: 50%; filter: blur(100px); 
-    opacity: 0.5; mix-blend-mode: multiply; animation: float 25s infinite ease-in-out; 
+.aurora-blob {
+    position: absolute; border-radius: 50%; filter: blur(100px);
+    opacity: 0.5; mix-blend-mode: multiply; animation: float 25s infinite ease-in-out;
 }
-[data-md-color-scheme="slate"] .aurora-blob { mix-blend-mode: screen; opacity: 0.3; }
+[data-md-color-scheme="slate"] .aurora-blob {
+    mix-blend-mode: screen; opacity: 0.3;
+}
 
 .blob-1 { top: -20%; right: -20%; width: 80vw; height: 80vw; background: radial-gradient(circle, rgba(0, 47, 167, 0.4), transparent 70%); }
 .blob-2 { bottom: -20%; left: -20%; width: 70vw; height: 70vw; background: radial-gradient(circle, rgba(59, 109, 255, 0.3), transparent 70%); animation-delay: -5s; }
-@keyframes float { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(-20px, 20px); } }
 
+@keyframes float {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(-20px, 20px); }
+}
 
 /* =========================================
-   4. NAVIGATION BAR (Refined Capsule Style)
+   4. UI TWEAKS (Subtle)
    ========================================= */
 
-/* 4.1 Reset the main header container to be invisible/floating */
+/* Transparent Header to show background */
 .md-header {
-    background-color: transparent !important;
-    box-shadow: none !important;
-    top: 1.5rem; /* Float it down */
-    height: auto !important;
-    transition: top 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+[data-md-color-scheme="slate"] .md-header {
+    background-color: rgba(20, 20, 20, 0.85);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
-/* 4.2 The "Inner" container becomes the unified capsule */
-.md-header__inner {
-    width: auto;
-    max-width: 1400px;
-    margin: 0 auto;
-    background: var(--glass-bg) !important;
-    backdrop-filter: var(--glass-blur);
-    -webkit-backdrop-filter: var(--glass-blur);
-    border: 1px solid var(--glass-border);
-    box-shadow: var(--glass-shadow);
-    border-radius: var(--capsule-radius);
-    padding: 0.25rem 0.5rem; /* Compact padding */
-    height: var(--capsule-height) !important;
-    gap: 0.5rem;
-}
-
-/* 4.3 Hide unnecessary separators or shadows */
-.md-header__title {
-    margin-left: 0.5rem;
-    padding: 0;
-    flex-grow: 1;
-    font-weight: 700;
-    font-size: 0.95rem;
-    letter-spacing: 0.02em;
-}
-
-/* 4.4 Logo Styling */
-.md-header__button.md-logo {
-    margin: 0;
-    padding: 0;
-    background: transparent !important;
-    border: none;
-    box-shadow: none;
-    opacity: 0.9;
-}
-.md-header__button.md-logo img, 
-.md-header__button.md-logo svg {
-    height: 24px;
-    width: auto;
-    display: block;
-}
-
-/* 4.5 Search Input - Integrated seamlessly */
-.md-search {
-    margin-left: auto; /* Push to right */
-    border-left: 1px solid var(--glass-border); /* Subtle divider */
-    padding-left: 0.5rem;
-}
-.md-search__inner {
-    background: transparent !important;
-    box-shadow: none !important;
-    width: 12rem;
-    padding: 0;
-}
-.md-search__input {
-    background: transparent !important;
-    height: 100%;
-    font-size: 0.85rem;
-    padding-left: 2.2rem; /* Make room for icon */
-}
-/* Icon color fix */
-.md-search__icon {
-    color: var(--md-default-fg-color);
-    opacity: 0.5;
-}
-
-/* 4.6 Icons / Repo / Theme Toggle */
-.md-header__source, 
-.md-header__option {
-    color: var(--md-default-fg-color) !important;
-    opacity: 0.7;
-    transition: all 0.2s;
-    background: transparent !important;
-    box-shadow: none !important;
-    border: none !important;
-    width: 36px; 
-    height: 36px;
-    display: flex; 
-    align-items: center; 
-    justify-content: center;
-    border-radius: 50%;
-}
-.md-header__source:hover,
-.md-header__option:hover {
-    background: rgba(0,0,0,0.05) !important;
-    opacity: 1;
-    color: var(--dr-klein-blue) !important;
-}
-[data-md-color-scheme="slate"] .md-header__option:hover {
-    background: rgba(255,255,255,0.1) !important;
-}
-
-/* =========================================
-   5. NAVIGATION TABS (Below Header)
-   ========================================= */
-.md-tabs {
-    background: transparent !important;
-    box-shadow: none !important;
-    margin-top: 1rem;
-    pointer-events: none; /* Let background clicks pass */
-}
-.md-tabs__list {
-    display: inline-flex;
-    background: var(--glass-bg);
-    backdrop-filter: var(--glass-blur);
-    -webkit-backdrop-filter: var(--glass-blur);
-    border: 1px solid var(--glass-border);
-    border-radius: 99px; /* Pill shape */
-    padding: 0.2rem 1.5rem;
-    margin: 0;
-    pointer-events: auto;
-    gap: 1.5rem;
-}
-.md-tabs__item {
-    padding: 0;
-}
-.md-tabs__link {
-    opacity: 0.6;
-    font-weight: 600;
-    font-size: 0.8rem;
-    letter-spacing: 0.05em;
-    padding: 0.5rem 0;
-    transition: all 0.2s;
-}
-.md-tabs__link--active, 
-.md-tabs__link:hover {
-    opacity: 1;
-    color: var(--dr-klein-blue);
-}
-[data-md-color-scheme="slate"] .md-tabs__link--active {
-    color: var(--dr-klein-light);
-}
-
-/* =========================================
-   6. CONTENT & FOOTER
-   ========================================= */
-.md-main { padding-top: 3rem; }
-
-/* 6.1 Glass Cards for Content Blocks */
+/* Content Cards - Glassy look */
 .md-typeset .admonition,
 .md-typeset details {
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
-    border-radius: 20px;
-    box-shadow: var(--glass-shadow);
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0,0,0,0.05);
+}
+[data-md-color-scheme="slate"] .md-typeset .admonition,
+[data-md-color-scheme="slate"] .md-typeset details {
+    background: rgba(30, 30, 30, 0.5);
+    border: 1px solid rgba(255,255,255,0.1);
 }
 
-/* 6.2 Footer Navigation (Prev/Next) - Matches "Connect" cards */
-.md-footer {
-    background: transparent !important;
-    margin-top: 4rem;
-}
-.md-footer__inner {
-    padding: 0;
-    background: transparent;
-    border: none;
-}
-/* The actual links */
+/* Footer Previous/Next Links - Restored Card Style */
 .md-footer__link {
     background: var(--glass-bg);
-    backdrop-filter: blur(20px);
     border: 1px solid var(--glass-border);
-    border-radius: 24px; /* Large rounded corners */
-    padding: 2rem;
-    margin: 1rem 0;
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    border-radius: 16px;
+    padding: 1.5rem;
+    margin: 0.5rem 0;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 }
+
 .md-footer__link:hover {
-    transform: translateY(-5px) scale(1.01);
-    background: #fff;
+    background: #ffffff;
+    transform: translateY(-4px);
     border-color: var(--dr-klein-blue);
-    box-shadow: 0 20px 40px -10px rgba(0, 47, 167, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 47, 167, 0.15);
 }
+
 [data-md-color-scheme="slate"] .md-footer__link:hover {
-    background: #1a1a1a;
+    background: #222;
     border-color: var(--dr-klein-light);
 }
 
-.md-footer__title {
-    font-family: "Syncopate", sans-serif;
-    font-weight: 700;
-    font-size: 1.1rem;
-    margin-top: 0.5rem;
+/* Force Syncopate on Text Elements inside Footer Link */
+.md-footer__direction {
+    font-family: "JetBrains Mono", monospace !important;
+    /* REMOVED: text-transform: uppercase; */
+    font-size: 0.75rem;
+    opacity: 0.6;
+    margin-bottom: 0.5rem;
 }
 
-/* =========================================
-   7. MOBILE TWEAKS
-   ========================================= */
-@media screen and (max-width: 60em) {
-    .md-header { 
-        top: 0; 
-    }
-    .md-header__inner {
-        margin: 0.5rem;
-        width: calc(100% - 1rem);
-        border-radius: 16px; /* Slightly less round on mobile */
-    }
-    .md-tabs__list {
-        display: none; /* Hide standard tabs on mobile usually, or adjust styling */
-    }
+.md-footer__title {
+    font-family: "Syncopate", sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 1.1rem;
+}
+
+/* Hide Repo Source (Explicit Request) */
+.md-header__source {
+    display: none !important;
+}
+
+/* Adjust Main Content Background transparency */
+.md-main__inner {
+    margin-top: 1rem;
 }
