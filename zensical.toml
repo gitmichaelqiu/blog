@@ -103,6 +103,7 @@ features = [
     "navigation.path",
     "navigation.footer"
 ]
+custom_dir = "overrides"
 
 [[project.theme.palette]]
 media = "(prefers-color-scheme)"
