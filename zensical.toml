@@ -1,8 +1,90 @@
 [project]
-site_name = "My site"
+site_name = "Michael Qiu's Blog"
+site_author = "Michael Qiu"
+site_description = "This is Michael Qiu's personal site."
 site_url = "https://gitmichaelqiu.github.io"
-site_description = "Michael Qiu's personal website."
-site_author = "Michael Y. Qiu"
-copyright = "&copy; 2025 Michael Y. Qiu"
-docs_dir = "docs"
-site_dir = "site"
+
+# Navigation
+nav = [
+    { Home = [
+        { About = "index.md" },
+        { "Some Websites" = "some-websites.md" },
+        { Utilities = [
+            { "Discord Spam Spoiler" = "utilities/discord-spam-spoiler.md" }
+        ]}
+    ]},
+    { "My Projects" = [
+        { "My Projects" = "my-projects/my-projects.md" },
+        { LexiGen = [
+            { "中文版" = [
+                { LexiGen = "my-projects/lexigen/lexigen-zh.md" },
+                { "快捷键" = "my-projects/lexigen/keyboard-shortcuts-zh.md" },
+                { "自定义提示词" = "my-projects/lexigen/customize-prompts-zh.md" }
+            ]},
+            { LexiGen = "my-projects/lexigen/lexigen.md" },
+            { "Keyboard Shortcuts" = "my-projects/lexigen/keyboard-shortcuts.md" },
+            { "Customize Prompts" = "my-projects/lexigen/customize-prompts.md" }
+        ]}
+    ]},
+    { Algorithms = [
+        { "GCD & LCM" = "algorithms/gcd-lcm.md" },
+        { Prime = [
+            { "Euler Sieve" = "algorithms/prime/euler-sieve.md" }
+        ]},
+        { Search = [
+            { "A*" = "algorithms/search/a-star.md" }
+        ]},
+        { "Shortest Path" = [
+            { "Bellman Ford" = "algorithms/shortest-path/bellman-ford.md" },
+            { "Dijkstra (prioirty_queue)" = "algorithms/shortest-path/dijkstra.md" },
+            { Floyd = "algorithms/shortest-path/floyd.md" },
+            { SPFA = "algorithms/shortest-path/spfa.md" }
+        ]},
+        { Sort = [
+            { "Sort Overview" = "algorithms/sort/sort-overview.md" },
+            { "Bubble Sort" = "algorithms/sort/bubble-sort.md" },
+            { "Radix Sort" = "algorithms/sort/radix-sort.md" }
+        ]},
+        { "Quick Pow" = "algorithms/quick-pow.md" }
+    ]},
+    { "Data Structures" = [
+        { Bignum = "data-structures/bignum.md" },
+        { "Binary Heap" = "data-structures/binary-heap.md" },
+        { "Disjoint Set Union" = "data-structures/disjoint-set-union.md" },
+        { "Segment Tree" = "data-structures/segment-tree.md" },
+        { "Sparse Table" = "data-structures/sparse-table.md" },
+        { Stack = "data-structures/stack.md" },
+        { Tree = [
+            { "Binary Tree Traversals" = "data-structures/tree/binary-tree-traversals.md" }
+        ]}
+    ]},
+    { "OI Tips" = [
+        { "Elapsed Time Measurement" = "oi-tips/elapsed-time.md" },
+        { "File Read & Write" = "oi-tips/file-read-and-write.md" },
+        { "GCC Optimize" = "oi-tips/gcc-optimize.md" },
+        { "iostream Acceleration" = "oi-tips/accelerate-ios.md" },
+        { "Quick Read & Write" = "oi-tips/qread-and-qwrite.md" }
+    ]},
+    { Math = [
+        { Primes = "math/primes.md" },
+        { Polynomials = "math/polynomials.md" }
+    ]},
+    { "Academic Notes" = [
+        { AP = [
+            { Calculus = [
+                { Limit = "academic-notes/ap/calculus/limit.md" },
+                { Differentiation = "academic-notes/ap/calculus/differentiation.md" },
+                { "Fundamental Calculus" = "academic-notes/ap/calculus/fundamental-calculus.md" }
+            ]},
+            { Microeconomics = [
+                { "Basic Economic Concept" = "academic-notes/ap/microeconomics/basic-economic-concept.md" },
+                { "Demand and Supply" = "academic-notes/ap/microeconomics/demand-and-supply.md" },
+                { "Production, Cost and Competition" = "academic-notes/ap/microeconomics/production-cost-and-competition.md" }
+            ]}
+        ]},
+        { "学考化学" = [
+            { "物质俗名" = "academic-notes/chinese/xuekao/chemistry.md" }
+        ]}
+    ]},
+    { Blog = "blog/index.md" }
+]
