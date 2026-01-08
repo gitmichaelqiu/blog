@@ -130,7 +130,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../../../blog/index.md" title="Michael Qiu&#x27;s Blog" class="md-header__button md-logo" aria-label="Michael Qiu's Blog" data-md-component="logo">
+    <a href="../../../.." title="Michael Qiu&#x27;s Blog" class="md-header__button md-logo" aria-label="Michael Qiu's Blog" data-md-component="logo">
       
   <img src="../../../../images/logo.png" alt="logo">
 
@@ -396,22 +396,6 @@
   
 
       
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../../../blog/index.md" class="md-tabs__link">
-        
-  
-  Blog
-
-      </a>
-    </li>
-  
-
-      
     </ul>
   </div>
 </nav>
@@ -434,7 +418,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../../blog/index.md" title="Michael Qiu&#x27;s Blog" class="md-nav__button md-logo" aria-label="Michael Qiu's Blog" data-md-component="logo">
+    <a href="../../../.." title="Michael Qiu&#x27;s Blog" class="md-nav__button md-logo" aria-label="Michael Qiu's Blog" data-md-component="logo">
       
   <img src="../../../../images/logo.png" alt="logo">
 
@@ -2918,33 +2902,6 @@
   
 
     
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../blog/index.md" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Blog
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
   </ul>
 </nav>
                   </div>
@@ -3079,26 +3036,9 @@
 
 
 
-  
-
 
   <nav class="md-path" aria-label="Navigation" >
     <ol class="md-path__list">
-      
-        
-  
-  
-    <li class="md-path__item">
-      <a href="../../../../blog/index.md" class="md-path__link">
-        
-  <span class="md-ellipsis">
-    Blog
-  </span>
-
-      </a>
-    </li>
-  
-
       
       
         
@@ -3192,40 +3132,39 @@
 
   <h1>Fundamental calculus</h1>
 
-<h2 id="antiderivative">Antiderivative</h2>
+<h2 id="antiderivative">Antiderivative<a class="headerlink" href="#antiderivative" title="Permanent link">&para;</a></h2>
 <p><span class="arithmatex">\(y = \int f(x) dx = F(x) + C\)</span></p>
-<p>!!! note</p>
-<div class="language-text highlight"><pre><span></span><code>$f$: integrand
-
-$dx$: variable of integration
-
-$F(x)$: an antiderivative of $f(x)$
-
-$C$: constant of integration
-</code></pre></div>
-<p>??? example</p>
-<div class="language-text highlight"><pre><span></span><code>$\int x^3\ dx = \frac{x^4}{4} + C$
-</code></pre></div>
-<h2 id="definition-of-definite-integral">Definition of Definite Integral</h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><span class="arithmatex">\(f\)</span>: integrand</p>
+<p><span class="arithmatex">\(dx\)</span>: variable of integration</p>
+<p><span class="arithmatex">\(F(x)\)</span>: an antiderivative of <span class="arithmatex">\(f(x)\)</span></p>
+<p><span class="arithmatex">\(C\)</span>: constant of integration</p>
+</div>
+<details class="example">
+<summary>Example</summary>
+<p><span class="arithmatex">\(\int x^3\ dx = \frac{x^4}{4} + C\)</span></p>
+</details>
+<h2 id="definition-of-definite-integral">Definition of Definite Integral<a class="headerlink" href="#definition-of-definite-integral" title="Permanent link">&para;</a></h2>
 <p><span class="arithmatex">\(\int^b_a f(x) dx = \lim\limits_{n \to \infty} \sum\limits^n_{k=1} f(x^*_k) \cdot \Delta x\)</span></p>
 <ul>
 <li>Left point：<span class="arithmatex">\(x_k^* = a + (k-1)\Delta x\)</span></li>
 <li>Right point：<span class="arithmatex">\(x_k^* = a + k\Delta x\)</span></li>
 <li>Middle point：<span class="arithmatex">\(x_k^* = a + \left(k - \frac{1}{2}\right)\Delta x\)</span></li>
 </ul>
-<h3 id="definite-integral">Definite Integral</h3>
+<h3 id="definite-integral">Definite Integral<a class="headerlink" href="#definite-integral" title="Permanent link">&para;</a></h3>
 <p><span class="arithmatex">\(\int^b_a f(x) dx = \lim\limits_{n \to \infty} \sum\limits^n_{k=1} f(a + k \cdot \dfrac{b-a}{n}) \cdot \dfrac{b-a}{n}\)</span></p>
-<h3 id="left-riemann-sum">Left Riemann Sum</h3>
+<h3 id="left-riemann-sum">Left Riemann Sum<a class="headerlink" href="#left-riemann-sum" title="Permanent link">&para;</a></h3>
 <p><span class="arithmatex">\(\int^b_a f(x) dx = \lim\limits_{n \to \infty} \sum\limits^n_{k=1} f(a + (k-1) \cdot \dfrac{b-a}{n}) \cdot \dfrac{b-a}{n}\)</span></p>
-<h2 id="right-riemann-sum">Right Riemann Sum</h2>
+<h2 id="right-riemann-sum">Right Riemann Sum<a class="headerlink" href="#right-riemann-sum" title="Permanent link">&para;</a></h2>
 <p><span class="arithmatex">\(\int^b_a f(x) dx = \lim\limits_{n \to \infty} \sum\limits^n_{k=1} f(a + k \cdot \dfrac{b-a}{n}) \cdot \dfrac{b-a}{n}\)</span></p>
-<h2 id="midpoint-riemann-sum">Midpoint Riemann Sum</h2>
+<h2 id="midpoint-riemann-sum">Midpoint Riemann Sum<a class="headerlink" href="#midpoint-riemann-sum" title="Permanent link">&para;</a></h2>
 <p><span class="arithmatex">\(\int^b_a f(x) dx = \lim\limits_{n \to \infty} \sum\limits^n_{k=1} f(a + (k-\frac12) \cdot \dfrac{b-a}{n}) \cdot \dfrac{b-a}{n}\)</span></p>
-<h2 id="trapezoidal-sum">Trapezoidal Sum</h2>
+<h2 id="trapezoidal-sum">Trapezoidal Sum<a class="headerlink" href="#trapezoidal-sum" title="Permanent link">&para;</a></h2>
 <p><span class="arithmatex">\(\int^b_a f(x)dx = \lim\limits_{n \to \infty} \dfrac{b-a}{2n}[f(a) + 2\sum\limits^{n-1}{k=1}f(a + k \cdot \dfrac{b-a}{n} + f(b))]\)</span></p>
 <p><span class="arithmatex">\(\iff\)</span></p>
 <p><span class="arithmatex">\(\int^b_a f(x) dx = \lim\limits_{n \to \infty} \sum\limits^n_{k=1} \dfrac{f(a + (k-1) \cdot \frac{b-a}n + f(a+k \cdot \frac{b-a}n))}{2} \cdot \dfrac{b-a}n\)</span></p>
-<h2 id="basic-integration-formulas">Basic Integration Formulas</h2>
+<h2 id="basic-integration-formulas">Basic Integration Formulas<a class="headerlink" href="#basic-integration-formulas" title="Permanent link">&para;</a></h2>
 <ul>
 <li><span class="arithmatex">\(\boxed{\int dx = x + C}\)</span></li>
 <li><span class="arithmatex">\(\boxed{\int k\ dx = kx + C}\)</span></li>

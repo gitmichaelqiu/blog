@@ -130,7 +130,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../blog/index.md" title="Michael Qiu&#x27;s Blog" class="md-header__button md-logo" aria-label="Michael Qiu's Blog" data-md-component="logo">
+    <a href="../.." title="Michael Qiu&#x27;s Blog" class="md-header__button md-logo" aria-label="Michael Qiu's Blog" data-md-component="logo">
       
   <img src="../../images/logo.png" alt="logo">
 
@@ -392,22 +392,6 @@
   
 
       
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../blog/index.md" class="md-tabs__link">
-        
-  
-  Blog
-
-      </a>
-    </li>
-  
-
-      
     </ul>
   </div>
 </nav>
@@ -430,7 +414,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../blog/index.md" title="Michael Qiu&#x27;s Blog" class="md-nav__button md-logo" aria-label="Michael Qiu's Blog" data-md-component="logo">
+    <a href="../.." title="Michael Qiu&#x27;s Blog" class="md-nav__button md-logo" aria-label="Michael Qiu's Blog" data-md-component="logo">
       
   <img src="../../images/logo.png" alt="logo">
 
@@ -2832,33 +2816,6 @@
   
 
     
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../blog/index.md" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Blog
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
   </ul>
 </nav>
                   </div>
@@ -2921,48 +2878,6 @@
 
 
 
-  
-
-
-  <nav class="md-path" aria-label="Navigation" >
-    <ol class="md-path__list">
-      
-        
-  
-  
-    <li class="md-path__item">
-      <a href="../../blog/index.md" class="md-path__link">
-        
-  <span class="md-ellipsis">
-    Blog
-  </span>
-
-      </a>
-    </li>
-  
-
-      
-      
-        
-  
-  
-    
-    
-      <li class="md-path__item">
-        <a href="../elapsed-time/" class="md-path__link">
-          
-  <span class="md-ellipsis">
-    OI Tips
-  </span>
-
-        </a>
-      </li>
-    
-  
-
-      
-    </ol>
-  </nav>
 
               
               <article class="md-content__inner md-typeset">
@@ -2974,22 +2889,28 @@
 
   <h1>Gcc optimize</h1>
 
-<h2 id="difference-between-gcc-optimizations">Difference Between GCC Optimizations</h2>
+<h2 id="difference-between-gcc-optimizations">Difference Between GCC Optimizations<a class="headerlink" href="#difference-between-gcc-optimizations" title="Permanent link">&para;</a></h2>
 <ul>
 <li>O1: Enable basic optimizations, including function inlining and loop unrolling.</li>
 <li>O2: Enable more optimizations, including function inlining, loop unrolling, constant propagation, dead code removal, etc.</li>
 <li>O3: Enable more advanced optimizations, including function inlining, loop unrolling, constant propagation, dead code removal, vectorization, etc.</li>
 <li>Os: Enable optimizations with code size reduction as the main goal.</li>
 </ul>
-<p>!!! warning
-    Enabling higher-level optimization options may result in increased compilation times and, in some cases, may result in less efficient code execution.</p>
-<p>!!! warning
-    Enabling GCC optimization manually is not allowed in Luogu OJ</p>
-<h2 id="usage">Usage</h2>
-<p>!!! tip
-    If you have STL in your code, you'd better turn on O2 or even O3 optimization.</p>
-<div class="language-cpp highlight"><span class="filename">O2 Optimization</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">#pragma GCC optimize(2)</span>
-</span></code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Enabling higher-level optimization options may result in increased compilation times and, in some cases, may result in less efficient code execution.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Enabling GCC optimization manually is not allowed in Luogu OJ</p>
+</div>
+<h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you have STL in your code, you'd better turn on O2 or even O3 optimization.</p>
+</div>
+<div class="highlight"><span class="filename">O2 Optimization</span><pre><span></span><code><span class="cp">#pragma GCC optimize(2)</span>
+</code></pre></div>
 
 
 
