@@ -2,258 +2,216 @@
    1. CORE VARIABLES & PALETTE
    ========================================= */
 :root {
-    /* Brand Colors from DesktopRenamer */
+    /* Brand Colors (Michael Qiu's Portfolio) */
     --dr-klein-blue: #002FA7;
     --dr-klein-light: #3B6DFF;
     --dr-bg-light: #F2F2F7;
     --dr-bg-dark: #050505;
-    --dr-navy: #020412;
     
-    /* Zensical/Material Overrides (Light Mode Default) */
+    /* Zensical Overrides */
     --md-primary-fg-color: var(--dr-klein-blue);
     --md-primary-fg-color--light: var(--dr-klein-light);
-    --md-primary-fg-color--dark: var(--dr-navy);
     
-    /* Typography Overrides */
-    --md-text-font: "Inter", sans-serif;
-    --md-code-font: "JetBrains Mono", monospace;
-    --md-header-font: "Syncopate", sans-serif;
-    
-    /* Glass Effect Variables */
-    --glass-bg: rgba(255, 255, 255, 0.75);
-    --glass-border: rgba(0, 0, 0, 0.08);
+    /* Refined Glass Variables (Matches index.html) */
+    --glass-bg: rgba(250, 250, 250, 0.6);
+    --glass-border: rgba(0, 0, 0, 0.05);
     --glass-blur: blur(20px);
-    --island-radius: 99px;
+    --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+    
+    /* Dimensions */
+    --capsule-height: 48px;
+    --capsule-radius: 999px;
 }
 
-/* Dark Mode Overrides */
 [data-md-color-scheme="slate"] {
     --md-default-bg-color: var(--dr-bg-dark);
     --md-default-fg-color: #ffffff;
-    --md-primary-fg-color: var(--dr-klein-light);
-    
-    /* Glass Dark */
-    --glass-bg: rgba(20, 20, 20, 0.7);
-    --glass-border: rgba(255, 255, 255, 0.15);
+    --glass-bg: rgba(20, 20, 20, 0.6);
+    --glass-border: rgba(255, 255, 255, 0.1);
 }
 
 /* =========================================
    2. TYPOGRAPHY
    ========================================= */
-body {
-    -webkit-font-smoothing: antialiased;
-    letter-spacing: -0.01em;
-}
-
-h1, .md-typeset h1 {
-    font-family: "Syncopate", sans-serif;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: -0.05em;
-}
-
-h2, .md-typeset h2 {
+body { 
+    -webkit-font-smoothing: antialiased; 
+    letter-spacing: -0.01em; 
     font-family: "Inter", sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.03em;
 }
 
-code, kbd, pre {
-    font-family: "JetBrains Mono", monospace;
+/* Display Font for Headings */
+h1, .md-typeset h1 { 
+    font-family: "Syncopate", sans-serif; 
+    font-weight: 800; 
+    text-transform: uppercase; 
+    letter-spacing: -0.05em; 
 }
 
-/* =========================================
-   3. BACKGROUND & AURORA ANIMATION
-   ========================================= */
-.aurora-wrapper {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: -1;
-    overflow: hidden;
-    pointer-events: none;
-    background-color: var(--dr-bg-light);
-}
-
-[data-md-color-scheme="slate"] .aurora-wrapper {
-    background-color: var(--dr-bg-dark);
-}
-
-.aurora-container {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%; z-index: 0;
-}
-
-.aurora-blob {
-    position: absolute; border-radius: 50%; filter: blur(80px);
-    opacity: 0.6; mix-blend-mode: multiply;
-    animation: float 20s infinite ease-in-out;
-}
-
-[data-md-color-scheme="slate"] .aurora-blob {
-    mix-blend-mode: screen; opacity: 0.4; filter: blur(100px);
-}
-
-.blob-1 { top: -10%; right: -10%; width: 70vw; height: 70vw; background: radial-gradient(circle, rgba(0, 47, 167, 0.4), transparent 70%); animation-delay: 0s; }
-.blob-2 { bottom: -10%; left: -10%; width: 60vw; height: 60vw; background: radial-gradient(circle, rgba(59, 109, 255, 0.3), transparent 70%); animation-delay: -5s; }
-.blob-3 { top: 40%; right: 20%; width: 40vw; height: 40vw; background: radial-gradient(circle, rgba(100, 0, 255, 0.2), transparent 70%); animation-delay: -10s; }
-
-@keyframes float {
-    0%, 100% { transform: translate(0, 0); }
-    50% { transform: translate(-20px, 20px); }
+/* Code Font */
+code, kbd, pre { 
+    font-family: "JetBrains Mono", monospace; 
 }
 
 /* =========================================
-   4. UI COMPONENTS - FLOATING ISLANDS
+   3. BACKGROUND (Aurora from DesktopRenamer)
+   ========================================= */
+.aurora-wrapper { 
+    position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1; 
+    overflow: hidden; pointer-events: none; background-color: var(--dr-bg-light); 
+}
+[data-md-color-scheme="slate"] .aurora-wrapper { background-color: var(--dr-bg-dark); }
+
+.aurora-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+.aurora-blob { 
+    position: absolute; border-radius: 50%; filter: blur(100px); 
+    opacity: 0.5; mix-blend-mode: multiply; animation: float 25s infinite ease-in-out; 
+}
+[data-md-color-scheme="slate"] .aurora-blob { mix-blend-mode: screen; opacity: 0.3; }
+
+.blob-1 { top: -20%; right: -20%; width: 80vw; height: 80vw; background: radial-gradient(circle, rgba(0, 47, 167, 0.4), transparent 70%); }
+.blob-2 { bottom: -20%; left: -20%; width: 70vw; height: 70vw; background: radial-gradient(circle, rgba(59, 109, 255, 0.3), transparent 70%); animation-delay: -5s; }
+@keyframes float { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(-20px, 20px); } }
+
+
+/* =========================================
+   4. NAVIGATION BAR (Refined Capsule Style)
    ========================================= */
 
-/* 4.1. Header Container Reset */
+/* 4.1 Reset the main header container to be invisible/floating */
 .md-header {
     background-color: transparent !important;
     box-shadow: none !important;
+    top: 1.5rem; /* Float it down */
     height: auto !important;
-    top: 1.2rem; /* Push down for floating effect */
-    transition: top 0.3s;
+    transition: top 0.3s ease;
 }
 
+/* 4.2 The "Inner" container becomes the unified capsule */
 .md-header__inner {
-    background: transparent !important;
-    backdrop-filter: none !important;
-    border: none !important;
-    padding: 0 1rem;
-    gap: 0.8rem; /* Space between islands */
-    align-items: center;
+    width: auto;
+    max-width: 1400px;
+    margin: 0 auto;
+    background: var(--glass-bg) !important;
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    border-radius: var(--capsule-radius);
+    padding: 0.25rem 0.5rem; /* Compact padding */
+    height: var(--capsule-height) !important;
+    gap: 0.5rem;
 }
 
-/* 4.2. Common "Island" Style for Buttons/Cards */
-/* Applies to Title, Search Input, Repo, and Icon Buttons */
-.md-header__title, 
-.md-search__inner,
-.md-header__source,
+/* 4.3 Hide unnecessary separators or shadows */
+.md-header__title {
+    margin-left: 0.5rem;
+    padding: 0;
+    flex-grow: 1;
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
+}
+
+/* 4.4 Logo Styling */
+.md-header__button.md-logo {
+    margin: 0;
+    padding: 0;
+    background: transparent !important;
+    border: none;
+    box-shadow: none;
+    opacity: 0.9;
+}
+.md-header__button.md-logo img, 
+.md-header__button.md-logo svg {
+    height: 24px;
+    width: auto;
+    display: block;
+}
+
+/* 4.5 Search Input - Integrated seamlessly */
+.md-search {
+    margin-left: auto; /* Push to right */
+    border-left: 1px solid var(--glass-border); /* Subtle divider */
+    padding-left: 0.5rem;
+}
+.md-search__inner {
+    background: transparent !important;
+    box-shadow: none !important;
+    width: 12rem;
+    padding: 0;
+}
+.md-search__input {
+    background: transparent !important;
+    height: 100%;
+    font-size: 0.85rem;
+    padding-left: 2.2rem; /* Make room for icon */
+}
+/* Icon color fix */
+.md-search__icon {
+    color: var(--md-default-fg-color);
+    opacity: 0.5;
+}
+
+/* 4.6 Icons / Repo / Theme Toggle */
+.md-header__source, 
 .md-header__option {
+    color: var(--md-default-fg-color) !important;
+    opacity: 0.7;
+    transition: all 0.2s;
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    width: 36px; 
+    height: 36px;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    border-radius: 50%;
+}
+.md-header__source:hover,
+.md-header__option:hover {
+    background: rgba(0,0,0,0.05) !important;
+    opacity: 1;
+    color: var(--dr-klein-blue) !important;
+}
+[data-md-color-scheme="slate"] .md-header__option:hover {
+    background: rgba(255,255,255,0.1) !important;
+}
+
+/* =========================================
+   5. NAVIGATION TABS (Below Header)
+   ========================================= */
+.md-tabs {
+    background: transparent !important;
+    box-shadow: none !important;
+    margin-top: 1rem;
+    pointer-events: none; /* Let background clicks pass */
+}
+.md-tabs__list {
+    display: inline-flex;
     background: var(--glass-bg);
     backdrop-filter: var(--glass-blur);
     -webkit-backdrop-filter: var(--glass-blur);
     border: 1px solid var(--glass-border);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
-/* Hover effects for all islands */
-.md-header__title:hover,
-.md-header__source:hover,
-.md-header__option:hover,
-.md-search__inner:hover {
-    transform: translateY(-2px) scale(1.02);
-    border-color: var(--dr-klein-blue);
-    box-shadow: 0 10px 25px rgba(0, 47, 167, 0.15);
-    background: rgba(255,255,255,0.95);
-    z-index: 10;
-}
-[data-md-color-scheme="slate"] .md-header__title:hover,
-[data-md-color-scheme="slate"] .md-header__source:hover,
-[data-md-color-scheme="slate"] .md-header__option:hover {
-    background: rgba(30,30,30,0.9);
-    border-color: var(--dr-klein-light);
-}
-
-/* 4.3. Specific Island Styling */
-
-/* TITLE ISLAND */
-.md-header__title {
-    border-radius: var(--island-radius);
-    padding: 0.3rem 1.5rem;
-    flex-grow: 0; /* Stop it from taking all space */
-    margin-right: auto; /* Push everything else to right */
-    display: inline-flex;
-    align-items: center;
-    color: var(--md-default-fg-color) !important;
-}
-.md-header__button.md-logo {
-    margin: 0 0.8rem 0 0;
-    padding: 0;
-    background: transparent !important; /* Remove bg from logo */
-    border: none !important;
-    box-shadow: none !important;
-}
-
-/* SEARCH ISLAND */
-.md-search {
-    /* Container layout */
-    margin-left: 0.5rem;
-}
-.md-search__inner {
-    border-radius: var(--island-radius);
-    padding: 0.1rem 0;
-    width: 14rem; /* Fixed width for better look */
-    transition: width 0.3s;
-}
-.md-search.md-search--active .md-search__inner {
-    background: var(--md-default-bg-color); /* Solid when active */
-    border-radius: 1rem; /* Square up slightly when active */
-}
-
-/* REPO/SOURCE ISLAND */
-.md-header__source {
-    border-radius: var(--island-radius);
-    padding: 0.35rem 1.2rem;
-    width: auto !important;
-    max-width: none !important;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: var(--md-default-fg-color) !important;
-}
-
-/* THEME/ICON BUTTONS (Circular) */
-/* The layout puts theme toggle in .md-header__option */
-.md-header__option {
-    border-radius: 50%;
-    width: 2.8rem;
-    height: 2.8rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0;
-    margin-left: 0;
-}
-
-/* 4.4. Content Adjustments */
-/* Push content down because header is floating */
-.md-main {
-    padding-top: 2rem; 
-}
-
-/* 4.5. Navigation Tabs (If enabled) */
-/* Float these as well */
-.md-tabs {
-    background: transparent !important;
-    position: relative;
-    z-index: 5;
-    margin-top: 1rem;
-    pointer-events: none; /* Let clicks pass through empty space */
-}
-.md-tabs__list {
-    background: var(--glass-bg);
-    backdrop-filter: var(--glass-blur);
-    border: 1px solid var(--glass-border);
-    border-radius: 1rem;
-    padding: 0.2rem 0.5rem;
-    display: inline-flex;
-    margin-left: 1rem; /* Align with content */
+    border-radius: 99px; /* Pill shape */
+    padding: 0.2rem 1.5rem;
+    margin: 0;
     pointer-events: auto;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    gap: 1.5rem;
 }
 .md-tabs__item {
-    padding: 0 0.8rem;
+    padding: 0;
 }
 .md-tabs__link {
-    opacity: 0.7;
-    transition: opacity 0.2s;
+    opacity: 0.6;
+    font-weight: 600;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    padding: 0.5rem 0;
+    transition: all 0.2s;
 }
-.md-tabs__link--active, .md-tabs__link:hover {
+.md-tabs__link--active, 
+.md-tabs__link:hover {
     opacity: 1;
     color: var(--dr-klein-blue);
 }
@@ -261,56 +219,71 @@ code, kbd, pre {
     color: var(--dr-klein-light);
 }
 
-/* 4.6. Footer & Content Glass */
-.md-content__inner { margin-top: 1rem; }
+/* =========================================
+   6. CONTENT & FOOTER
+   ========================================= */
+.md-main { padding-top: 3rem; }
 
-/* Admonitions */
-.md-typeset .admonition, 
+/* 6.1 Glass Cards for Content Blocks */
+.md-typeset .admonition,
 .md-typeset details {
     background: var(--glass-bg);
     border: 1px solid var(--glass-border);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    border-radius: 12px;
+    border-radius: 20px;
+    box-shadow: var(--glass-shadow);
 }
 
-/* Footer */
+/* 6.2 Footer Navigation (Prev/Next) - Matches "Connect" cards */
 .md-footer {
     background: transparent !important;
     margin-top: 4rem;
 }
 .md-footer__inner {
+    padding: 0;
+    background: transparent;
+    border: none;
+}
+/* The actual links */
+.md-footer__link {
     background: var(--glass-bg);
     backdrop-filter: blur(20px);
-    border-top: 1px solid var(--glass-border);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px; /* Large rounded corners */
+    padding: 2rem;
+    margin: 1rem 0;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.md-footer__link:hover {
+    transform: translateY(-5px) scale(1.01);
+    background: #fff;
+    border-color: var(--dr-klein-blue);
+    box-shadow: 0 20px 40px -10px rgba(0, 47, 167, 0.2);
+}
+[data-md-color-scheme="slate"] .md-footer__link:hover {
+    background: #1a1a1a;
+    border-color: var(--dr-klein-light);
 }
 
-/* 4.7 Mobile Adjustments */
-/* Collapse islands on mobile to avoid overflow */
+.md-footer__title {
+    font-family: "Syncopate", sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+}
+
+/* =========================================
+   7. MOBILE TWEAKS
+   ========================================= */
 @media screen and (max-width: 60em) {
-    .md-header__title {
-        background: transparent;
-        border: none;
-        backdrop-filter: none;
-        box-shadow: none;
-        padding: 0;
+    .md-header { 
+        top: 0; 
     }
     .md-header__inner {
-        padding: 0 0.5rem;
-        gap: 0.2rem;
+        margin: 0.5rem;
+        width: calc(100% - 1rem);
+        border-radius: 16px; /* Slightly less round on mobile */
     }
-    /* Keep search and menu accessible */
-    .md-header__option {
-        width: 2.5rem; height: 2.5rem;
-        background: transparent;
-        border: none;
-        box-shadow: none;
-    }
-    /* Adjust Tabs for mobile scroll */
     .md-tabs__list {
-        width: 100%;
-        border-radius: 0;
-        background: var(--md-default-bg-color);
-        margin: 0;
+        display: none; /* Hide standard tabs on mobile usually, or adjust styling */
     }
 }

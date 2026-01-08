@@ -6,9 +6,6 @@ site_url = "https://gitmichaelqiu.github.io"
 
 copyright = "Copyright &copy; 2026 Michael Y. Qiu"
 
-repo_url = "https://github.com/gitmichaelqiu/gitmichaelqiu.github.io"
-repo_name = "gitmichaelqiu.github.io"
-
 # Navigation
 nav = [
     { Home = [
