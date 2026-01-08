@@ -112,7 +112,8 @@ features = [
     "navigation.tabs",
     "navigation.sections",
     "navigation.path",
-    "navigation.footer"
+    "navigation.footer",
+    "content.code.copy"
 ]
 custom_dir = "overrides"
 
