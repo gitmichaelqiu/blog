@@ -89,6 +89,9 @@ nav = [
     { Blog = "blog/index.md" }
 ]
 
+[project.theme]
+logo = "images/logo.png"
+
 [[project.theme.palette]]
 media = "(prefers-color-scheme)"
 toggle.icon = "lucide/monitor"
