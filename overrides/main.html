@@ -2,259 +2,343 @@
 
 {% block extrahead %}
   {{ super() }}
-  <!-- 1. Typography from your design -->
+  <!-- Typography -->
   <link rel="preconnect" href="https://gs.jurieo.com/gemini/fonts-googleapis">
   <link rel="preconnect" href="https://gs.jurieo.com/gemini/fonts-gstatic" crossorigin>
-  <link href="https://gs.jurieo.com/gemini/fonts-googleapis/css2?family=Inter:wght@300;400;600;900&family=JetBrains+Mono:wght@400;700&family=Syncopate:wght@700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://gs.jurieo.com/gemini/fonts-googleapis/css2?family=Inter:wght@300;400;600;900&family=JetBrains+Mono:wght@400;700&family=Syncopate:wght@700;800&display=swap" rel="stylesheet">
 
   <style>
-    /* --- 2. THEME VARIABLES OVERRIDES --- */
+    /* --- 1. THEME & COLORS --- */
     :root {
-      /* Your Brand Color */
       --klein-blue: #002FA7;
-      --klein-light: #3B6DFF;
+      --klein-blue-dark-mode: #548bf4; /* Lighter for better contrast in dark mode */
       
-      /* Overriding MkDocs Material Fonts */
+      /* Glass Vars */
+      --glass-bg: rgba(255, 255, 255, 0.65);
+      --glass-border: rgba(0, 0, 0, 0.08);
+      --glass-blur: blur(16px);
+      --capsule-radius: 9999px;
+      
+      /* Override Material Fonts */
       --md-text-font: "Inter", sans-serif;
       --md-code-font: "JetBrains Mono", monospace;
-      
-      /* Default (Light Mode) Overrides */
-      --md-default-bg-color: #F2F2F7; /* Your light gray bg */
-      --md-primary-fg-color: #000000; /* Primary elements black */
+    }
+
+    /* LIGHT MODE (Default) */
+    [data-md-color-scheme="default"] {
+      --md-default-bg-color: #F2F2F7;
+      --md-default-fg-color: #111111;
+      --md-primary-fg-color: #000000;
       --md-accent-fg-color: var(--klein-blue);
       
-      /* Glass variables */
-      --glass-bg: rgba(255, 255, 255, 0.7);
-      --glass-border: rgba(0, 0, 0, 0.05);
-      --glass-blur: blur(20px);
+      /* Sidebar/Card Backgrounds */
+      --md-surface-bg-color: rgba(255,255,255,0.5); 
     }
 
-    /* Dark Mode Overrides (Slate) */
+    /* DARK MODE (Slate) */
     [data-md-color-scheme="slate"] {
-      --md-default-bg-color: #050505; /* Your deep black bg */
-      --md-primary-fg-color: #ffffff; /* Primary elements white */
-      --md-accent-fg-color: var(--klein-light);
+      --md-default-bg-color: #050505;
+      --md-default-fg-color: #eeeeee;
+      --md-primary-fg-color: #ffffff;
+      --md-accent-fg-color: var(--klein-blue-dark-mode); /* Fixed Contrast */
       
-      /* Dark Glass variables */
-      --glass-bg: rgba(20, 20, 20, 0.7);
-      --glass-border: rgba(255, 255, 255, 0.1);
+      --glass-bg: rgba(20, 20, 20, 0.65);
+      --glass-border: rgba(255, 255, 255, 0.12);
+      
+      /* Sidebar/Card Backgrounds */
+      --md-surface-bg-color: rgba(30,30,30,0.5);
     }
 
-    /* --- 3. GLOBAL UI STYLING --- */
+    /* --- 2. LAYOUT & SCROLLING --- */
     
-    /* Smooth transition for theme switching */
-    body {
-      transition: background-color 0.5s ease, color 0.5s ease;
-      cursor: none; /* Hide default cursor for custom one */
+    /* Hide Default Header & Tabs */
+    .md-header, .md-tabs {
+      display: none !important;
     }
-    
-    /* Make standard container transparent so Aurora shows through */
+
+    /* Adjust main container to account for missing header */
     .md-container {
-      background: transparent !important;
+      padding-top: 0 !important;
     }
-    
-    /* Headers (Syncopate font for distinct look) */
-    h1, .md-typeset h1 {
-      font-family: 'Syncopate', sans-serif;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      text-transform: uppercase;
+    .md-main__inner {
+      padding-top: 6rem; /* Make space for floating capsule */
+      max-width: 90vw; /* Wider layout similar to DesktopRenamer */
     }
 
-    /* --- 4. GLASSMORPHISM HEADER & NAV --- */
+    /* Fix Sidebar Scrolling */
+    .md-sidebar {
+      position: fixed; /* Force fixed to viewport */
+      top: 6rem !important; /* Start below capsule */
+      height: calc(100vh - 7rem) !important; /* Full height minus capsule */
+      overflow-y: auto !important; /* Scrollable */
+      scrollbar-width: thin; /* Nice scrollbar */
+    }
     
-    /* Floating Glass Header */
-    .md-header {
-      background-color: var(--glass-bg) !important;
+    /* Make Content Cards Glassy */
+    .md-content {
+      background: var(--md-surface-bg-color);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--glass-border);
+      border-radius: 24px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    /* --- 3. CUSTOM CAPSULE NAVIGATION --- */
+    
+    .nav-capsule-container {
+      position: fixed;
+      top: 1.5rem;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      z-index: 100; /* Above everything */
+      pointer-events: none; /* Let clicks pass through outside capsule */
+    }
+
+    .nav-capsule {
+      pointer-events: auto;
+      background: var(--glass-bg);
       backdrop-filter: var(--glass-blur);
       -webkit-backdrop-filter: var(--glass-blur);
-      border-bottom: 1px solid var(--glass-border);
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--capsule-radius);
+      padding: 0.35rem 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
     
-    /* Tabs Navigation Bar (if enabled) */
-    .md-tabs {
-      background-color: transparent !important; /* Let header glass show */
-      border-bottom: 1px solid var(--glass-border);
+    .nav-capsule:hover {
+      box-shadow: 0 12px 40px rgba(0, 47, 167, 0.15);
+      border-color: var(--md-accent-fg-color);
     }
 
-    /* --- 5. CONTENT CARDS & GLASS --- */
-    
-    /* Main Content Area styling */
-    .md-main__inner {
-      margin-top: 1rem;
+    /* Brand / Home Button */
+    .capsule-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.4rem 1rem;
+      background: rgba(0,0,0,0.03);
+      border-radius: var(--capsule-radius);
+      color: var(--md-default-fg-color);
+      font-family: 'Syncopate', sans-serif;
+      font-weight: 700;
+      font-size: 0.7rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.2s;
     }
+    [data-md-color-scheme="slate"] .capsule-brand { background: rgba(255,255,255,0.05); }
+    .capsule-brand:hover { background: var(--md-accent-fg-color); color: white; }
 
-    /* Articles / Page Content */
-    .md-content {
-      /* Optional: Encase content in a subtle glass card */
-      border-radius: 16px;
-      /* padding: 20px; */ /* Uncomment if you want card-like spacing */
+    /* Navigation Links */
+    .capsule-links {
+      display: flex;
+      align-items: center;
+      padding: 0 0.5rem;
+      border-left: 1px solid var(--glass-border);
+      height: 1.5rem;
     }
-
-    /* Admonitions (Note/Info boxes) - Make them Glassy */
-    .md-typeset .admonition, 
-    .md-typeset details {
-      background: var(--glass-bg);
-      backdrop-filter: blur(10px);
-      border: 1px solid var(--glass-border) !important;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-      border-radius: 12px;
-    }
-    
-    /* Code Blocks - Dark/Sleek */
-    .md-typeset pre > code {
-      background: rgba(0, 0, 0, 0.85);
-      border-radius: 8px;
-      border: 1px solid rgba(255,255,255,0.1);
-    }
-    [data-md-color-scheme="slate"] .md-typeset pre > code {
-      background: rgba(255, 255, 255, 0.05);
-    }
-
-    /* Links - Klein Blue Hover */
-    .md-typeset a {
-      color: var(--md-accent-fg-color);
+    .capsule-link {
+      color: var(--md-default-fg-color);
+      opacity: 0.6;
+      font-size: 0.75rem;
       font-weight: 600;
+      padding: 0.4rem 0.8rem;
+      border-radius: 8px;
+      text-decoration: none;
       transition: all 0.2s;
     }
-    .md-typeset a:hover {
-      color: var(--md-primary-fg-color);
-      text-decoration: none;
-      border-bottom: 2px solid var(--klein-blue);
-    }
+    .capsule-link:hover { opacity: 1; background: rgba(125,125,125,0.1); }
+    .capsule-link.active { opacity: 1; color: var(--md-accent-fg-color); }
 
-    /* --- 6. AURORA BACKGROUND ANIMATION --- */
+    /* Action Buttons (Theme, Search) */
+    .capsule-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding-left: 0.5rem;
+      border-left: 1px solid var(--glass-border);
+    }
     
-    .aurora-container {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        z-index: -1; /* Behind everything */
-        overflow: hidden;
-        pointer-events: none;
+    .capsule-btn {
+      width: 2rem;
+      height: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      color: var(--md-default-fg-color);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .capsule-btn:hover { background: rgba(125,125,125,0.1); transform: scale(1.1); }
+    
+    /* Search specific styling to trigger MkDocs modal */
+    .search-trigger {
+      cursor: pointer;
     }
 
+    /* --- 4. CONTENT & CODE BLOCKS --- */
+    
+    /* Headers */
+    h1 { font-family: 'Syncopate', sans-serif; font-weight: 800; letter-spacing: -0.03em; color: var(--md-default-fg-color); }
+    
+    /* Code Blocks */
+    .md-typeset pre > code {
+      font-family: 'JetBrains Mono', monospace;
+      border-radius: 12px;
+      background: #111; /* Always dark bg for code */
+      color: #eee;
+    }
+    /* Fix Copy Button Visibility */
+    .md-clipboard {
+      z-index: 10;
+      color: rgba(255,255,255,0.7);
+    }
+    .md-clipboard:hover {
+      color: white;
+      background-color: var(--klein-blue);
+    }
+
+    /* --- 5. AURORA BACKGROUND --- */
+    .aurora-bg {
+      position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1;
+      background: var(--md-default-bg-color);
+      transition: background 0.5s ease;
+      overflow: hidden;
+    }
     .aurora-blob {
-        position: absolute;
-        border-radius: 50%;
-        filter: blur(80px);
-        opacity: 0.4;
-        animation: float 20s infinite ease-in-out;
+      position: absolute; border-radius: 50%; filter: blur(90px); opacity: 0.5;
+      animation: auroraFloat 20s infinite ease-in-out;
+    }
+    [data-md-color-scheme="slate"] .aurora-blob { opacity: 0.25; mix-blend-mode: screen; }
+    
+    .blob-1 { top: -10%; right: -5%; width: 50vw; height: 50vw; background: var(--klein-blue); animation-delay: 0s; }
+    .blob-2 { bottom: -10%; left: -5%; width: 40vw; height: 40vw; background: #00d2ff; animation-delay: -5s; }
+
+    @keyframes auroraFloat {
+      0%, 100% { transform: translate(0, 0); }
+      50% { transform: translate(-30px, 30px); }
     }
 
-    /* Light Mode Blobs */
-    .blob-1 { top: -10%; right: -10%; width: 60vw; height: 60vw; background: radial-gradient(circle, rgba(0, 47, 167, 0.2), transparent 70%); animation-delay: 0s; }
-    .blob-2 { bottom: -20%; left: -10%; width: 50vw; height: 50vw; background: radial-gradient(circle, rgba(32, 190, 255, 0.2), transparent 70%); animation-delay: -5s; }
-    
-    /* Dark Mode Blob Adjustments */
-    [data-md-color-scheme="slate"] .aurora-blob {
-        opacity: 0.2;
-        mix-blend-mode: screen;
-    }
-    [data-md-color-scheme="slate"] .blob-1 { background: radial-gradient(circle, rgba(0, 47, 167, 0.6), transparent 70%); }
-    
-    @keyframes float {
-        0%, 100% { transform: translate(0, 0); }
-        50% { transform: translate(-20px, 20px); }
-    }
-
-    /* --- 7. CUSTOM CURSOR --- */
-    
-    .cursor-dot, .cursor-outline {
-        position: fixed;
-        top: 0;
-        left: 0;
-        transform: translate(-50%, -50%);
-        border-radius: 50%;
-        z-index: 9999;
-        pointer-events: none;
-        mix-blend-mode: difference;
-    }
-    .cursor-dot { width: 8px; height: 8px; background-color: white; }
-    .cursor-outline { 
-        width: 40px; 
-        height: 40px; 
-        border: 1px solid white; 
-        transition: width 0.2s, height 0.2s, background-color 0.2s; 
-    }
-    
-    /* Restore default cursor on touch devices */
-    @media (hover: none) and (pointer: coarse) {
-        .cursor-dot, .cursor-outline { display: none; }
-        body { cursor: auto; }
-    }
-    
-    /* Hover state for links (Interactive) */
-    body.is-hovering .cursor-outline {
-        width: 20px;
-        height: 20px;
-        background-color: rgba(255, 255, 255, 0.5);
+    /* Hide on Mobile */
+    @media screen and (max-width: 768px) {
+      .capsule-links { display: none; }
+      .md-header { display: block !important; } /* Restore default header on mobile */
+      .nav-capsule-container { display: none; }
+      .md-sidebar { top: 0 !important; height: 100vh !important; }
+      .md-main__inner { padding-top: 0; }
     }
   </style>
 {% endblock %}
 
+{% block header %}
+  <!-- 
+    REPLACING DEFAULT HEADER WITH CAPSULE 
+    (Only visible on Desktop due to media query above)
+  -->
+  <div class="nav-capsule-container">
+    <div class="nav-capsule">
+      
+      <!-- Brand / Logo -->
+      <a href="{{ nav.url | url }}" class="capsule-brand">
+        {% if config.theme.logo %}
+          <img src="{{ config.theme.logo | url }}" alt="Logo" style="width: 1.2rem; height: 1.2rem;">
+        {% endif %}
+        <span>{{ config.site_name }}</span>
+      </a>
+
+      <!-- Primary Navigation Links (From mkdocs.yml 'nav') -->
+      <div class="capsule-links">
+        {% for nav_item in nav %}
+          {% if nav_item.url %}
+            <a href="{{ nav_item.url | url }}" class="capsule-link {% if nav_item.active %}active{% endif %}">
+              {{ nav_item.title }}
+            </a>
+          {% else %}
+             <!-- Handle subsections like "Utilities" or "LexiGen" -->
+             <span class="capsule-link" style="cursor: default; opacity: 0.4;">{{ nav_item.title }}</span>
+          {% endif %}
+        {% endfor %}
+      </div>
+
+      <!-- Right Actions -->
+      <div class="capsule-actions">
+        
+        <!-- Search Trigger (Using MkDocs internal label ID) -->
+        <label class="capsule-btn search-trigger" for="__search" title="Search">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </label>
+
+        <!-- Theme Toggle (Cycles through palette) -->
+        <!-- We map this to the hidden inputs MkDocs generates for palettes -->
+        {% if config.theme.palette %}
+          <label class="capsule-btn" for="__palette_1" hidden></label> <!-- Hidden helper -->
+          
+          <!-- 
+            MkDocs Material generates inputs with ids like __palette_1, __palette_2 based on config.
+            We use a simple JS handler to cycle them because purely mapping labels is tricky with 3 states.
+          -->
+          <div class="capsule-btn" onclick="cyclePalette()" title="Switch Theme">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+          </div>
+        {% endif %}
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- Keep standard MkDocs header for Search Modal functionality & Mobile, but hide it on desktop -->
+  <div class="md-header" data-md-component="header">
+    <nav class="md-header__inner md-grid">
+      <!-- Standard Header content (Hidden via CSS on Desktop) -->
+      {{ super() }}
+    </nav>
+  </div>
+{% endblock %}
+
 {% block announce %}
-  {{ super() }}
-  <!-- Inject Background & Cursor HTML at top of body -->
-  <div class="aurora-container">
+  <!-- Aurora Background Layers -->
+  <div class="aurora-bg">
     <div class="aurora-blob blob-1"></div>
     <div class="aurora-blob blob-2"></div>
   </div>
-  
-  <div class="cursor-dot"></div>
-  <div class="cursor-outline"></div>
 {% endblock %}
 
 {% block scripts %}
   {{ super() }}
   <script>
-    /** * Custom Cursor Logic 
-     * Replicating the feel from DesktopRenamer.html
-     */
-    document.addEventListener("DOMContentLoaded", function() {
-        const dot = document.querySelector('.cursor-dot');
-        const outline = document.querySelector('.cursor-outline');
-        
-        if (!dot || !outline) return;
-
-        // Mouse Movement
-        window.addEventListener('mousemove', (e) => {
-            const posX = e.clientX;
-            const posY = e.clientY;
-
-            // Dot follows instantly
-            dot.style.left = `${posX}px`;
-            dot.style.top = `${posY}px`;
-
-            // Outline follows with lag (using simple animation for performance)
-            outline.animate({
-                left: `${posX}px`,
-                top: `${posY}px`
-            }, { duration: 500, fill: "forwards" });
-        });
-
-        // Interactive Elements Hover Effect
-        const interactiveElements = document.querySelectorAll('a, button, input, [role="button"], label');
-        
-        interactiveElements.forEach(el => {
-            el.addEventListener('mouseenter', () => document.body.classList.add('is-hovering'));
-            el.addEventListener('mouseleave', () => document.body.classList.remove('is-hovering'));
-        });
-        
-        // Handle dynamic content (MkDocs Single Page interaction)
-        // Re-attach listeners if content changes (optional optimization)
-        const observer = new MutationObserver(() => {
-             const newLinks = document.querySelectorAll('a:not([data-hover-attached])');
-             newLinks.forEach(el => {
-                el.setAttribute('data-hover-attached', 'true');
-                el.addEventListener('mouseenter', () => document.body.classList.add('is-hovering'));
-                el.addEventListener('mouseleave', () => document.body.classList.remove('is-hovering'));
-             });
-        });
-        observer.observe(document.querySelector('body'), { childList: true, subtree: true });
-    });
+    /* Theme Cycling Logic */
+    function cyclePalette() {
+      // MkDocs Material stores current palette index in localStorage
+      // We simulate a click on the next available palette input
+      const inputs = document.querySelectorAll('input[name="__palette"]');
+      if (inputs.length < 2) return;
+      
+      let current = Array.from(inputs).find(i => i.checked);
+      let nextIndex = 0;
+      
+      if (current) {
+        // Parse ID like "__palette_1"
+        let idx = parseInt(current.id.replace('__palette_', ''));
+        nextIndex = idx % inputs.length; // Cycle: 1->2, 2->3, 3->1 (assuming 1-based indexing in DOM, 0-based in logic)
+      }
+      
+      // Select the next input ID
+      const nextInput = document.getElementById(`__palette_${nextIndex + 1}`);
+      if (nextInput) {
+        nextInput.click(); // Trigger MkDocs native change handler
+      } else {
+        // Fallback to first if standard naming fails
+         document.getElementById('__palette_1').click();
+      }
+    }
   </script>
 {% endblock %}
