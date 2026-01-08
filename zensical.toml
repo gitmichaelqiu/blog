@@ -1,0 +1,180 @@
+[project]
+site_name = "Michael Qiu's Blog"
+site_author = "Michael Qiu"
+site_description = "This is Michael Qiu's personal site."
+site_url = "https://gitmichaelqiu.github.io"
+
+copyright = "Copyright &copy; 2026 Michael Y. Qiu"
+
+# Navigation
+nav = [
+    { Home = [
+        { About = "index.md" },
+        { "Some Websites" = "some-websites.md" },
+        { Utilities = [
+            { "Discord Spam Spoiler" = "utilities/discord-spam-spoiler.md" }
+        ]}
+    ]},
+    { "My Projects" = [
+        { "My Projects" = "my-projects/my-projects.md" },
+        { LexiGen = [
+            { "中文版" = [
+                { LexiGen = "my-projects/lexigen/lexigen-zh.md" },
+                { "快捷键" = "my-projects/lexigen/keyboard-shortcuts-zh.md" },
+                { "自定义提示词" = "my-projects/lexigen/customize-prompts-zh.md" }
+            ]},
+            { LexiGen = "my-projects/lexigen/lexigen.md" },
+            { "Keyboard Shortcuts" = "my-projects/lexigen/keyboard-shortcuts.md" },
+            { "Customize Prompts" = "my-projects/lexigen/customize-prompts.md" }
+        ]}
+    ]},
+    { Algorithms = [
+        { "GCD & LCM" = "algorithms/gcd-lcm.md" },
+        { Prime = [
+            { "Euler Sieve" = "algorithms/prime/euler-sieve.md" }
+        ]},
+        { Search = [
+            { "A*" = "algorithms/search/a-star.md" }
+        ]},
+        { "Shortest Path" = [
+            { "Bellman Ford" = "algorithms/shortest-path/bellman-ford.md" },
+            { "Dijkstra (prioirty_queue)" = "algorithms/shortest-path/dijkstra.md" },
+            { Floyd = "algorithms/shortest-path/floyd.md" },
+            { SPFA = "algorithms/shortest-path/spfa.md" }
+        ]},
+        { Sort = [
+            { "Sort Overview" = "algorithms/sort/sort-overview.md" },
+            { "Bubble Sort" = "algorithms/sort/bubble-sort.md" },
+            { "Radix Sort" = "algorithms/sort/radix-sort.md" }
+        ]},
+        { "Quick Pow" = "algorithms/quick-pow.md" }
+    ]},
+    { "Data Structures" = [
+        { Bignum = "data-structures/bignum.md" },
+        { "Binary Heap" = "data-structures/binary-heap.md" },
+        { "Disjoint Set Union" = "data-structures/disjoint-set-union.md" },
+        { "Segment Tree" = "data-structures/segment-tree.md" },
+        { "Sparse Table" = "data-structures/sparse-table.md" },
+        { Stack = "data-structures/stack.md" },
+        { Tree = [
+            { "Binary Tree Traversals" = "data-structures/tree/binary-tree-traversals.md" }
+        ]}
+    ]},
+    { "OI Tips" = [
+        { "Elapsed Time Measurement" = "oi-tips/elapsed-time.md" },
+        { "File Read & Write" = "oi-tips/file-read-and-write.md" },
+        { "GCC Optimize" = "oi-tips/gcc-optimize.md" },
+        { "iostream Acceleration" = "oi-tips/accelerate-ios.md" },
+        { "Quick Read & Write" = "oi-tips/qread-and-qwrite.md" }
+    ]},
+    { Math = [
+        { Primes = "math/primes.md" },
+        { Polynomials = "math/polynomials.md" }
+    ]},
+    { "Academic Notes" = [
+        { AP = [
+            { Calculus = [
+                { Limit = "academic-notes/ap/calculus/limit.md" },
+                { Differentiation = "academic-notes/ap/calculus/differentiation.md" },
+                { "Fundamental Calculus" = "academic-notes/ap/calculus/fundamental-calculus.md" }
+            ]},
+            { Microeconomics = [
+                { "Basic Economic Concept" = "academic-notes/ap/microeconomics/basic-economic-concept.md" },
+                { "Demand and Supply" = "academic-notes/ap/microeconomics/demand-and-supply.md" },
+                { "Production, Cost and Competition" = "academic-notes/ap/microeconomics/production-cost-and-competition.md" }
+            ]}
+        ]},
+        { "学考化学" = [
+            { "物质俗名" = "academic-notes/chinese/xuekao/chemistry.md" }
+        ]}
+    ]},
+]
+
+extra_javascript = [
+    "javascripts/katex.js",
+    "https://unpkg.com/katex@0/dist/katex.min.js",
+    "https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"
+]
+
+extra_css = [
+    "https://unpkg.com/katex@0/dist/katex.min.css",
+    "stylesheets/desktop-renamer.css"
+]
+
+[project.theme]
+logo = "images/logo.png"
+favicon = "images/favicon.png"
+features = [
+    "navigation.tabs",
+    "navigation.sections",
+    "navigation.path",
+    "navigation.footer"
+]
+custom_dir = "overrides"
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme)"
+toggle.icon = "lucide/monitor"
+toggle.name = "Switch to light mode"
+# You can add the colors here if you want them to apply to this mode:
+primary = "indigo"
+accent = "indigo"
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme: light)"
+scheme = "default"
+toggle.icon = "lucide/sun"
+toggle.name = "Switch to dark mode"
+primary = "indigo"
+accent = "indigo"
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme: dark)"
+scheme = "slate"
+toggle.icon = "lucide/moon"
+toggle.name = "Switch to system preference"
+primary = "indigo"
+accent = "indigo"
+
+[[project.extra.social]]
+icon = "fontawesome/brands/github"
+link = "https://github.com/gitmichaelqiu"
+
+[[project.extra.social]]
+icon = "fontawesome/brands/x-twitter"
+link = "https://x.com/mickymike2023"
+
+[[project.extra.social]]
+icon = "fontawesome/brands/reddit"
+link = "https://www.reddit.com/user/MickyMike2077"
+
+[project.markdown_extensions.pymdownx.snippets]
+
+[project.markdown_extensions.abbr]
+[project.markdown_extensions.admonition]
+[project.markdown_extensions.attr_list]
+[project.markdown_extensions.def_list]
+[project.markdown_extensions.footnotes]
+[project.markdown_extensions.md_in_html]
+[project.markdown_extensions.toc]
+permalink = true
+[project.markdown_extensions.pymdownx.arithmatex]
+generic = true
+[project.markdown_extensions.pymdownx.betterem]
+smart_enable = "all"
+[project.markdown_extensions.pymdownx.caret]
+[project.markdown_extensions.pymdownx.details]
+[project.markdown_extensions.pymdownx.emoji]
+emoji_generator = "zensical.extensions.emoji.to_svg"
+emoji_index = "zensical.extensions.emoji.twemoji"
+[project.markdown_extensions.pymdownx.highlight]
+[project.markdown_extensions.pymdownx.inlinehilite]
+[project.markdown_extensions.pymdownx.keys]
+[project.markdown_extensions.pymdownx.mark]
+[project.markdown_extensions.pymdownx.smartsymbols]
+[project.markdown_extensions.pymdownx.superfences]
+[project.markdown_extensions.pymdownx.tabbed]
+alternate_style = true
+[project.markdown_extensions.pymdownx.tasklist]
+custom_checkbox = true
+[project.markdown_extensions.pymdownx.tilde]
