@@ -29,7 +29,7 @@
     
     
       
-        <title>Disjoint set union - Michael Qiu's Blog</title>
+        <title>include - Michael Qiu's Blog</title>
       
     
     
@@ -115,6 +115,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#include" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -144,7 +149,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Disjoint set union
+              include
             
           </span>
         </div>
@@ -1758,6 +1763,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -2817,6 +2824,8 @@
   
   
   
+    
+  
   
 </nav>
                   </div>
@@ -2882,11 +2891,15 @@
   
 
 
-  <h1>Disjoint set union</h1>
-
-<p>=== "Head Files"
-    <code>cpp
-    #include &lt;vector&gt;</code></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Head Files</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>```cpp</p>
+<h1 id="include">include <vector></h1>
+<p>```</p>
+</div>
+</div>
+</div>
 <p>```cpp title="Template"</p>
 <p>class dsu {
 private:
@@ -2894,7 +2907,7 @@ private:
 <p>public:
     dsu(const int &amp;sz) {
         fa.resize(sz+1, 0);</p>
-<pre><code>    for (int i=1; i&lt;=sz; ++i) {
+<div class="highlight"><pre><span></span><code>    for (int i=1; i&lt;=sz; ++i) {
         fa[i] = i;
     }
 }
@@ -2909,7 +2922,7 @@ inline void merge(const int &amp;x, const int &amp;y) {
         fa[fx] = fy;
     }
 }
-</code></pre>
+</code></pre></div>
 <p>};
 ```</p>
 

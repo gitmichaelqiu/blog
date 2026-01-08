@@ -29,7 +29,7 @@
     
     
       
-        <title>Bellman ford - Michael Qiu's Blog</title>
+        <title>include - Michael Qiu's Blog</title>
       
     
     
@@ -149,7 +149,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Bellman ford
+              include
             
           </span>
         </div>
@@ -1433,6 +1433,17 @@
     <span class="md-ellipsis">
       
         Template
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#include" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        include
       
     </span>
   </a>
@@ -2920,6 +2931,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#include" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        include
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3004,19 +3026,24 @@
   
 
 
-  <h1>Bellman ford</h1>
-
 <h2 id="video-recommendation">Video Recommendation</h2>
 <ul>
 <li><a href="https://youtu.be/FtN3BYH2Zes?si=Dc4eQoTKZMcSWMru">4.4 Bellman Ford Algorithm - Single Source Shortest Path - Dynamic Programming - Adbul Bari</a></li>
 </ul>
 <h2 id="template">Template</h2>
-<p>=== "Head Files"
-    <code>cpp
-    #include &lt;vector&gt;</code>
-=== "C++ Version"
-    <code>cpp
-    -std=c++11</code></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Head Files</label><label for="__tabbed_1_2">C++ Version</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>```cpp</p>
+<h1 id="include">include <vector></h1>
+<p>```</p>
+</div>
+<div class="tabbed-block">
+<p><code>cpp
+-std=c++11</code></p>
+</div>
+</div>
+</div>
 <p><code>cpp title="Constants"
 const int inf = 0x3f;
 const int maxn = 1e4 + 5;</code></p>
@@ -3026,10 +3053,10 @@ struct edge {
 };</p>
 <p>struct node {
     int u, dis;</p>
-<pre><code>bool operator&gt;(const node &amp;x) const {
+<div class="highlight"><pre><span></span><code>bool operator&gt;(const node &amp;x) const {
     return dis &gt; x.dis;
 }
-</code></pre>
+</code></pre></div>
 <p>};</p>
 <p>vector<edge> e[maxn];
 ```</p>
@@ -3037,7 +3064,7 @@ struct edge {
 void bellman_ford(const int &amp;sz, const int &amp;st) {
     vector<int> dis(sz+1, inf);
     dis[st] = 0;</p>
-<pre><code>bool flag;
+<div class="highlight"><pre><span></span><code>bool flag;
 for (int i=1; i&lt;=sz; ++i) {
     flag = 0;
     for (int u=1; u&lt;=sz; ++u) {
@@ -3052,7 +3079,7 @@ for (int i=1; i&lt;=sz; ++i) {
 
     if (!flag) return;
 }
-</code></pre>
+</code></pre></div>
 <p>}
 ```</p>
 

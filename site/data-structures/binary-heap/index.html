@@ -29,7 +29,7 @@
     
     
       
-        <title>Binary heap - Michael Qiu's Blog</title>
+        <title>include - Michael Qiu's Blog</title>
       
     
     
@@ -115,6 +115,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#include" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -144,7 +149,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Binary heap
+              include
             
           </span>
         </div>
@@ -1730,6 +1735,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -2817,6 +2824,8 @@
   
   
   
+    
+  
   
 </nav>
                   </div>
@@ -2882,21 +2891,26 @@
   
 
 
-  <h1>Binary heap</h1>
-
 <p>Time Complexity:</p>
 <ul>
 <li>Emplace: <span class="arithmatex">\(O(\log n)\)</span></li>
 <li>Pop: <span class="arithmatex">\(O(\log n)\)</span></li>
 </ul>
 <hr />
-<p>=== "Head Files"
-    <code>cpp
-    #include &lt;cstddef&gt;
-    #include &lt;algorithm&gt;</code>
-=== "C++ Version"
-    <code>cpp
-    -std=c++11</code></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Head Files</label><label for="__tabbed_1_2">C++ Version</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>```cpp</p>
+<h1 id="include">include <cstddef></h1>
+<h1 id="include_1">include <algorithm></h1>
+<p>```</p>
+</div>
+<div class="tabbed-block">
+<p><code>cpp
+-std=c++11</code></p>
+</div>
+</div>
+</div>
 <p>```cpp title="Template"
 template <typename Type, size_t Size>
 class heap {
@@ -2905,7 +2919,7 @@ private:
     Type val[Size];</p>
 <p>public:
     heap() {cnt=0;}</p>
-<pre><code>void emplace(int x) {
+<div class="highlight"><pre><span></span><code>void emplace(int x) {
     val[++cnt] = x;
     int now = cnt;
 
@@ -2953,7 +2967,7 @@ bool empty() {
 Type top() {
     return val[1];
 }
-</code></pre>
+</code></pre></div>
 <p>};
 ```</p>
 

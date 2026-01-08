@@ -29,7 +29,7 @@
     
     
       
-        <title>Gcd lcm - Michael Qiu's Blog</title>
+        <title>include - Michael Qiu's Blog</title>
       
     
     
@@ -149,7 +149,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Gcd lcm
+              include
             
           </span>
         </div>
@@ -1162,6 +1162,18 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#include" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        include
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="include">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#gcd-1" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1171,8 +1183,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#lcm-2" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1180,6 +1192,11 @@
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2919,6 +2936,18 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#include" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        include
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="include">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#gcd-1" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2928,8 +2957,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#lcm-2" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2937,6 +2966,11 @@
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3006,37 +3040,50 @@
   
 
 
-  <h1>Gcd lcm</h1>
-
 <h2 id="stl">STL</h2>
 <p><a href="https://en.cppreference.com/w/cpp/numeric/gcd">cppreference</a></p>
-<p>=== "Head Files"
-    <code>cpp
-    #include &lt;numeric&gt;</code>
-=== "C++ Version"
-    <code>cpp
-    -std=c++17</code></p>
-<p>=== "std::gcd"
-    <code>cpp
-    template&lt; class M, class N &gt;
-    constexpr std::common_type_t&lt;M, N&gt; gcd( M m, N n );</code></p>
-<p>=== "std::lcm"
-    <code>cpp
-    template&lt; class M, class N &gt;
-    constexpr std::common_type_t&lt;M, N&gt; lcm( M m, N n );</code></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Head Files</label><label for="__tabbed_1_2">C++ Version</label><label for="__tabbed_1_3">std::gcd</label><label for="__tabbed_1_4">std::lcm</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>```cpp</p>
+<h1 id="include">include <numeric></h1>
+<p>```</p>
+</div>
+<div class="tabbed-block">
+<p><code>cpp
+-std=c++17</code></p>
+</div>
+<div class="tabbed-block">
+<p><code>cpp
+template&lt; class M, class N &gt;
+constexpr std::common_type_t&lt;M, N&gt; gcd( M m, N n );</code></p>
+</div>
+<div class="tabbed-block">
+<p><code>cpp
+template&lt; class M, class N &gt;
+constexpr std::common_type_t&lt;M, N&gt; lcm( M m, N n );</code></p>
+</div>
+</div>
+</div>
 <h2 id="gcd-1">GCD [^1]</h2>
 <p>[^1]: Greatest Common Divisor</p>
-<p>=== "Conditional Operator"
-    <code>cpp
-    int gcd(int x, int y) {
-        return y&gt;0 ? gcd(y, x%y) : x;
-    }</code></p>
-<p>=== "Bitwise Operation"
-    <code>cpp
-    int gcd(int x, int y) {
-        while (y^=x^=y^=x%=y);
-        return x;
-    }</code></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Conditional Operator</label><label for="__tabbed_2_2">Bitwise Operation</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><code>cpp
+int gcd(int x, int y) {
+    return y&gt;0 ? gcd(y, x%y) : x;
+}</code></p>
+</div>
+<div class="tabbed-block">
+<p><code>cpp
+int gcd(int x, int y) {
+    while (y^=x^=y^=x%=y);
+    return x;
+}</code></p>
+</div>
+</div>
+</div>
 <h2 id="lcm-2">LCM [^2]</h2>
 <p>[^2]: Least Common Multiple</p>
 <p><code>cpp

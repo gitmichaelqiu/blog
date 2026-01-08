@@ -29,7 +29,7 @@
     
     
       
-        <title>Segment tree - Michael Qiu's Blog</title>
+        <title>include - Michael Qiu's Blog</title>
       
     
     
@@ -149,7 +149,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Segment tree
+              include
             
           </span>
         </div>
@@ -1861,7 +1861,29 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Template">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#include" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        include
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#include_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        include
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="include">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2935,7 +2957,29 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Template">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#include" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        include
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#include_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        include
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="include">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3031,8 +3075,6 @@
   
 
 
-  <h1>Segment tree</h1>
-
 <h2 id="time-complexity">Time Complexity:</h2>
 <ul>
 <li>Build: <span class="arithmatex">\(O(n)\)</span></li>
@@ -3042,13 +3084,20 @@
 </ul>
 <hr />
 <h2 id="template">Template</h2>
-<p>=== "Head Files"
-    <code>cpp
-    #include &lt;vector&gt;
-    #include &lt;functional&gt;</code>
-=== "C++ Version"
-    <code>cpp
-    -std=c++11</code></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Head Files</label><label for="__tabbed_1_2">C++ Version</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>```cpp</p>
+<h1 id="include">include <vector></h1>
+<h1 id="include_1">include <functional></h1>
+<p>```</p>
+</div>
+<div class="tabbed-block">
+<p><code>cpp
+-std=c++11</code></p>
+</div>
+</div>
+</div>
 <h3 id="integrated-version">Integrated Version</h3>
 <p>```cpp title="Template"
 template<typename Type>
@@ -3060,7 +3109,7 @@ private:
     vector<Type> set_tag;
     vector<bool> is_set;
     int len;</p>
-<pre><code>inline int ls(const int &amp;x) { return x &lt;&lt; 1; }
+<div class="highlight"><pre><span></span><code>inline int ls(const int &amp;x) { return x &lt;&lt; 1; }
 inline int rs(const int &amp;x) { return x &lt;&lt; 1 | 1; }
 
 func_type opr;
@@ -3151,7 +3200,7 @@ void modify(const int &amp;L, const int &amp;R, const int &amp;x, const int &amp
 
     push_up(x);
 }
-</code></pre>
+</code></pre></div>
 <p>public:
     segment_tree(vector<Type> v, func_type _opr = default_func_type) {
         val.resize(v.size() &lt;&lt; 2, Type());
@@ -3160,7 +3209,7 @@ void modify(const int &amp;L, const int &amp;R, const int &amp;x, const int &amp
         is_set.resize(v.size() &lt;&lt; 2, false);
         len = v.size();
         opr = _opr;</p>
-<pre><code>    v.insert(v.begin(), Type());
+<div class="highlight"><pre><span></span><code>    v.insert(v.begin(), Type());
     build(v, 1, 1, len);
 }
 
@@ -3179,14 +3228,14 @@ void update(const int &amp;L, const int &amp;R, const Type &amp;d) {
 void modify(const int &amp;L, const int &amp;R, const Type &amp;d) {
     modify(L, R, 1, 1, len, d);
 }
-</code></pre>
+</code></pre></div>
 <p>};
 ```</p>
 <p>```cpp title="Usage"
 signed main() {
     vector<int> a;
     int b[]={5, 4, 3, 2, 1};</p>
-<pre><code>for (int i=0; i&lt;5; ++i) {
+<div class="highlight"><pre><span></span><code>for (int i=0; i&lt;5; ++i) {
     a.emplace_back(b[i]);
 }
 segment_tree&lt;int&gt; sg(a);
@@ -3196,7 +3245,7 @@ sg.update(1, 2, 2);
 cout &lt;&lt; sg.query(1, 4) &lt;&lt; endl;
 sg.modify(1, 2, 2);
 cout &lt;&lt; sg.query(1, 4) &lt;&lt; endl;
-</code></pre>
+</code></pre></div>
 <p>}
 ```</p>
 <hr />
@@ -3208,7 +3257,7 @@ using CI = const int;</p>
 <p>private:
     VI val, tag;
     int len;</p>
-<pre><code>inline int ls(CI &amp;x) {
+<div class="highlight"><pre><span></span><code>inline int ls(CI &amp;x) {
     return x &lt;&lt; 1;
 }
 inline int rs(CI &amp;x) {
@@ -3275,16 +3324,16 @@ void update(CI &amp;L, CI &amp;R, CI &amp;x, CI &amp;l, CI &amp;r, CI &amp;d) {
 
     push_up(x);
 }
-</code></pre>
+</code></pre></div>
 <p>public:
     segment_tree(VI &amp;s) {
         val.resize(s.size() &lt;&lt; 2, 0);
         tag.resize(s.size() &lt;&lt; 2, 0);
         len = s.size();</p>
-<pre><code>    s.emplace(s.begin(), 0);
+<div class="highlight"><pre><span></span><code>    s.emplace(s.begin(), 0);
     build(s, 1, 1, len);
 }
-</code></pre>
+</code></pre></div>
 <p>};
 ```</p>
 <!-- === "Sum of Elements"

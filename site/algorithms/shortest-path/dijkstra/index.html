@@ -29,7 +29,7 @@
     
     
       
-        <title>Dijkstra - Michael Qiu's Blog</title>
+        <title>include - Michael Qiu's Blog</title>
       
     
     
@@ -149,7 +149,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Dijkstra
+              include
             
           </span>
         </div>
@@ -1479,6 +1479,29 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#include" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        include
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#include_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        include
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="include">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#problems" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1486,6 +1509,11 @@
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2954,6 +2982,29 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#include" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        include
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#include_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        include
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="include">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#problems" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2961,6 +3012,11 @@
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3048,8 +3104,6 @@
   
 
 
-  <h1>Dijkstra</h1>
-
 <h2 id="video-recommendation">Video Recommendation</h2>
 <ul>
 <li><a href="https://youtu.be/XB4MIexjvY0?si=TQ26gFkRjFhhRMBm">3.6 Dijkstra Algorithm - Single Source Shortest Path - Greedy Method - Abdul Bari</a></li>
@@ -3058,13 +3112,20 @@
 <h2 id="complexity">Complexity</h2>
 <p>Time Complexity: <span class="arithmatex">\(O(m \log m)\)</span></p>
 <h2 id="template">Template</h2>
-<p>=== "Head Files"
-    <code>cpp
-    #include &lt;vector&gt;
-    #include &lt;queue&gt;</code>
-=== "C++ Version"
-    <code>cpp
-    -std=c++11</code></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Head Files</label><label for="__tabbed_1_2">C++ Version</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>```cpp</p>
+<h1 id="include">include <vector></h1>
+<h1 id="include_1">include <queue></h1>
+<p>```</p>
+</div>
+<div class="tabbed-block">
+<p><code>cpp
+-std=c++11</code></p>
+</div>
+</div>
+</div>
 <p><code>cpp title="Constants"
 const int inf = 0x3f;
 const int maxn = 1e4 + 5;</code></p>
@@ -3074,10 +3135,10 @@ struct edge {
 };</p>
 <p>struct node {
     int u, dis;</p>
-<pre><code>bool operator&gt;(const node &amp;x) const {
+<div class="highlight"><pre><span></span><code>bool operator&gt;(const node &amp;x) const {
     return dis &gt; x.dis;
 }
-</code></pre>
+</code></pre></div>
 <p>};</p>
 <p>vector<edge> e[maxn];
 ```</p>
@@ -3086,7 +3147,7 @@ vector<int> dijkstra(const int &amp;sz, const int &amp;st) {
     vector<int> dis(sz+1, inf);
     vector<bool> vis(sz+1, 0);
     priority_queue<node, vector\<node>, greater\<node> > pq;</p>
-<pre><code>dis[st] = 0;
+<div class="highlight"><pre><span></span><code>dis[st] = 0;
 pq.emplace((node){st, 0});
 
 while (!pq.empty()) {
@@ -3102,7 +3163,7 @@ while (!pq.empty()) {
         }
     }
 }
-</code></pre>
+</code></pre></div>
 <p>}
 ```</p>
 <h2 id="problems">Problems</h2>
@@ -3113,7 +3174,7 @@ while (!pq.empty()) {
     using namespace std;
     const int maxn = 1e5 + 2;
     const int inf = 0x3f3f3f3f;</p>
-<pre><code>struct edge {
+<div class="highlight"><pre><span></span><code>struct edge {
     int v, w;
 }; vector&lt;edge&gt; e[maxn];
 
@@ -3149,7 +3210,7 @@ void dijkstra(const int &amp;sz, const int &amp;st) {
     }
 
     for (int i=1; i&lt;=n; ++i) {
-        cout &lt;&lt; dis[i] &lt;&lt; (i == n ? "\n" : " ");
+        cout &lt;&lt; dis[i] &lt;&lt; (i == n ? &quot;\n&quot; : &quot; &quot;);
     }
 }
 
@@ -3169,7 +3230,7 @@ signed main() {
     dijkstra(n, s);
 }
 ```
-</code></pre>
+</code></pre></div>
 
 
 

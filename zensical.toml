@@ -153,3 +153,9 @@ link = "https://x.com/mickymike2023"
 [[project.extra.social]]
 icon = "fontawesome/brands/reddit"
 link = "https://www.reddit.com/user/MickyMike2077"
+
+[project.markdown_extensions.pymdownx.tabbed]
+alternate_style = true
+
+[project.markdown_extensions.pymdownx.highlight]
+linenums_style = "pymdownx-inline"

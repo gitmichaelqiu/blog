@@ -2915,14 +2915,20 @@
 <p><strong>元素:</strong> 小写字母 <span class="arithmatex">\(a, b, c,...\)</span></p>
 <h2 id="_4">写法</h2>
 <h3 id="_5">数集的写法</h3>
-<p>=== "列举法"
-    <span class="arithmatex">\(\mathbb{A} = \\{a, b, c, ..., z\\}\)</span></p>
-<p>=== "描述法"
-    <span class="arithmatex">\(\mathbb{A} = \\{x \mid p(x)\\}\)</span> [^1]</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">列举法</label><label for="__tabbed_1_2">描述法</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><span class="arithmatex">\(\mathbb{A} = \\{a, b, c, ..., z\\}\)</span></p>
+</div>
+<div class="tabbed-block">
+<p><span class="arithmatex">\(\mathbb{A} = \\{x \mid p(x)\\}\)</span> [^1]</p>
+</div>
+</div>
+</div>
 <p>[^1]: 默认 <span class="arithmatex">\(x \in \mathbb{R}\)</span></p>
 <p>???+ note "特殊的集合"
     <span class="arithmatex">\(\mathbb{N}\)</span>: 自然数集</p>
-<pre><code>$\mathbb{N}_+\ or\ \mathbb{N}^*$: 正整数集
+<div class="highlight"><pre><span></span><code>$\mathbb{N}_+\ or\ \mathbb{N}^*$: 正整数集
 
 $\mathbb{Z}$: 整数集
 
@@ -2931,46 +2937,54 @@ $\mathbb{Q}$: 有理数集
 $\mathbb{R}$: 实数集
 
 $\mathbb{C}$: 复数集
-</code></pre>
+</code></pre></div>
 <h3 id="_6">关系的写法</h3>
-<p>=== "元素与集合的关系"
-    属于: <span class="arithmatex">\(a \in \mathbb{A}\)</span></p>
-<pre><code>不属于: $b \notin \mathbb{A}$
-</code></pre>
-<p>=== "集合与集合的关系"
-    子集: $\mathbb{B} \subseteq \mathbb{A}
-    \iff
-    \mathbb{A} \supseteq \mathbb{B}
-    $</p>
-<pre><code>相等: $\mathbb{A} = \mathbb{B}$
-
-真子集: $\mathbb{B} \subsetneqq \mathbb{A}
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">元素与集合的关系</label><label for="__tabbed_2_2">集合与集合的关系</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>属于: <span class="arithmatex">\(a \in \mathbb{A}\)</span></p>
+<p>不属于: <span class="arithmatex">\(b \notin \mathbb{A}\)</span></p>
+</div>
+<div class="tabbed-block">
+<p>子集: $\mathbb{B} \subseteq \mathbb{A}
+\iff
+\mathbb{A} \supseteq \mathbb{B}
+$</p>
+<p>相等: <span class="arithmatex">\(\mathbb{A} = \mathbb{B}\)</span></p>
+<p>真子集: $\mathbb{B} \subsetneqq \mathbb{A}
 \iff
 \mathbb{A} \supsetneqq \mathbb{B}
-$
-</code></pre>
+$</p>
+</div>
+</div>
+</div>
 <h2 id="_7">数集 &amp; 点集</h2>
 <p>数集，表范围: <span class="arithmatex">\(\mathbb{A} = \\{x \mid p(x)\\}\)</span></p>
 <p>点集，表图像: <span class="arithmatex">\(\mathbb{B} = \\{(x, y) \mid y = x^2 \\}\)</span></p>
 <h1 id="_8">集合间的运算及运用</h1>
-<p>=== "交集"
-    <span class="arithmatex">\(\mathbb{A} \cap \mathbb{B} = \\{x \mid x \in \mathbb{A}\ and\ x \in \mathbb{B}\\}\)</span></p>
-<pre><code>即对集合进行 "与 $\land$" 操作
-</code></pre>
-<p>=== "并集"
-    <span class="arithmatex">\(\mathbb{A} \cup \mathbb{B} = \\{x \mid x \in \mathbb{A}\ or\ x \in \mathbb{B}\\}\)</span></p>
-<pre><code>即对集合进行 "或 $\lor$" 操作
-</code></pre>
-<p>=== "补集"
-    <span class="arithmatex">\(\complement_\mathbb{U} \mathbb{A} = \\{x \mid x \in \mathbb{U}\ and\ x \notin \mathbb{A}\\}\)</span></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">交集</label><label for="__tabbed_3_2">并集</label><label for="__tabbed_3_3">补集</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><span class="arithmatex">\(\mathbb{A} \cap \mathbb{B} = \\{x \mid x \in \mathbb{A}\ and\ x \in \mathbb{B}\\}\)</span></p>
+<p>即对集合进行 "与 <span class="arithmatex">\(\land\)</span>" 操作</p>
+</div>
+<div class="tabbed-block">
+<p><span class="arithmatex">\(\mathbb{A} \cup \mathbb{B} = \\{x \mid x \in \mathbb{A}\ or\ x \in \mathbb{B}\\}\)</span></p>
+<p>即对集合进行 "或 <span class="arithmatex">\(\lor\)</span>" 操作</p>
+</div>
+<div class="tabbed-block">
+<p><span class="arithmatex">\(\complement_\mathbb{U} \mathbb{A} = \\{x \mid x \in \mathbb{U}\ and\ x \notin \mathbb{A}\\}\)</span></p>
+</div>
+</div>
+</div>
 <p>???+ tip "运算变形 &amp; 性质"
     === "并集的性质"
         <span class="arithmatex">\(\mathbb{A} \cup \emptyset = \mathbb{A}\)</span></p>
-<pre><code>    $(\mathbb{A} \cup \mathbb{B}) \supseteq \mathbb{A}$
+<div class="highlight"><pre><span></span><code>    $(\mathbb{A} \cup \mathbb{B}) \supseteq \mathbb{A}$
 
     $\mathbb{A} \cup \mathbb{B} \iff \mathbb{B} \subseteq \mathbb{A}$
 
-=== "补集的性质"
+=== &quot;补集的性质&quot;
     $\complement_\mathbb{U} \mathbb{U} = \emptyset$
 
     $\complement_\mathbb{U} \emptyset = \mathbb{U}$
@@ -2980,7 +2994,7 @@ $
     $\mathbb{A} \cup (\complement_\mathbb{U} \mathbb{A}) = \mathbb{U}$
 
     $\mathbb{A} \cap (\complement_\mathbb{U} \mathbb{A}) = \emptyset$
-</code></pre>
+</code></pre></div>
 
 
 

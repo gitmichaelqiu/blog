@@ -29,7 +29,7 @@
     
     
       
-        <title>Sparse table - Michael Qiu's Blog</title>
+        <title>include - Michael Qiu's Blog</title>
       
     
     
@@ -115,6 +115,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#include" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -144,7 +149,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Sparse table
+              include
             
           </span>
         </div>
@@ -1814,6 +1819,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -2817,6 +2824,8 @@
   
   
   
+    
+  
   
 </nav>
                   </div>
@@ -2882,33 +2891,38 @@
   
 
 
-  <h1>Sparse table</h1>
-
 <p>Time Complexity:</p>
 <ul>
 <li>Build: <span class="arithmatex">\(O(n \log n)\)</span></li>
 <li>Query: <span class="arithmatex">\(O(1)\)</span></li>
 </ul>
 <hr />
-<p>=== "Head Files"
-    <code>cpp
-    #include &lt;vector&gt;
-    #include &lt;algorithm&gt;
-    #include &lt;functional&gt;
-    #include &lt;cmath&gt;</code>
-===  "C++ Version"
-    <code>cpp
-    -std=c++11</code></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Head Files</label><label for="__tabbed_1_2">C++ Version</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>```cpp</p>
+<h1 id="include">include <vector></h1>
+<h1 id="include_1">include <algorithm></h1>
+<h1 id="include_2">include <functional></h1>
+<h1 id="include_3">include <cmath></h1>
+<p>```</p>
+</div>
+<div class="tabbed-block">
+<p><code>cpp
+-std=c++11</code></p>
+</div>
+</div>
+</div>
 <p>```cpp title="build log2 table"
 vector<int> _log2;
 void build_log2(int x) {
     if (x &lt; _log2.size()) return;</p>
-<pre><code>_log2.resize(x+1);
+<div class="highlight"><pre><span></span><code>_log2.resize(x+1);
 _log2[1] = 0;
 for (int i=2; i&lt;=x; ++i) {
     _log2[i] = _log2[i &gt;&gt; 1] + 1;
 }
-</code></pre>
+</code></pre></div>
 <p>}
 ```</p>
 <p>```cpp title="sparse_table"
@@ -2923,7 +2937,7 @@ private:
     sparse_table(const vector<Type> &amp;v, func_type _opr = default_func_type) {
         opr = _opr;
         int row = v.size();</p>
-<pre><code>    if (_log2.empty()) { build_log2(row); }
+<div class="highlight"><pre><span></span><code>    if (_log2.empty()) { build_log2(row); }
 
     int col = ceil(_log2[row]) + 1;
 
@@ -2945,7 +2959,7 @@ Type query(int l, int r) {
     int q = floor(_log2[len]);
     return opr(val[l][q], val[r - (1 &lt;&lt; q) + 1][q]);
 }
-</code></pre>
+</code></pre></div>
 <p>};
 ```</p>
 

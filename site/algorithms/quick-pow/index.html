@@ -2897,10 +2897,10 @@
 long long qpow(long long a, const long long &amp;n, const long long &amp;m=1) {
     if (n == 0) return 1;
     else if (n == 1) return a;</p>
-<pre><code>long long tmp = qpow(a, n&gt;&gt;1, m);
+<div class="highlight"><pre><span></span><code>long long tmp = qpow(a, n&gt;&gt;1, m);
 if (n &amp; 1) return tmp * tmp * a % m;
 else return tmp * tmp % m;
-</code></pre>
+</code></pre></div>
 <p>}
 ```</p>
 

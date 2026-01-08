@@ -29,7 +29,7 @@
     
     
       
-        <title>A star - Michael Qiu's Blog</title>
+        <title>include - Michael Qiu's Blog</title>
       
     
     
@@ -149,7 +149,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              A star
+              include
             
           </span>
         </div>
@@ -1342,6 +1342,50 @@
     <span class="md-ellipsis">
       
         Template
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#include" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        include
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#include_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        include
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#include_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        include
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#include_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        include
       
     </span>
   </a>
@@ -2920,6 +2964,50 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#include" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        include
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#include_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        include
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#include_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        include
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#include_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        include
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3004,20 +3092,25 @@
   
 
 
-  <h1>A star</h1>
-
 <h2 id="complexity">Complexity</h2>
 <p>Time Complexity: <span class="arithmatex">\(O((n+m) \log m)\)</span></p>
 <h2 id="template">Template</h2>
-<p>=== "Head Files"
-    <code>cpp
-    #include &lt;vector&gt;
-    #include &lt;queue&gt;
-    #include &lt;utility&gt;
-    #include &lt;algorithm&gt;</code>
-=== "C++ Version"
-    <code>cpp
-    -std=c++11</code></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Head Files</label><label for="__tabbed_1_2">C++ Version</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>```cpp</p>
+<h1 id="include">include <vector></h1>
+<h1 id="include_1">include <queue></h1>
+<h1 id="include_2">include <utility></h1>
+<h1 id="include_3">include <algorithm></h1>
+<p>```</p>
+</div>
+<div class="tabbed-block">
+<p><code>cpp
+-std=c++11</code></p>
+</div>
+</div>
+</div>
 <p><code>cpp title="Constants"
 const int inf = 0x3f;
 const int maxn = 1e4 + 5;</code></p>
@@ -3027,30 +3120,36 @@ struct edge {
 };</p>
 <p>struct node {
     int u, dis;</p>
-<pre><code>bool operator&gt;(const node &amp;x) const {
+<div class="highlight"><pre><span></span><code>bool operator&gt;(const node &amp;x) const {
     return dis &gt; x.dis;
 }
-</code></pre>
+</code></pre></div>
 <p>};</p>
 <p>vector<edge> e[maxn];
 pair<int, int> coord[maxn];
 ```</p>
-<p>=== "Manhattan distance"
-    <code>cpp
-    int heuristic(const pair&lt;int, int&gt; &amp;u, const pair&lt;int, int&gt; &amp;tg) {
-        return abs(u.first - tg.first) + abs(u.second - tg.second);
-    }</code></p>
-<p>=== "Euclidean Distance"
-    <code>cpp
-    int heuristic(const pair&lt;int, int&gt; &amp;u, const pair&lt;int, int&gt; &amp;tg) {
-        return sqrt(pow(u.first - tg.first, 2) + pow(u.second - tg.second, 2)); // Euclidean distance
-    }</code></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Manhattan distance</label><label for="__tabbed_2_2">Euclidean Distance</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><code>cpp
+int heuristic(const pair&lt;int, int&gt; &amp;u, const pair&lt;int, int&gt; &amp;tg) {
+    return abs(u.first - tg.first) + abs(u.second - tg.second);
+}</code></p>
+</div>
+<div class="tabbed-block">
+<p><code>cpp
+int heuristic(const pair&lt;int, int&gt; &amp;u, const pair&lt;int, int&gt; &amp;tg) {
+    return sqrt(pow(u.first - tg.first, 2) + pow(u.second - tg.second, 2)); // Euclidean distance
+}</code></p>
+</div>
+</div>
+</div>
 <p>```cpp title="A*"
 vector<int> a_star(const int &amp;sz, const int &amp;st, const int &amp;tg) {
     vector<int> dis(sz+1, inf);
     vector<int> prev(sz+1, -1);
     priority_queue&lt; node, vector<node>, greater<node> &gt; pq;</p>
-<pre><code>dis[st] = 0;
+<div class="highlight"><pre><span></span><code>dis[st] = 0;
 pq.emplace((node){st, 0});
 
 while (!pq.empty()) {
@@ -3075,7 +3174,7 @@ if (dis[tg] != inf) {
     reverse(path.begin(), path.end());
 }
 return path;
-</code></pre>
+</code></pre></div>
 <p>}
 ```</p>
 
