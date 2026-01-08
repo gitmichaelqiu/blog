@@ -1,3 +1,6 @@
+/* =========================================
+   1. CORE VARIABLES & PALETTE
+   ========================================= */
 :root {
     /* Brand Colors */
     --dr-klein-blue: #002FA7;
@@ -155,9 +158,9 @@ code, kbd, pre {
     margin-bottom: 0.5rem;
 }
 
-/* Hide Repo Source (Explicit Request) */
+/* REPO SOURCE - Re-enabled as requested */
 .md-header__source {
-    display: none !important;
+    display: block;
 }
 
 /* Adjust Main Content Background transparency */
@@ -165,6 +168,10 @@ code, kbd, pre {
     margin-top: 1rem;
 }
 
+/* =========================================
+   5. TOC & SIDEBAR FIXES
+   ========================================= */
+/* Ensure "On this page" / TOC background is transparent */
 .md-sidebar--secondary,
 .md-nav--secondary,
 .md-nav--secondary .md-nav__title {
