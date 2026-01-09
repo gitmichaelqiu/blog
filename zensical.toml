@@ -16,9 +16,9 @@ nav = [
     { Home = [
         { About = "index.md" },
         { "Some Websites" = "some-websites.md" },
-        { Utilities = [
-            { "Discord Spam Spoiler" = "utilities/discord-spam-spoiler.md" }
-        ]}
+        # { Utilities = [
+        #     { "Discord Spam Spoiler" = "utilities/discord-spam-spoiler.md" }
+        # ]}
     ]},
     { "My Projects" = [
         { "My Projects" = "my-projects/my-projects.md" },
