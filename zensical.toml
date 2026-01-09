@@ -90,8 +90,11 @@ nav = [
                 { "Production, Cost and Competition" = "academic-notes/ap/microeconomics/production-cost-and-competition.md" }
             ]}
         ]},
-        { "学考化学" = [
-            { "物质俗名" = "academic-notes/chinese/xuekao/chemistry/material-name.md" }
+        { "体制内" = [
+            { "初中地理" = "academic-notes/chinese/geography.md" },
+            { "学考化学物质俗名" = "academic-notes/chinese/material-name.md" },
+            { "学考抛物运动" = "academic-notes/chinese/projectile-motion.md" },
+            { "学考集合" = "academic-notes/chinese/sets.md" },
         ]}
     ]},
 ]
