@@ -22,16 +22,21 @@ nav = [
     ]},
     { "My Projects" = [
         { "My Projects" = "my-projects/my-projects.md" },
-        { LexiGen = [
+        { "LexiGen" = [
             # { "中文版" = [
             #     { LexiGen = "my-projects/lexigen/lexigen-zh.md" },
             #     { "快捷键" = "my-projects/lexigen/keyboard-shortcuts-zh.md" },
             #     { "自定义提示词" = "my-projects/lexigen/customize-prompts-zh.md" }
             # ]},
-            { LexiGen = "my-projects/lexigen/lexigen.md" },
+            { "LexiGen" = "my-projects/lexigen/lexigen.md" },
             { "Keyboard Shortcuts" = "my-projects/lexigen/keyboard-shortcuts.md" },
             { "Customize Prompts" = "my-projects/lexigen/customize-prompts.md" }
-        ]}
+        ]},
+        { "macOSer Series" = [
+            { "DesktopRenamer" = "https://gitmichaelqiu.github.io/DesktopRenamer" },
+            { "OptClicker" = "https://gitmichaelqiu.github.io/OptClicker" },
+            { "SpaceSwitcher" = "https://gitmichaelqiu.github.io/SpaceSwitcher" },
+        ] }
     ]},
     { Algorithms = [
         { "GCD & LCM" = "algorithms/gcd-lcm.md" },
