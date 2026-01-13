@@ -83,6 +83,11 @@ nav = [
         { Polynomials = "math/polynomials.md" }
     ]},
     { "Academic Notes" = [
+        { "A-Level" = [
+            { Physics = [
+                { "AS Physics" = "academic-notes/a-level/physics/as-physics.md" }
+            ]},
+        ]},
         { AP = [
             { Calculus = [
                 { Limit = "academic-notes/ap/calculus/limit.md" },
