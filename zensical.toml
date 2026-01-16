@@ -34,7 +34,7 @@ nav = [
         ]},
         { "macOSer Series" = [
             { "DesktopRenamer" = "my-projects/desktoprenamer.md" },
-            { "OptClicker" = "https://gitmichaelqiu.github.io/OptClicker" },
+            { "OptClicker" = "my-projects/optclicker.md" },
             { "SpaceSwitcher" = "https://gitmichaelqiu.github.io/SpaceSwitcher" },
         ] }
     ]},
