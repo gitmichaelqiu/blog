@@ -102,9 +102,11 @@ nav = [
         ]},
         { "体制内" = [
             { "初中地理" = "academic-notes/chinese/geography.md" },
-            { "学考化学物质俗名" = "academic-notes/chinese/material-name.md" },
-            { "学考抛物运动" = "academic-notes/chinese/projectile-motion.md" },
-            { "学考集合" = "academic-notes/chinese/sets.md" },
+            { "学考" = [
+                { "化学物质俗名" = "academic-notes/chinese/xuekao/material-name.md" },
+                { "抛物运动" = "academic-notes/chinese/xuekao/projectile-motion.md" },
+                { "集合" = "academic-notes/chinese/xuekao/sets.md" },
+            ]},
         ]}
     ]},
 ]
