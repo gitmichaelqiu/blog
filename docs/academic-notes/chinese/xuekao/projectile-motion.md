@@ -10,49 +10,43 @@ $\Delta v = gt$
 
 水平:
 
-$ \left\{
+$\left\{
 \begin{aligned}
 v_x &= v_0 \\
 x &= v_0 t
 \end{aligned}
-\right.
-$
+\right.$
 
 竖直:
 
-$ \left\{
+$\left\{
 \begin{aligned}
 v_y &= gt \\
 y &= \frac{1}{2} g t^2 \\
 \end{aligned}
-\right.
-$
+\right.$
 
 合成:
 
-$ \left\{
+$\left\{
 \begin{aligned}
 v &= \sqrt{v_x^2 + v_y^2} \\
 x &= \sqrt{x^2 + y^2} \\
 \end{aligned}
-\right.
-$
+\right.$
 
 ## 推论
 
-$
-\because
+$\because
 \left\{
 \begin{aligned}
 \tan{\theta} &= \dfrac{v_y}{v_x} = \dfrac{2y_A}{x_A} \\
 \tan{\alpha} &= \dfrac{y_A}{x_A}
 \end{aligned}
-\right.
-$
+\right.$
 
-$
-\therefore
-\tan{\theta} = 2 \tan{\alpha}
+$\therefore
+\tan{\theta} = 2 \tan{\alpha}$
 
 $\tan{\theta} = 2 \tan{\alpha}$
 
