@@ -78,14 +78,14 @@ nav = [
         { "iostream Acceleration" = "oi-tips/accelerate-ios.md" },
         { "Quick Read & Write" = "oi-tips/qread-and-qwrite.md" }
     ]},
-    { Math = [
-        { Primes = "math/primes.md" },
-        { Polynomials = "math/polynomials.md" }
-    ]},
     { "Academic Notes" = [
         { "A-Level" = [
             { Physics = [
                 { "AS Physics" = "academic-notes/a-level/physics/as-physics.md" }
+            ]},
+            { "Advanced Math" = [
+                { Primes = "academic-notes/a-level/math/primes.md" },
+                { Polynomials = "academic-notes/a-level/math/polynomials.md" }
             ]},
         ]},
         { AP = [
