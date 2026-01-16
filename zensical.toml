@@ -21,7 +21,11 @@ nav = [
         # ]}
     ]},
     { "My Projects" = [
-        { "My Projects" = "my-projects/my-projects.md" },
+        { "macOSer Series" = [
+            { "DesktopRenamer" = "my-projects/desktoprenamer.md" },
+            { "OptClicker" = "my-projects/optclicker.md" },
+            { "SpaceSwitcher" = "my-projects/spaceswitcher.md" },
+        ] },
         { "LexiGen" = [
             # { "中文版" = [
             #     { LexiGen = "my-projects/lexigen/lexigen-zh.md" },
@@ -32,11 +36,7 @@ nav = [
             { "Keyboard Shortcuts" = "my-projects/lexigen/keyboard-shortcuts.md" },
             { "Customize Prompts" = "my-projects/lexigen/customize-prompts.md" }
         ]},
-        { "macOSer Series" = [
-            { "DesktopRenamer" = "my-projects/desktoprenamer.md" },
-            { "OptClicker" = "my-projects/optclicker.md" },
-            { "SpaceSwitcher" = "my-projects/spaceswitcher.md" },
-        ] }
+        { "Other Projects" = "my-projects/other.md" }
     ]},
     { Algorithms = [
         { "GCD & LCM" = "algorithms/gcd-lcm.md" },
