@@ -35,7 +35,7 @@ nav = [
         { "macOSer Series" = [
             { "DesktopRenamer" = "my-projects/desktoprenamer.md" },
             { "OptClicker" = "my-projects/optclicker.md" },
-            { "SpaceSwitcher" = "https://gitmichaelqiu.github.io/SpaceSwitcher" },
+            { "SpaceSwitcher" = "my-projects/spaceswitcher.md" },
         ] }
     ]},
     { Algorithms = [
