@@ -111,6 +111,7 @@ nav = [
                     { "必修一" = "academic-notes/chinese/xuekao/politics-book-1.md" },
                     { "必修二" = "academic-notes/chinese/xuekao/politics-book-2.md" },
                 ]},
+                { "中国古代史" = "academic-notes/chinese/xuekao/history-china.md" },
                 { "化学物质俗名" = "academic-notes/chinese/xuekao/material-name.md" },
                 { "抛物运动" = "academic-notes/chinese/xuekao/projectile-motion.md" },
                 { "集合" = "academic-notes/chinese/xuekao/sets.md" },
