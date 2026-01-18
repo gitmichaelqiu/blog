@@ -104,7 +104,8 @@ nav = [
             { "初中地理" = "academic-notes/chinese/geography.md" },
             { "学考" = [
                 { "生物" = [
-                    { "细胞的分子组成" = "academic-notes/chinese/xuekao/cell-composition.md" }
+                    { "细胞的分子组成" = "academic-notes/chinese/xuekao/cell-composition.md" },
+                    { "细胞的结构" = "academic-notes/chinese/xuekao/cell-structure.md" }
                 ]},
                 { "化学物质俗名" = "academic-notes/chinese/xuekao/material-name.md" },
                 { "抛物运动" = "academic-notes/chinese/xuekao/projectile-motion.md" },
