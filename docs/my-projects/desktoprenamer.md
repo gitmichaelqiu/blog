@@ -7,7 +7,7 @@ comments: true
 # DesktopRenamer
 
 !!! note
-    Scroll at the margin to skip the site.
+    Visit the site [here](https://gitmichaelqiu.github.io/DesktopRenamer). Scroll at the margin to skip the site.
 
 <iframe 
   src="https://gitmichaelqiu.github.io/DesktopRenamer" 
