@@ -107,6 +107,10 @@ nav = [
                     { "细胞的分子组成" = "academic-notes/chinese/xuekao/cell-composition.md" },
                     { "细胞的结构" = "academic-notes/chinese/xuekao/cell-structure.md" }
                 ]},
+                { "政治" = [
+                    { "必修一" = "academic-notes/chinese/xuekao/politics-book-1.md" },
+                    { "必修二" = "academic-notes/chinese/xuekao/politics-book-2.md" },
+                ]},
                 { "化学物质俗名" = "academic-notes/chinese/xuekao/material-name.md" },
                 { "抛物运动" = "academic-notes/chinese/xuekao/projectile-motion.md" },
                 { "集合" = "academic-notes/chinese/xuekao/sets.md" },
