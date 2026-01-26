@@ -8,7 +8,7 @@ comments: true
 
 ![](assets/logo-MK-round-little.svg)
 
-This is a blog site created by **Michael Qiu**.
+This is a blog site created by **Michael Qiu**. Also check out my [portfolio site](https://gitmichaelqiu.github.io/).
 
 ---
 
@@ -46,9 +46,20 @@ This is a blog site created by **Michael Qiu**.
     ```
 
 ## About Me
-Currently an OIer.
+
+A development enthusiat. A student from Hangzhou, China.
+
+Stuff I like:
+
+- Coffee, both Latte and Americano
+- Music, Rock'n'Roll, Alternative and OSTs
+
+  - King Crimson, Pink Floyd, The Beatles, Yes
+  - Cigarettes After S*x, Beachhouse
+  - Blade Runner OST
 
 ## Find Me
-This is my GitHub page: [MichaelQiu](https://github.com/gitmichaelqiu)
 
-This is my Luogu page: [MikePP](https://www.luogu.com.cn/user/1050603)
+- GitHub: [@gitmichaelqiu](https://github.com/gitmichaelqiu)
+- Kaggle: [@michaelqiu0606](https://www.kaggle.com/michaelqiu0606)
+- Luogu: [@MikePP](https://www.luogu.com.cn/user/1050603)
