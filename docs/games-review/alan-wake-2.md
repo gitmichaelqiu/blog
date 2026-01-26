@@ -156,3 +156,5 @@ The most issues with Alan Wake 2 except minor bugs come from external factors, i
 ***"Show me the champion of light"***
 
 ***"I'll show you the herald of darkness"***
+
+[TGA Herald of Darkness performance](https://youtu.be/yQ9Ydz7jo6I?si=v6c8Cghm3G3PG6i_)
