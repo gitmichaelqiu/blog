@@ -143,7 +143,7 @@ If you really dislike the jumpscares, you can download [SilverEzredes's Jumpscar
 
 Speaking of the story itself, though the story telling skills are extraordinary, I feel like the plots are sort of too "bland". How the story is conveyed is innovative but the story itself does not impress me, but it is more of a classic supernatural one, not "profound" and "thought-provoking" enough. I have to admit such requirement is too strict for a game, but we have already had games such as Detroit and Red Dead Redemption 2, so wish Remedy can make breakthroughs in the future.
 
-## Other
+## Others
 
 To be honest, I don't like Epic Launcher. There is minimal social features and the interaction logic is broken. Kinda funny that I attach "Steam Review Template" at the top. Were the game released on Steam, the sales could have been much higher, though it is not possible because Epic is the publisher of the game.
 
