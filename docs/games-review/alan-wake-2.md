@@ -1,7 +1,5 @@
 ---
 comments: true
-hide:
-  - toc
 ---
 
 # Alan Wake 2
