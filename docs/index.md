@@ -2,7 +2,9 @@
 comments: true
 ---
 
-# 👋 Welcome
+# Home
+
+## 👋 Welcome
 
 ![](assets/logo-MK-round-little.svg)
 

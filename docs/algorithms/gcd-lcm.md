@@ -2,6 +2,8 @@
 comments: true
 ---
 
+# GCD & LCM
+
 ## STL
 
 [cppreference](https://en.cppreference.com/w/cpp/numeric/gcd)
