@@ -57,26 +57,26 @@ nav = [
             { "Bubble Sort" = "algorithms/sort/bubble-sort.md" },
             { "Radix Sort" = "algorithms/sort/radix-sort.md" }
         ]},
-        { "Quick Pow" = "algorithms/quick-pow.md" }
-    ]},
-    { "Data Structures" = [
-        # { Bignum = "data-structures/bignum.md" },
-        { "Binary Heap" = "data-structures/binary-heap.md" },
-        { "Disjoint Set Union" = "data-structures/disjoint-set-union.md" },
+        { "Quick Pow" = "algorithms/quick-pow.md" },
+        { "Data Structures" = [
+            # { Bignum = "data-structures/bignum.md" },
+            { "Binary Heap" = "data-structures/binary-heap.md" },
+            { "Disjoint Set Union" = "data-structures/disjoint-set-union.md" },
 
-        { "Sparse Table" = "data-structures/sparse-table.md" },
-        { Stack = "data-structures/stack.md" },
-        { Tree = [
-            { "Binary Tree Traversals" = "data-structures/tree/binary-tree-traversals.md" },
-            { "Segment Tree" = "data-structures/segment-tree.md" },
-        ]}
-    ]},
-    { "OI Tips" = [
-        { "Elapsed Time Measurement" = "oi-tips/elapsed-time.md" },
-        { "File Read & Write" = "oi-tips/file-read-and-write.md" },
-        { "GCC Optimize" = "oi-tips/gcc-optimize.md" },
-        { "iostream Acceleration" = "oi-tips/accelerate-ios.md" },
-        { "Quick Read & Write" = "oi-tips/qread-and-qwrite.md" }
+            { "Sparse Table" = "data-structures/sparse-table.md" },
+            { Stack = "data-structures/stack.md" },
+            { Tree = [
+                { "Binary Tree Traversals" = "data-structures/tree/binary-tree-traversals.md" },
+                { "Segment Tree" = "data-structures/segment-tree.md" },
+            ]}
+        ]},
+        { "OI Tips" = [
+            { "Elapsed Time Measurement" = "oi-tips/elapsed-time.md" },
+            { "File Read & Write" = "oi-tips/file-read-and-write.md" },
+            { "GCC Optimize" = "oi-tips/gcc-optimize.md" },
+            { "iostream Acceleration" = "oi-tips/accelerate-ios.md" },
+            { "Quick Read & Write" = "oi-tips/qread-and-qwrite.md" }
+        ]},
     ]},
     { "Academic Notes" = [
         { "A-Level" = [
