@@ -139,9 +139,11 @@ Compared to Alan Wake 1, less fightings are present and the stress is on story-t
 
 ## Story
 
-Compared to games like PT (I haven't played much horror games at the time this review is written), Alan Wake 2 is more like a thrilling game instead of "horror". It will not be too horrifying if you have played other horror games before. Some reviews say the jumpscare is too much, but I will say it is fine. Though I have to admit jumpscare is a low-level way of "shocking" players, Alan Wake 2 has made it more than a tool to scare but a crucial part to push the story-telling. The faces in the jumpscare are inherently the nightmare devils of the heros.
+Compared to games like PT (I haven't played much horror games at the time this review is written), Alan Wake 2 is more like a thrilling game instead of "horror". It will not be too horrifying if you have played other horror games before. Some reviews say the jumpscare is too much, but I will say it is fine. Though I have to admit jumpscare is a low-level way of "shocking" players, Alan Wake 2 has made it more than a tool to scare but a crucial part to push the plots. The faces in the jumpscare are inherently the nightmare devils of the heros.
 
 If you really dislike the jumpscares, you can download [SilverEzredes's Jumpscare remover](https://www.nexusmods.com/alanwake2/mods/20).
+
+Speaking of the story itself, though the story telling skills are extraordinary, I feel like the plots are sort of too "bland". How the story is conveyed is innovative but the story itself does not impress me, but it is more of a classic supernatural one, not "profound" and "thought-provoking" enough. I have to admit such requirement is too strict for a game, but we have already had games such as Detroit and Red Dead Redemption 2, so wish Remedy can make breakthroughs in the future.
 
 ## Other
 
