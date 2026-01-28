@@ -121,8 +121,8 @@ nav = [
             { "学考集合" = "academic-notes/chinese/sets.md" },
         ]},
     ]},
-    { "Games Review" = [
-        { "Alan Wake 2" = "games-review/alan-wake-2.md" }
+    { "Games Reviews" = [
+        { "Alan Wake 2" = "games-reviews/alan-wake-2.md" }
     ]}
 ]
 
