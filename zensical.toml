@@ -106,25 +106,25 @@ nav = [
             ] },
             { Statistics = [
                 { "Unit 1: Exploring One-Variable Data" = [
-                    { "Summary Statistics" = "academic-notes/ap/statistics/u1/summary-statistics.md" },
-                    { "Graphical Representations" = "academic-notes/ap/statistics/u1/graphical-representations.md" },
-                    { "The Normal Distribution" = "academic-notes/ap/statistics/u1/the-normal-distribution.md" },
+                    { "1. Summary Statistics" = "academic-notes/ap/statistics/u1/summary-statistics.md" },
+                    { "2. Graphical Representations" = "academic-notes/ap/statistics/u1/graphical-representations.md" },
+                    { "3. The Normal Distribution" = "academic-notes/ap/statistics/u1/the-normal-distribution.md" },
                 ] },
                 { "Unit 2: Exploring Two-Variable Data" = [
-                    { "Tables & Graphs" = "academic-notes/ap/statistics/u2/tables-and-graphs.md" },
-                    { "Scatterplots & Regression" = "academic-notes/ap/statistics/u2/scatterplots-and-regression.md" },
-                    { "Experimental Design" = "academic-notes/ap/statistics/u2/experimental-design.md" },
+                    { "1. Tables & Graphs" = "academic-notes/ap/statistics/u2/tables-and-graphs.md" },
+                    { "2. Scatterplots & Regression" = "academic-notes/ap/statistics/u2/scatterplots-and-regression.md" },
+                    { "3. Experimental Design" = "academic-notes/ap/statistics/u2/experimental-design.md" },
                 ] },
                 { "Unit 3: Collecting Data" = [
-                    { "Sampling Methods & Bias" = "academic-notes/ap/statistics/u3/sampling-methods-and-bias.md" },
-                    { "Experimental Design" = "academic-notes/ap/statistics/u3/experimental-design.md" },
+                    { "1. Sampling Methods & Bias" = "academic-notes/ap/statistics/u3/sampling-methods-and-bias.md" },
+                    { "2. Experimental Design" = "academic-notes/ap/statistics/u3/experimental-design.md" },
                 ] },
                 { "Unit 4: Probability, Random Variables, and Probability Distributions" = [
-                    { "Discrete Random Variables" = "academic-notes/ap/statistics/u4/discrete-random-variables.md" },
-                    { "Binomial & Geometric Distributions" = "academic-notes/ap/statistics/u4/binomial-geometric-distributions.md" },
+                    { "1. Discrete Random Variables" = "academic-notes/ap/statistics/u4/discrete-random-variables.md" },
+                    { "2. Binomial & Geometric Distributions" = "academic-notes/ap/statistics/u4/binomial-geometric-distributions.md" },
                 ] },
                 { "Unit 5: Sampling Distributions" = [
-                    { "Sampling Distributions" = "academic-notes/ap/statistics/u5/sampling-distributions.md" },
+                    { "1. Sampling Distributions" = "academic-notes/ap/statistics/u5/sampling-distributions.md" },
                 ] },
             ] },
         ] },
