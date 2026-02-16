@@ -147,6 +147,7 @@ nav = [
     ] },
     { "Games Reviews" = [
         { "Alan Wake 2" = "games-reviews/alan-wake-2.md" },
+        { "Red Dead Redemption 2" = "games-reviews/red-dead-redemption-2.md" },
     ] },
 ] # Navigation
 
