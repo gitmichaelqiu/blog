@@ -10,7 +10,6 @@ repo = "fontawesome/brands/git-alt"
 
 copyright = "Copyright &copy; 2026 Michael Y. Qiu"
 
-# Navigation
 nav = [
     { "Portfolio" = "https://gitmichaelqiu.github.io" },
     { Home = [
@@ -81,6 +80,7 @@ nav = [
     { "Academic Notes" = [
         { "A-Level" = [
             { Physics = [
+                { "Copyright Claim" = "academic-notes/a-level/physics/copyright.md" },
                 { "AS Physics" = "academic-notes/a-level/physics/as-physics.md" },
             ] },
             { Chemistry = [
@@ -105,6 +105,7 @@ nav = [
                 { "Production, Cost and Competition" = "academic-notes/ap/microeconomics/production-cost-and-competition.md" },
             ] },
             { Statistics = [
+                { "Copyright Claim" = "academic-notes/ap/statistics/copyright.md" },
                 { "Unit 1: Exploring One-Variable Data" = [
                     { "1. Summary Statistics" = "academic-notes/ap/statistics/u1/summary-statistics.md" },
                     { "2. Graphical Representations" = "academic-notes/ap/statistics/u1/graphical-representations.md" },
@@ -147,7 +148,7 @@ nav = [
     { "Games Reviews" = [
         { "Alan Wake 2" = "games-reviews/alan-wake-2.md" },
     ] },
-]
+] # Navigation
 
 extra_javascript = [
     "javascripts/katex.js",
