@@ -38,9 +38,9 @@ nav = [
         { "Other Projects" = "my-projects/other.md" },
     ] },
     { Algorithms = [
-        { "GCD & LCM" = "algorithms/gcd-lcm.md" },
-        { Prime = [
-            { "Euler Sieve" = "algorithms/prime/euler-sieve.md" },
+        { "Number Theory" = [
+            { "GCD & LCM" = "algorithms/number-theory/gcd-lcm.md" },
+            { "Euler Sieve" = "algorithms/number-theory/euler-sieve.md" },
         ] },
         { Search = [
             { "A*" = "algorithms/search/a-star.md" },
