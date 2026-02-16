@@ -172,6 +172,7 @@ features = [
     "navigation.path",
     "navigation.footer",
     "content.code.copy",
+    "navigation.top",
 ]
 custom_dir = "overrides"
 
@@ -179,7 +180,6 @@ custom_dir = "overrides"
 media = "(prefers-color-scheme)"
 toggle.icon = "lucide/monitor"
 toggle.name = "Switch to light mode"
-# You can add the colors here if you want them to apply to this mode:
 primary = "indigo"
 accent = "indigo"
 
