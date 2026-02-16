@@ -58,7 +58,7 @@ nav = [
         ] },
         { "Quick Pow" = "algorithms/quick-pow.md" },
         { "Data Structures" = [
-            # { Bignum = "data-structures/bignum.md" },
+            { Bignum = "data-structures/bignum.md" },
             { "Binary Heap" = "data-structures/binary-heap.md" },
             { "Disjoint Set Union" = "data-structures/disjoint-set-union.md" },
 
