@@ -80,8 +80,8 @@ nav = [
     { "Academic Notes" = [
         { "A-Level" = [
             { Physics = [
-                { "Copyright Claim" = "academic-notes/a-level/physics/copyright.md" },
                 { "AS Physics" = "academic-notes/a-level/physics/as-physics.md" },
+                { "Copyright Claim" = "academic-notes/a-level/physics/copyright.md" },
             ] },
             { Chemistry = [
                 { "Bonding & Structures" = "academic-notes/a-level/chemistry/bonding-and-structures.md" },
@@ -105,7 +105,6 @@ nav = [
                 { "Production, Cost and Competition" = "academic-notes/ap/microeconomics/production-cost-and-competition.md" },
             ] },
             { Statistics = [
-                { "Copyright Claim" = "academic-notes/ap/statistics/copyright.md" },
                 { "Unit 1: Exploring One-Variable Data" = [
                     { "1. Summary Statistics" = "academic-notes/ap/statistics/u1/summary-statistics.md" },
                     { "2. Graphical Representations" = "academic-notes/ap/statistics/u1/graphical-representations.md" },
@@ -127,6 +126,7 @@ nav = [
                 { "Unit 5: Sampling Distributions" = [
                     { "1. Sampling Distributions" = "academic-notes/ap/statistics/u5/sampling-distributions.md" },
                 ] },
+                { "Copyright Claim" = "academic-notes/ap/statistics/copyright.md" },
             ] },
         ] },
         { "体制内" = [
