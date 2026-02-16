@@ -15,9 +15,6 @@ nav = [
     { Home = [
         { About = "index.md" },
         { "Some Websites" = "some-websites.md" },
-        # { Utilities = [
-        #     { "Discord Spam Spoiler" = "utilities/discord-spam-spoiler.md" }
-        # ]}
     ] },
     { "My Projects" = [
         { "macOSer Series" = [
@@ -34,6 +31,9 @@ nav = [
             { "LexiGen" = "my-projects/lexigen.md" },
             { "Keyboard Shortcuts" = "my-projects/lexigen/keyboard-shortcuts.md" },
             { "Customize Prompts" = "my-projects/lexigen/customize-prompts.md" },
+        ] },
+        { Utilities = [
+            { "Discord Spam Spoiler" = "utilities/discord-spam-spoiler.md" },
         ] },
         { "Other Projects" = "my-projects/other.md" },
     ] },
@@ -149,7 +149,7 @@ nav = [
         { "Alan Wake 2" = "games-reviews/alan-wake-2.md" },
         { "Red Dead Redemption 2" = "games-reviews/red-dead-redemption-2.md" },
     ] },
-] # Navigation
+]
 
 extra_javascript = [
     "javascripts/katex.js",
