@@ -106,25 +106,25 @@ nav = [
             ]},
             { Statistics = [
                 { "Unit 1: Exploring One-Variable Data" = [
-                    { "Summary Statistics" = "academic-notes/ap/statistics/U1_ExploringOneVariableData/U1C1_SummaryStatistics.md" },
-                    { "Graphical Representations" = "academic-notes/ap/statistics/U1_ExploringOneVariableData/U1C2_GraphicalRepresentations.md" },
-                    { "The Normal Distribution" = "academic-notes/ap/statistics/U1_ExploringOneVariableData/U1C3_TheNormalDistribution.md" }
+                    { "Summary Statistics" = "academic-notes/ap/statistics/exploring-one-variable-data/summary-statistics.md" },
+                    { "Graphical Representations" = "academic-notes/ap/statistics/exploring-one-variable-data/graphical-representations.md" },
+                    { "The Normal Distribution" = "academic-notes/ap/statistics/exploring-one-variable-data/the-normal-distribution.md" }
                 ]},
                 { "Unit 2: Exploring Two-Variable Data" = [
-                    { "Tables & Graphs" = "academic-notes/ap/statistics/U2_ExploringTwoVariableData/U2C1_Tables-Graphs.md" },
-                    { "Scatterplots & Regression" = "academic-notes/ap/statistics/U2_ExploringTwoVariableData/U2C2_Scatterplots-Regression.md" },
-                    { "Experimental Design" = "academic-notes/ap/statistics/U2_ExploringTwoVariableData/U2C3_ExperimentalDesign.md" }
+                    { "Tables & Graphs" = "academic-notes/ap/statistics/exploring-two-variable-data/tables-and-graphs.md" },
+                    { "Scatterplots & Regression" = "academic-notes/ap/statistics/exploring-two-variable-data/scatterplots-and-regression.md" },
+                    { "Experimental Design" = "academic-notes/ap/statistics/exploring-two-variable-data/experimental-design.md" }
                 ]},
                 { "Unit 3: Collecting Data" = [
-                    { "Sampling Methods & Bias" = "academic-notes/ap/statistics/U3_CollectingData/U3C1_SamplingMethods-Bias.md" },
-                    { "Experimental Design" = "academic-notes/ap/statistics/U3_CollectingData/U3C2_ExperimentalDesign.md" }
+                    { "Sampling Methods & Bias" = "academic-notes/ap/statistics/collecting-data/sampling-methods-and-bias.md" },
+                    { "Experimental Design" = "academic-notes/ap/statistics/collecting-data/experimental-design.md" }
                 ]},
                 { "Unit 4: Probability, Random Variables, and Probability Distributions" = [
-                    { "Discrete Random Variables" = "academic-notes/ap/statistics/U4_Probability-RandomVariables-ProbabilityDistributions/U4C2_DiscreteRandomVariables.md" },
-                    { "Binomial & Geometric Distributions" = "academic-notes/ap/statistics/U4_Probability-RandomVariables-ProbabilityDistributions/U4C3_Bionomial-GeometricDistributions.md" }
+                    { "Discrete Random Variables" = "academic-notes/ap/statistics/probability-random-variables-probability-distributions/discrete-random-variables.md" },
+                    { "Binomial & Geometric Distributions" = "academic-notes/ap/statistics/probability-random-variables-probability-distributions/binomial-geometric-distributions.md" }
                 ]},
                 { "Unit 5: Sampling Distributions" = [
-                    { "Sampling Distributions" = "academic-notes/ap/statistics/U5_SamplingDistributions/U5_SamplingDistributions.md" }
+                    { "Sampling Distributions" = "academic-notes/ap/statistics/sampling-distributions/sampling-distributions.md" }
                 ]}
             ]},
         ]},
