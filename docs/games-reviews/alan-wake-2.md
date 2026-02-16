@@ -135,6 +135,8 @@ The boss fights are actually better than I assume, because they are generic in C
 
 Compared to Alan Wake 1, less fightings are present and the stress is on story-tellling, which is always the shining point of Remedy Games. Alan Wake 2 has gone beyond the limit of games and is standinig at the edge between a game and a movie. Especially the musical play chapter completely refreshes my definition of a game. If you enjoy Ashtray Maze in Control, you will find even more fun at that chapter.
 
+However, it is easy to lose your direction in the game, especially in the Coffee World theme park. The instructions are vague so I had to find guides online to find out where to go.
+
 ## Story
 
 Compared to games like PT (I haven't played much horror games at the time this review is written), Alan Wake 2 is more like a thrilling game instead of "horror". It will not be too horrifying if you have played other horror games before. Some reviews say the jumpscare is too much, but I will say it is fine. Though I have to admit jumpscare is a low-level way of "shocking" players, Alan Wake 2 has made it more than a tool to scare but a crucial part to push the plots. The faces in the jumpscare are inherently the nightmare devils of the heros.
@@ -149,7 +151,7 @@ To be honest, I don't like Epic Launcher. There is minimal social features and t
 
 Since the discount is really great after years, buy the game when it is on sale.
 
-## Conclusion: 10/10
+## Conclusion: 9/10
 
 The most issues with Alan Wake 2 except minor bugs come from external factors, including hardware configuration and the launcher. If you like story-telling games and enjoy the cinematic scenes, Alan Wake 2 is your choice.
 
