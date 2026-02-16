@@ -32,10 +32,10 @@ nav = [
             { "Keyboard Shortcuts" = "my-projects/lexigen/keyboard-shortcuts.md" },
             { "Customize Prompts" = "my-projects/lexigen/customize-prompts.md" },
         ] },
-        { Utilities = [
-            { "Discord Spam Spoiler" = "utilities/discord-spam-spoiler.md" },
+        { "Other Projects" = [
+            { "Discord Spam Spoiler" = "my-projects/other-projects/discord-spam-spoiler.md" },
+            { "Other Projects" = "my-projects/other-projects/other.md" },
         ] },
-        { "Other Projects" = "my-projects/other.md" },
     ] },
     { Algorithms = [
         { "Number Theory" = [
