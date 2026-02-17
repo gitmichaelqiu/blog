@@ -1,3 +1,8 @@
+---
+comments: true
+---
+
+
 [Standalone Webpage with the Copy Function](https://gitmichaelqiu.github.io/Discord-Spoiler-Generator/)
 
 <div class="text-transformer-container">
