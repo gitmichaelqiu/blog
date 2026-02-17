@@ -47,7 +47,7 @@ nav = [
         ] },
         { "Shortest Path" = [
             { "Bellman Ford" = "algorithms/shortest-path/bellman-ford.md" },
-            { "Dijkstra (prioirty_queue)" = "algorithms/shortest-path/dijkstra.md" },
+            { "Dijkstra" = "algorithms/shortest-path/dijkstra.md" },
             { Floyd = "algorithms/shortest-path/floyd.md" },
             { SPFA = "algorithms/shortest-path/spfa.md" },
         ] },
