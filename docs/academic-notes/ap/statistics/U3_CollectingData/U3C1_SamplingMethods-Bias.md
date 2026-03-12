@@ -1,9 +1,3 @@
----
-comments: true
----
-
-# Sampling Methods & Bias
-
 ## Introduction to Sampling
 
 > A **population** is the set of all the possible elements that could be studied

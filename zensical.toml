@@ -126,6 +126,9 @@ nav = [
                 { "Unit 5: Sampling Distributions" = [
                     { "1. Sampling Distributions" = "academic-notes/ap/statistics/u5/sampling-distributions.md" },
                 ] },
+                { "Unit 6: Inference for Categorical Data: Proportions" = [
+
+                ] },
                 { "Copyright Claim" = "academic-notes/ap/statistics/copyright.md" },
             ] },
         ] },

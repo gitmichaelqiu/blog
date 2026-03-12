@@ -1,9 +1,3 @@
----
-comments: true
----
-
-# Binomial & Geometric Distributions
-
 ## Binomial Distributions
 
 > Counts the number of success

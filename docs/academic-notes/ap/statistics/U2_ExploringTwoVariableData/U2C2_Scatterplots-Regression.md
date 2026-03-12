@@ -1,9 +1,3 @@
----
-comments: true
----
-
-# Scatterplots & Regression
-
 ## Explanatory & Response Variables
 
 ### Bivariate Data

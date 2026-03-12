@@ -1,9 +1,3 @@
----
-comments: true
----
-
-# Summary Statistics
-
 ## Definitions
 
 ### Parameters & Statistics

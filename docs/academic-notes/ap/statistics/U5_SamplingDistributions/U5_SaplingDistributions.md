@@ -1,9 +1,3 @@
----
-comments: true
----
-
-# Sampling Distributions
-
 ## Sampling Distributions for Sample Means
 
 > Take all possible samples of size $n$ from a population and calculate the sample mean $\overline{x}$  for each, all possible values of the sample mean are calculated

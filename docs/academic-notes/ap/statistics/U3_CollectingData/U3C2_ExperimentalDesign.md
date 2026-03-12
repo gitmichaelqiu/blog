@@ -1,9 +1,3 @@
----
-comments: true
----
-
-# Experimental Design (Unit 3)
-
 ## Introduction to Experiments
 
 ### Experiments
