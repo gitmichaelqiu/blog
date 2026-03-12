@@ -105,6 +105,9 @@ nav = [
                 { "Production, Cost and Competition" = "academic-notes/ap/microeconomics/production-cost-and-competition.md" },
             ] },
             { Statistics = [
+                { "Summaries" = [
+                    { "Hypothesis Test & Confidence Interval" = "academic-notes/ap/statistics/summaries/hypothesis-test-and-confidence-interval.md" },
+                ] },
                 { "Unit 1: Exploring One-Variable Data" = [
                     { "1. Summary Statistics" = "academic-notes/ap/statistics/u1/summary-statistics.md" },
                     { "2. Graphical Representations" = "academic-notes/ap/statistics/u1/graphical-representations.md" },
@@ -140,9 +143,6 @@ nav = [
                 ] },
                 { "Unit 9: Inference for Quantitative Data: Slopes" = [
                     { "1. Inference for Regression Slopes" = "academic-notes/ap/statistics/u9/inference-for-regression-slopes.md" },
-                ] },
-                { "Summaries" = [
-                    { "Hypothesis Test & Confidence Interval" = "academic-notes/ap/statistics/summaries/hypothesis-test-and-confidence-interval.md" },
                 ] },
                 { "Copyright Claim" = "academic-notes/ap/statistics/copyright.md" },
             ] },
