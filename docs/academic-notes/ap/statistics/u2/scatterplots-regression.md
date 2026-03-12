@@ -1,3 +1,5 @@
+# Scatterplots Regression
+
 ## Explanatory & Response Variables
 
 ### Bivariate Data

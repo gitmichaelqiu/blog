@@ -1,3 +1,5 @@
+# Tables Graphs
+
 ## Two-Way Tables & Relative Frequencies
 
 ![](https://cdn.savemyexams.com/cdn-cgi/image/f=auto,width=2048/https://cdn.savemyexams.com/uploads/2024/09/50640_frequency-two-way-table.png)

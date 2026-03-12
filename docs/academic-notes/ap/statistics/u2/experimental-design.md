@@ -1,3 +1,5 @@
+# Experimental Design
+
 ## Introduction to Experiments
 
 > > *If 10 swimmers from a club are given a new type of swim cap to see if it improves the time it takes to swim one lap*

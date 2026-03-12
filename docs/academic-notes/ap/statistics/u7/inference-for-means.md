@@ -1,3 +1,5 @@
+# Inference for Means
+
 ## t-Distribution
 
 ### What Is t-Distribution

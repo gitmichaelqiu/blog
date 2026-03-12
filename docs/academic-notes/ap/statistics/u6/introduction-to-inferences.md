@@ -1,3 +1,5 @@
+# Introduction to Inferences
+
 ## Tails on A Normal Distribution
 
 > The regions on the extreme left or right sides

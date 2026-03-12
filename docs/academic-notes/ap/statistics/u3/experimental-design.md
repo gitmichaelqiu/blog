@@ -1,3 +1,5 @@
+# Experimental Design
+
 ## Introduction to Experiments
 
 ### Experiments

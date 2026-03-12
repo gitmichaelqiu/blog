@@ -1,3 +1,5 @@
+# Binomial and Geometric Distributions
+
 ## Binomial Distributions
 
 > Counts the number of success

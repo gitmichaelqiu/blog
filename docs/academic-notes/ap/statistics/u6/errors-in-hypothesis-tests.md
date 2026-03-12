@@ -1,3 +1,5 @@
+# Errors in Hypothesis Tests
+
 ## Type I & Type II Errors
 
 | Reality\\Conclusion | Reject   | Not reject |

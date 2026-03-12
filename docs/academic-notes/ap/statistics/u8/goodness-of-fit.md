@@ -1,3 +1,5 @@
+# Goodness of Fit
+
 ## Chi-Square Distributions
 
 > A continuous probability distribution of the sum of the squares of $k$ independent variables

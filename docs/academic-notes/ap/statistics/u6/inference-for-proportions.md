@@ -1,3 +1,5 @@
+# Inference for Proportions
+
 ## One-Sample z-test for Population Proportion
 
 ### z-test for Population Proportion

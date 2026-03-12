@@ -1,3 +1,5 @@
+# Inference for Regression Slopes
+
 ## Sampling Distributions for Sample Slopes
 
 ### Population Least-Squares Regression Line

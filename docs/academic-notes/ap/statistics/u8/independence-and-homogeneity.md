@@ -1,3 +1,5 @@
+# Independence and Homogeneity
+
 ## Test for Independence
 
 > Contingency table: 2-way table

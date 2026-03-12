@@ -1,3 +1,5 @@
+# The Normal Distribution
+
 ### Properties of Normal Distributions
 
 ### Empirical Rules

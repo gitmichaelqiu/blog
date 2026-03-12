@@ -1,3 +1,5 @@
+# Discrete Random Variables
+
 ## Discrete Random Variables
 
 > A random variable with a countable number of values

@@ -111,23 +111,38 @@ nav = [
                     { "3. The Normal Distribution" = "academic-notes/ap/statistics/u1/the-normal-distribution.md" },
                 ] },
                 { "Unit 2: Exploring Two-Variable Data" = [
-                    { "1. Tables & Graphs" = "academic-notes/ap/statistics/u2/tables-and-graphs.md" },
-                    { "2. Scatterplots & Regression" = "academic-notes/ap/statistics/u2/scatterplots-and-regression.md" },
+                    { "1. Tables & Graphs" = "academic-notes/ap/statistics/u2/tables-graphs.md" },
+                    { "2. Scatterplots & Regression" = "academic-notes/ap/statistics/u2/scatterplots-regression.md" },
                     { "3. Experimental Design" = "academic-notes/ap/statistics/u2/experimental-design.md" },
                 ] },
                 { "Unit 3: Collecting Data" = [
-                    { "1. Sampling Methods & Bias" = "academic-notes/ap/statistics/u3/sampling-methods-and-bias.md" },
+                    { "1. Sampling Methods & Bias" = "academic-notes/ap/statistics/u3/sampling-methods-bias.md" },
                     { "2. Experimental Design" = "academic-notes/ap/statistics/u3/experimental-design.md" },
                 ] },
                 { "Unit 4: Probability, Random Variables, and Probability Distributions" = [
                     { "1. Discrete Random Variables" = "academic-notes/ap/statistics/u4/discrete-random-variables.md" },
-                    { "2. Binomial & Geometric Distributions" = "academic-notes/ap/statistics/u4/binomial-geometric-distributions.md" },
+                    { "2. Binomial & Geometric Distributions" = "academic-notes/ap/statistics/u4/binomial-and-geometric-distributions.md" },
                 ] },
                 { "Unit 5: Sampling Distributions" = [
                     { "1. Sampling Distributions" = "academic-notes/ap/statistics/u5/sampling-distributions.md" },
                 ] },
                 { "Unit 6: Inference for Categorical Data: Proportions" = [
-
+                    { "1. Introduction to Inferences" = "academic-notes/ap/statistics/u6/introduction-to-inferences.md" },
+                    { "2. Inference for Proportions" = "academic-notes/ap/statistics/u6/inference-for-proportions.md" },
+                    { "3. Errors in Hypothesis Tests" = "academic-notes/ap/statistics/u6/errors-in-hypothesis-tests.md" },
+                ] },
+                { "Unit 7: Inference for Quantitative Data: Means" = [
+                    { "1. Inference for Means" = "academic-notes/ap/statistics/u7/inference-for-means.md" },
+                ] },
+                { "Unit 8: Inference for Categorical Data: Chi-Square" = [
+                    { "1. Goodness of Fit" = "academic-notes/ap/statistics/u8/goodness-of-fit.md" },
+                    { "2. Independence and Homogeneity" = "academic-notes/ap/statistics/u8/independence-and-homogeneity.md" },
+                ] },
+                { "Unit 9: Inference for Quantitative Data: Slopes" = [
+                    { "1. Inference for Regression Slopes" = "academic-notes/ap/statistics/u9/inference-for-regression-slopes.md" },
+                ] },
+                { "Summaries" = [
+                    { "Hypothesis Test & Confidence Interval" = "academic-notes/ap/statistics/summaries/hypothesis-test-and-confidence-interval.md" },
                 ] },
                 { "Copyright Claim" = "academic-notes/ap/statistics/copyright.md" },
             ] },
