@@ -1,5 +1,3 @@
-# AS Physics
-
 ## Practical Equipment
 
 | Apparatus              | Resolution |
@@ -76,7 +74,7 @@ $F = \rho g V$
 
 ### The Principle of Conservation of Energy
 
-> Energy cannot be created or destroyed, it can only transferred from one energy store to another
+> Energy cannot be created or destroyed, it can only be transferred from one energy store to another
 
 ### Gravitational Energy
 
@@ -258,9 +256,13 @@ $\lambda = \dfrac{ax}D$
 
 ### The Diffraction Grating
 
-$d \sin(\theta) = n \lambda$
+- Use monochromatic light: one wavelength
+- From a laser to ensure that the light beams are coherent
+- Better than Young's double slit
 
-- $d$: spacing between adjacent silts
+$a \sin(\theta) = n \lambda$
+
+- $a$: spacing between adjacent silts
 - $\theta$: angular separation between the order of maxima
 - $n \in \mathbb{N}$: order or maxima
 - $\lambda$: wavelength of source
@@ -272,3 +274,41 @@ To calculate the orders of maxima, $\theta = 90^\circ, \sin(\theta) = 1$
 Diffraction gratings come in different sizes measured by lines/m, represented by $N$
 
 $d = \dfrac1N$
+
+## Atomic Structure and Particle Physics
+
+### Nuclear Force
+
+> **Strong Nuclear Force**: A fundamental force that acts between particles such as protons and neutrons, but which does not affect particles like electrons
+
+### Radiation
+
+| Radiation | Nature              | Charge | Penetrating ability in air | Affected by magnetic fields |
+| --------- | ------------------- | ------ | -------------------------- | --------------------------- |
+| $\alpha$  | $^4_2He^{2+}$       | $+2e$  | 6cm                        | a little                    |
+| $\beta^-$ | electron            | $-1e$  | 2m                         | a lot                       |
+| $\beta^+$ | positron            | $+1e$  | 2m                         | a lot                       |
+| $\gamma$  | electromagnetic ray | $0$    | never completely stop      | none                        |
+
+- $\alpha: ^A_Z X \rightarrow ^{A-4}_{Z-2}Y + ^4_2 \alpha$
+- $\beta^-: n \rightarrow p + ^0_{-1}\beta^- + \overline{v_e}$
+- $\beta^+: p \rightarrow n + ^0_{+1}\beta^+ + v_e$
+
+### Particles
+
+> **Leptons**: subatomic fundamental particles that are not affected by strong nuclear force
+
+> **Hadrons**: subatomic particles made up of quarks that are affected by strong nuclear force
+>
+> > **Baryon**: three quarks
+> 
+> > **Meson**: one quark and one antiquark
+
+| Quark   | Charge           | Antiquark   | Charge           |
+| ------- | ---------------- | ----------- | ---------------- |
+| Up      | $+\dfrac{2}{3}e$ | Antiup      | $-\dfrac{2}{3}e$ |
+| Down    | $-\dfrac{1}{3}e$ | Antidown    | $+\dfrac{1}{3}e$ |
+| Charm   | $+\dfrac{2}{3}e$ | Anticharm   | $-\dfrac{2}{3}e$ |
+| Strange | $-\dfrac{1}{3}e$ | Antistrange | $+\dfrac{1}{3}e$ |
+| Top     | $+\dfrac{2}{3}e$ | Antitop     | $-\dfrac{2}{3}e$ |
+| Bottom  | $-\dfrac{1}{3}e$ | Antibottom  | $+\dfrac{1}{3}e$ |
