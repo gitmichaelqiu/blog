@@ -115,9 +115,9 @@ comments: true
     ☐ 5
     ☐ 6
     ☐ 7
-    ☐ 8
+    ☑ 8
     ☐ 9
-    ☑ 10
+    ☐ 10
 
     ---{ Author }---
     ☑ https://vojtastruhar.github.io/steam-review-template 
@@ -151,9 +151,9 @@ To be honest, I don't like Epic Launcher. There is minimal social features and t
 
 Since the discount is really great after years, buy the game when it is on sale.
 
-## Conclusion: 9/10
+## Conclusion: 8/10
 
-The most issues with Alan Wake 2 except minor bugs come from external factors, including hardware configuration and the launcher. If you like story-telling games and enjoy the cinematic scenes, Alan Wake 2 is your choice.
+Alan Wake 2 has outstanding story-telling techniques, but the story itself, in my opinion, does not match the techniques. If you like story-telling games and enjoy the cinematic scenes, Alan Wake 2 is your choice.
 
 ***"Show me the champion of light"***
 
