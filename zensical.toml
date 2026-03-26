@@ -17,6 +17,7 @@ nav = [
         { "Some Websites" = "some-websites.md" },
     ] },
     { "My Projects" = [
+        { Overview = "my-projects/overview.md" },
         { "macOSer Series" = [
             { "DesktopRenamer" = "my-projects/desktoprenamer.md" },
             { "OptClicker" = "my-projects/optclicker.md" },
