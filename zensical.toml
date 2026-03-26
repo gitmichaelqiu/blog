@@ -77,6 +77,9 @@ nav = [
             { "Quick Read & Write" = "oi-tips/qread-and-qwrite.md" },
         ] },
     ] },
+    { "Data Science" = [
+        { "Set up Environment" = "data-science/set-up-environment.md" },
+    ] },
     { "Academic Notes" = [
         { "A-Level" = [
             { Physics = [
