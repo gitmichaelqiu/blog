@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Set up Environment
 
 This guides will teach you how to set up a Machine Learning environment with conda and VSCode.
