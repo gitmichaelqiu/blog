@@ -91,6 +91,7 @@ nav = [
                 { "Bonding & Structures" = "academic-notes/a-level/chemistry/bonding-and-structures.md" },
                 { "Isomerism" = "academic-notes/a-level/chemistry/isomerism.md" },
                 { "Organic Compounds" = "academic-notes/a-level/chemistry/organic-compounds.md" },
+                { "AS Problem Collection" = "academic-notes/a-level/chemistry/as-problem-collection.md" },
             ] },
             { "Advanced Math" = [
                 { Primes = "academic-notes/a-level/math/primes.md" },
@@ -178,11 +179,13 @@ extra_javascript = [
     "https://unpkg.com/katex@0/dist/katex.min.js",
     "https://unpkg.com/katex@0/dist/contrib/auto-render.min.js",
     "https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.5.0/dist/svg-pan-zoom.min.js",
+    "javascripts/sheet.js",
 ]
 
 extra_css = [
     "https://unpkg.com/katex@0/dist/katex.min.css",
     "stylesheets/desktop-renamer.css",
+    "stylesheets/sheet.css",
 ]
 
 [project.theme]

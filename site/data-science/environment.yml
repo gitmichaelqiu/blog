@@ -1,0 +1,24 @@
+name: ml
+channels:
+  - defaults
+dependencies:
+  - python=3.11
+  - matplotlib
+  - scikit-learn
+  - seaborn
+  - xgboost
+  - lightgbm
+  - optuna
+  - numpy
+  - ipykernel
+  - ipywidgets
+  - nbconvert
+  - polars
+  - loky
+  - yfinance
+  - conda-forge::gplearn==0.4.1
+  - streamlit
+  - pykalman
+  - gymnasium
+  - conda-forge::stable-baselines3
+prefix: /opt/anaconda3/envs/ml

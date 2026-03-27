@@ -1,3 +1,5 @@
+# AS Problem Collection
+
 ```sheet
 | w23 | - | 11 | x | 21 | |
 | ^ | - | 12 | | 22 | |
@@ -13,7 +15,7 @@
 ## 9701_w22_qp_12
 ### 18
 
-![[Screenshot 2026-03-24 at 10.21.52.png]]
+![](attachments/9701_w22_qp_12_q18.png)
 
 ```sheet
 | Wrong Ans | - | C |
@@ -25,7 +27,7 @@
 ## 9701_w21_qp_12
 ### 11
 
-![[Screenshot 2026-03-24 at 18.39.13.png]]
+![](attachments/9701_w21_qp_12_q11.png)
 
 ```sheet
 | Wrong Ans | - | B |
@@ -35,7 +37,7 @@
 
 ### 16
 
-![[Screenshot 2026-03-24 at 18.43.46.png]]
+![](attachments/9701_w21_qp_12_q16.png)
 
 ```sheet
 | Wrong Ans | - | D |
@@ -45,7 +47,7 @@
 
 ### 26
 
-![[Screenshot 2026-03-24 at 18.55.28.png]]
+![](attachments/9701_w21_qp_12_q26.png)
 
 ```sheet
 | Wrong Ans | - | B |
@@ -55,7 +57,7 @@
 
 ### 29
 
-![[Screenshot 2026-03-24 at 19.00.45.png]]
+![](attachments/9701_w21_qp_12_q29.png)
 
 ```sheet
 | Wrong Ans | - | A |
@@ -65,7 +67,7 @@
 
 ### 31
 
-![[Screenshot 2026-03-24 at 19.05.06.png]]
+![](attachments/9701_w21_qp_12_q31.png)
 
 ```sheet
 | Wrong Ans | - | 1, 2 |
@@ -78,7 +80,7 @@
 
 ### 5
 
-![[Screenshot 2026-03-25 at 18.40.43.png]]
+![](attachments/9701_w23_qp_11_q5.png)
 
 ```sheet
 | Wrong Ans | - | C |
@@ -88,7 +90,7 @@
 
 ### 16
 
-![[Screenshot 2026-03-25 at 18.46.09.png]]
+![](attachments/9701_w23_qp_11_q16.png)
 
 ```sheet
 | Wrong Ans | - | B |
@@ -110,7 +112,7 @@ Ground state: lowest possible energy state
 
 ### 29
 
-![[Screenshot 2026-03-25 at 20.51.21.png]]
+![](attachments/9701_w22_qp_11_q29.png)
 
 ```sheet
 | Wrong Ans | - | A |
@@ -120,7 +122,7 @@ Ground state: lowest possible energy state
 
 ### 32
 
-![[Screenshot 2026-03-25 at 20.57.19.png]]
+![](attachments/9701_w22_qp_11_q32.png)
 
 ```sheet
 | Wrong Ans | - | B |
@@ -132,7 +134,7 @@ Ground state: lowest possible energy state
 
 ### 8
 
-![[Screenshot 2026-03-27 at 08.33.59.png]]
+![](attachments/9701_w21_qp_11_q8.png)
 ```sheet
 | Wrong Ans | - | A |
 | Correct Ans | - | C |
@@ -141,7 +143,7 @@ Ground state: lowest possible energy state
 
 ### 19
 
-![[Screenshot 2026-03-27 at 08.38.17.png]]
+![](attachments/9701_w21_qp_11_q19.png)
 ```sheet
 | Wrong Ans | - | D |
 | Correct Ans | - | B |
@@ -151,7 +153,7 @@ Ground state: lowest possible energy state
 
 ### 26
 
-![[Screenshot 2026-03-27 at 08.44.04.png]]
+![](attachments/9701_w21_qp_11_q26.png)
 
 ```sheet
 | Wrong Ans | - | C |
