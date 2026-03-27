@@ -88,10 +88,10 @@ nav = [
                 { "Copyright Claim" = "academic-notes/a-level/physics/copyright.md" },
             ] },
             { Chemistry = [
+                { "AS Problem Collection" = "academic-notes/a-level/chemistry/as-problem-collection.md" },
                 { "Bonding & Structures" = "academic-notes/a-level/chemistry/bonding-and-structures.md" },
                 { "Isomerism" = "academic-notes/a-level/chemistry/isomerism.md" },
                 { "Organic Compounds" = "academic-notes/a-level/chemistry/organic-compounds.md" },
-                { "AS Problem Collection" = "academic-notes/a-level/chemistry/as-problem-collection.md" },
             ] },
             { "Advanced Math" = [
                 { Primes = "academic-notes/a-level/math/primes.md" },
