@@ -1,9 +1,15 @@
 document.addEventListener("DOMContentLoaded", function() {
     const renderSheets = () => {
-        const codeBlocks = document.querySelectorAll('code.language-sheet');
+        // Find blocks with .sheet class (from superfences) or .language-sheet (fallback)
+        const codeBlocks = document.querySelectorAll('.sheet code, code.language-sheet');
         
         codeBlocks.forEach(code => {
             const pre = code.parentElement;
+            if (!pre || pre.tagName !== 'PRE') return;
+            
+            // Check if already processed
+            if (pre.dataset.sheetProcessed) return;
+            pre.dataset.sheetProcessed = "true";
             const source = code.textContent;
             const lines = source.split('\n');
             const grid = [];
@@ -111,7 +117,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
             // Replace the pre/div wrapper
             // superfences often wraps in <div class="highlight"><pre><code>
-            const wrapper = pre.closest('.highlight') || pre;
+            // Or with custom fence: <div class="sheet"><pre><code>
+            const wrapper = pre.closest('.sheet') || pre.closest('.highlight') || pre;
             wrapper.parentNode.replaceChild(table, wrapper);
         });
         
