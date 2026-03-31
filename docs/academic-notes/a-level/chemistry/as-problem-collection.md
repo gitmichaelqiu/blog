@@ -2,7 +2,7 @@
 
 ```sheet
 | w23 | - | 11 | x | 21 | |
-| ^ | - | 12 | | 22 | |
+| ^ | - | 12 | x | 22 | |
 | ^ | - | 13 | | 23 | |
 | w22 | - | 11 | x | 21 | |
 | ^ | - | 12 | x | 22 | |
@@ -161,3 +161,24 @@ Ground state: lowest possible energy state
 | Explain | - | The intermediate is $R_2C(O^-)CN$, with no $-OH$. |
 ```
 
+## 9701_w23_qp_12
+
+### 17
+
+![](attachments/9701_w23_qp_12_q17.png)
+
+```sheet
+| Wrong Ans | - | X |
+| Correct Ans | - | 2, 3 |
+| Explain | - | For 2 and 3, though the equilibrium moves to the left/does not move, the concentration increases, so the rate of change of the forward reaction increases. |
+```
+
+### 33
+
+![](attachments/9701_w23_qp_12_q33.png)
+
+```sheet
+| Wrong Ans | - | B |
+| Correct Ans | - | A |
+| Explain | - | NaOH(ethanol) can only be used in dehydrohalogenation, removing HX. To dehydrate, use conc. H₂SO₄. |
+```
