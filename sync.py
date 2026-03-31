@@ -5,12 +5,7 @@ import shutil
 import sys
 import argparse
 from pathlib import Path
-
-# Try to import argcomplete for tab-completion support
-try:
-    import argcomplete
-except ImportError:
-    argcomplete = None
+import argcomplete
 
 # --- CONFIGURATION ---
 # Define multiple source folders to monitor. 
