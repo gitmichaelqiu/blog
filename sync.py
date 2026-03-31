@@ -8,23 +8,22 @@ from tkinter import ttk, messagebox
 from pathlib import Path
 
 # --- CONFIGURATION ---
-# Define multiple source folders to monitor.
 SOURCES = [
     (Path("~/Files/Obsidian/ALevel").expanduser(), "alevel"),
     (Path("~/Files/Obsidian/AP").expanduser(), "ap"),
     (Path("~/Academics/01_HFLSSenior/25_Q4_G11_Sem1/04_Chemistry/04_Chem_Mindmap").expanduser(), "chem_mindmap"),
 ]
 
-# Path to your destination folder (local to where the script is)
 DEST_DIR = Path("./content").expanduser() 
-
-# State file stored in your destination repo
 STATE_FILE = Path("./sync-state.json").expanduser()
 
-# Constants for Checkbox UI
-CHECKED = "☑"
-UNCHECKED = "☐"
-PARTIAL = "▣"
+# Theme Colors
+COLOR_NEW = "#2e7d32"      # Green
+COLOR_MODIFIED = "#1565c0" # Blue
+COLOR_DELETED = "#c62828"  # Red
+COLOR_FOLDER = "#37474f"   # Dark Grey
+COLOR_BG = "#ffffff"
+COLOR_STRIPE = "#f5f5f5"
 
 def get_file_hash(filepath):
     """Calculate SHA-256 hash of a file."""
@@ -40,7 +39,6 @@ def get_file_hash(filepath):
         return None
 
 def load_state():
-    """Load the existing sync state."""
     if STATE_FILE.exists():
         try:
             with open(STATE_FILE, 'r', encoding='utf-8') as f:
@@ -51,24 +49,17 @@ def load_state():
     return {}
 
 def save_state(state):
-    """Save the current sync state."""
     with open(STATE_FILE, 'w', encoding='utf-8') as f:
         json.dump(state, f, indent=4)
 
 def get_diff():
-    """Compares sources to current state."""
     state = load_state()
     seen_keys = []
-    changes = {
-        "new": [],      
-        "modified": [], 
-        "deleted": []   
-    }
+    changes = {"new": [], "modified": [], "deleted": []}
 
     for source_root, source_id in SOURCES:
         source_root = source_root.expanduser()
-        if not source_root.exists():
-            continue
+        if not source_root.exists(): continue
 
         current_files = [f for f in source_root.rglob("*") if f.is_file()]
         for src_path in current_files:
@@ -77,227 +68,221 @@ def get_diff():
             seen_keys.append(state_key)
             
             current_hash = get_file_hash(src_path)
-            
             if state_key not in state:
-                changes["new"].append({
-                    "key": state_key, "path": src_path, "rel": relative_path, 
-                    "id": source_id, "hash": current_hash, "type": "new"
-                })
+                changes["new"].append({"key": state_key, "path": src_path, "rel": relative_path, "id": source_id, "hash": current_hash, "type": "new"})
             elif state[state_key].get('hash') != current_hash:
-                changes["modified"].append({
-                    "key": state_key, "path": src_path, "rel": relative_path, 
-                    "id": source_id, "hash": current_hash, "type": "modified"
-                })
+                changes["modified"].append({"key": state_key, "path": src_path, "rel": relative_path, "id": source_id, "hash": current_hash, "type": "modified"})
 
     deleted_keys = set(state.keys()) - set(seen_keys)
     for k in deleted_keys:
         changes["deleted"].append({"key": k, "type": "deleted"})
-    
     return state, changes
+
+class CheckboxTree(ttk.Treeview):
+    """A custom Treeview that handles checkboxes properly."""
+    def __init__(self, master, **kwargs):
+        kwargs.update({"selectmode": "none", "columns": ("status", "rel_path")})
+        super().__init__(master, **kwargs)
+        
+        self.heading("#0", text="  Name", anchor="w")
+        self.heading("status", text="Status", anchor="w")
+        self.heading("rel_path", text="Relative Path", anchor="w")
+        
+        self.column("#0", width=450, stretch=True)
+        self.column("status", width=100, anchor="center")
+        self.column("rel_path", width=350, stretch=True)
+
+        # Custom checkbox 'images' using Unicode for simplicity but styled via tags
+        self.tag_configure("checked", text="  ☑  ")
+        self.tag_configure("unchecked", text="  ☐  ")
+        self.tag_configure("partial", text="  ▣  ")
+
+        self.bind("<Button-1>", self._on_click)
+        self.node_states = {} # item_id -> bool (True/False/None for partial)
+
+    def _on_click(self, event):
+        item_id = self.identify_row(event.y)
+        column = self.identify_column(event.x)
+        element = self.identify_element(event.x, event.y)
+
+        # If user clicked the text or the area where the checkbox would be (not the expand button)
+        if item_id and column == "#0" and element != "tree":
+            self.toggle_item(item_id)
+
+    def toggle_item(self, item_id, force_state=None):
+        current_state = self.node_states.get(item_id, False)
+        new_state = not current_state if force_state is None else force_state
+        
+        self.node_states[item_id] = new_state
+        self._update_visual(item_id)
+        
+        # Propagate to children
+        for child in self.get_children(item_id):
+            self.toggle_item(child, force_state=new_state)
+            
+        # Propagate to parents
+        self._update_parent_state(self.parent(item_id))
+
+    def _update_parent_state(self, parent_id):
+        if not parent_id: return
+        
+        children = self.get_children(parent_id)
+        child_states = [self.node_states.get(c, False) for c in children]
+        
+        if all(s is True for s in child_states):
+            new_state = True
+        elif all(s is False for s in child_states):
+            new_state = False
+        else:
+            new_state = None # Partial
+            
+        self.node_states[parent_id] = new_state
+        self._update_visual(parent_id)
+        self._update_parent_state(self.parent(parent_id))
+
+    def _update_visual(self, item_id):
+        state = self.node_states.get(item_id, False)
+        text = self.item(item_id, "text")
+        # Extract original text if already has icon
+        clean_text = text[5:] if text.startswith("  ") else text
+        
+        icon = "  ☐  "
+        if state is True: icon = "  ☑  "
+        elif state is None: icon = "  ▣  "
+        
+        self.item(item_id, text=f"{icon}{clean_text}")
 
 class CommitGui:
     def __init__(self, state, diff):
         self.state = state
         self.diff = diff
         self.root = tk.Tk()
-        self.root.title("Sync Commit Tool")
-        self.root.geometry("1000x700")
+        self.root.title("Zensical Sync Monitor")
+        self.root.geometry("1100x750")
+        self.root.configure(bg="#f8f9fa")
+
+        self.setup_styles()
         
-        # UI Styles
-        style = ttk.Style()
-        style.configure("Treeview", rowheight=25)
-        
-        main_frame = ttk.Frame(self.root, padding="10")
+        main_frame = ttk.Frame(self.root, padding="20")
         main_frame.pack(fill="both", expand=True)
 
-        label = ttk.Label(main_frame, text="Review Changes (Hierarchical View)", font=("Arial", 12, "bold"))
-        label.pack(pady=(0, 10))
+        header = ttk.Label(main_frame, text="Synchronize Content", font=("Segoe UI", 16, "bold"))
+        header.pack(anchor="w", pady=(0, 5))
+        
+        subheader = ttk.Label(main_frame, text="Select files to port to your website repository.", font=("Segoe UI", 10))
+        subheader.pack(anchor="w", pady=(0, 20))
 
-        tree_container = ttk.Frame(main_frame)
+        # Treeview Area
+        tree_container = tk.Frame(main_frame, bg="white", highlightthickness=1, highlightbackground="#dee2e6")
         tree_container.pack(fill="both", expand=True)
 
-        self.tree = ttk.Treeview(tree_container, columns=("Status",), selectmode="none")
-        self.tree.heading("#0", text="Folder / File", anchor="w")
-        self.tree.heading("Status", text="Status", anchor="w")
-        self.tree.column("#0", width=600)
-        self.tree.column("Status", width=150)
-
-        scrollbar = ttk.Scrollbar(tree_container, orient="vertical", command=self.tree.yview)
-        self.tree.configure(yscrollcommand=scrollbar.set)
-        self.tree.pack(side="left", fill="both", expand=True)
-        scrollbar.pack(side="right", fill="y")
-
-        # Tags for coloring
-        self.tree.tag_configure("new", foreground="green")
-        self.tree.tag_configure("modified", foreground="blue")
-        self.tree.tag_configure("deleted", foreground="red")
-        self.tree.tag_configure("folder", font=("Arial", 10, "bold"))
-
-        self.item_data = {}  # Map tree node to file info
-        self.node_states = {} # Map node to checkbox state
+        self.tree = CheckboxTree(tree_container)
         
+        vsb = ttk.Scrollbar(tree_container, orient="vertical", command=self.tree.yview)
+        self.tree.configure(yscrollcommand=vsb.set)
+        
+        self.tree.pack(side="left", fill="both", expand=True)
+        vsb.pack(side="right", fill="y")
+
+        # Color Tags
+        self.tree.tag_configure("new", foreground=COLOR_NEW)
+        self.tree.tag_configure("modified", foreground=COLOR_MODIFIED)
+        self.tree.tag_configure("deleted", foreground=COLOR_DELETED)
+        self.tree.tag_configure("folder", font=("Segoe UI", 10, "bold"), foreground=COLOR_FOLDER)
+
+        self.item_data = {}
         self._populate_tree()
 
-        # Bind click for checkbox toggle
-        self.tree.bind("<Button-1>", self.on_click)
-
-        # Bottom Buttons
-        btn_frame = ttk.Frame(main_frame)
-        btn_frame.pack(fill="x", pady=10)
+        # Footer
+        footer = ttk.Frame(main_frame, padding=(0, 20, 0, 0))
+        footer.pack(fill="x")
         
-        ttk.Button(btn_frame, text="Commit Selected", command=self.perform_commit).pack(side="right", padx=5)
-        ttk.Button(btn_frame, text="Cancel", command=self.root.destroy).pack(side="right", padx=5)
+        self.status_var = tk.StringVar(value="Ready")
+        ttk.Label(footer, textvariable=self.status_var, font=("Segoe UI", 9, "italic")).pack(side="left")
 
-    def _get_checkbox_text(self, state, text):
-        return f"{state} {text}"
+        ttk.Button(footer, text="Commit Changes", command=self.perform_commit, style="Accent.TButton").pack(side="right", padx=(10, 0))
+        ttk.Button(footer, text="Cancel", command=self.root.destroy).pack(side="right")
+
+    def setup_styles(self):
+        style = ttk.Style()
+        # Modern Look
+        style.theme_use('clam')
+        style.configure("Treeview", font=("Segoe UI", 10), rowheight=30, borderwidth=0)
+        style.configure("Treeview.Heading", font=("Segoe UI", 10, "bold"), background="#e9ecef")
+        style.map("Treeview", background=[('selected', '#e7f1ff')], foreground=[('selected', '#000000')])
+        
+        style.configure("Accent.TButton", padding=6, font=("Segoe UI", 10, "bold"))
 
     def _populate_tree(self):
         all_items = self.diff["new"] + self.diff["modified"] + self.diff["deleted"]
-        
-        # Group by source and build folder structure
         structure = {}
+        
         for item in all_items:
             sid = item.get("id") or item["key"].split(":")[0]
-            if sid not in structure:
-                structure[sid] = {}
-            
-            # Navigate/Build hierarchy
+            if sid not in structure: structure[sid] = {}
             rel_path = item.get("rel", item["key"].split(":", 1)[-1])
             parts = Path(rel_path).parts
             
-            current_level = structure[sid]
+            curr = structure[sid]
             for part in parts[:-1]:
-                # We need to distinguish between folders and files at this level
-                if part not in current_level or not isinstance(current_level[part], dict):
-                    current_level[part] = {}
-                current_level = current_level[part]
-            
-            # The leaf is the item itself
-            current_level[parts[-1]] = item
+                if part not in curr or not isinstance(curr[part], dict):
+                    curr[part] = {}
+                curr = curr[part]
+            curr[parts[-1]] = item
 
-        # Recursively insert into tree
-        def insert_node(parent, name, content):
-            if isinstance(content, dict):
-                # Check if it's actually a folder or a file masquerading as a dict
-                # In our structure, folders are dicts, file items are dicts with a "type" key
-                if "type" in content and "key" in content:
-                    # It's a file item
-                    item = content
-                    file_id = self.tree.insert(
-                        parent, "end", 
-                        text=self._get_checkbox_text(CHECKED, name), 
-                        values=(item["type"].upper(),),
-                        tags=(item["type"],)
-                    )
-                    self.node_states[file_id] = CHECKED
-                    self.item_data[file_id] = item
-                else:
-                    # It's a folder
-                    folder_id = self.tree.insert(parent, "end", text=self._get_checkbox_text(CHECKED, name), open=True, tags=("folder",))
-                    self.node_states[folder_id] = CHECKED
-                    for k, v in content.items():
-                        insert_node(folder_id, k, v)
+        def insert_recursive(parent, name, content):
+            if isinstance(content, dict) and not ("type" in content and "key" in content):
+                fid = self.tree.insert(parent, "end", text=f"  ☐  {name}", open=True, tags=("folder",))
+                self.tree.node_states[fid] = False
+                for k, v in sorted(content.items(), key=lambda x: (not isinstance(x[1], dict), x[0])):
+                    insert_recursive(fid, k, v)
             else:
-                # Should not reach here based on structure logic, but for safety:
-                pass
+                item = content
+                file_id = self.tree.insert(parent, "end", text=f"  ☐  {name}", 
+                                         values=(item["type"].upper(), item.get("rel", "")),
+                                         tags=(item["type"],))
+                self.tree.node_states[file_id] = False
+                self.item_data[file_id] = item
 
-        for sid, content in structure.items():
-            root_id = self.tree.insert("", "end", text=self._get_checkbox_text(CHECKED, f"Source: {sid}"), open=True, tags=("folder",))
-            self.node_states[root_id] = CHECKED
-            for k, v in content.items():
-                insert_node(root_id, k, v)
-
-    def on_click(self, event):
-        item_id = self.tree.identify_row(event.y)
-        column = self.tree.identify_column(event.x)
+        for sid, content in sorted(structure.items()):
+            root_id = self.tree.insert("", "end", text=f"  ☐  Source: {sid}", open=True, tags=("folder",))
+            self.tree.node_states[root_id] = False
+            for k, v in sorted(content.items(), key=lambda x: (not isinstance(x[1], dict), x[0])):
+                insert_recursive(root_id, k, v)
         
-        # Only toggle if clicking the tree label area (where checkbox is)
-        if not item_id or column != "#0":
-            return
-
-        # Toggle state
-        current_state = self.node_states.get(item_id)
-        new_state = UNCHECKED if current_state in [CHECKED, PARTIAL] else CHECKED
-        
-        self._update_node_and_children(item_id, new_state)
-        self._update_parents(item_id)
-
-    def _update_node_and_children(self, node, state):
-        self.node_states[node] = state
-        # Update Visual
-        current_text = self.tree.item(node, "text")[2:]
-        self.tree.item(node, text=f"{state} {current_text}")
-        
-        # Recurse to children
-        for child in self.tree.get_children(node):
-            self._update_node_and_children(child, state)
-
-    def _update_parents(self, node):
-        parent = self.tree.parent(node)
-        if not parent:
-            return
-        
-        children = self.tree.get_children(parent)
-        child_states = [self.node_states[c] for c in children]
-        
-        if all(s == CHECKED for s in child_states):
-            new_p_state = CHECKED
-        elif all(s == UNCHECKED for s in child_states):
-            new_p_state = UNCHECKED
-        else:
-            new_p_state = PARTIAL
-            
-        if self.node_states[parent] != new_p_state:
-            self.node_states[parent] = new_p_state
-            current_text = self.tree.item(parent, "text")[2:]
-            self.tree.item(parent, text=f"{new_p_state} {current_text}")
-            self._update_parents(parent)
+        # Initial Select All
+        for child in self.tree.get_children(""):
+            self.tree.toggle_item(child, force_state=True)
 
     def perform_commit(self):
-        # Gather all checked file nodes
-        to_commit = []
-        for node, item in self.item_data.items():
-            if self.node_states[node] == CHECKED:
-                to_commit.append(item)
-
+        to_commit = [item for node, item in self.item_data.items() if self.tree.node_states.get(node) is True]
         if not to_commit:
-            messagebox.showwarning("No Selection", "Please select at least one file to commit.")
+            messagebox.showwarning("No Selection", "Please select at least one file.")
             return
 
-        confirm = messagebox.askyesno("Confirm", f"Commit {len(to_commit)} changes?")
-        if not confirm:
+        if not messagebox.askyesno("Confirm Sync", f"Apply {len(to_commit)} changes to the destination?"):
             return
 
-        updates_made = False
+        count = 0
         for item in to_commit:
             key = item["key"]
             if item['type'] == "deleted":
                 if key in self.state:
                     del self.state[key]
-                    updates_made = True
+                    count += 1
             else:
                 dest_path = DEST_DIR / item['rel']
                 dest_path.parent.mkdir(parents=True, exist_ok=True)
                 try:
                     shutil.copy2(item['path'], dest_path)
-                    self.state[key] = {
-                        "source_id": item['id'],
-                        "relative_path": item['rel'],
-                        "hash": item['hash'],
-                        "dest_path": str(item['rel'])
-                    }
-                    updates_made = True
+                    self.state[key] = {"source_id": item['id'], "relative_path": item['rel'], "hash": item['hash'], "dest_path": str(item['rel'])}
+                    count += 1
                 except Exception as e:
                     print(f"Error copying {key}: {e}")
 
-        if updates_made:
-            save_state(self.state)
-            messagebox.showinfo("Success", f"Synced {len(to_commit)} items successfully.")
-        
+        save_state(self.state)
+        messagebox.showinfo("Success", f"Successfully synced {count} items.")
         self.root.destroy()
-
-    def run(self):
-        self.root.mainloop()
 
 def main():
     state, diff = get_diff()
@@ -306,7 +291,7 @@ def main():
         return
     
     gui = CommitGui(state, diff)
-    gui.run()
+    gui.mainloop()
 
 if __name__ == "__main__":
     main()
