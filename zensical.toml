@@ -92,6 +92,7 @@ nav = [
                 { "Bonding & Structures" = "academic-notes/a-level/chemistry/bonding-and-structures.md" },
                 { "Isomerism" = "academic-notes/a-level/chemistry/isomerism.md" },
                 { "Organic Compounds" = "academic-notes/a-level/chemistry/organic-compounds.md" },
+                { "Periods & Groups" = "academic-notes/a-level/chemistry/periods-and-groups.md" },
             ] },
             { "Advanced Math" = [
                 { Primes = "academic-notes/a-level/math/primes.md" },
