@@ -1,11 +1,15 @@
 import os
 import hashlib
 import json
-import shutil
 import sys
-import tkinter as tk
-from tkinter import ttk, messagebox
 from pathlib import Path
+
+from PySide6.QtWidgets import (
+    QApplication, QMainWindow, QWidget, QVBoxLayout, QHBoxLayout,
+    QTreeView, QPushButton, QLabel, QMessageBox
+)
+from PySide6.QtGui import QStandardItemModel, QStandardItem, QColor, QFont
+from PySide6.QtCore import Qt
 
 # --- CONFIGURATION ---
 SOURCES = [
@@ -14,16 +18,16 @@ SOURCES = [
     (Path("~/Academics/01_HFLSSenior/25_Q4_G11_Sem1/04_Chemistry/04_Chem_Mindmap").expanduser(), "chem_mindmap"),
 ]
 
-DEST_DIR = Path("./content").expanduser() 
+# State file stored in your destination repo to track last known status
 STATE_FILE = Path("./sync-state.json").expanduser()
 
 # Theme Colors
-COLOR_NEW = "#2e7d32"      # Green
-COLOR_MODIFIED = "#1565c0" # Blue
-COLOR_DELETED = "#c62828"  # Red
-COLOR_FOLDER = "#37474f"   # Dark Grey
-COLOR_BG = "#ffffff"
-COLOR_STRIPE = "#f5f5f5"
+COLOR_NEW = "#4CAF50"      # Green
+COLOR_MODIFIED = "#2196F3" # Blue
+COLOR_DELETED = "#F44336"  # Red
+COLOR_TEXT = "#E0E0E0"
+COLOR_BG = "#1E1E1E"
+COLOR_ACCENT = "#3A3A3A"
 
 def get_file_hash(filepath):
     """Calculate SHA-256 hash of a file."""
@@ -78,140 +82,174 @@ def get_diff():
         changes["deleted"].append({"key": k, "type": "deleted"})
     return state, changes
 
-class CheckboxTree(ttk.Treeview):
-    """A custom Treeview that handles checkboxes properly."""
-    def __init__(self, master, **kwargs):
-        kwargs.update({"selectmode": "none", "columns": ("status", "rel_path")})
-        super().__init__(master, **kwargs)
+class SyncItem(QStandardItem):
+    """Custom item that handles recursive checkbox toggling."""
+    def __init__(self, text, data=None, is_folder=False):
+        super().__init__(text)
+        self.is_folder = is_folder
+        self.sync_data = data
+        self._is_updating = False 
         
-        self.heading("#0", text="  Name", anchor="w")
-        self.heading("status", text="Status", anchor="w")
-        self.heading("rel_path", text="Relative Path", anchor="w")
+        self.setCheckable(True)
+        self.setCheckState(Qt.Checked) 
         
-        self.column("#0", width=450, stretch=True)
-        self.column("status", width=100, anchor="center")
-        self.column("rel_path", width=350, stretch=True)
+        if is_folder:
+            font = QFont()
+            font.setBold(True)
+            self.setFont(font)
 
-        # Custom checkbox 'images' using Unicode for simplicity but styled via tags
-        self.tag_configure("checked", text="  ☑  ")
-        self.tag_configure("unchecked", text="  ☐  ")
-        self.tag_configure("partial", text="  ▣  ")
-
-        self.bind("<Button-1>", self._on_click)
-        self.node_states = {} # item_id -> bool (True/False/None for partial)
-
-    def _on_click(self, event):
-        item_id = self.identify_row(event.y)
-        column = self.identify_column(event.x)
-        element = self.identify_element(event.x, event.y)
-
-        # If user clicked the text or the area where the checkbox would be (not the expand button)
-        if item_id and column == "#0" and element != "tree":
-            self.toggle_item(item_id)
-
-    def toggle_item(self, item_id, force_state=None):
-        current_state = self.node_states.get(item_id, False)
-        new_state = not current_state if force_state is None else force_state
-        
-        self.node_states[item_id] = new_state
-        self._update_visual(item_id)
-        
-        # Propagate to children
-        for child in self.get_children(item_id):
-            self.toggle_item(child, force_state=new_state)
+    def setData(self, value, role=Qt.EditRole):
+        if role == Qt.CheckStateRole:
+            new_state = Qt.CheckState(value)
+            if new_state == self.checkState():
+                return super().setData(value, role)
             
-        # Propagate to parents
-        self._update_parent_state(self.parent(item_id))
+            if self._is_updating:
+                return super().setData(value, role)
+            
+            self._is_updating = True
+            try:
+                for i in range(self.rowCount()):
+                    child = self.child(i)
+                    if isinstance(child, SyncItem):
+                        child.setCheckState(new_state)
+                
+                result = super().setData(value, role)
+                
+                if self.parent():
+                    self._update_parent_state(self.parent())
+                return result
+            finally:
+                self._is_updating = False
+        
+        return super().setData(value, role)
 
-    def _update_parent_state(self, parent_id):
-        if not parent_id: return
+    def _update_parent_state(self, parent):
+        if not isinstance(parent, SyncItem) or parent._is_updating:
+            return
+            
+        checked_count = 0
+        unchecked_count = 0
+        total = parent.rowCount()
         
-        children = self.get_children(parent_id)
-        child_states = [self.node_states.get(c, False) for c in children]
-        
-        if all(s is True for s in child_states):
-            new_state = True
-        elif all(s is False for s in child_states):
-            new_state = False
+        for i in range(total):
+            state = parent.child(i).checkState()
+            if state == Qt.Checked: checked_count += 1
+            elif state == Qt.Unchecked: unchecked_count += 1
+            
+        if checked_count == total:
+            new_state = Qt.Checked
+        elif unchecked_count == total:
+            new_state = Qt.Unchecked
         else:
-            new_state = None # Partial
+            new_state = Qt.PartiallyChecked
             
-        self.node_states[parent_id] = new_state
-        self._update_visual(parent_id)
-        self._update_parent_state(self.parent(parent_id))
+        if parent.checkState() != new_state:
+            parent._is_updating = True
+            try:
+                parent.setCheckState(new_state)
+            finally:
+                parent._is_updating = False
+                
+            if parent.parent():
+                self._update_parent_state(parent.parent())
 
-    def _update_visual(self, item_id):
-        state = self.node_states.get(item_id, False)
-        text = self.item(item_id, "text")
-        # Extract original text if already has icon
-        clean_text = text[5:] if text.startswith("  ") else text
-        
-        icon = "  ☐  "
-        if state is True: icon = "  ☑  "
-        elif state is None: icon = "  ▣  "
-        
-        self.item(item_id, text=f"{icon}{clean_text}")
-
-class CommitGui:
+class CommitWindow(QMainWindow):
     def __init__(self, state, diff):
+        super().__init__()
         self.state = state
         self.diff = diff
-        self.root = tk.Tk()
-        self.root.title("Zensical Sync Monitor")
-        self.root.geometry("1100x750")
-        self.root.configure(bg="#f8f9fa")
-
-        self.setup_styles()
+        self.setWindowTitle("Zensical Status Monitor")
+        self.resize(1000, 700)
         
-        main_frame = ttk.Frame(self.root, padding="20")
-        main_frame.pack(fill="both", expand=True)
+        font_family = "sans-serif"
+        if sys.platform == "win32":
+            font_family = "'Segoe UI', sans-serif"
+        elif sys.platform == "darwin":
+            font_family = "'SF Pro Text', 'Helvetica Neue', sans-serif"
 
-        header = ttk.Label(main_frame, text="Synchronize Content", font=("Segoe UI", 16, "bold"))
-        header.pack(anchor="w", pady=(0, 5))
-        
-        subheader = ttk.Label(main_frame, text="Select files to port to your website repository.", font=("Segoe UI", 10))
-        subheader.pack(anchor="w", pady=(0, 20))
+        self.setStyleSheet(f"""
+            QMainWindow, QWidget {{
+                background-color: {COLOR_BG};
+                color: {COLOR_TEXT};
+                font-family: {font_family};
+            }}
+            QTreeView {{
+                background-color: #252526;
+                border: 1px solid #3F3F46;
+                border-radius: 4px;
+                outline: 0;
+            }}
+            QTreeView::item {{
+                padding: 6px;
+            }}
+            QTreeView::item:hover {{
+                background-color: #2D2D30;
+            }}
+            QPushButton {{
+                background-color: {COLOR_ACCENT};
+                border: none;
+                padding: 8px 20px;
+                border-radius: 4px;
+                font-weight: bold;
+            }}
+            QPushButton#updateBtn {{
+                background-color: {COLOR_NEW};
+                color: white;
+            }}
+            QPushButton#updateBtn:hover {{
+                background-color: #45a049;
+            }}
+            QPushButton:hover {{
+                background-color: #4A4A4A;
+            }}
+            QLabel#title {{
+                font-size: 18px;
+                font-weight: bold;
+            }}
+        """)
 
-        # Treeview Area
-        tree_container = tk.Frame(main_frame, bg="white", highlightthickness=1, highlightbackground="#dee2e6")
-        tree_container.pack(fill="both", expand=True)
+        central_widget = QWidget()
+        self.setCentralWidget(central_widget)
+        layout = QVBoxLayout(central_widget)
+        layout.setContentsMargins(20, 20, 20, 20)
+        layout.setSpacing(15)
 
-        self.tree = CheckboxTree(tree_container)
-        
-        vsb = ttk.Scrollbar(tree_container, orient="vertical", command=self.tree.yview)
-        self.tree.configure(yscrollcommand=vsb.set)
-        
-        self.tree.pack(side="left", fill="both", expand=True)
-        vsb.pack(side="right", fill="y")
+        header_layout = QVBoxLayout()
+        title = QLabel("Status Monitor")
+        title.setObjectName("title")
+        subtitle = QLabel("Identify changes in source folders and update tracking state.")
+        header_layout.addWidget(title)
+        header_layout.addWidget(subtitle)
+        layout.addLayout(header_layout)
 
-        # Color Tags
-        self.tree.tag_configure("new", foreground=COLOR_NEW)
-        self.tree.tag_configure("modified", foreground=COLOR_MODIFIED)
-        self.tree.tag_configure("deleted", foreground=COLOR_DELETED)
-        self.tree.tag_configure("folder", font=("Segoe UI", 10, "bold"), foreground=COLOR_FOLDER)
+        self.view = QTreeView()
+        self.model = QStandardItemModel()
+        self.model.setHorizontalHeaderLabels(["Name", "Status", "Relative Path"])
+        self.view.setModel(self.model)
+        self.view.setColumnWidth(0, 400)
+        self.view.setColumnWidth(1, 100)
+        self.view.setIndentation(20)
+        layout.addWidget(self.view)
 
-        self.item_data = {}
         self._populate_tree()
 
-        # Footer
-        footer = ttk.Frame(main_frame, padding=(0, 20, 0, 0))
-        footer.pack(fill="x")
+        footer = QHBoxLayout()
+        self.status_lbl = QLabel("Ready")
+        footer.addWidget(self.status_lbl)
         
-        self.status_var = tk.StringVar(value="Ready")
-        ttk.Label(footer, textvariable=self.status_var, font=("Segoe UI", 9, "italic")).pack(side="left")
-
-        ttk.Button(footer, text="Commit Changes", command=self.perform_commit, style="Accent.TButton").pack(side="right", padx=(10, 0))
-        ttk.Button(footer, text="Cancel", command=self.root.destroy).pack(side="right")
-
-    def setup_styles(self):
-        style = ttk.Style()
-        # Modern Look
-        style.theme_use('clam')
-        style.configure("Treeview", font=("Segoe UI", 10), rowheight=30, borderwidth=0)
-        style.configure("Treeview.Heading", font=("Segoe UI", 10, "bold"), background="#e9ecef")
-        style.map("Treeview", background=[('selected', '#e7f1ff')], foreground=[('selected', '#000000')])
+        footer.addStretch()
         
-        style.configure("Accent.TButton", padding=6, font=("Segoe UI", 10, "bold"))
+        cancel_btn = QPushButton("Close")
+        cancel_btn.clicked.connect(self.close)
+        footer.addWidget(cancel_btn)
+        
+        update_btn = QPushButton("Acknowledge Changes")
+        update_btn.setObjectName("updateBtn")
+        update_btn.clicked.connect(self.perform_update)
+        footer.addWidget(update_btn)
+        
+        layout.addLayout(footer)
 
     def _populate_tree(self):
         all_items = self.diff["new"] + self.diff["modified"] + self.diff["deleted"]
@@ -230,59 +268,77 @@ class CommitGui:
                 curr = curr[part]
             curr[parts[-1]] = item
 
-        def insert_recursive(parent, name, content):
+        def insert_recursive(parent_item, name, content):
             if isinstance(content, dict) and not ("type" in content and "key" in content):
-                fid = self.tree.insert(parent, "end", text=f"  ☐  {name}", open=True, tags=("folder",))
-                self.tree.node_states[fid] = False
+                node = SyncItem(name, is_folder=True)
+                parent_item.appendRow([node, QStandardItem("FOLDER"), QStandardItem("")])
                 for k, v in sorted(content.items(), key=lambda x: (not isinstance(x[1], dict), x[0])):
-                    insert_recursive(fid, k, v)
+                    insert_recursive(node, k, v)
             else:
                 item = content
-                file_id = self.tree.insert(parent, "end", text=f"  ☐  {name}", 
-                                         values=(item["type"].upper(), item.get("rel", "")),
-                                         tags=(item["type"],))
-                self.tree.node_states[file_id] = False
-                self.item_data[file_id] = item
+                name_node = SyncItem(name, data=item)
+                
+                status_node = QStandardItem(item["type"].upper())
+                color = {"new": COLOR_NEW, "modified": COLOR_MODIFIED, "deleted": COLOR_DELETED}.get(item["type"], COLOR_TEXT)
+                status_node.setForeground(QColor(color))
+                
+                path_node = QStandardItem(item.get("rel", ""))
+                path_node.setForeground(QColor("#888888"))
+                
+                parent_item.appendRow([name_node, status_node, path_node])
 
+        root_node = self.model.invisibleRootItem()
         for sid, content in sorted(structure.items()):
-            root_id = self.tree.insert("", "end", text=f"  ☐  Source: {sid}", open=True, tags=("folder",))
-            self.tree.node_states[root_id] = False
+            source_node = SyncItem(f"Source: {sid}", is_folder=True)
+            root_node.appendRow([source_node, QStandardItem("SOURCE"), QStandardItem("")])
             for k, v in sorted(content.items(), key=lambda x: (not isinstance(x[1], dict), x[0])):
-                insert_recursive(root_id, k, v)
+                insert_recursive(source_node, k, v)
         
-        # Initial Select All
-        for child in self.tree.get_children(""):
-            self.tree.toggle_item(child, force_state=True)
+        self.view.expandAll()
 
-    def perform_commit(self):
-        to_commit = [item for node, item in self.item_data.items() if self.tree.node_states.get(node) is True]
-        if not to_commit:
-            messagebox.showwarning("No Selection", "Please select at least one file.")
+    def get_selected_items(self):
+        selected = []
+        def walk(item):
+            if isinstance(item, SyncItem) and not item.is_folder and item.checkState() == Qt.Checked:
+                selected.append(item.sync_data)
+            for i in range(item.rowCount()):
+                walk(item.child(i))
+        
+        root = self.model.invisibleRootItem()
+        for i in range(root.rowCount()):
+            walk(root.child(i))
+        return selected
+
+    def perform_update(self):
+        to_update = self.get_selected_items()
+        if not to_update:
+            QMessageBox.warning(self, "No Selection", "Please select at least one change to acknowledge.")
             return
 
-        if not messagebox.askyesno("Confirm Sync", f"Apply {len(to_commit)} changes to the destination?"):
-            return
-
-        count = 0
-        for item in to_commit:
-            key = item["key"]
-            if item['type'] == "deleted":
-                if key in self.state:
-                    del self.state[key]
+        reply = QMessageBox.question(self, "Confirm Update", 
+                                   f"Acknowledge {len(to_update)} changes? This will update the tracking state but will NOT copy any files.",
+                                   QMessageBox.Yes | QMessageBox.No)
+        
+        if reply == QMessageBox.Yes:
+            count = 0
+            for item in to_update:
+                key = item["key"]
+                if item['type'] == "deleted":
+                    if key in self.state:
+                        del self.state[key]
+                        count += 1
+                else:
+                    # Update state with the new hash/info without moving the file
+                    self.state[key] = {
+                        "source_id": item['id'], 
+                        "relative_path": item['rel'], 
+                        "hash": item['hash']
+                    }
                     count += 1
-            else:
-                dest_path = DEST_DIR / item['rel']
-                dest_path.parent.mkdir(parents=True, exist_ok=True)
-                try:
-                    shutil.copy2(item['path'], dest_path)
-                    self.state[key] = {"source_id": item['id'], "relative_path": item['rel'], "hash": item['hash'], "dest_path": str(item['rel'])}
-                    count += 1
-                except Exception as e:
-                    print(f"Error copying {key}: {e}")
 
-        save_state(self.state)
-        messagebox.showinfo("Success", f"Successfully synced {count} items.")
-        self.root.destroy()
+            save_state(self.state)
+            QMessageBox.information(self, "Success", f"State updated for {count} items.")
+            self.close()
 
 def main():
     state, diff = get_diff()
@@ -290,8 +346,10 @@ def main():
         print("Nothing to sync, working tree clean.")
         return
     
-    gui = CommitGui(state, diff)
-    gui.mainloop()
+    app = QApplication(sys.argv)
+    window = CommitWindow(state, diff)
+    window.show()
+    sys.exit(app.exec())
 
 if __name__ == "__main__":
     main()
