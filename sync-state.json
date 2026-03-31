@@ -1,0 +1,162 @@
+{
+    "ap:.DS_Store": {
+        "source_id": "ap",
+        "relative_path": ".DS_Store",
+        "hash": "21ea7932ef9e224e762e02846c3a965aa2e202507be53b38da7e8b3a88fbc505"
+    },
+    "ap:.obsidian/.DS_Store": {
+        "source_id": "ap",
+        "relative_path": ".obsidian/.DS_Store",
+        "hash": "a04ee76f98572ce7167a9d7f1491ed3a9b8267362e0fdadd0f3d09fe9f735f44"
+    },
+    "ap:.obsidian/app.json": {
+        "source_id": "ap",
+        "relative_path": ".obsidian/app.json",
+        "hash": "4760ab638d4fdfc899470ab63717513e483f5bfd44cb4d36b82affb8ffdcba13"
+    },
+    "ap:.obsidian/appearance.json": {
+        "source_id": "ap",
+        "relative_path": ".obsidian/appearance.json",
+        "hash": "b0b9bd0b746db5a87d9c04f086122869985a960f3af3d1b299e1346c3750b054"
+    },
+    "ap:.obsidian/community-plugins.json": {
+        "source_id": "ap",
+        "relative_path": ".obsidian/community-plugins.json",
+        "hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "ap:.obsidian/core-plugins.json": {
+        "source_id": "ap",
+        "relative_path": ".obsidian/core-plugins.json",
+        "hash": "6accf63ea9e47cabaee493e20473eb7ead8fb97324120c5b3d44c90f844f9cfe"
+    },
+    "ap:.obsidian/graph.json": {
+        "source_id": "ap",
+        "relative_path": ".obsidian/graph.json",
+        "hash": "223fd6208eb9759fa1a8f0a4349e45d4799036f05bd294f91b1a01c254d0cfc5"
+    },
+    "ap:.obsidian/hotkeys.json": {
+        "source_id": "ap",
+        "relative_path": ".obsidian/hotkeys.json",
+        "hash": "ae2a47362691cc0c936de7555e685be92e0ab927e21ec0076a8394ac47461d04"
+    },
+    "ap:.obsidian/workspace.json": {
+        "source_id": "ap",
+        "relative_path": ".obsidian/workspace.json",
+        "hash": "b589156a6b030b55f719b56afa9beeca86eae069244fcb3b73a6e0bf88441580"
+    },
+    "ap:Macroeconomics/U2_EconomicsIndicatorsAndBusinessCycle.md": {
+        "source_id": "ap",
+        "relative_path": "Macroeconomics/U2_EconomicsIndicatorsAndBusinessCycle.md",
+        "hash": "89fc47d7d8e74b5e65e7069c5817188580bb9a8951d672b76e2622554e95fd65"
+    },
+    "ap:Statistics/.DS_Store": {
+        "source_id": "ap",
+        "relative_path": "Statistics/.DS_Store",
+        "hash": "70873e0c9d7bef4dba761dc29c8a1a74d72a20f72f63efe69d5285dcc6476b63"
+    },
+    "ap:Statistics/Summaries/APStat_HypothesisTest-ConfidenceInterval.md": {
+        "source_id": "ap",
+        "relative_path": "Statistics/Summaries/APStat_HypothesisTest-ConfidenceInterval.md",
+        "hash": "cf52cf332b814abf20aaea4ce83f68daace4ccafe5edb99fc972fd049566555c"
+    },
+    "ap:Statistics/U1_ExploringOneVariableData/U1C1_SummaryStatistics.md": {
+        "source_id": "ap",
+        "relative_path": "Statistics/U1_ExploringOneVariableData/U1C1_SummaryStatistics.md",
+        "hash": "d0dcf87cefa84440b83b7c8193be434e0acfddb0742f7be219fc90c077cba7f2"
+    },
+    "ap:Statistics/U1_ExploringOneVariableData/U1C2_GraphicalRepresentations.md": {
+        "source_id": "ap",
+        "relative_path": "Statistics/U1_ExploringOneVariableData/U1C2_GraphicalRepresentations.md",
+        "hash": "2de4f693f5da602f1e44f2a5c6a275bfd2e90e231fec1ecd677eecaca2d851f8"
+    },
+    "ap:Statistics/U1_ExploringOneVariableData/U1C3_TheNormalDistribution.md": {
+        "source_id": "ap",
+        "relative_path": "Statistics/U1_ExploringOneVariableData/U1C3_TheNormalDistribution.md",
+        "hash": "a65cb5cbf37284fa44a3210400d186811de2007016440a93703fe12b7ba37400"
+    },
+    "ap:Statistics/U2_ExploringTwoVariableData/U2C1_Tables-Graphs.md": {
+        "source_id": "ap",
+        "relative_path": "Statistics/U2_ExploringTwoVariableData/U2C1_Tables-Graphs.md",
+        "hash": "97e1e206f7e42c601374f88d4a03e4c6a0f41aee5d81d5890b26da51eef24f77"
+    },
+    "ap:Statistics/U2_ExploringTwoVariableData/U2C2_Scatterplots-Regression.md": {
+        "source_id": "ap",
+        "relative_path": "Statistics/U2_ExploringTwoVariableData/U2C2_Scatterplots-Regression.md",
+        "hash": "ff5183ecf904cbe7302430df7fceeecc5a985804855b58d164458765232efab9"
+    },
+    "ap:Statistics/U2_ExploringTwoVariableData/U2C3_ExperimentalDesign.md": {
+        "source_id": "ap",
+        "relative_path": "Statistics/U2_ExploringTwoVariableData/U2C3_ExperimentalDesign.md",
+        "hash": "921fa4349c4c7578062723c7c8ec17e5a6cbc9f3e9daf416bf27ec67da6ce807"
+    },
+    "ap:Statistics/U3_CollectingData/U3C1_SamplingMethods-Bias.md": {
+        "source_id": "ap",
+        "relative_path": "Statistics/U3_CollectingData/U3C1_SamplingMethods-Bias.md",
+        "hash": "e7096a745d77d12fda93cd94726c4f514ff9614c02b660094e4a2167d71c303a"
+    },
+    "ap:Statistics/U3_CollectingData/U3C2_ExperimentalDesign.md": {
+        "source_id": "ap",
+        "relative_path": "Statistics/U3_CollectingData/U3C2_ExperimentalDesign.md",
+        "hash": "ad459a7093c68030f262827bc6dc8435817755bab38cd8ddda43b23543dc8b0d"
+    },
+    "ap:Statistics/U4_Probability-RandomVariables-ProbabilityDistributions/U4C2_DiscreteRandomVariables.md": {
+        "source_id": "ap",
+        "relative_path": "Statistics/U4_Probability-RandomVariables-ProbabilityDistributions/U4C2_DiscreteRandomVariables.md",
+        "hash": "08cf57ba949909d1090bf8bc7a7c5e48fed13deec7691032f8ae07a7c68e69fa"
+    },
+    "ap:Statistics/U4_Probability-RandomVariables-ProbabilityDistributions/U4C3_Bionomial-GeometricDistributions.md": {
+        "source_id": "ap",
+        "relative_path": "Statistics/U4_Probability-RandomVariables-ProbabilityDistributions/U4C3_Bionomial-GeometricDistributions.md",
+        "hash": "b696340841ee0ca5f7cb874bc26e62e63ecda7bce4307c546666a716100486e5"
+    },
+    "ap:Statistics/U5_SamplingDistributions/U5_SaplingDistributions.md": {
+        "source_id": "ap",
+        "relative_path": "Statistics/U5_SamplingDistributions/U5_SaplingDistributions.md",
+        "hash": "c7b1955b253d83d078a29ea687d9c2f9290ab69f9c9f20bbd11dd1e825d5eca5"
+    },
+    "ap:Statistics/U6_InferenceForCategoricalData-Proportions/U6C1_Introduction to Inferences.md": {
+        "source_id": "ap",
+        "relative_path": "Statistics/U6_InferenceForCategoricalData-Proportions/U6C1_Introduction to Inferences.md",
+        "hash": "314a8fd7104a4e9f554f245ac8889613690197d08223a9303a3ad51e0bc269be"
+    },
+    "ap:Statistics/U6_InferenceForCategoricalData-Proportions/U6C2_InferenceForProportions.md": {
+        "source_id": "ap",
+        "relative_path": "Statistics/U6_InferenceForCategoricalData-Proportions/U6C2_InferenceForProportions.md",
+        "hash": "605c5ca40606731336295c0f65a7f93f7e4e0c368725306fcd53b1f69c76b44d"
+    },
+    "ap:Statistics/U6_InferenceForCategoricalData-Proportions/U6C3_ErrorsInHypothesisTests.md": {
+        "source_id": "ap",
+        "relative_path": "Statistics/U6_InferenceForCategoricalData-Proportions/U6C3_ErrorsInHypothesisTests.md",
+        "hash": "cad6e830bce53175049e5affc9ba2b8d03f2b9e230ca67bfef3fda20129ff5a8"
+    },
+    "ap:Statistics/U7_InferenceForQuantitativeData_Means/U7C1_InferenceForMeans.md": {
+        "source_id": "ap",
+        "relative_path": "Statistics/U7_InferenceForQuantitativeData_Means/U7C1_InferenceForMeans.md",
+        "hash": "987012330693481a4a1732e703fd44085bc7b00a48d8850792c7f8610c375b84"
+    },
+    "ap:Statistics/U8_InferenceForCategoricalData-ChiSquare/U8C1_GoodnessOfFit.md": {
+        "source_id": "ap",
+        "relative_path": "Statistics/U8_InferenceForCategoricalData-ChiSquare/U8C1_GoodnessOfFit.md",
+        "hash": "b6c6e6ee9d7a484fd2733051e5834197dcc90d49707d4cc58dd5103d33c75d5f"
+    },
+    "ap:Statistics/U8_InferenceForCategoricalData-ChiSquare/U8C2_IndependenceAndHomogeneity.md": {
+        "source_id": "ap",
+        "relative_path": "Statistics/U8_InferenceForCategoricalData-ChiSquare/U8C2_IndependenceAndHomogeneity.md",
+        "hash": "440b1246df93e029ab348dd37beb8a72caef12c500ddbcd2e88fe9ee26a48128"
+    },
+    "ap:Statistics/U9_InferenceForQuantitativeData-Slopes/U9C1_InferenceForRegressionSlopes.md": {
+        "source_id": "ap",
+        "relative_path": "Statistics/U9_InferenceForQuantitativeData-Slopes/U9C1_InferenceForRegressionSlopes.md",
+        "hash": "b939442d6f551129ed32e4d9af822f24a8c53e2c869e861bef3099e77f0c2735"
+    },
+    "chem_mindmap:04_StatesOfMatter_Bonding-Structures.xmind": {
+        "source_id": "chem_mindmap",
+        "relative_path": "04_StatesOfMatter_Bonding-Structures.xmind",
+        "hash": "c8e855f407d5307b97c0f3d74427de4397b784b99956301f17ac64168fca3052"
+    },
+    "chem_mindmap:13_Isomerism.xmind": {
+        "source_id": "chem_mindmap",
+        "relative_path": "13_Isomerism.xmind",
+        "hash": "b9d9d7b6fd14a6631966b883efa1a0016ca1d5c13f98ee88fc02fb5ea10eebcf"
+    }
+}
