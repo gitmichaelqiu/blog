@@ -11,3 +11,7 @@ wheels/
 
 # tmp folders
 **/tmp/
+
+# Zensical build
+
+site/
