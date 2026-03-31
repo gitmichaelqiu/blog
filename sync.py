@@ -3,27 +3,31 @@ import hashlib
 import json
 import shutil
 import sys
-import argparse
+import tkinter as tk
+from tkinter import ttk, messagebox
 from pathlib import Path
-import argcomplete
 
 # --- CONFIGURATION ---
-# Define multiple source folders to monitor. 
-# Added .expanduser() to handle '~' shorthand correctly.
+# Define multiple source folders to monitor.
 SOURCES = [
     (Path("~/Files/Obsidian/ALevel").expanduser(), "alevel"),
     (Path("~/Files/Obsidian/AP").expanduser(), "ap"),
     (Path("~/Academics/01_HFLSSenior/25_Q4_G11_Sem1/04_Chemistry/04_Chem_Mindmap").expanduser(), "chem_mindmap"),
 ]
 
-# Path to your destination folder (e.g., website content, project repo)
+# Path to your destination folder (local to where the script is)
 DEST_DIR = Path("./content").expanduser() 
 
-# State file stored in your destination repo to track changes
+# State file stored in your destination repo
 STATE_FILE = Path("./sync-state.json").expanduser()
 
+# Constants for Checkbox UI
+CHECKED = "☑"
+UNCHECKED = "☐"
+PARTIAL = "▣"
+
 def get_file_hash(filepath):
-    """Calculate SHA-256 hash of a file to detect content changes."""
+    """Calculate SHA-256 hash of a file."""
     hasher = hashlib.sha256()
     try:
         if not filepath.is_file():
@@ -36,44 +40,37 @@ def get_file_hash(filepath):
         return None
 
 def load_state():
-    """Load the existing sync state from the JSON file."""
+    """Load the existing sync state."""
     if STATE_FILE.exists():
         try:
             with open(STATE_FILE, 'r', encoding='utf-8') as f:
                 content = f.read().strip()
-                if not content:
-                    return {}
-                return json.loads(content)
+                return json.loads(content) if content else {}
         except json.JSONDecodeError:
-            print(f"[Error] Could not parse {STATE_FILE}. Starting with empty state.")
+            print(f"[Error] Could not parse {STATE_FILE}.")
     return {}
 
 def save_state(state):
-    """Save the current sync state to the JSON file."""
+    """Save the current sync state."""
     with open(STATE_FILE, 'w', encoding='utf-8') as f:
         json.dump(state, f, indent=4)
 
 def get_diff():
-    """Compares sources to current state and returns pending changes."""
+    """Compares sources to current state."""
     state = load_state()
     seen_keys = []
     changes = {
-        "new": [],      # (state_key, src_path, relative_path, source_id, hash)
-        "modified": [], # (state_key, src_path, relative_path, source_id, hash)
-        "deleted": []   # state_key
+        "new": [],      
+        "modified": [], 
+        "deleted": []   
     }
 
     for source_root, source_id in SOURCES:
-        # Ensure path is expanded even if changed in config
         source_root = source_root.expanduser()
-        
         if not source_root.exists():
-            print(f"[Warning] Source path does not exist: {source_root}")
             continue
 
-        # Use rglob("*") and filter for files to ensure we catch everything
         current_files = [f for f in source_root.rglob("*") if f.is_file()]
-        
         for src_path in current_files:
             relative_path = str(src_path.relative_to(source_root))
             state_key = f"{source_id}:{relative_path}"
@@ -82,126 +79,234 @@ def get_diff():
             current_hash = get_file_hash(src_path)
             
             if state_key not in state:
-                changes["new"].append((state_key, src_path, relative_path, source_id, current_hash))
+                changes["new"].append({
+                    "key": state_key, "path": src_path, "rel": relative_path, 
+                    "id": source_id, "hash": current_hash, "type": "new"
+                })
             elif state[state_key].get('hash') != current_hash:
-                changes["modified"].append((state_key, src_path, relative_path, source_id, current_hash))
+                changes["modified"].append({
+                    "key": state_key, "path": src_path, "rel": relative_path, 
+                    "id": source_id, "hash": current_hash, "type": "modified"
+                })
 
     deleted_keys = set(state.keys()) - set(seen_keys)
-    changes["deleted"] = list(deleted_keys)
+    for k in deleted_keys:
+        changes["deleted"].append({"key": k, "type": "deleted"})
     
     return state, changes
 
-def get_pending_targets(prefix, parsed_args, **kwargs):
-    """Helper for argcomplete to provide Tab-completion choices."""
-    _, diff = get_diff()
-    # Collect all keys that have pending changes
-    pending = [item[0] for item in (diff["new"] + diff["modified"])]
-    pending.extend(diff["deleted"])
-    pending.append(".")
-    return [p for p in pending if p.startswith(prefix)]
-
-def show_status():
-    """Prints the current status of files (staged/unstaged)."""
-    _, diff = get_diff()
-    
-    has_changes = any(diff.values())
-    
-    if not has_changes:
-        print("Nothing to sync, working tree clean.")
-        return
-
-    if diff["new"]:
-        print(f"\nNew files ({len(diff['new'])}):")
-        for item in diff["new"]:
-            print(f"  (new)      {item[0]}")
-            
-    if diff["modified"]:
-        print(f"\nModified files ({len(diff['modified'])}):")
-        for item in diff["modified"]:
-            print(f"  (modified) {item[0]}")
-
-    if diff["deleted"]:
-        print(f"\nDeleted in source ({len(diff['deleted'])}):")
-        for key in diff["deleted"]:
-            print(f"  (deleted)  {key}")
-    print("")
-
-def commit(target):
-    """Syncs the target file(s) and updates the state."""
-    state, diff = get_diff()
-    to_sync = []
-    to_remove_from_state = []
-
-    # Filter changes based on target
-    if target == ".":
-        to_sync = diff["new"] + diff["modified"]
-        to_remove_from_state = diff["deleted"]
-    else:
-        # User specified a specific state_key (e.g. obsidian:MyNote.md)
-        to_sync = [item for item in (diff["new"] + diff["modified"]) if item[0] == target]
-        if target in diff["deleted"]:
-            to_remove_from_state = [target]
+class CommitGui:
+    def __init__(self, state, diff):
+        self.state = state
+        self.diff = diff
+        self.root = tk.Tk()
+        self.root.title("Sync Commit Tool")
+        self.root.geometry("1000x700")
         
-        if not to_sync and not to_remove_from_state:
-            print(f"Error: No changes found for '{target}'")
+        # UI Styles
+        style = ttk.Style()
+        style.configure("Treeview", rowheight=25)
+        
+        main_frame = ttk.Frame(self.root, padding="10")
+        main_frame.pack(fill="both", expand=True)
+
+        label = ttk.Label(main_frame, text="Review Changes (Hierarchical View)", font=("Arial", 12, "bold"))
+        label.pack(pady=(0, 10))
+
+        tree_container = ttk.Frame(main_frame)
+        tree_container.pack(fill="both", expand=True)
+
+        self.tree = ttk.Treeview(tree_container, columns=("Status",), selectmode="none")
+        self.tree.heading("#0", text="Folder / File", anchor="w")
+        self.tree.heading("Status", text="Status", anchor="w")
+        self.tree.column("#0", width=600)
+        self.tree.column("Status", width=150)
+
+        scrollbar = ttk.Scrollbar(tree_container, orient="vertical", command=self.tree.yview)
+        self.tree.configure(yscrollcommand=scrollbar.set)
+        self.tree.pack(side="left", fill="both", expand=True)
+        scrollbar.pack(side="right", fill="y")
+
+        # Tags for coloring
+        self.tree.tag_configure("new", foreground="green")
+        self.tree.tag_configure("modified", foreground="blue")
+        self.tree.tag_configure("deleted", foreground="red")
+        self.tree.tag_configure("folder", font=("Arial", 10, "bold"))
+
+        self.item_data = {}  # Map tree node to file info
+        self.node_states = {} # Map node to checkbox state
+        
+        self._populate_tree()
+
+        # Bind click for checkbox toggle
+        self.tree.bind("<Button-1>", self.on_click)
+
+        # Bottom Buttons
+        btn_frame = ttk.Frame(main_frame)
+        btn_frame.pack(fill="x", pady=10)
+        
+        ttk.Button(btn_frame, text="Commit Selected", command=self.perform_commit).pack(side="right", padx=5)
+        ttk.Button(btn_frame, text="Cancel", command=self.root.destroy).pack(side="right", padx=5)
+
+    def _get_checkbox_text(self, state, text):
+        return f"{state} {text}"
+
+    def _populate_tree(self):
+        all_items = self.diff["new"] + self.diff["modified"] + self.diff["deleted"]
+        
+        # Group by source and build folder structure
+        structure = {}
+        for item in all_items:
+            sid = item.get("id") or item["key"].split(":")[0]
+            if sid not in structure:
+                structure[sid] = {}
+            
+            # Navigate/Build hierarchy
+            rel_path = item.get("rel", item["key"].split(":", 1)[-1])
+            parts = Path(rel_path).parts
+            
+            current_level = structure[sid]
+            for part in parts[:-1]:
+                # We need to distinguish between folders and files at this level
+                if part not in current_level or not isinstance(current_level[part], dict):
+                    current_level[part] = {}
+                current_level = current_level[part]
+            
+            # The leaf is the item itself
+            current_level[parts[-1]] = item
+
+        # Recursively insert into tree
+        def insert_node(parent, name, content):
+            if isinstance(content, dict):
+                # Check if it's actually a folder or a file masquerading as a dict
+                # In our structure, folders are dicts, file items are dicts with a "type" key
+                if "type" in content and "key" in content:
+                    # It's a file item
+                    item = content
+                    file_id = self.tree.insert(
+                        parent, "end", 
+                        text=self._get_checkbox_text(CHECKED, name), 
+                        values=(item["type"].upper(),),
+                        tags=(item["type"],)
+                    )
+                    self.node_states[file_id] = CHECKED
+                    self.item_data[file_id] = item
+                else:
+                    # It's a folder
+                    folder_id = self.tree.insert(parent, "end", text=self._get_checkbox_text(CHECKED, name), open=True, tags=("folder",))
+                    self.node_states[folder_id] = CHECKED
+                    for k, v in content.items():
+                        insert_node(folder_id, k, v)
+            else:
+                # Should not reach here based on structure logic, but for safety:
+                pass
+
+        for sid, content in structure.items():
+            root_id = self.tree.insert("", "end", text=self._get_checkbox_text(CHECKED, f"Source: {sid}"), open=True, tags=("folder",))
+            self.node_states[root_id] = CHECKED
+            for k, v in content.items():
+                insert_node(root_id, k, v)
+
+    def on_click(self, event):
+        item_id = self.tree.identify_row(event.y)
+        column = self.tree.identify_column(event.x)
+        
+        # Only toggle if clicking the tree label area (where checkbox is)
+        if not item_id or column != "#0":
             return
 
-    # Perform Sync
-    updates_made = False
-    
-    for state_key, src_path, relative_path, source_id, current_hash in to_sync:
-        print(f"Syncing: {state_key}")
-        dest_path = DEST_DIR / relative_path
-        dest_path.parent.mkdir(parents=True, exist_ok=True)
+        # Toggle state
+        current_state = self.node_states.get(item_id)
+        new_state = UNCHECKED if current_state in [CHECKED, PARTIAL] else CHECKED
         
-        try:
-            shutil.copy2(src_path, dest_path)
-            state[state_key] = {
-                "source_id": source_id,
-                "relative_path": relative_path,
-                "hash": current_hash,
-                "dest_path": str(relative_path)
-            }
-            updates_made = True
-        except Exception as e:
-            print(f"  [Error] Failed to copy {state_key}: {e}")
+        self._update_node_and_children(item_id, new_state)
+        self._update_parents(item_id)
 
-    for key in to_remove_from_state:
-        print(f"Removing from state: {key}")
-        if key in state:
-            del state[key]
-            updates_made = True
+    def _update_node_and_children(self, node, state):
+        self.node_states[node] = state
+        # Update Visual
+        current_text = self.tree.item(node, "text")[2:]
+        self.tree.item(node, text=f"{state} {current_text}")
+        
+        # Recurse to children
+        for child in self.tree.get_children(node):
+            self._update_node_and_children(child, state)
 
-    if updates_made:
-        save_state(state)
-        print("Done.")
-    else:
-        print("No updates performed.")
+    def _update_parents(self, node):
+        parent = self.tree.parent(node)
+        if not parent:
+            return
+        
+        children = self.tree.get_children(parent)
+        child_states = [self.node_states[c] for c in children]
+        
+        if all(s == CHECKED for s in child_states):
+            new_p_state = CHECKED
+        elif all(s == UNCHECKED for s in child_states):
+            new_p_state = UNCHECKED
+        else:
+            new_p_state = PARTIAL
+            
+        if self.node_states[parent] != new_p_state:
+            self.node_states[parent] = new_p_state
+            current_text = self.tree.item(parent, "text")[2:]
+            self.tree.item(parent, text=f"{new_p_state} {current_text}")
+            self._update_parents(parent)
+
+    def perform_commit(self):
+        # Gather all checked file nodes
+        to_commit = []
+        for node, item in self.item_data.items():
+            if self.node_states[node] == CHECKED:
+                to_commit.append(item)
+
+        if not to_commit:
+            messagebox.showwarning("No Selection", "Please select at least one file to commit.")
+            return
+
+        confirm = messagebox.askyesno("Confirm", f"Commit {len(to_commit)} changes?")
+        if not confirm:
+            return
+
+        updates_made = False
+        for item in to_commit:
+            key = item["key"]
+            if item['type'] == "deleted":
+                if key in self.state:
+                    del self.state[key]
+                    updates_made = True
+            else:
+                dest_path = DEST_DIR / item['rel']
+                dest_path.parent.mkdir(parents=True, exist_ok=True)
+                try:
+                    shutil.copy2(item['path'], dest_path)
+                    self.state[key] = {
+                        "source_id": item['id'],
+                        "relative_path": item['rel'],
+                        "hash": item['hash'],
+                        "dest_path": str(item['rel'])
+                    }
+                    updates_made = True
+                except Exception as e:
+                    print(f"Error copying {key}: {e}")
+
+        if updates_made:
+            save_state(self.state)
+            messagebox.showinfo("Success", f"Synced {len(to_commit)} items successfully.")
+        
+        self.root.destroy()
+
+    def run(self):
+        self.root.mainloop()
 
 def main():
-    parser = argparse.ArgumentParser(description="Sync Monitor - A Git-like tool for porting notes.")
-    subparsers = parser.add_subparsers(dest="command", help="Commands")
-
-    # Status command
-    subparsers.add_parser("status", help="Show changes between source and destination.")
-
-    # Commit command
-    commit_parser = subparsers.add_parser("commit", help="Sync changes and update state.")
-    target_arg = commit_parser.add_argument("target", help="The file ID to sync, or '.' for all.")
+    state, diff = get_diff()
+    if not any(diff.values()):
+        print("Nothing to sync, working tree clean.")
+        return
     
-    # Register the completer function for the 'target' argument
-    if argcomplete:
-        target_arg.completer = get_pending_targets
-        argcomplete.autocomplete(parser)
-
-    args = parser.parse_args()
-
-    if args.command == "status":
-        show_status()
-    elif args.command == "commit":
-        commit(args.target)
-    else:
-        parser.print_help()
+    gui = CommitGui(state, diff)
+    gui.run()
 
 if __name__ == "__main__":
     main()
