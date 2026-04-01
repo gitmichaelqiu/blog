@@ -79,7 +79,12 @@ nav = [
         ] },
     ] },
     { "Data Science" = [
-        { "Set up Environment" = "data-science/set-up-environment.md" },
+        { "Introduction" = [
+            { "Set up Environment" = "data-science/set-up-environment.md" },
+        ] },
+        { "Competition Writeups" = [
+            { "Predict Customer Churn" = "data-science/competitions/predict-customer-churn.md" },
+        ] },
     ] },
     { "Academic Notes" = [
         { "A-Level" = [
