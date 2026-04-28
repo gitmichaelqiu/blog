@@ -5,7 +5,11 @@ import os
 import markdown
 
 # Ensure node_modules is in the path for the subprocess
-os.environ["NODE_PATH"] = os.path.join(os.getcwd(), "node_modules")
+# We use the absolute path of the repo root to be robust
+_PLUGIN_DIR = os.path.dirname(os.path.abspath(__file__))
+_REPO_ROOT = os.path.dirname(_PLUGIN_DIR)
+_NODE_MODULES = os.path.join(_REPO_ROOT, "node_modules")
+os.environ["NODE_PATH"] = _NODE_MODULES
 
 def render_katex(source, language, class_name, options, md, **kwargs):
     """
@@ -38,7 +42,9 @@ try {{
         )
         return result.stdout.strip()
     except subprocess.CalledProcessError as e:
-        return f'<span class="katex-error" title="{e.stderr.strip()}">{source}</span>'
+        # In case of error, we return the original source but could also log it
+        error_msg = e.stderr.strip() or e.stdout.strip() or "Unknown KaTeX error"
+        return f'<span class="katex-error" title="{error_msg}">{source}</span>'
     except Exception as e:
         return f'<span class="katex-error" title="{str(e)}">{source}</span>'
 
