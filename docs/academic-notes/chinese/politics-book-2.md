@@ -20,5 +20,5 @@ comments: true
   }
 </style>
 
-<div id="map-wrapper" data-src="../politics-book-2.svg"></div>
+<div id="map-wrapper"><link href="../politics-book-2.svg"></div>
 

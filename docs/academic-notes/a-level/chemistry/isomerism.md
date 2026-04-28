@@ -20,5 +20,5 @@ comments: true
   }
 </style>
 
-<div id="map-wrapper" data-src="../isomerism.svg"></div>
+<div id="map-wrapper"><link href="../isomerism.svg"></div>
 

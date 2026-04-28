@@ -28,7 +28,8 @@ const initPanZoomLoader = () => {
     };
 
     mapWrappers.forEach(wrapper => {
-        const svgSrc = wrapper.getAttribute('data-src');
+        const linkEl = wrapper.querySelector('link');
+        const svgSrc = linkEl ? linkEl.getAttribute('href') : null;
         if (!svgSrc) return;
 
         // Skip if already initialized

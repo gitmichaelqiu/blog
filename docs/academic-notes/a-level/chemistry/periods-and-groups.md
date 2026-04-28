@@ -20,5 +20,5 @@ comments: true
   }
 </style>
 
-<div id="map-wrapper" data-src="../periods-and-groups.svg"></div>
+<div id="map-wrapper"><link href="../periods-and-groups.svg"></div>
 

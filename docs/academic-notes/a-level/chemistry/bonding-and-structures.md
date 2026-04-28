@@ -20,5 +20,5 @@ comments: true
   }
 </style>
 
-<div id="map-wrapper" data-src="../bonding-and-structures.svg"></div>
+<div id="map-wrapper"><link href="../bonding-and-structures.svg"></div>
 

@@ -21,5 +21,5 @@ comments: true
   }
 </style>
 
-<div id="map-wrapper" data-src="../cell-composition.svg"></div>
+<div id="map-wrapper"><link href="../cell-composition.svg"></div>
 
