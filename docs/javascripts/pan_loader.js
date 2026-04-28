@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+const initPanZoomLoader = () => {
     const mapWrappers = document.querySelectorAll('#map-wrapper');
     if (mapWrappers.length === 0) return;
 
@@ -31,13 +31,15 @@ document.addEventListener("DOMContentLoaded", function() {
         const svgSrc = wrapper.getAttribute('data-src');
         if (!svgSrc) return;
 
+        // Skip if already initialized
+        if (wrapper.querySelector('embed')) return;
+
         let panZoomInstance = null;
         let svgElement = null;
 
         const initPanZoom = () => {
             if (panZoomInstance) return;
 
-            // Create the embed element dynamically
             svgElement = document.createElement('embed');
             svgElement.id = 'cell-svg';
             svgElement.type = 'image/svg+xml';
@@ -48,7 +50,6 @@ document.addEventListener("DOMContentLoaded", function() {
             wrapper.appendChild(svgElement);
 
             loadScript(() => {
-                // Wait for the SVG to load before initializing pan-zoom
                 svgElement.addEventListener('load', function() {
                     try {
                         if (panZoomInstance) return;
@@ -73,22 +74,6 @@ document.addEventListener("DOMContentLoaded", function() {
                         };
                         window.addEventListener('resize', handleResize);
 
-                        // Cleanup logic
-                        const cleanup = () => {
-                            if (panZoomInstance) {
-                                panZoomInstance.destroy();
-                                panZoomInstance = null;
-                            }
-                            window.removeEventListener('resize', handleResize);
-                            if (svgElement && svgElement.parentNode) {
-                                svgElement.parentNode.removeChild(svgElement);
-                            }
-                        };
-
-                        // Use MutationObserver or custom event for cleanup if needed
-                        // For non-SPA, this runs once per page. 
-                        // For SPA, we might need a global cleanup on navigation.
-
                     } catch (e) {
                         console.error("Failed to initialize SVG Pan-Zoom:", e);
                     }
@@ -107,4 +92,18 @@ document.addEventListener("DOMContentLoaded", function() {
 
         intersectionObserver.observe(wrapper);
     });
-});
+};
+
+// Initial load
+document.addEventListener("DOMContentLoaded", initPanZoomLoader);
+
+// Handle SPA transitions (MkDocs Material / Zensical)
+// Use multiple common events to be safe
+window.addEventListener("locationChange", initPanZoomLoader);
+window.addEventListener("popstate", initPanZoomLoader);
+// Some versions use this specific event for content updates
+document.addEventListener("DOMNodeInserted", (e) => {
+    if (e.target.id === "map-wrapper" || (e.target.querySelector && e.target.querySelector("#map-wrapper"))) {
+        initPanZoomLoader();
+    }
+}, false);
