@@ -1,3 +1,5 @@
+# AS Physics
+
 ## Practical Equipment
 
 | Apparatus              | Resolution |
