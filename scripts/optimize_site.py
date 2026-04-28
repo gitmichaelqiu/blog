@@ -2,6 +2,7 @@ import os
 import re
 import json
 import subprocess
+import shutil
 from bs4 import BeautifulSoup
 
 def render_katex(source, is_block):
@@ -38,26 +39,16 @@ def optimize_html_file(file_path):
     changed = False
 
     # Find all arithmatex spans and divs
-    # pymdownx.arithmatex with generic=true outputs \(...\) or \[...\]
     math_elements = soup.find_all(class_='arithmatex')
     for el in math_elements:
         text = el.get_text().strip()
-        is_block = False
-        math_content = ""
-
-        if text.startswith('\\(') and text.endswith('\\)'):
-            math_content = text[2:-2].strip()
-            is_block = False
-        elif text.startswith('\\[') and text.endswith('\\]'):
-            math_content = text[2:-2].strip()
-            is_block = True
-        elif el.name == 'div':
-            math_content = text
-            is_block = True
-        else:
-            # Fallback for other formats
-            math_content = text
-            is_block = (el.name == 'div')
+        # Pymdownx.arithmatex with generic=true outputs \(...\) or \[...\]
+        math_content = text
+        # Aggressively remove any leading/trailing \( \) \[ \] and spaces
+        math_content = re.sub(r'^(\\\(|\\\[|\s)+', '', math_content)
+        math_content = re.sub(r'(\\\)|\\\]|\s)+$', '', math_content)
+        
+        is_block = (el.name == 'div') or text.strip().startswith('\\[')
 
         if math_content:
             rendered = render_katex(math_content, is_block)
@@ -71,18 +62,40 @@ def optimize_html_file(file_path):
         return True
     return False
 
+def copy_svg_assets():
+    """Ensure all SVGs are copied to the site directory as Zensical might skip them if not explicitly linked."""
+    print("Syncing SVG assets...")
+    docs_dir = 'docs'
+    site_dir = 'site'
+    
+    for root, dirs, files in os.walk(docs_dir):
+        for file in files:
+            if file.endswith('.svg'):
+                # Calculate relative path from docs/
+                rel_path = os.path.relpath(os.path.join(root, file), docs_dir)
+                dest_path = os.path.join(site_dir, rel_path)
+                
+                # Create destination directory if it doesn't exist
+                os.makedirs(os.path.dirname(dest_path), exist_ok=True)
+                
+                # Copy file
+                shutil.copy2(os.path.join(root, file), dest_path)
+                print(f"  Copied {rel_path} to {dest_path}")
+
 def main():
     site_dir = 'site'
     if not os.path.exists(site_dir):
         print(f"Directory {site_dir} not found.")
         return
 
+    # First, copy SVG assets that Zensical might have missed
+    copy_svg_assets()
+
     count = 0
     for root, dirs, files in os.walk(site_dir):
         for file in files:
             if file.endswith('.html'):
                 file_path = os.path.join(root, file)
-                print(f"Processing {file_path}...")
                 if optimize_html_file(file_path):
                     count += 1
     
