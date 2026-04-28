@@ -20,7 +20,5 @@ comments: true
   }
 </style>
 
-<div id="map-wrapper">
-    <embed id="cell-svg" type="image/svg+xml" src="../bonding-and-structures.svg" style="width:100%; height:100%;"/>
-</div>
+<div id="map-wrapper" data-src="../bonding-and-structures.svg"></div>
 
