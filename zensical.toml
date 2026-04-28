@@ -184,17 +184,14 @@ nav = [
 ]
 
 extra_javascript = [
-    "javascripts/katex.js",
-    "https://unpkg.com/katex@0/dist/katex.min.js",
-    "https://unpkg.com/katex@0/dist/contrib/auto-render.min.js",
-    "https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.5.0/dist/svg-pan-zoom.min.js",
-    "javascripts/sheet.js",
+    "javascripts/pan_loader.js",
 ]
 
 extra_css = [
     "https://unpkg.com/katex@0/dist/katex.min.css",
     "stylesheets/desktop-renamer.css",
     "stylesheets/sheet.css",
+    "stylesheets/pan_zoom.css",
 ]
 
 [project.theme]
@@ -266,13 +263,17 @@ emoji_generator = "zensical.extensions.emoji.to_svg"
 emoji_index = "zensical.extensions.emoji.twemoji"
 [project.markdown_extensions.pymdownx.highlight]
 [project.markdown_extensions.pymdownx.inlinehilite]
+custom_inline = [
+    { name = "math", class = "arithmatex", format = "zensical_plugins.render_utils.render_katex" }
+]
 [project.markdown_extensions.pymdownx.keys]
 [project.markdown_extensions.pymdownx.mark]
 [project.markdown_extensions.pymdownx.smartsymbols]
 [project.markdown_extensions.pymdownx.superfences]
 custom_fences = [
     { name = "mermaid", class = "mermaid", format = "pymdownx.superfences.fence_code_format" },
-    { name = "sheet", class = "sheet", format = "pymdownx.superfences.fence_code_format" },
+    { name = "sheet", class = "sheet", format = "zensical_plugins.render_utils.render_sheet" },
+    { name = "math", class = "arithmatex", format = "zensical_plugins.render_utils.render_katex" },
 ]
 [project.markdown_extensions.pymdownx.tabbed]
 alternate_style = true

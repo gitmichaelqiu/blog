@@ -1,0 +1,35 @@
+#map-wrapper {
+    position: relative;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
+}
+
+#map-wrapper.pan-zoom-inactive:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.pan-zoom-hint {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-family: var(--md-text-font-family, sans-serif);
+    font-size: 0.9rem;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 10;
+    backdrop-filter: blur(4px);
+}
+
+#map-wrapper:not(.pan-zoom-inactive) .pan-zoom-hint {
+    opacity: 0;
+    pointer-events: none;
+}
+
+[data-md-color-scheme="slate"] .pan-zoom-hint {
+    background: rgba(255, 255, 255, 0.1);
+}
