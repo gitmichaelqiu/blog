@@ -7,7 +7,15 @@ Visit [here](https://gitmichaelqiu.github.io/blog).
 ## Build This Site Locally
 
 ```bash
-git clone https://github.com/gitmichaelqiu/gitmichaelqiu.github.io.git
-cd gitmichaelqiu.github.io
-zensical serve
+git clone https://github.com/gitmichaelqiu/blog.git
+cd blog
+zensical build
+```
+
+This site uses a hybrid approach for building the site. An extra python script is used to pre-render the site.
+
+```bash
+./build.sh
+cd site
+python -m http.server
 ```
