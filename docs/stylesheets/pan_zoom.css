@@ -1,24 +1,18 @@
 #map-wrapper {
     position: relative;
     width: 100%;
-    min-height: 500px; /* Slightly taller for better view */
+    min-height: 500px;
     border-radius: 12px;
     overflow: hidden;
-    background: #ffffff; /* Default light background */
+    background-color: #ffffff !important; /* Force solid white in light mode */
     border: 1px solid rgba(0,0,0,0.1);
-    transition: background 0.3s ease;
+    transition: background-color 0.3s ease;
 }
 
-/* Dark mode support */
-[data-md-color-scheme="slate"] #map-wrapper {
-    background: #1e2124;
+/* Dark mode support - Targeting body attribute used by MkDocs Material */
+body[data-md-color-scheme="slate"] #map-wrapper {
+    background-color: #1e2124 !important; /* Force solid dark in dark mode */
     border-color: rgba(255,255,255,0.1);
-}
-
-@media (prefers-color-scheme: dark) {
-    :root:not([data-md-color-scheme="default"]) #map-wrapper {
-        background: #1e2124;
-    }
 }
 
 /* Ensure the SVG takes up the full container */
@@ -26,10 +20,10 @@
     width: 100%;
     height: 100%;
     display: block;
+    background: transparent !important;
 }
 
-/* In dark mode, if the SVG has hardcoded black text, we can invert it.
-   Adjust as needed if the SVG is already themed. */
-[data-md-color-scheme="slate"] #map-wrapper embed {
-    filter: invert(0.9) hue-rotate(180deg);
+/* In dark mode, invert the SVG colors */
+body[data-md-color-scheme="slate"] #map-wrapper embed {
+    filter: invert(0.9) hue-rotate(180deg) !important;
 }

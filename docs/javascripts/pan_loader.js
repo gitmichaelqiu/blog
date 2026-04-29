@@ -40,15 +40,28 @@
             }
         };
 
-        embed.addEventListener('load', tryInit);
-        
-        // Prevent page scroll when mouse is over the SVG and scrolling (zooming)
-        wrapper.addEventListener('wheel', (e) => {
-            if (e.ctrlKey || e.metaKey || true) { // Always prevent if we want zoom to be exclusive
-                e.preventDefault();
-            }
-        }, { passive: false });
+        const stopScroll = (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+        };
 
+        // Attach scroll suppression to both the wrapper and the embed itself
+        wrapper.addEventListener('wheel', stopScroll, { passive: false });
+        embed.addEventListener('wheel', stopScroll, { passive: false });
+
+        embed.addEventListener('load', () => {
+            tryInit();
+            // Try to attach to the inner document as well
+            try {
+                const svgDoc = embed.getSVGDocument();
+                if (svgDoc) {
+                    svgDoc.addEventListener('wheel', stopScroll, { passive: false });
+                }
+            } catch (e) {
+                console.warn('Could not attach scroll listener to inner SVG document');
+            }
+        });
+        
         wrapper.appendChild(embed);
     }
 
