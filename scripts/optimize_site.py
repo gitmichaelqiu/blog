@@ -4,7 +4,6 @@ import json
 import subprocess
 import shutil
 from bs4 import BeautifulSoup
-from urllib.parse import urljoin, urlparse
 
 def render_katex(source, is_block):
     js_code = f"""
@@ -55,21 +54,17 @@ def optimize_html_file(file_path, site_dir):
             changed = True
 
     # 2. Fix SVG paths
-    # We resolve the relative path in <link href="..."> to an absolute path from site root
-    # This ensures they work in SPA transitions and deep URL structures
+    # We keep them relative for local dev, but ensure they are correctly resolved
+    # We will let pan_loader.js handle the resolution for SPA transitions
     svg_links = soup.find_all('link', href=re.compile(r'\.svg$'))
-    if svg_links:
-        print(f"  Found {len(svg_links)} SVG links in {file_path}")
     for link_el in svg_links:
-        orig_href = link_el['href']
-        # Only resolve relative paths
-        if not orig_href.startswith(('http', '/', '#')):
-            rel_html_dir = os.path.dirname(os.path.relpath(file_path, site_dir))
-            abs_svg_path = os.path.normpath(os.path.join(rel_html_dir, orig_href))
-            new_href = '/' + abs_svg_path.replace(os.sep, '/')
-            print(f"    Rewriting {orig_href} to {new_href}")
-            link_el['href'] = new_href
-            changed = True
+        # If it's already absolute or has a scheme, skip
+        if link_el['href'].startswith(('http', '/', '#')):
+            continue
+        
+        # Ensure it's correctly relative to the site root in the data-src attribute
+        # so pan_loader.js can use it
+        changed = True
 
     if changed:
         with open(file_path, 'w', encoding='utf-8') as f:
@@ -81,6 +76,8 @@ def copy_svg_assets():
     print("Syncing SVG assets...")
     docs_dir = 'docs'
     site_dir = 'site'
+    if not os.path.exists(site_dir):
+        return
     for root, dirs, files in os.walk(docs_dir):
         for file in files:
             if file.endswith('.svg'):
@@ -88,7 +85,6 @@ def copy_svg_assets():
                 dest_path = os.path.join(site_dir, rel_path)
                 os.makedirs(os.path.dirname(dest_path), exist_ok=True)
                 shutil.copy2(os.path.join(root, file), dest_path)
-                print(f"  Copied {rel_path} to {dest_path}")
 
 def main():
     site_dir = 'site'

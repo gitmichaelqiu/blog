@@ -29,8 +29,16 @@ const initPanZoomLoader = () => {
 
     mapWrappers.forEach(wrapper => {
         const linkEl = wrapper.querySelector('link');
-        const svgSrc = linkEl ? linkEl.getAttribute('href') : null;
+        let svgSrc = linkEl ? linkEl.getAttribute('href') : null;
         if (!svgSrc) return;
+
+        // Resolve relative paths to absolute URLs using the current page location
+        // This is crucial for SPA navigation and subpath deployments (like /blog/)
+        try {
+            svgSrc = new URL(svgSrc, window.location.href).href;
+        } catch (e) {
+            console.error("Failed to resolve SVG path:", svgSrc, e);
+        }
 
         // Skip if already initialized
         if (wrapper.querySelector('embed')) return;
