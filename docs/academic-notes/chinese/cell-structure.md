@@ -20,5 +20,5 @@ comments: true
   }
 </style>
 
-<div id="map-wrapper"><link href="../cell-structure.svg"></div>
+<div id="map-wrapper"><link href="./cell-structure.svg"></div>
 

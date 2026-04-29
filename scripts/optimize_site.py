@@ -54,16 +54,36 @@ def optimize_html_file(file_path, site_dir):
             changed = True
 
     # 2. Fix SVG paths
-    # We keep them relative for local dev, but ensure they are correctly resolved
-    # We will let pan_loader.js handle the resolution for SPA transitions
-    svg_links = soup.find_all('link', href=re.compile(r'\.svg$'))
+    # We resolve relative paths in the built HTML to absolute paths from site root.
+    # Page at: site/academic-notes/a-level/chemistry/bonding-and-structures/index.html
+    # Links to: ./bonding-and-structures.svg (which is wrong, should be ../)
+    # But wait, in the .md it was ./bonding-and-structures.svg.
+    # The SVG is actually at site/academic-notes/a-level/chemistry/bonding-and-structures.svg.
+    
+    svg_links = soup.find_all(href=re.compile(r'\.svg$'))
+    if svg_links:
+        print(f"  Found {len(svg_links)} SVG-related tags in {file_path}")
     for link_el in svg_links:
-        # If it's already absolute or has a scheme, skip
-        if link_el['href'].startswith(('http', '/', '#')):
+        orig_href = link_el.get('href', '')
+        if orig_href.startswith(('http', '/', '#')):
             continue
+            
+        # Resolve path
+        html_rel_path = os.path.relpath(file_path, site_dir)
+        html_dir = os.path.dirname(html_rel_path)
         
-        # Ensure it's correctly relative to the site root in the data-src attribute
-        # so pan_loader.js can use it
+        # In MkDocs/Zensical, page.md -> page/index.html
+        # Relative paths in page.md are relative to the parent folder of the new index.html
+        if os.path.basename(file_path) == 'index.html' and html_dir != '':
+            base_dir = os.path.dirname(html_dir)
+        else:
+            base_dir = html_dir
+            
+        abs_svg_path = os.path.normpath(os.path.join(base_dir, orig_href))
+        root_relative = '/' + abs_svg_path.replace(os.sep, '/')
+        
+        print(f"  Fixing SVG path: {orig_href} -> {root_relative}")
+        link_el['href'] = root_relative
         changed = True
 
     if changed:

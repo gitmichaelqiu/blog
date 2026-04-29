@@ -1,118 +1,76 @@
-const initPanZoomLoader = () => {
+/**
+ * pan_loader.js
+ * Handles lazy-loading and initializing pan-zoom for SVG mindmaps.
+ * Supports SPA transitions and subpath deployments (like GitHub Pages /blog/).
+ */
+
+function initSVGPanZoom() {
     const mapWrappers = document.querySelectorAll('#map-wrapper');
     if (mapWrappers.length === 0) return;
-
-    let isScriptLoading = false;
-    const pendingInits = [];
-
-    const loadScript = (callback) => {
-        if (window.svgPanZoom) {
-            callback();
-            return;
-        }
-        pendingInits.push(callback);
-        if (isScriptLoading) return;
-        isScriptLoading = true;
-
-        const script = document.createElement('script');
-        script.src = "https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.6.1/dist/svg-pan-zoom.min.js";
-        script.onload = () => {
-            isScriptLoading = false;
-            while (pendingInits.length) { pendingInits.shift()(); }
-        };
-        script.onerror = () => {
-            isScriptLoading = false;
-            console.error("Failed to load svg-pan-zoom script.");
-        };
-        document.head.appendChild(script);
-    };
 
     mapWrappers.forEach(wrapper => {
         const linkEl = wrapper.querySelector('link');
         let svgSrc = linkEl ? linkEl.getAttribute('href') : null;
         if (!svgSrc) return;
 
-        // Resolve relative paths to absolute URLs using the current page location
-        // This is crucial for SPA navigation and subpath deployments (like /blog/)
-        try {
-            svgSrc = new URL(svgSrc, window.location.href).href;
-        } catch (e) {
-            console.error("Failed to resolve SVG path:", svgSrc, e);
-        }
-
         // Skip if already initialized
         if (wrapper.querySelector('embed')) return;
 
-        let panZoomInstance = null;
-        let svgElement = null;
+        // --- SUBPATH HANDLING (GitHub Pages /blog/) ---
+        // If the path is root-relative (starts with /) but missing the /blog prefix
+        if (svgSrc.startsWith('/') && !svgSrc.startsWith('/blog/')) {
+            // Check if current page is under /blog/ (deployed site)
+            if (window.location.pathname.startsWith('/blog/')) {
+                svgSrc = '/blog' + svgSrc;
+            }
+        }
 
-        const initPanZoom = () => {
-            if (panZoomInstance) return;
+        const embed = document.createElement('embed');
+        embed.setAttribute('id', 'cell-svg');
+        embed.setAttribute('type', 'image/svg+xml');
+        embed.setAttribute('src', svgSrc);
+        embed.style.width = '100%';
+        embed.style.height = '100%';
 
-            svgElement = document.createElement('embed');
-            svgElement.id = 'cell-svg';
-            svgElement.type = 'image/svg+xml';
-            svgElement.src = svgSrc;
-            svgElement.style.width = '100%';
-            svgElement.style.height = '100%';
-            
-            wrapper.appendChild(svgElement);
-
-            loadScript(() => {
-                svgElement.addEventListener('load', function() {
-                    try {
-                        if (panZoomInstance) return;
-
-                        panZoomInstance = window.svgPanZoom(svgElement, {
-                            zoomEnabled: true,
-                            controlIconsEnabled: true,
-                            fit: true,
-                            center: true,
-                            mouseWheelZoomEnabled: true
-                        });
-
-                        const svgDoc = svgElement.getSVGDocument();
-                        if (svgDoc) {
-                            svgDoc.addEventListener('wheel', function(e) {
-                                e.preventDefault();
-                            }, { passive: false });
-                        }
-
-                        const handleResize = () => {
-                            if (panZoomInstance) panZoomInstance.resize();
-                        };
-                        window.addEventListener('resize', handleResize);
-
-                    } catch (e) {
-                        console.error("Failed to initialize SVG Pan-Zoom:", e);
-                    }
-                });
-            });
-        };
-
-        const intersectionObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    initPanZoom();
-                    intersectionObserver.unobserve(wrapper);
+        embed.addEventListener('load', () => {
+            const svgDoc = embed.getSVGDocument();
+            if (svgDoc) {
+                // Initialize svg-pan-zoom
+                if (window.svgPanZoom) {
+                    window.svgPanZoom(embed, {
+                        zoomEnabled: true,
+                        controlIconsEnabled: true,
+                        fit: true,
+                        center: true,
+                        minZoom: 0.1,
+                        maxZoom: 10
+                    });
                 }
-            });
-        }, { threshold: 0.1 });
+            }
+        });
 
-        intersectionObserver.observe(wrapper);
+        wrapper.appendChild(embed);
     });
-};
+}
 
-// Initial load
-document.addEventListener("DOMContentLoaded", initPanZoomLoader);
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', initSVGPanZoom);
 
-// Handle SPA transitions (MkDocs Material / Zensical)
-// Use multiple common events to be safe
-window.addEventListener("locationChange", initPanZoomLoader);
-window.addEventListener("popstate", initPanZoomLoader);
-// Some versions use this specific event for content updates
-document.addEventListener("DOMNodeInserted", (e) => {
-    if (e.target.id === "map-wrapper" || (e.target.querySelector && e.target.querySelector("#map-wrapper"))) {
-        initPanZoomLoader();
-    }
-}, false);
+// Support for Instant Navigation (SPA transitions)
+if (window.location.href.includes('instant')) {
+    // Some themes use different events for SPA transitions
+    document.addEventListener('DOMNodeInserted', (e) => {
+        if (e.target.id === 'map-wrapper') initSVGPanZoom();
+    });
+}
+
+// Observe for dynamic content changes (more robust for SPAs)
+const observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+        if (mutation.addedNodes.length) {
+            initSVGPanZoom();
+        }
+    });
+});
+
+observer.observe(document.body, { childList: true, subtree: true });
