@@ -3,6 +3,7 @@ import re
 import json
 import subprocess
 import shutil
+from urllib.parse import urlparse
 from bs4 import BeautifulSoup
 
 def render_katex(source, is_block):
@@ -31,7 +32,21 @@ try {{
         print(f"Error rendering KaTeX: {e}")
         return source
 
-def optimize_html_file(file_path, site_dir):
+def get_base_path():
+    """Extracts the base path from zensical.toml's site_url."""
+    try:
+        with open('zensical.toml', 'r', encoding='utf-8') as f:
+            content = f.read()
+            match = re.search(r'site_url\s*=\s*"(.*?)"', content)
+            if match:
+                url = match.group(1)
+                path = urlparse(url).path.rstrip('/')
+                return path
+    except Exception as e:
+        print(f"Error reading zensical.toml: {e}")
+    return ""
+
+def optimize_html_file(file_path, site_dir, base_path):
     with open(file_path, 'r', encoding='utf-8') as f:
         html = f.read()
     
@@ -54,33 +69,29 @@ def optimize_html_file(file_path, site_dir):
             changed = True
 
     # 2. Fix SVG paths
-    # We resolve relative paths in the built HTML to absolute paths from site root.
-    # Page at: site/academic-notes/a-level/chemistry/bonding-and-structures/index.html
-    # Links to: ./bonding-and-structures.svg (which is wrong, should be ../)
-    # But wait, in the .md it was ./bonding-and-structures.svg.
-    # The SVG is actually at site/academic-notes/a-level/chemistry/bonding-and-structures.svg.
-    
+    # We resolve relative paths in the built HTML to absolute paths including the subpath (base_path).
     svg_links = soup.find_all(href=re.compile(r'\.svg$'))
-    if svg_links:
-        print(f"  Found {len(svg_links)} SVG-related tags in {file_path}")
     for link_el in svg_links:
         orig_href = link_el.get('href', '')
         if orig_href.startswith(('http', '/', '#')):
             continue
             
-        # Resolve path
+        # Resolve path relative to site root
         html_rel_path = os.path.relpath(file_path, site_dir)
         html_dir = os.path.dirname(html_rel_path)
         
         # In MkDocs/Zensical, page.md -> page/index.html
-        # Relative paths in page.md are relative to the parent folder of the new index.html
         if os.path.basename(file_path) == 'index.html' and html_dir != '':
-            base_dir = os.path.dirname(html_dir)
+            md_base_dir = os.path.dirname(html_dir)
         else:
-            base_dir = html_dir
+            md_base_dir = html_dir
             
-        abs_svg_path = os.path.normpath(os.path.join(base_dir, orig_href))
-        root_relative = '/' + abs_svg_path.replace(os.sep, '/')
+        abs_svg_path = os.path.normpath(os.path.join(md_base_dir, orig_href))
+        
+        # Combine with base_path for deployment
+        # e.g. /blog + /academic-notes/...
+        root_relative = base_path + '/' + abs_svg_path.replace(os.sep, '/')
+        root_relative = re.sub(r'/+', '/', root_relative) # Remove double slashes
         
         print(f"  Fixing SVG path: {orig_href} -> {root_relative}")
         link_el['href'] = root_relative
@@ -113,13 +124,17 @@ def main():
         return
 
     copy_svg_assets()
+    
+    # Always get the base path from zensical.toml for consistency with site_url
+    base_path = get_base_path()
+    print(f"Detected base path: '{base_path}'")
 
     count = 0
     for root, dirs, files in os.walk(site_dir):
         for file in files:
             if file.endswith('.html'):
                 file_path = os.path.join(root, file)
-                if optimize_html_file(file_path, site_dir):
+                if optimize_html_file(file_path, site_dir, base_path):
                     count += 1
     
     print(f"Optimized {count} HTML files.")
