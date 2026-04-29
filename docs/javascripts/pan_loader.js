@@ -3,55 +3,71 @@
  * Handles lazy-loading and initializing pan-zoom for SVG mindmaps.
  */
 
-function initSVGPanZoom() {
-    const mapWrappers = document.querySelectorAll('#map-wrapper');
-    if (mapWrappers.length === 0) return;
-
-    mapWrappers.forEach(wrapper => {
+(function() {
+    function initializeWrapper(wrapper) {
         const linkEl = wrapper.querySelector('link');
         const svgSrc = linkEl ? linkEl.getAttribute('href') : null;
         if (!svgSrc) return;
 
-        // Skip if already initialized
+        // Skip if already has an embed
         if (wrapper.querySelector('embed')) return;
 
         const embed = document.createElement('embed');
-        embed.setAttribute('id', 'cell-svg');
+        embed.setAttribute('class', 'pan-zoom-svg');
         embed.setAttribute('type', 'image/svg+xml');
         embed.setAttribute('src', svgSrc);
         embed.style.width = '100%';
         embed.style.height = '100%';
 
-        embed.addEventListener('load', () => {
-            const svgDoc = embed.getSVGDocument();
-            if (svgDoc) {
-                if (window.svgPanZoom) {
-                    window.svgPanZoom(embed, {
-                        zoomEnabled: true,
-                        controlIconsEnabled: true,
-                        fit: true,
-                        center: true,
-                        minZoom: 0.1,
-                        maxZoom: 10
-                    });
-                }
+        const tryInit = () => {
+            if (!window.svgPanZoom) {
+                console.warn('svgPanZoom not loaded yet, retrying...');
+                setTimeout(tryInit, 100);
+                return;
             }
-        });
 
+            try {
+                window.svgPanZoom(embed, {
+                    zoomEnabled: true,
+                    controlIconsEnabled: true,
+                    fit: true,
+                    center: true,
+                    minZoom: 0.1,
+                    maxZoom: 10
+                });
+            } catch (e) {
+                console.error('Failed to initialize svgPanZoom:', e);
+            }
+        };
+
+        embed.addEventListener('load', tryInit);
         wrapper.appendChild(embed);
-    });
-}
+    }
 
-// Initialize on page load
-document.addEventListener('DOMContentLoaded', initSVGPanZoom);
+    function scanAndInit() {
+        // Look for any div with id="map-wrapper"
+        const mapWrappers = document.querySelectorAll('#map-wrapper');
+        mapWrappers.forEach(initializeWrapper);
+    }
 
-// Observe for dynamic content changes (SPA transitions)
-const observer = new MutationObserver((mutations) => {
-    mutations.forEach((mutation) => {
-        if (mutation.addedNodes.length) {
-            initSVGPanZoom();
+    // Initial check
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', scanAndInit);
+    } else {
+        scanAndInit();
+    }
+
+    // Observe for dynamic content changes (SPA transitions)
+    const observer = new MutationObserver((mutations) => {
+        let shouldScan = false;
+        for (const mutation of mutations) {
+            if (mutation.addedNodes.length) {
+                shouldScan = true;
+                break;
+            }
         }
+        if (shouldScan) scanAndInit();
     });
-});
 
-observer.observe(document.body, { childList: true, subtree: true });
+    observer.observe(document.documentElement, { childList: true, subtree: true });
+})();

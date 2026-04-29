@@ -178,6 +178,7 @@ nav = [
 ]
 
 extra_javascript = [
+    "https://unpkg.com/svg-pan-zoom@3.6.1/dist/svg-pan-zoom.min.js",
     "javascripts/pan_loader.js",
 ]
 
