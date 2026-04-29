@@ -41,6 +41,14 @@
         };
 
         embed.addEventListener('load', tryInit);
+        
+        // Prevent page scroll when mouse is over the SVG and scrolling (zooming)
+        wrapper.addEventListener('wheel', (e) => {
+            if (e.ctrlKey || e.metaKey || true) { // Always prevent if we want zoom to be exclusive
+                e.preventDefault();
+            }
+        }, { passive: false });
+
         wrapper.appendChild(embed);
     }
 
