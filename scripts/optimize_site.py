@@ -80,13 +80,9 @@ def optimize_html_file(file_path, site_dir, base_path):
         html_rel_path = os.path.relpath(file_path, site_dir)
         html_dir = os.path.dirname(html_rel_path)
         
-        # In MkDocs/Zensical, page.md -> page/index.html
-        if os.path.basename(file_path) == 'index.html' and html_dir != '':
-            md_base_dir = os.path.dirname(html_dir)
-        else:
-            md_base_dir = html_dir
-            
-        abs_svg_path = os.path.normpath(os.path.join(md_base_dir, orig_href))
+        # Zensical has already adjusted orig_href to be relative to the HTML file's location.
+        # We just need to resolve it against the HTML's directory to get the site-root relative path.
+        abs_svg_path = os.path.normpath(os.path.join(html_dir, orig_href))
         
         # Combine with base_path for deployment
         # e.g. /blog + /academic-notes/...
