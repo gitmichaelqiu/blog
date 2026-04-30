@@ -46,12 +46,12 @@
    3. BASE & TYPOGRAPHY
    ========================================= */
 html {
-    scroll-behavior: auto;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
 }
 
-html.lenis,
-html.lenis body {
-    height: auto !important;
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
 }
 
 body {

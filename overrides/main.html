@@ -20,16 +20,4 @@
 
 {% block scripts %}
   {{ super() }}
-  <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
-  <script>
-    const lenis = new Lenis({
-      duration: 1.5,
-      easing: function(t) { return Math.min(1, 1.001 - Math.pow(2, -10 * t)); },
-      smooth: true,
-      smoothTouch: false
-    });
-    function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
-    requestAnimationFrame(raf);
-    window.addEventListener('load', function() { lenis.resize(); });
-  </script>
 {% endblock %}
