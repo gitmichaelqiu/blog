@@ -210,9 +210,9 @@ code, kbd, pre {
 
 .md-footer-klein-banner__text {
     font-family: "Inter", sans-serif;
-    font-size: clamp(2.5rem, 8vw, 8rem);
+    font-size: clamp(4rem, 12vw, 15rem);
     font-weight: 900;
-    letter-spacing: -0.06em;
+    letter-spacing: -0.05em;
     line-height: 1;
     text-align: left;
 }
