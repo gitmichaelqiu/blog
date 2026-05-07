@@ -2,7 +2,7 @@
 site_name = "Michael Qiu's Blog"
 site_author = "Michael Qiu"
 site_description = "This is Michael Qiu's personal site."
-site_url = "https://gitmichaelqiu.github.io/blog"
+site_url = "https://mqiu.dev/blog"
 
 repo_url = "https://github.com/gitmichaelqiu/blog"
 repo_name = "gitmichaelqiu/blog"
@@ -11,7 +11,7 @@ repo = "fontawesome/brands/git-alt"
 copyright = "Copyright &copy; 2026 Michael Y. Qiu"
 
 nav = [
-    { "Portfolio" = "https://gitmichaelqiu.github.io" },
+    { "Portfolio" = "https://mqiu.dev" },
     { Home = [
         { About = "index.md" },
         { "Some Websites" = "some-websites.md" },
