@@ -45,9 +45,14 @@
   color: #ffffff !important;
 }
 
-/* Header title: force black/white to avoid picking up primary color */
+/* Header title: force black/white (overrides desktop-renamer.css !important) */
 .md-header__title,
 .md-header__title .md-header__ellipsis,
 .md-header__title .md-header__topic {
-  color: var(--md-default-fg-color);
+  color: var(--md-default-fg-color) !important;
+}
+
+/* Active tab underline indicator — Klein blue */
+.md-tabs__item--active {
+  border-bottom-color: var(--klein-blue-text);
 }
