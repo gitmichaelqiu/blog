@@ -187,6 +187,7 @@ extra_css = [
     "stylesheets/desktop-renamer.css",
     "stylesheets/sheet.css",
     "stylesheets/pan_zoom.css",
+    "stylesheets/theme-override.css?v2",
 ]
 
 [project.theme]
