@@ -10,6 +10,11 @@
   --bg-primary: var(--pale-silver);
 }
 
+/* Prevent smooth scroll animation from making palette toggle scroll */
+html {
+  scroll-behavior: auto !important;
+}
+
 /* Light Mode */
 [data-md-color-scheme="default"] {
   --md-primary-fg-color: #002FA7;
@@ -64,4 +69,22 @@
 /* Blockquote left border — Klein blue */
 .md-typeset blockquote {
   border-left-color: var(--klein-blue-text);
+}
+
+/* Prevent palette radio inputs from causing scroll on theme toggle */
+.md-option {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  overflow-anchor: none;
+  scroll-margin: 0;
+}
+
+/* Logo: SVG is white, invert to black in light mode */
+.md-logo img {
+  filter: brightness(0);
+}
+
+[data-md-color-scheme="slate"] .md-logo img {
+  filter: none;
 }
