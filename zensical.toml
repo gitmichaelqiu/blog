@@ -191,7 +191,7 @@ extra_css = [
 ]
 
 [project.theme]
-logo = "images/logo.png"
+logo = "assets/logo-MK-round-circle-auto.svg"
 favicon = "images/favicon.png"
 features = [
     "navigation.tabs",

@@ -20,6 +20,8 @@
   --md-default-bg-color: #FAFAF6;
   --md-typeset-a-color: #002FA7;
   --md-typeset-mark-color: rgba(0, 47, 167, 0.15);
+  --md-code-hl-color: #002FA7;
+  --md-code-hl-color--light: rgba(0, 47, 167, 0.1);
 }
 
 /* Dark Mode */
@@ -32,6 +34,8 @@
   --md-accent-fg-color--transparent: rgba(91, 141, 239, 0.15);
   --md-default-bg-color: #0a0a0a;
   --md-typeset-a-color: #5B8DEF;
+  --md-code-hl-color: #5B8DEF;
+  --md-code-hl-color--light: rgba(91, 141, 239, 0.15);
 }
 
 /* Selection — Klein blue */
@@ -55,4 +59,9 @@
 /* Active tab underline indicator — Klein blue */
 .md-tabs__item--active {
   border-bottom-color: var(--klein-blue-text);
+}
+
+/* Blockquote left border — Klein blue */
+.md-typeset blockquote {
+  border-left-color: var(--klein-blue-text);
 }
