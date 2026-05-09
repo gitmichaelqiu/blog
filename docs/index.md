@@ -8,7 +8,7 @@ comments: true
 
 ![](assets/logo-MK-round-little.svg)
 
-This is a blog site created by **Michael Qiu**. Also check out my [portfolio site](https://gitmichaelqiu.github.io/).
+This is a blog site created by **Michael Qiu**. Also check out my [portfolio site](https://mqiu.dev/).
 
 ---
 

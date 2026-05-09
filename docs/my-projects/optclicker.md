@@ -7,10 +7,10 @@ comments: true
 # OptClicker
 
 !!! note
-    Visit the site [here](https://gitmichaelqiu.github.io/OptClicker). Scroll at the margin to skip the site.
+    Visit the site [here](https://optclicker.mqiu.dev). Scroll at the margin to skip the site.
 
 <iframe 
-  src="https://gitmichaelqiu.github.io/OptClicker" 
+  src="https://optclicker.mqiu.dev" 
   style="width: 100%; aspect-ratio: 16 / 11; border: 0;" 
   allowfullscreen>
 </iframe>

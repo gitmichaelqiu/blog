@@ -2,20 +2,32 @@
 
 {% block extrahead %}
   {{ super() }}
-  <!-- Import DesktopRenamer Fonts -->
-  <link href="https://gs.jurieo.com/gemini/fonts-googleapis/css2?family=Inter:wght@300;400;600;900&family=JetBrains+Mono:wght@400;700&family=Syncopate:wght@700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap" rel="stylesheet">
+  <script>
+    document.addEventListener('click', function(ev) {
+      if (ev.target.closest('[data-md-component="palette"]')) {
+        var y = window.scrollY;
+        requestAnimationFrame(function() {
+          window.scroll(0, y);
+        });
+      }
+    });
+  </script>
 {% endblock %}
 
 {% block header %}
-  <!-- Aurora Background Animation Layer -->
-  <div class="aurora-wrapper">
-      <div class="aurora-container">
-          <div class="aurora-blob blob-1"></div>
-          <div class="aurora-blob blob-2"></div>
-          <div class="aurora-blob blob-3"></div>
-      </div>
-      <div class="aurora-overlay"></div>
+  {{ super() }}
+{% endblock %}
+
+{% block footer %}
+  {{ super() }}
+  <div class="md-footer-klein-banner">
+    <div class="md-footer-klein-banner__inner md-grid">
+      <div class="md-footer-klein-banner__text">mqiu.dev / blog</div>
+    </div>
   </div>
-  
+{% endblock %}
+
+{% block scripts %}
   {{ super() }}
 {% endblock %}
