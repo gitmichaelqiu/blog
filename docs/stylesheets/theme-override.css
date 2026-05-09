@@ -88,3 +88,13 @@ html {
 [data-md-color-scheme="slate"] .md-logo img {
   filter: none;
 }
+
+/* Table background: white in light mode, dark in dark mode */
+[data-md-color-scheme="default"] .md-typeset table {
+  background-color: #ffffff;
+}
+
+/* Disable scroll anchoring in header to prevent palette toggle from scrolling */
+.md-header {
+  overflow-anchor: none;
+}

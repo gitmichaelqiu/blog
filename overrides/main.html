@@ -3,6 +3,16 @@
 {% block extrahead %}
   {{ super() }}
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap" rel="stylesheet">
+  <script>
+    document.addEventListener('click', function(ev) {
+      if (ev.target.closest('[data-md-component="palette"]')) {
+        var y = window.scrollY;
+        requestAnimationFrame(function() {
+          window.scroll(0, y);
+        });
+      }
+    });
+  </script>
 {% endblock %}
 
 {% block header %}
