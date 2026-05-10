@@ -12,11 +12,34 @@ from PySide6.QtGui import QStandardItemModel, QStandardItem, QColor, QFont
 from PySide6.QtCore import Qt
 
 # --- CONFIGURATION ---
-SOURCES = [
-    (Path("~/Files/Obsidian/ALevel").expanduser(), "alevel"),
-    (Path("~/Files/Obsidian/AP").expanduser(), "ap"),
-    (Path("~/Academics/01_HFLSSenior/25_Q4_G11_Sem1/04_Chemistry/04_Chem_Mindmap").expanduser(), "chem_mindmap"),
-]
+def load_env(path=".env"):
+    """Parse a .env file and return a dict of key-value pairs."""
+    env = {}
+    env_path = Path(path)
+    if env_path.is_file():
+        for line in env_path.read_text(encoding="utf-8").splitlines():
+            line = line.strip()
+            if not line or line.startswith("#") or "=" not in line:
+                continue
+            key, _, value = line.partition("=")
+            env[key.strip()] = value.strip().strip("\"'")
+    return env
+
+
+def load_sources(env_file=".env"):
+    """Read SOURCE_<id> entries from .env and return a list of (Path, id) tuples."""
+    env = load_env(env_file)
+    sources = []
+    for key, value in sorted(env.items()):
+        if key.startswith("SOURCE_"):
+            source_id = key[len("SOURCE_"):]
+            sources.append((Path(value).expanduser(), source_id))
+    if not sources:
+        print("Warning: No SOURCE_ entries found in .env file. Create one from .env.example.")
+    return sources
+
+
+SOURCES = load_sources()
 
 # State file stored in your destination repo to track last known status
 STATE_FILE = Path("./sync-state.json").expanduser()
