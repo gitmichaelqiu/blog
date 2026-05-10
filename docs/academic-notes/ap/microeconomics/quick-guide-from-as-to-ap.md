@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Quick Guide for AS Students to Learn AP
 
 > This guide is specifically designed for those who have already learnt AS Level Economics but not AP Macroeconomics.

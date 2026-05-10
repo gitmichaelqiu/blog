@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Tables Graphs
 
 ## Two-Way Tables & Relative Frequencies

@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Discrete Random Variables
 
 ## Discrete Random Variables

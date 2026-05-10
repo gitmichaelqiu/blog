@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Experimental Design
 
 ## Introduction to Experiments

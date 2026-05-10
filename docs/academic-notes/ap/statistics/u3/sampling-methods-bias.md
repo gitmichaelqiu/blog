@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Sampling Methods Bias
 
 ## Introduction to Sampling

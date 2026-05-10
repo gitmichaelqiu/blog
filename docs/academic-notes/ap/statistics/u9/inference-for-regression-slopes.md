@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Inference for Regression Slopes
 
 ## Sampling Distributions for Sample Slopes

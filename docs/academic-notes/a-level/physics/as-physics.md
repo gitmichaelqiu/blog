@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 ## Practical Equipment
 
 | Apparatus              | Resolution |

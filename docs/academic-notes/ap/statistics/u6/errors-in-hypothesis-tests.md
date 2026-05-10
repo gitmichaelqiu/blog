@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Errors in Hypothesis Tests
 
 ## Type I & Type II Errors

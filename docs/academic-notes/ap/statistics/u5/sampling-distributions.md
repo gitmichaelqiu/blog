@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Sampling Distributions
 
 ## Sampling Distributions for Sample Means

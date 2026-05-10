@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Independence and Homogeneity
 
 ## Test for Independence

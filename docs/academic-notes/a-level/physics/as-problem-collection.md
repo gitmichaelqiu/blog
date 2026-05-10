@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # AS Physics Problem Collection
 
 ```sheet

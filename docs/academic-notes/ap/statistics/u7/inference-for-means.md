@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Inference for Means
 
 ## t-Distribution

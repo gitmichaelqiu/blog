@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Binomial and Geometric Distributions
 
 ## Binomial Distributions

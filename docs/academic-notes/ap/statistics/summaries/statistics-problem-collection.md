@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # AP Statistics Problem Collection
 
 ## 1

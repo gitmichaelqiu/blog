@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 ## Derivative
 
 $f'(x_0) = \lim\limits_{\Delta x \to 0} \dfrac{\Delta y}{\Delta x} = \lim\limits_{\Delta x \to 0} \dfrac{f(x_0 + \Delta x) - f(x_0)}{\Delta x}$

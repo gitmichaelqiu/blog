@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Economics Indicators
 
 ## The Circular Flow & GDP

@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 ## Procedures for Hypothesis Test
 
 1. Define context

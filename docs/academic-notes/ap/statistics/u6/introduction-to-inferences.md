@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Introduction to Inferences
 
 ## Tails on A Normal Distribution

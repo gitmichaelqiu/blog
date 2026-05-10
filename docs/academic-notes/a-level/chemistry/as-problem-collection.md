@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # AS Chemistry Problem Collection
 
 ```sheet

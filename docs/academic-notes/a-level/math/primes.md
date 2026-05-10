@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 ## Legendre's Formula
 
 $V_p(n!) = \sum\limits_{i=1}^\infty \lfloor \dfrac{n}{p^i} \rfloor$

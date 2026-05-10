@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # MLTabularPipelines
 
 MLTabularPipelines `mltabpipe` is a workshop of modualized machine learning pipelines for tabular tasks.

@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 ## Antiderivative
 
 $y = \int f(x) dx = F(x) + C$

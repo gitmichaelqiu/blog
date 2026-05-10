@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # The Normal Distribution
 
 ### Properties of Normal Distributions

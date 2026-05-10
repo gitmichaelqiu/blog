@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Goodness of Fit
 
 ## Chi-Square Distributions

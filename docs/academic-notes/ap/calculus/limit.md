@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 ## Limit Laws
 
 If $L, M, c, k \in \mathbb{R}$ and $\lim\limits_{x \to c} f(x) = L$ and $\lim\limits_{x \to c} g(x) = M$, then
