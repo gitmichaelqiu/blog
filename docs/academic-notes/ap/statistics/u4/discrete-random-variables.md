@@ -6,7 +6,7 @@
 > 
 > - The number of variables could be either finite or infinite
 
-### Discrete Probability Distribution
+## Discrete Probability Distribution
 
 > Describes the probabilities of the occurrences of each possible outcome associated with a discrete random variable
 
@@ -61,3 +61,22 @@ $Y = \sum\limits_{i=1}^n a_iX_i$
 $\mu_Y = \sum\limits_{i=1}^n a_i\mu_i$
 
 $\sigma_Y = \sqrt{\sum\limits_{i=1}^n a_i^2\sigma_i^2}$
+
+## Independence's Effect on Combination
+
+### Mean of Difference
+
+The mean of the difference between two variables is always the difference of their means, **regardless of whether they are independent or dependent**. This is a property of the expected value:
+
+$\mu_{X-Y} = \mu_X - \mu_Y$
+
+### Standard Deviation of Difference
+
+The formula for the variance of the difference between two dependent variables is:
+
+$\sigma_{X-Y}^2 = \sigma_X^2 + \sigma_Y^2 - 2 \cdot r \cdot \sigma_X \sigma_Y$
+
+Where $r$ is the **correlation coefficient** between X and Y.
+
+- If the variables were independent, $r$ would be 0, and we could calculate the standard deviation.
+- Because they are **not independent**, we need to know the correlation $r$ to calculate the exact standard deviation.

@@ -6,7 +6,7 @@
 
 - **$\overline{x}$**: The sample mean
 - **$\mu$**: the population mean
-- **$S$**: Sample standard deviation
+- **$s$**: Sample standard deviation
 - **$\sigma$**: Population standard deviation
 - **$X^2$**: Sample chi-square value
 - **$\chi^2$**: Population chi-quare value

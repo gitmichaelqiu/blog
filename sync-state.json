@@ -47,7 +47,7 @@
     "ap:Macroeconomics/U2_EconomicsIndicatorsAndBusinessCycle.md": {
         "source_id": "ap",
         "relative_path": "Macroeconomics/U2_EconomicsIndicatorsAndBusinessCycle.md",
-        "hash": "89fc47d7d8e74b5e65e7069c5817188580bb9a8951d672b76e2622554e95fd65"
+        "hash": "c313e009c4a70a02e655737865cdf14c8eb82cf43628d7aa6ff1bb519b142f7b"
     },
     "ap:Statistics/.DS_Store": {
         "source_id": "ap",
@@ -62,7 +62,7 @@
     "ap:Statistics/U1_ExploringOneVariableData/U1C1_SummaryStatistics.md": {
         "source_id": "ap",
         "relative_path": "Statistics/U1_ExploringOneVariableData/U1C1_SummaryStatistics.md",
-        "hash": "d0dcf87cefa84440b83b7c8193be434e0acfddb0742f7be219fc90c077cba7f2"
+        "hash": "8cff6561d763e7dacd01edb9fc4e64fde8cf26f9dfb7a9e305b93e5fb3a83526"
     },
     "ap:Statistics/U1_ExploringOneVariableData/U1C2_GraphicalRepresentations.md": {
         "source_id": "ap",
@@ -102,7 +102,7 @@
     "ap:Statistics/U4_Probability-RandomVariables-ProbabilityDistributions/U4C2_DiscreteRandomVariables.md": {
         "source_id": "ap",
         "relative_path": "Statistics/U4_Probability-RandomVariables-ProbabilityDistributions/U4C2_DiscreteRandomVariables.md",
-        "hash": "08cf57ba949909d1090bf8bc7a7c5e48fed13deec7691032f8ae07a7c68e69fa"
+        "hash": "28a8efd63778da6600da572f1d0a8fc370727c8fc43674da45e386392abaa480"
     },
     "ap:Statistics/U4_Probability-RandomVariables-ProbabilityDistributions/U4C3_Bionomial-GeometricDistributions.md": {
         "source_id": "ap",
@@ -152,7 +152,7 @@
     "alevel:.DS_Store": {
         "source_id": "alevel",
         "relative_path": ".DS_Store",
-        "hash": "983072664d96a8a40c1fd1144772f6c2613823e57061dc036317370a3d7d6062"
+        "hash": "a40ef850d20f6de9b262f8e58105ad8530583421a3b25beee3a153e7777d571a"
     },
     "alevel:.obsidian/.DS_Store": {
         "source_id": "alevel",
@@ -222,7 +222,7 @@
     "alevel:.obsidian/workspace.json": {
         "source_id": "alevel",
         "relative_path": ".obsidian/workspace.json",
-        "hash": "c2cce9cc305a68b2cd5812a20b9513891b7b5fcd7a30cb8892471ccf03b80b8b"
+        "hash": "6c4f4cbc10883e767c82f9eb65bd412b798a47014382e04d1f076d5fbb3cf723"
     },
     "alevel:AS Chemistry.md": {
         "source_id": "alevel",
@@ -373,5 +373,35 @@
         "source_id": "alevel",
         "relative_path": "Attachments/Screenshot 2026-04-15 at 09.18.50.png",
         "hash": "930c1716a8da9f80ee78c921e9623d11b3d422cf1e5de1e20ebf423429de5ec1"
+    },
+    "ap:Attachments/Screenshot 2026-04-01 at 20.57.50.png": {
+        "source_id": "ap",
+        "relative_path": "Attachments/Screenshot 2026-04-01 at 20.57.50.png",
+        "hash": "e38105ac719ef2eb37e66c6319f72879a63e1ca08f9ae6d6e5649e3bbb001eee"
+    },
+    "ap:QuickGuideForASEcoLearnerToAPMacro.md": {
+        "source_id": "ap",
+        "relative_path": "QuickGuideForASEcoLearnerToAPMacro.md",
+        "hash": "e4308aa6376f75a2db95e8c277334f493180f671c229a6ed38a7aa1661d64eb0"
+    },
+    "ap:Statistics/AP Statistics Problem Collection.md": {
+        "source_id": "ap",
+        "relative_path": "Statistics/AP Statistics Problem Collection.md",
+        "hash": "18ce47bf5b06c3e510a6b0b349776163a4660cecf60c784c03c246c440c8114c"
+    },
+    "ap:Statistics/Summaries/APStat_DetermineTests.md": {
+        "source_id": "ap",
+        "relative_path": "Statistics/Summaries/APStat_DetermineTests.md",
+        "hash": "14a237a7b8227f235f287dc088d5961203056c739718f69e067650d6763c4c04"
+    },
+    "ap:Statistics/Summaries/AP_Stat_ProblemCollection.md": {
+        "source_id": "ap",
+        "relative_path": "Statistics/Summaries/AP_Stat_ProblemCollection.md",
+        "hash": "6ae32682a8776099d9f3f4b2c19919dd6443e728758aac2b08eb274d9f3b5fc9"
+    },
+    "ap:Statistics/U9_InferenceForQuantitativeData-Slopes/U9C2_SimpleLinearRegression.md": {
+        "source_id": "ap",
+        "relative_path": "Statistics/U9_InferenceForQuantitativeData-Slopes/U9C2_SimpleLinearRegression.md",
+        "hash": "997482a38525fb3ddf8958cd53f7aebd4d01cad982b1f095d651e1e30fa7e0bd"
     }
 }
