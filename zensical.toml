@@ -108,6 +108,7 @@ nav = [
                 { "Fundamental Calculus" = "academic-notes/ap/calculus/fundamental-calculus.md" },
             ] },
             { Microeconomics = [
+                { "Quick Guide for AS Students to Learn A" = "academic-notes/ap/microeconomics/quick-guide-from-as-to-ap.md" },
                 { "Basic Economic Concept" = "academic-notes/ap/microeconomics/basic-economic-concept.md" },
                 { "Demand and Supply" = "academic-notes/ap/microeconomics/demand-and-supply.md" },
                 { "Production, Cost and Competition" = "academic-notes/ap/microeconomics/production-cost-and-competition.md" },
