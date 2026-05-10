@@ -112,6 +112,7 @@ nav = [
                 { "Basic Economic Concept" = "academic-notes/ap/microeconomics/basic-economic-concept.md" },
                 { "Demand and Supply" = "academic-notes/ap/microeconomics/demand-and-supply.md" },
                 { "Production, Cost and Competition" = "academic-notes/ap/microeconomics/production-cost-and-competition.md" },
+                { "Economics Indicators" = "academic-notes/ap/microeconomics/economics-indicators.md" },
             ] },
             { Statistics = [
                 { "Summaries" = [
