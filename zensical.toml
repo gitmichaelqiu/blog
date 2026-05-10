@@ -86,11 +86,12 @@ nav = [
     { "Academic Notes" = [
         { "A-Level" = [
             { Physics = [
-                { "AS Physics" = "academic-notes/a-level/physics/as-physics.md" },
+                { "AS Physics Problem Collection" = "academic-notes/a-level/physics/as-problem-collection.md" },
+                { "AS Physics Summary" = "academic-notes/a-level/physics/as-physics.md" },
                 { "Copyright Claim" = "academic-notes/a-level/physics/copyright.md" },
             ] },
             { Chemistry = [
-                { "AS Problem Collection" = "academic-notes/a-level/chemistry/as-problem-collection.md" },
+                { "AS Chemistry Problem Collection" = "academic-notes/a-level/chemistry/as-problem-collection.md" },
                 { "Bonding & Structures" = "academic-notes/a-level/chemistry/bonding-and-structures.md" },
                 { "Isomerism" = "academic-notes/a-level/chemistry/isomerism.md" },
                 { "Organic Compounds" = "academic-notes/a-level/chemistry/organic-compounds.md" },
@@ -116,9 +117,9 @@ nav = [
             ] },
             { Statistics = [
                 { "Summaries" = [
+                    { "AP Statistics Problem Collection" = "academic-notes/ap/statistics/summaries/statistics-problem-collection.md" },
                     { "Hypothesis Test & Confidence Interval" = "academic-notes/ap/statistics/summaries/hypothesis-test-and-confidence-interval.md" },
                     { "Determine Tests" = "academic-notes/ap/statistics/summaries/determine-tests.md" },
-                    { "AP Statistics Problem Collection" = "academic-notes/ap/statistics/summaries/statistics-problem-collection.md" },
                 ] },
                 { "Unit 1: Exploring One-Variable Data" = [
                     { "1. Summary Statistics" = "academic-notes/ap/statistics/u1/summary-statistics.md" },

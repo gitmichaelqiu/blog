@@ -1,4 +1,4 @@
-# AS Problem Collection
+# AS Physics Problem Collection
 
 ```sheet
 | w23 | - | 11 | x | 21 | |
