@@ -117,6 +117,7 @@ nav = [
             { Statistics = [
                 { "Summaries" = [
                     { "Hypothesis Test & Confidence Interval" = "academic-notes/ap/statistics/summaries/hypothesis-test-and-confidence-interval.md" },
+                    { "AP Statistics Problem Collection" = "academic-notes/ap/statistics/summaries/statistics-problem-collection.md" },
                 ] },
                 { "Unit 1: Exploring One-Variable Data" = [
                     { "1. Summary Statistics" = "academic-notes/ap/statistics/u1/summary-statistics.md" },
