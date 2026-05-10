@@ -1,5 +1,3 @@
-# AS Physics
-
 ## Practical Equipment
 
 | Apparatus              | Resolution |
@@ -70,7 +68,7 @@ $\tau = Fd$
 
 > An object submerged in a fluid at rest has an upward buoyancy force (upthrust) equal to the weight of the fluid displaced by the object
 
-$F = \rho g V$
+$F = \rho V g$
 
 ## Energy
 
@@ -256,15 +254,25 @@ $\lambda = \dfrac{ax}D$
 - $x$: fringe width (distance between successive bright fringes)
 - $D$: distance between the slits and the screen
 
+### Orders of Maxima
+
+Highest order of maxima is calculated by
+
+$n = \dfrac{d}{\lambda}$
+
+round down to integer
+
 ### The Diffraction Grating
+
+![](https://cdn.savemyexams.com/cdn-cgi/image/f=auto,width=3840/https://cdn.savemyexams.com/uploads/2020/09/8.2.3.1-Angular-separation.png)
 
 - Use monochromatic light: one wavelength
 - From a laser to ensure that the light beams are coherent
 - Better than Young's double slit
 
-$a \sin(\theta) = n \lambda$
+$d \sin(\theta) = n \lambda$
 
-- $a$: spacing between adjacent silts
+- $d$: spacing between adjacent silts
 - $\theta$: angular separation between the order of maxima
 - $n \in \mathbb{N}$: order or maxima
 - $\lambda$: wavelength of source

@@ -2,7 +2,7 @@
     "ap:.DS_Store": {
         "source_id": "ap",
         "relative_path": ".DS_Store",
-        "hash": "21ea7932ef9e224e762e02846c3a965aa2e202507be53b38da7e8b3a88fbc505"
+        "hash": "0ab022450d81745d780672eb9d28461b8f3ae02914d5a65d027012f10ea79814"
     },
     "ap:.obsidian/.DS_Store": {
         "source_id": "ap",
@@ -12,7 +12,7 @@
     "ap:.obsidian/app.json": {
         "source_id": "ap",
         "relative_path": ".obsidian/app.json",
-        "hash": "4760ab638d4fdfc899470ab63717513e483f5bfd44cb4d36b82affb8ffdcba13"
+        "hash": "39125d06624dea6fcc313cced53034d6a1986c4b00bc02439c0f4c79d8273aca"
     },
     "ap:.obsidian/appearance.json": {
         "source_id": "ap",
@@ -22,7 +22,7 @@
     "ap:.obsidian/community-plugins.json": {
         "source_id": "ap",
         "relative_path": ".obsidian/community-plugins.json",
-        "hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        "hash": "3c0fefda14fd5dcdd9cfa09ff0dc065ad85ceb32568ff72901e7dcbcdc9c73b7"
     },
     "ap:.obsidian/core-plugins.json": {
         "source_id": "ap",
@@ -32,17 +32,17 @@
     "ap:.obsidian/graph.json": {
         "source_id": "ap",
         "relative_path": ".obsidian/graph.json",
-        "hash": "223fd6208eb9759fa1a8f0a4349e45d4799036f05bd294f91b1a01c254d0cfc5"
+        "hash": "89b1b8c279c3229a13509a0fad866ef90a7a70a6536f78d542e9c0960aec3d77"
     },
     "ap:.obsidian/hotkeys.json": {
         "source_id": "ap",
         "relative_path": ".obsidian/hotkeys.json",
-        "hash": "ae2a47362691cc0c936de7555e685be92e0ab927e21ec0076a8394ac47461d04"
+        "hash": "84f8f4f2317b1c08c561ec21ed14828b50a4c0df40e97d0c8e5360a150d93174"
     },
     "ap:.obsidian/workspace.json": {
         "source_id": "ap",
         "relative_path": ".obsidian/workspace.json",
-        "hash": "10d624814dc37fd08e80a05006dc398fce6c5a7d72d22f81a7ff9d359e5a7d90"
+        "hash": "a33f4e130b1eb6fbccc278560b8b9d38a89fd0b9de70632baa37b94235073ddb"
     },
     "ap:Macroeconomics/U2_EconomicsIndicatorsAndBusinessCycle.md": {
         "source_id": "ap",
@@ -149,30 +149,10 @@
         "relative_path": "Statistics/U9_InferenceForQuantitativeData-Slopes/U9C1_InferenceForRegressionSlopes.md",
         "hash": "b939442d6f551129ed32e4d9af822f24a8c53e2c869e861bef3099e77f0c2735"
     },
-    "chem_mindmap:04_StatesOfMatter_Bonding-Structures.xmind": {
-        "source_id": "chem_mindmap",
-        "relative_path": "04_StatesOfMatter_Bonding-Structures.xmind",
-        "hash": "c8e855f407d5307b97c0f3d74427de4397b784b99956301f17ac64168fca3052"
-    },
-    "chem_mindmap:13_Isomerism.xmind": {
-        "source_id": "chem_mindmap",
-        "relative_path": "13_Isomerism.xmind",
-        "hash": "b9d9d7b6fd14a6631966b883efa1a0016ca1d5c13f98ee88fc02fb5ea10eebcf"
-    },
-    "chem_mindmap:14-18_OrganicCompounds.xmind": {
-        "source_id": "chem_mindmap",
-        "relative_path": "14-18_OrganicCompounds.xmind",
-        "hash": "e2a77d3b02d15813243a29db5a906b6433b0c6ad90a30a1296924563c9748409"
-    },
-    "chem_mindmap:9-12_PeriodsAndGroups.xmind": {
-        "source_id": "chem_mindmap",
-        "relative_path": "9-12_PeriodsAndGroups.xmind",
-        "hash": "23f846b179b681ffca5dc94069e61855acade7438284bb2a5c12bf19536bb212"
-    },
     "alevel:.DS_Store": {
         "source_id": "alevel",
         "relative_path": ".DS_Store",
-        "hash": "6378d2d2332eab4e5c9750d11e94be812a75b1ba53c154d3f95c0af50af9e467"
+        "hash": "983072664d96a8a40c1fd1144772f6c2613823e57061dc036317370a3d7d6062"
     },
     "alevel:.obsidian/.DS_Store": {
         "source_id": "alevel",
@@ -242,7 +222,7 @@
     "alevel:.obsidian/workspace.json": {
         "source_id": "alevel",
         "relative_path": ".obsidian/workspace.json",
-        "hash": "e2e25614514aa9097fe0e696d7f8a58edc5c09c332ff862cd4a232af3f8dd7d9"
+        "hash": "c2cce9cc305a68b2cd5812a20b9513891b7b5fcd7a30cb8892471ccf03b80b8b"
     },
     "alevel:AS Chemistry.md": {
         "source_id": "alevel",
@@ -343,5 +323,35 @@
         "source_id": "alevel",
         "relative_path": "Attachments/Screenshot 2026-03-31 at 14.22.41.png",
         "hash": "60da6437544eab2173d70a42f2874bd5245cd87dbaf15d054da795288016dc98"
+    },
+    "ap:.obsidian/plugins/obsidian-mind-map/main.js": {
+        "source_id": "ap",
+        "relative_path": ".obsidian/plugins/obsidian-mind-map/main.js",
+        "hash": "fc6ac8460ef17f521f923099a741b5c1e8e6f89e479bfafa8fb0f24a08191113"
+    },
+    "ap:.obsidian/plugins/obsidian-mind-map/manifest.json": {
+        "source_id": "ap",
+        "relative_path": ".obsidian/plugins/obsidian-mind-map/manifest.json",
+        "hash": "4f485188e1e9c5916778aa8f02a36ddf752c00ff345fbd296785425ef247befe"
+    },
+    "ap:.obsidian/plugins/sheets/main.js": {
+        "source_id": "ap",
+        "relative_path": ".obsidian/plugins/sheets/main.js",
+        "hash": "61fb8105f6d7566a943734972ca3c8163257f658899004db19da4128a653c3f2"
+    },
+    "ap:.obsidian/plugins/sheets/manifest.json": {
+        "source_id": "ap",
+        "relative_path": ".obsidian/plugins/sheets/manifest.json",
+        "hash": "8c4032afd102c3f5cc21206bbdcc553b6a9b351c3793b3675d9fa2d874cf6002"
+    },
+    "ap:.obsidian/plugins/sheets/styles.css": {
+        "source_id": "ap",
+        "relative_path": ".obsidian/plugins/sheets/styles.css",
+        "hash": "f15563dbd53ebd381da92ab5db6e450d64adb2e9f29cfc6eb129b4a5666257c9"
+    },
+    "ap:.obsidian/workspace-mobile.json": {
+        "source_id": "ap",
+        "relative_path": ".obsidian/workspace-mobile.json",
+        "hash": "acdb2a2921325dbef3d7e3b60397520b073758b370ea77779f5b3ee10f5972df"
     }
 }
