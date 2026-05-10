@@ -182,3 +182,11 @@ Ground state: lowest possible energy state
 | Correct Ans | - | A |
 | Explain | - | NaOH(ethanol) can only be used in dehydrohalogenation, removing HX. To dehydrate, use conc. H₂SO₄. |
 ```
+
+## Other Sources
+
+### 1
+
+![](attachments/other_01_q.png)
+
+![](attachments/other_01_ans.png)
