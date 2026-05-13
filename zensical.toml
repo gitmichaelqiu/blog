@@ -108,16 +108,16 @@ nav = [
                 { Differentiation = "academic-notes/ap/calculus/differentiation.md" },
                 { "Fundamental Calculus" = "academic-notes/ap/calculus/fundamental-calculus.md" },
             ] },
-            { "Mechanics Physics C" = [
-                { "Quick Guide from AS to AP Mechanics" = "academic-notes/ap/mechanics/quick-guide-from-as-to-ap-mechanics.md"},
-                { "AP Mechanics Problem Collection" = "academic-notes/ap/mechanics/mechanics-problem-collection.md"},
-            ] },
             { Microeconomics = [
                 { "Quick Guide from AS to AP Economics" = "academic-notes/ap/microeconomics/quick-guide-from-as-to-ap-macro.md" },
                 { "Basic Economic Concept" = "academic-notes/ap/microeconomics/basic-economic-concept.md" },
                 { "Demand and Supply" = "academic-notes/ap/microeconomics/demand-and-supply.md" },
                 { "Production, Cost and Competition" = "academic-notes/ap/microeconomics/production-cost-and-competition.md" },
                 { "Economics Indicators" = "academic-notes/ap/microeconomics/economics-indicators.md" },
+            ] },
+            { "Physics C: Mechanics" = [
+                { "Quick Guide from AS to AP Mechanics" = "academic-notes/ap/mechanics/quick-guide-from-as-to-ap-mechanics.md"},
+                { "AP Mechanics Problem Collection" = "academic-notes/ap/mechanics/mechanics-problem-collection.md"},
             ] },
             { Statistics = [
                 { "Summaries" = [
