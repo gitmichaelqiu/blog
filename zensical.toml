@@ -14,7 +14,7 @@ nav = [
     { "Portfolio" = "https://mqiu.dev" },
     { Home = [
         { About = "index.md" },
-        { "Some Websites" = "some-websites.md" },
+        # { "Some Websites" = "some-websites.md" },
     ] },
     { "My Projects" = [
         { Overview = "my-projects/overview.md" },
