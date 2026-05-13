@@ -108,8 +108,8 @@ nav = [
                 { Differentiation = "academic-notes/ap/calculus/differentiation.md" },
                 { "Fundamental Calculus" = "academic-notes/ap/calculus/fundamental-calculus.md" },
             ] },
-            { Macroeconomics = [
-                { "Quick Guide from AS to AP Economics" = "academic-notes/ap/macroeconomics/quick-guide-from-as-to-ap-macro.md" },
+            { Economics = [
+                { "Quick Guide from AS to AP Macroeconomics" = "academic-notes/ap/macroeconomics/quick-guide-from-as-to-ap-macro.md" },
                 { "Basic Economic Concept" = "academic-notes/ap/macroeconomics/basic-economic-concept.md" },
                 { "Demand and Supply" = "academic-notes/ap/macroeconomics/demand-and-supply.md" },
                 { "Production, Cost and Competition" = "academic-notes/ap/macroeconomics/production-cost-and-competition.md" },
