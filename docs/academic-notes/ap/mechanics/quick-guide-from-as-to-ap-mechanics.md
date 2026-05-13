@@ -57,7 +57,7 @@ The position of the center of mass is fixed when the object is at equilibrium.
 >
 > Notice that the center of mass does not change **relative to the inertial frame of reference** but not the relative position to the object itself. This is because we measure the velocity relative to the frame of reference but not a point on the object. The center of mass can change its relative position on the object if the object moves, but not relative to the frame of reference.
 >
-> To understand this point, check [[AP Mechanics Problem Collection#1]].
+> To understand this point, check [AP Mechanics Problem Collection#1](./mechanics-problem-collection.md#1).
 
 ## Unit 3: Work, Energy, and Power
 

@@ -6,7 +6,7 @@
 
 Notice that there is 0 net external horizontal force acting on the board. Therefore, the entire system of board and person is in equilibrium. According to 
 
-![[QuickGuideForASPhyLearnerToAPPhyMechanics#Position of Center of Mass]]
+[Quick Guide from AS to AP Mechanics#Position of Center of Mass](./quick-guide-from-as-to-ap-mechanics.md#position-of-center-of-mass)
 
 the coordinate of the center of mass of the system is fixed.
 
