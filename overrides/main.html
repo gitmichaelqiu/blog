@@ -5,19 +5,38 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap" rel="stylesheet">
   <script>
     (function() {
-      var lockY, lockTimer;
-      function lockScroll() { window.scroll(0, lockY); }
+      var lockY, rafId;
+
+      // Save scroll position as early as possible (capture phase)
       document.addEventListener('click', function(ev) {
         if (ev.target.closest('[data-md-component="palette"]')) {
-          clearTimeout(lockTimer);
-          window.removeEventListener('scroll', lockScroll);
           lockY = window.scrollY;
-          window.addEventListener('scroll', lockScroll, { passive: false });
-          lockTimer = setTimeout(function() {
-            window.removeEventListener('scroll', lockScroll);
-          }, 700);
         }
       }, true);
+
+      function forceScroll() {
+        window.scrollTo(0, lockY);
+        rafId = requestAnimationFrame(forceScroll);
+      }
+
+      new MutationObserver(function(mutations) {
+        mutations.forEach(function(m) {
+          if (m.attributeName === 'data-md-color-switching') {
+            if (document.body.hasAttribute('data-md-color-switching')) {
+              if (rafId == null) {
+                lockY = window.scrollY;
+                rafId = requestAnimationFrame(forceScroll);
+              }
+            } else {
+              window.scrollTo(0, lockY);
+              if (rafId != null) {
+                cancelAnimationFrame(rafId);
+                rafId = null;
+              }
+            }
+          }
+        });
+      }).observe(document.body, { attributes: true, attributeFilter: ['data-md-color-switching'] });
     })();
   </script>
 {% endblock %}

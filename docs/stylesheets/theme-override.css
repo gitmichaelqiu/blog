@@ -10,9 +10,10 @@
   --bg-primary: var(--pale-silver);
 }
 
-/* Prevent smooth scroll animation from making palette toggle scroll */
+/* Prevent smooth scroll and scroll-padding from causing palette toggle scroll */
 html {
   scroll-behavior: auto !important;
+  scroll-padding-top: 0 !important;
 }
 
 /* Light Mode */
@@ -74,8 +75,10 @@ html {
 /* Prevent palette radio inputs from causing scroll on theme toggle */
 .md-option {
   position: fixed !important;
-  top: 0;
-  left: 0;
+  top: 0 !important;
+  left: 0 !important;
+  bottom: auto !important;
+  right: auto !important;
   overflow-anchor: none;
   scroll-margin: 0;
 }
