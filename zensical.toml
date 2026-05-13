@@ -214,7 +214,7 @@ custom_dir = "overrides"
 
 [[project.theme.palette]]
 media = "(prefers-color-scheme)"
-toggle.icon = "lucide/monitor"
+toggle.icon = "lucide/sun-moon"
 toggle.name = "Switch to light mode"
 primary = "indigo"
 accent = "indigo"
