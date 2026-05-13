@@ -2,7 +2,7 @@
     "ap:.DS_Store": {
         "source_id": "ap",
         "relative_path": ".DS_Store",
-        "hash": "0ab022450d81745d780672eb9d28461b8f3ae02914d5a65d027012f10ea79814"
+        "hash": "fb9670bc3e02723611fb0479b995dfe10ca7c77d4f56a0d6c887a01a9cfc20c3"
     },
     "ap:.obsidian/.DS_Store": {
         "source_id": "ap",
@@ -42,7 +42,7 @@
     "ap:.obsidian/workspace.json": {
         "source_id": "ap",
         "relative_path": ".obsidian/workspace.json",
-        "hash": "a33f4e130b1eb6fbccc278560b8b9d38a89fd0b9de70632baa37b94235073ddb"
+        "hash": "4a5881858fc8ba08035b314223f02cef33826980f02fdefa07fe8e6f28709685"
     },
     "ap:Macroeconomics/U2_EconomicsIndicatorsAndBusinessCycle.md": {
         "source_id": "ap",
@@ -52,7 +52,7 @@
     "ap:Statistics/.DS_Store": {
         "source_id": "ap",
         "relative_path": "Statistics/.DS_Store",
-        "hash": "70873e0c9d7bef4dba761dc29c8a1a74d72a20f72f63efe69d5285dcc6476b63"
+        "hash": "61dc6b778a875b9348ec861df0740ab77ca55a8b27a122a60c9a4d9e9630dff3"
     },
     "ap:Statistics/Summaries/APStat_HypothesisTest-ConfidenceInterval.md": {
         "source_id": "ap",
@@ -152,7 +152,7 @@
     "alevel:.DS_Store": {
         "source_id": "alevel",
         "relative_path": ".DS_Store",
-        "hash": "a40ef850d20f6de9b262f8e58105ad8530583421a3b25beee3a153e7777d571a"
+        "hash": "6a5a04d3e0bbf46efbace3ba0727236760932eb4c667a17e794bb7a2dc6073e7"
     },
     "alevel:.obsidian/.DS_Store": {
         "source_id": "alevel",
@@ -379,11 +379,6 @@
         "relative_path": "Attachments/Screenshot 2026-04-01 at 20.57.50.png",
         "hash": "e38105ac719ef2eb37e66c6319f72879a63e1ca08f9ae6d6e5649e3bbb001eee"
     },
-    "ap:QuickGuideForASEcoLearnerToAPMacro.md": {
-        "source_id": "ap",
-        "relative_path": "QuickGuideForASEcoLearnerToAPMacro.md",
-        "hash": "e4308aa6376f75a2db95e8c277334f493180f671c229a6ed38a7aa1661d64eb0"
-    },
     "ap:Statistics/AP Statistics Problem Collection.md": {
         "source_id": "ap",
         "relative_path": "Statistics/AP Statistics Problem Collection.md",
@@ -403,5 +398,50 @@
         "source_id": "ap",
         "relative_path": "Statistics/U9_InferenceForQuantitativeData-Slopes/U9C2_SimpleLinearRegression.md",
         "hash": "997482a38525fb3ddf8958cd53f7aebd4d01cad982b1f095d651e1e30fa7e0bd"
+    },
+    "ap:Attachments/Screenshot 2026-05-11 at 09.00.18.png": {
+        "source_id": "ap",
+        "relative_path": "Attachments/Screenshot 2026-05-11 at 09.00.18.png",
+        "hash": "f9e34ef424a944056a7aaf0516871bc544fe915a0df0efd73e8bd9ad0dcd9729"
+    },
+    "ap:Attachments/Screenshot 2026-05-11 at 20.14.23.png": {
+        "source_id": "ap",
+        "relative_path": "Attachments/Screenshot 2026-05-11 at 20.14.23.png",
+        "hash": "fd3ec60d182c194b0c51f775eff51b5b5eac2344bf1cff02374245d53c7b1d9d"
+    },
+    "ap:Attachments/Screenshot 2026-05-11 at 20.14.59.png": {
+        "source_id": "ap",
+        "relative_path": "Attachments/Screenshot 2026-05-11 at 20.14.59.png",
+        "hash": "fd880918c20a5ffb7104e8f5e84f4dd746513f60a02dae2c1315d7ab65d59d85"
+    },
+    "ap:Attachments/mech_01.png": {
+        "source_id": "ap",
+        "relative_path": "Attachments/mech_01.png",
+        "hash": "89c66229f8eada79232b365971d5ab3dfa82fb88da25b389ce55f1d0126367a9"
+    },
+    "ap:Attachments/mech_02.png": {
+        "source_id": "ap",
+        "relative_path": "Attachments/mech_02.png",
+        "hash": "5f85affda278ebc455f132310ae853cb73f6c12839c1ff6f445030e8dfac5e4d"
+    },
+    "ap:Macroeconomics/QuickGuideForASEcoLearnerToAPMacro.md": {
+        "source_id": "ap",
+        "relative_path": "Macroeconomics/QuickGuideForASEcoLearnerToAPMacro.md",
+        "hash": "e4308aa6376f75a2db95e8c277334f493180f671c229a6ed38a7aa1661d64eb0"
+    },
+    "ap:Mechanics/AP Mechanics Problem Collection.md": {
+        "source_id": "ap",
+        "relative_path": "Mechanics/AP Mechanics Problem Collection.md",
+        "hash": "7f0ca896564062416250be0fcf4d9937855f8ac96afb6d05f494d700903520e9"
+    },
+    "ap:Mechanics/QuickGuideForASPhyLearnerToAPPhyMechanics.md": {
+        "source_id": "ap",
+        "relative_path": "Mechanics/QuickGuideForASPhyLearnerToAPPhyMechanics.md",
+        "hash": "b9412ab27342173a6906b6de00c69b28c71b03b318cc90543e29e7e7951072b7"
+    },
+    "ap:Statistics/Summaries/.DS_Store": {
+        "source_id": "ap",
+        "relative_path": "Statistics/Summaries/.DS_Store",
+        "hash": "d65165279105ca6773180500688df4bdc69a2c7b771752f0a46ef120b7fd8ec3"
     }
 }
