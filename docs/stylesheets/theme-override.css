@@ -94,6 +94,11 @@ html {
   background-color: #ffffff;
 }
 
+/* Disable scroll anchoring during palette switch to prevent scroll-up */
+[data-md-color-switching] {
+  overflow-anchor: none;
+}
+
 /* Disable scroll anchoring in header to prevent palette toggle from scrolling */
 .md-header {
   overflow-anchor: none;

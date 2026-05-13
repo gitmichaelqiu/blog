@@ -4,14 +4,21 @@
   {{ super() }}
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap" rel="stylesheet">
   <script>
-    document.addEventListener('click', function(ev) {
-      if (ev.target.closest('[data-md-component="palette"]')) {
-        var y = window.scrollY;
-        requestAnimationFrame(function() {
-          window.scroll(0, y);
-        });
-      }
-    });
+    (function() {
+      var lockY, lockTimer;
+      function lockScroll() { window.scroll(0, lockY); }
+      document.addEventListener('click', function(ev) {
+        if (ev.target.closest('[data-md-component="palette"]')) {
+          clearTimeout(lockTimer);
+          window.removeEventListener('scroll', lockScroll);
+          lockY = window.scrollY;
+          window.addEventListener('scroll', lockScroll, { passive: false });
+          lockTimer = setTimeout(function() {
+            window.removeEventListener('scroll', lockScroll);
+          }, 700);
+        }
+      }, true);
+    })();
   </script>
 {% endblock %}
 
