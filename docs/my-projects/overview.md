@@ -10,7 +10,7 @@ comments: true
 
 <img src="https://capsule-render.vercel.app/api?type=waving&height=120&color=gradient&text=Welcome" alt="waving">
 
-<img src="https://github-readme-stats-tau-bay.vercel.app/api?username=gitmichaelqiu&theme=transparent" alt="gitmichaelqiu's GitHub stats">
+<img src="https://github-readme-stats-seven-theta-37.vercel.app/api?username=gitmichaelqiu&theme=transparent" alt="gitmichaelqiu's GitHub stats">
 
 </div>
 
