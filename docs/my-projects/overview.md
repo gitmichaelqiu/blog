@@ -135,6 +135,7 @@ For education purpose. Part of them are licensed under ***GPL v3.0 License***, f
 ---
 
 <div align="center">
+<img src="https://github-readme-streak-stats-dusky-kappa-91.vercel.app?user=gitmichaelqiu&theme=transparent" alt="gitmichaelqiu's GitHub streak stats"
 <picture>
   <source
     media="(prefers-color-scheme: dark)"
