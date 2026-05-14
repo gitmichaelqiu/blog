@@ -55,7 +55,7 @@ Stuff I like:
 - Music, Rock'n'Roll, Alternative and OSTs
 
   - King Crimson, Pink Floyd, The Beatles, Yes
-  - CAS, Beachhouse
+  - Low Roar, CAS, Beachhouse
   - Blade Runner OST
 
 ## Find Me
