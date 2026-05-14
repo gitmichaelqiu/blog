@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Quick Guide from AS to AP Mechanics
 
 ## Unit 1: Kinematics

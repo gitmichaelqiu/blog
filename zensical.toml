@@ -86,12 +86,12 @@ nav = [
     { "Academic Notes" = [
         { "A-Level" = [
             { Physics = [
-                { "AS Physics Problem Collection" = "academic-notes/a-level/physics/as-problem-collection.md" },
+                { "AS Physics Problem Collection" = "academic-notes/a-level/physics/physics-problem-collection.md" },
                 { "AS Physics Summary" = "academic-notes/a-level/physics/as-physics.md" },
                 { "Copyright Claim" = "academic-notes/a-level/physics/copyright.md" },
             ] },
             { Chemistry = [
-                { "AS Chemistry Problem Collection" = "academic-notes/a-level/chemistry/as-problem-collection.md" },
+                { "AS Chemistry Problem Collection" = "academic-notes/a-level/chemistry/chemistry-problem-collection.md" },
                 { "Bonding & Structures" = "academic-notes/a-level/chemistry/bonding-and-structures.md" },
                 { "Isomerism" = "academic-notes/a-level/chemistry/isomerism.md" },
                 { "Organic Compounds" = "academic-notes/a-level/chemistry/organic-compounds.md" },
