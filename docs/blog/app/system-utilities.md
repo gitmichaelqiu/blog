@@ -12,7 +12,7 @@ comments: true
 
 ## [Alcove](https://tryalcove.com/)
 
-![](https://cdn.macstories.net/appicon-1733573703452.png)
+<img src="https://cdn.macstories.net/appicon-1733573703452.png" alt="" height="64">
 
 Alcove addes dynamic island to your mac with native vibes. Currently played music, upcoming events, changes in volume and brightness, focus mode toggle... all system actions are aborad on Alcove. When on screen saver, there is even a Liquid Glass music widget if available.
 
@@ -20,7 +20,7 @@ It is a one-time paid app at \$13.99 for 3 apps. The updates are frequent. Highl
 
 ## [DockDoor](https://dockdoor.net/)
 
-![](https://dockdoor.net/Assets/Assets.xcassets/AppIcon.appiconset/AppIcon-iOS-Default-512x512@1x.png)
+<img src="https://dockdoor.net/Assets/Assets.xcassets/AppIcon.appiconset/AppIcon-iOS-Default-512x512@1x.png" alt="" height="64">
 
 DockDoor shows window preview when you hover on the dock app icons. It enhances the window management, making macOS closer to Windows. You can switch between windows of an app conveniently with it.
 
@@ -28,7 +28,7 @@ It is a free, open-sourced project available on GitHub. A large community is bac
 
 ## [Thaw](https://github.com/stonerl/Thaw/)
 
-![](https://github.com/stonerl/Thaw/raw/development/Resources/Icon.svg)
+<img src="https://github.com/stonerl/Thaw/raw/development/Resources/Icon.svg" alt="" height="64">
 
 Thaw gives you an extended menubar where you can put all of the icons to it. It is a fork of Ice, which no longer receives frequent updates.
 
@@ -36,7 +36,7 @@ It is a free, open-sourced project available on GitHub. Compared to the alternat
 
 ## [DesktopRenamer](https://desktoprenamer.mqiu.dev/)
 
-![](https://github.com/gitmichaelqiu/DesktopRenamer/raw/main/DesktopRenamer/Resources/DesktopRenamerIcon_Default.png)
+<img src="https://github.com/gitmichaelqiu/DesktopRenamer/raw/main/DesktopRenamer/Resources/DesktopRenamerIcon_Default.png" alt="" height="64">
 
 !!! note
     I am the author of DesktopRenamer.
