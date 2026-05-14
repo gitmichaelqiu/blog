@@ -8,9 +8,9 @@ comments: true
 
 <div align="center">
 
-![waving](https://capsule-render.vercel.app/api?type=waving&height=120&color=gradient&text=Welcome)
+<img src="https://capsule-render.vercel.app/api?type=waving&height=120&color=gradient&text=Welcome" alt="waving">
 
-![gitmichaelqiu's GitHub stats](https://github-readme-stats-tau-bay.vercel.app/api?username=gitmichaelqiu&theme=transparent)
+<img src="https://github-readme-stats-tau-bay.vercel.app/api?username=gitmichaelqiu&theme=transparent" alt="gitmichaelqiu's GitHub stats">
 
 </div>
 
@@ -133,8 +133,6 @@ For education purpose. Part of them are licensed under ***GPL v3.0 License***, f
 </table>
 
 ---
-
-[![GitHub Streak](https://github-readme-streak-stats-sigma-ebon.vercel.app?user=gitmichaelqiu&theme=transparent)](https://git.io/streak-stats)
 
 <div align="center">
 <picture>
