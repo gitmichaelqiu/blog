@@ -15,6 +15,11 @@ nav = [
     { Home = [
         { About = "index.md" },
         # { "Some Websites" = "some-websites.md" },
+        { Blog = [
+            { "macOS App Recommendation" = [
+                { "System Utilities" = "blog/app/system-utilities.md" },
+            ] },
+        ] },
     ] },
     { "My Projects" = [
         { Overview = "my-projects/overview.md" },
