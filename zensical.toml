@@ -17,7 +17,8 @@ nav = [
         # { "Some Websites" = "some-websites.md" },
         { Blog = [
             { "macOS App Recommendation" = [
-                { "System Utilities" = "blog/app/system-utilities.md" },
+                { "Browsers" = "blog/apps/browers.md" },
+                { "System Utilities" = "blog/apps/system-utilities.md" },
             ] },
         ] },
     ] },
